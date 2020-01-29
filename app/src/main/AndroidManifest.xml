@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.rentokil.pci.rauditor_sg">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application xmlns:tools="http://schemas.android.com/tools"
+        android:name=".volley.VolleyHelperApplication"
+        android:allowBackup="false"
+        android:icon="@drawable/app_logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/app_logo"
+        android:singleLine="false"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="allowBackup,supportsRtl">
+        <activity android:name=".PDFViewActivity"></activity>
+        <activity android:name=".LIST_TEST.date_pick" />
+        <activity
+            android:name=".PCI.PCI_SIGN_3"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".PCI.PCI_Audit_Page_2"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".PCI.PCI_Title_Page_1"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".PTI.PTI_SIGN_3"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".PTI.PTI_Audit_Page_2"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".CardJson"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".PTI.PTI_Title_Page_1"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".Main4Activity"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".Main3Activity"
+            android:label="Navigation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Image.Snackbar_Test" />
+        <activity
+            android:name=".Network.DownloadInfoActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Network.FacebookConnectActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Network.NetworkInfoActivity"
+            android:windowSoftInputMode="stateHidden" /> <!-- <meta-data -->
+        <!-- android:name="com.facebook.sdk.ApplicationId" -->
+        <!-- android:value="@string/facebook_app_id" /> -->
+        <activity android:name=".Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RequestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Category_Type_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Main2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.rentokil.pci.rauditor_sg.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".NetConnection" />
+        <activity android:name=".FirebasePost" />
+        <activity android:name=".FirebaseGet" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="9c383f35cb338c31600cde16490bc9d88ec6992b" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="9c383f35cb338c31600cde16490bc9d88ec6992b" />
+    </application>
+
+</manifest>

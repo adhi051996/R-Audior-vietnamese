@@ -1,0 +1,1727 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    >
+
+    <include layout="@layout/toolbar_category"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#082204"
+        android:elevation="3dp"
+        android:gravity="center"
+        android:paddingBottom="12dp"
+        android:paddingLeft="90dp"
+        android:textStyle="bold"
+        android:paddingRight="90dp"
+        android:paddingTop="12dp"
+        android:text="Standard Items (Must Have)"
+        android:textColor="#ffffff"
+        android:textSize="15dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <customfonts.TextViewSFProDisplayMedium
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="PC VIR (Section 6 of 7)"
+                android:textColor="#E63C06"
+                android:textSize="19.2sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+
+            android:layout_weight="1"
+            android:id="@+id/scrlbar"
+            android:background="#f5f7fa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginBottom="3dp"
+            >
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+
+                android:layout_marginBottom="5dp"
+                android:layout_height="wrap_content">
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Alpha Box (Min 5 pcs)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                        </RadioGroup>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Alphaban (Max 1 litre)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+
+
+
+                        </RadioGroup>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Demand CS (Max 1 bottle)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Deodorant (Min 1 litre - Max 2 litres)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Fogging Solution - oil/waterbased (Min 20 litres - Max 40 litres)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Insect Detector (100i) (Min 10 pcs x 3)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Killmaster/Newhunt (Max 2 cans)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Laevikil 1% MG (Min 1 pkt - Max 2 pkt)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Lizo Trap (Min 5 pcs - Max 20 pcs)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Misting Solution (Min 1 litres - Max 2 litres)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Newcyper 15 WP (Min 2 kgs - Max 4 kgs)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Newcyper 6.5 EC (Min 5 litres - Max 10 litres)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Petrol not more than 20L stored in metal container (check if container rusty)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Plastic Bag (Black) (Min 10 pcs)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Rat cage (Min 3 pcs)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd15"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Rid-rat Bait Blocks (Min 1 bucket - Max 1.5 bucket)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd16"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Rodent Contact Powder (Min 1 pkt - Max 1.5 pkt)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd17"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="RTU Glue Board (Min 5 pkts)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd18"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Tamper Proof Box (2 tones) (Min 5 pcs)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd19"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Tenopa SC (Max 1 litre)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd20"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Termikil Powder (Min 1 pkt - Max 2 pkt)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd21"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Vertox Bait Blocks  (Min 1 bucket - Max 1.5 bucket)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd22"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Yes"
+                                android:textColor="@color/text_color"
+
+                                android:theme="@style/SampleTheme_green" />
+
+
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+
+        android:layout_below="@+id/scrlbar"
+
+        >
+
+        <customfonts.Button_SF_Pro_Display_Semibold
+            android:layout_weight="1"
+            android:id="@+id/back_title_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:background="@drawable/black_rect"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:text="Back" />
+        <customfonts.Button_SF_Pro_Display_Semibold
+            android:layout_weight="1"
+
+            android:id="@+id/sub_title_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:layout_marginLeft="1dp"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:background="@drawable/black_rect"
+            android:text="NEXT" />
+
+
+    </LinearLayout>
+</LinearLayout>

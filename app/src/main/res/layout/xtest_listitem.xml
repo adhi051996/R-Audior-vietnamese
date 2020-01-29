@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rowdetail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="5dp">
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_margin="5dp"
+            android:text="Discussed Issue"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/round_border">
+
+
+            <EditText
+                android:id="@+id/et1_discuss"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginRight="10dp"
+                android:background="#00000000"
+                android:inputType="textCapWords|textCapSentences"
+                android:hint="Tap here to edit"
+                android:padding="15dp"
+                android:textSize="13dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:layout_margin="5dp"
+                android:text="Agreed Action Plan For"
+                android:textSize="16dp"
+                android:layout_marginTop="3dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/rd1"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:layout_marginTop="10dp" >
+
+                <RadioButton
+                    android:gravity="center_vertical"
+                    android:theme="@style/SampleTheme_green"
+                    android:textColor="@color/text_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+
+                    android:text="RENTOKIL" />
+
+                <RadioButton
+
+                    android:theme="@style/SampleTheme_green"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:text="CUSTOMER" />
+
+
+
+
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/addcmt1"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/plusymbol"/>
+
+
+            <TextView
+                android:id="@+id/image_Q1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="83dp"
+                android:layout_marginTop="-27dp"
+                android:background="@drawable/cameraicon1" />
+
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_layout_Q1_1"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="-15dp"
+                android:layout_marginTop="-35dp"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="5dp" />
+
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_layout_Q1_2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="55dp"
+                android:layout_marginTop="-45dp"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="5dp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_layout_Q1_3"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="125dp"
+                android:layout_marginTop="-45dp"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="5dp" />
+
+
+            <TextView
+                android:id="@+id/cmt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textStyle="italic"
+                android:textColor="@color/text_cmt"
+                android:textSize="@dimen/text"
+
+                />
+
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="5dp">
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_margin="5dp"
+            android:text="Agreed Action Plan"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/round_border">
+
+
+            <EditText
+                android:id="@+id/et_action_plan"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginRight="10dp"
+                android:background="#00000000"
+                android:inputType="textCapWords|textCapSentences"
+                android:hint="Tap here to edit"
+                android:padding="15dp"
+                android:textSize="13dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:layout_margin="5dp"
+                android:text="Status"
+                android:textSize="16dp"
+                android:layout_marginTop="3dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/rd2"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:layout_marginTop="10dp" >
+
+                <RadioButton
+                    android:gravity="center_vertical"
+                    android:theme="@style/SampleTheme_green"
+                    android:textColor="@color/text_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+
+                    android:text="OPEN" />
+
+                <RadioButton
+
+                    android:theme="@style/SampleTheme_green"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:text="CLOSE" />
+
+
+
+            </RadioGroup>
+
+            <ImageButton android:id="@+id/btnRemove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="300dp"
+                android:contentDescription="@string/btnRemove"
+                android:src="@android:drawable/ic_delete" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_gravity="center_horizontal"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        card_view:cardElevation="5dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardBackgroundColor="#FFF"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="Completed on"
+                android:textSize="16dp"
+                android:textColor="#000000"
+                android:layout_marginTop="3dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/round_border">
+
+                <EditText
+                    android:id="@+id/et_cond_date_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:hint="Tap here to edit"
+                    android:inputType="textCapWords|textCapSentences"
+                    android:padding="15dp"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>

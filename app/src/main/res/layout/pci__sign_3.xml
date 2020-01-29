@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:id="@+id/relsnack"
+
+    android:layout_height="match_parent"
+    >
+
+    <include layout="@layout/toolbar_category"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#082204"
+        android:elevation="3dp"
+        android:gravity="center"
+        android:paddingBottom="12dp"
+        android:paddingLeft="90dp"
+        android:textStyle="bold"
+        android:paddingRight="90dp"
+        android:paddingTop="12dp"
+        android:text="Signature"
+        android:textColor="#ffffff"
+        android:textSize="15dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+
+            android:layout_weight="1"
+            android:id="@+id/scrlbar"
+            android:background="#f5f7fa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginBottom="3dp"
+            >
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+
+                android:layout_marginBottom="5dp"
+                android:layout_height="wrap_content">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <customfonts.TextViewSFProDisplayMedium
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PC Inspection Report (Section 3 of 3)"
+                            android:textSize="19.2sp"
+                            android:textStyle="bold"
+                            android:textColor="#E63C06"/>
+
+
+
+                    </LinearLayout>
+                </FrameLayout>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:id="@+id/free_txt"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:paddingLeft="25dp"
+                            android:text="Summary"
+                            android:textColor="#000000"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginTop="18dp"
+                            android:layout_marginRight="18dp"
+                            android:layout_marginBottom="18dp"
+                            android:background="@drawable/round_border">
+
+                            <EditText
+                                android:id="@+id/et_reason"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#00000000"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:hint="Tap here to edit"
+                                android:inputType="textCapWords|textCapSentences"
+                                android:padding="15dp"
+                                android:textSize="13dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="12dp"
+                    card_view:cardBackgroundColor="#FFF"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:paddingLeft="25dp"
+                            android:text="Assessor's Name"
+                            android:textColor="#000000"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginTop="18dp"
+                            android:layout_marginRight="18dp"
+                            android:layout_marginBottom="18dp"
+                            android:background="@drawable/round_border">
+
+                            <EditText
+                                android:id="@+id/ass_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#00000000"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:hint="Tap here to edit"
+                                android:inputType="textCapWords|textCapSentences"
+                                android:padding="15dp"
+                                android:textSize="13dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:background="#103A55"
+                    android:id="@+id/tech_signature_button"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+
+                        android:layout_marginLeft="20dp"
+                        android:text="Assessor's Signature"
+                        android:textSize="18dp"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="12dp"
+                    card_view:cardBackgroundColor="#FFF"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true">
+
+
+                    <LinearLayout
+                        android:id="@+id/techsignature"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:id="@+id/tech_imageView"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+
+        android:layout_below="@+id/scrlbar"
+
+        >
+
+        <customfonts.Button_SF_Pro_Display_Semibold
+            android:layout_weight="1"
+            android:id="@+id/back_info_11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:background="@drawable/black_rect"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:text="Back" />
+        <customfonts.Button_SF_Pro_Display_Semibold
+            android:layout_weight="1"
+
+            android:id="@+id/sub_info_11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:layout_marginLeft="1dp"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:background="@drawable/black_rect"
+            android:text="Submit" />
+
+
+    </LinearLayout>
+</LinearLayout>

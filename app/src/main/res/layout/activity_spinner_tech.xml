@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:id="@+id/relsnack"
+    android:layout_height="match_parent"
+    tools:context="com.rentokil.pci.rauditor_sg.SIR.SIR_Title_1">
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:padding="7dp"
+            app:hintText="Select Country"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="82dp" />
+
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/spinner_branch"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:padding="5dp"
+            app:hintText="Select Branch"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="215dp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/scrlbar"
+
+        >
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/button_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#A6ACAF"
+            android:textColor="#17202A"
+            android:layout_marginLeft="7dp"
+            android:text="Cancel" />
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/button_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:textColor="#17202A"
+            android:background="#A6ACAF"
+            android:textStyle="bold"
+            android:text="Ok"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

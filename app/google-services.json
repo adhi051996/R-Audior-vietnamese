@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1057501527147",
+    "firebase_url": "https://scenting-b8b19.firebaseio.com",
+    "project_id": "scenting-b8b19",
+    "storage_bucket": "scenting-b8b19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057501527147:android:8de454049245bcb815052e",
+        "android_client_info": {
+          "package_name": "com.rentokil.pci.rauditor_sg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057501527147-tdoov75u5ih2vp2arg57kspluqueqe2k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rentokil.pci.rauditor_sg",
+            "certificate_hash": "3fa959aaf6b5a9d5a8886fc43b957f0966d6ff25"
+          }
+        },
+        {
+          "client_id": "1057501527147-5fhr882s83skol4d8ievebemcc16luol.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkalGXKxsxBjE3AV5G_FofM8ij6wh0eM8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057501527147-5fhr882s83skol4d8ievebemcc16luol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
