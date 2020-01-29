@@ -24,7 +24,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="allowBackup,supportsRtl">
-        <activity android:name=".PDFViewActivity"></activity>
+        <activity android:name=".PC_VIR.PC_VIR_OTHER_7" />
+        <activity android:name=".PC_VIR.PC_VIR_STANDARD_6" />
+        <activity android:name=".PC_VIR.PC_VIR_PPE_5" />
+        <activity android:name=".PC_VIR.PC_VIR_GENERAL_4" />
+        <activity android:name=".PC_VIR.PC_VIR_FUNCTION_3" />
+        <activity android:name=".PC_VIR.PC_VIR_BODY_2" />
+        <activity android:name=".PDFViewActivity" />
         <activity android:name=".LIST_TEST.date_pick" />
         <activity
             android:name=".PCI.PCI_SIGN_3"
@@ -47,11 +53,9 @@
         <activity
             android:name=".PTI.PTI_Title_Page_1"
             android:windowSoftInputMode="stateHidden" />
-
         <activity
             android:name=".Main4Activity"
             android:windowSoftInputMode="stateHidden" />
-
         <activity
             android:name=".Main3Activity"
             android:label="Navigation"

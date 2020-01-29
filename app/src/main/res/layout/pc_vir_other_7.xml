@@ -20,7 +20,7 @@
         android:textStyle="bold"
         android:paddingRight="90dp"
         android:paddingTop="12dp"
-        android:text="General Checklist"
+        android:text="Other Items (Optional)"
         android:textColor="#ffffff"
         android:textSize="15dp" />
 
@@ -41,7 +41,7 @@
             <customfonts.TextViewSFProDisplayMedium
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="PC VIR (Section 4 of 7)"
+                android:text="PC VIR (Section 7 of 7)"
                 android:textColor="#E63C06"
                 android:textSize="19.2sp"
                 android:textStyle="bold" />
@@ -79,7 +79,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="110dp"
+                    android:layout_height="140dp"
                     android:layout_gravity="center_horizontal"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     card_view:cardElevation="5dp"
@@ -99,7 +99,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
-                            android:text="Valid driving licence"
+                            android:text="Goldben - No unauthorised storage (Max 5 kg)"
                             android:textSize="16dp"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
@@ -113,323 +113,7 @@
                             android:layout_marginTop="12dp"
                             android:checked="false"
                             android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:checked="false"
-                                android:gravity="center_vertical"
-                                android:text="Yes"
-                                android:textColor="@color/text_color"
-
-                                android:theme="@style/SampleTheme_green" />
-
-
-
-                            <RadioButton
-                                android:layout_width="match_parent"
-
-                                android:layout_height="wrap_content"
-
-                                android:layout_weight="1"
-                                android:text="No"
-                                android:textColor="@color/text_color"
-                                android:theme="@style/SampleTheme_green" />
-
-
-                            <RadioButton
-                                android:layout_width="match_parent"
-
-                                android:layout_height="wrap_content"
-
-                                android:layout_weight="1"
-                                android:text="N/A"
-                                android:textColor="@color/text_color"
-                                android:theme="@style/SampleTheme_green" />
-
-
-
-
-
-
-                        </RadioGroup>
-
-
-                    </LinearLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:layout_gravity="center_horizontal"
-                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    card_view:cardElevation="5dp"
-                    card_view:cardUseCompatPadding="true"
-                    card_view:cardBackgroundColor="#FFF"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_marginTop="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="5dp"
-                            android:text="General cleanliness"
-                            android:textSize="16dp"
-                            android:textColor="#000000"
-                            android:layout_marginTop="3dp"
-                            android:textStyle="bold" />
-
-                        <RadioGroup
-                            android:id="@+id/main_rd2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="12dp"
-                            android:checked="false"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:checked="false"
-                                android:gravity="center_vertical"
-                                android:text="Good"
-                                android:textColor="@color/text_color"
-
-                                android:theme="@style/SampleTheme_green" />
-
-
-
-                            <RadioButton
-                                android:layout_width="match_parent"
-
-                                android:layout_height="wrap_content"
-
-                                android:layout_weight="1"
-                                android:text="Fair"
-                                android:textColor="@color/text_color"
-                                android:theme="@style/SampleTheme_green" />
-
-                            <RadioButton
-                                android:layout_width="match_parent"
-
-                                android:layout_height="wrap_content"
-
-                                android:layout_weight="1"
-                                android:text="Poor"
-                                android:textColor="@color/text_color"
-                                android:theme="@style/SampleTheme_green" />
-
-
-
-                            <RadioButton
-                                android:layout_width="match_parent"
-
-                                android:layout_height="wrap_content"
-
-                                android:layout_weight="1"
-                                android:text="N/A"
-                                android:textColor="@color/text_color"
-                                android:theme="@style/SampleTheme_green" />
-
-
-
-
-
-
-                        </RadioGroup>
-
-
-                    </LinearLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:layout_gravity="center_horizontal"
-                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    card_view:cardElevation="5dp"
-                    card_view:cardUseCompatPadding="true"
-                    card_view:cardBackgroundColor="#FFF"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_marginTop="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="5dp"
-                            android:text="Vehicle partition"
-                            android:textSize="16dp"
-                            android:textColor="#000000"
-                            android:layout_marginTop="3dp"
-                            android:textStyle="bold" />
-
-                        <RadioGroup
-                            android:id="@+id/main_rd3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="12dp"
-                            android:checked="false"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:checked="false"
-                                android:gravity="center_vertical"
-                                android:text="Pass"
-                                android:textColor="@color/text_color"
-                                android:theme="@style/SampleTheme_green" />
-
-                            <RadioButton
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Fail"
-                                android:textColor="@color/text_color"
-                                android:theme="@style/SampleTheme_green" />
-
-                            <RadioButton
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="N/A"
-                                android:textColor="@color/text_color"
-                                android:theme="@style/SampleTheme_green" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:layout_gravity="center_horizontal"
-                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    card_view:cardElevation="5dp"
-                    card_view:cardUseCompatPadding="true"
-                    card_view:cardBackgroundColor="#FFF"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_marginTop="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="5dp"
-                            android:text="Partition glass panel"
-                            android:textSize="16dp"
-                            android:textColor="#000000"
-                            android:layout_marginTop="3dp"
-                            android:textStyle="bold" />
-
-                        <RadioGroup
-                            android:id="@+id/main_rd4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="12dp"
-                            android:checked="false"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:checked="false"
-                                android:gravity="center_vertical"
-                                android:text="Pass"
-                                android:textColor="@color/text_color"
-                                android:theme="@style/SampleTheme_green" />
-
-                            <RadioButton
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Fail"
-                                android:textColor="@color/text_color"
-                                android:theme="@style/SampleTheme_green" />
-
-                            <RadioButton
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="N/A"
-                                android:textColor="@color/text_color"
-                                android:theme="@style/SampleTheme_green" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:layout_gravity="center_horizontal"
-                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    card_view:cardElevation="5dp"
-                    card_view:cardUseCompatPadding="true"
-                    card_view:cardBackgroundColor="#FFF"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_marginTop="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="5dp"
-                            android:text="Non-standard display item e.g. colored rims, decals, personal sticker, air freshener dispenser and others"
-                            android:textSize="16dp"
-                            android:textColor="#000000"
-                            android:layout_marginTop="3dp"
-                            android:textStyle="bold" />
-
-                        <RadioGroup
-                            android:id="@+id/main_rd5"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="12dp"
-                            android:checked="false"
-                            android:gravity="center"
                             android:orientation="vertical">
-
                             <RadioButton
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -456,13 +140,18 @@
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
                         </RadioGroup>
+
+
                     </LinearLayout>
+
+
                 </androidx.cardview.widget.CardView>
+
 
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="110dp"
+                    android:layout_height="140dp"
                     android:layout_gravity="center_horizontal"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     card_view:cardElevation="5dp"
@@ -476,11 +165,297 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
-                            android:text="Receipt book"
+                            android:text="Newbait - No unauthorised storage (max 1 kg)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Complaint"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Non-Complaint"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Contrac Blox (Max 8kg)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Complaint"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Non-Complaint"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Any Cockroach Gel Bait (Max 2 tube)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Complaint"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Non-Complaint"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Any Ant Gel Bait (Max 2 tube)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Complaint"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Non-Complaint"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Anti Malaria Oil (Max 20 litres unless with approval from line manager)"
                             android:textSize="16dp"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
@@ -494,15 +469,14 @@
                             android:layout_marginTop="12dp"
                             android:checked="false"
                             android:gravity="center"
-                            android:orientation="horizontal">
-
+                            android:orientation="vertical">
                             <RadioButton
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="false"
                                 android:gravity="center_vertical"
-                                android:text="Pass"
+                                android:text="Complaint"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -510,7 +484,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Fail"
+                                android:text="Non-Complaint"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -522,14 +496,17 @@
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
                         </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
 
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="140dp"
                     android:layout_gravity="center_horizontal"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     card_view:cardElevation="5dp"
@@ -548,36 +525,121 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="25dp"
-                            android:text="Remarks"
+                            android:paddingLeft="5dp"
+                            android:text="Rid-Rat or Vertox Soft Bait (Max 2 tubes unless with approval from line manager)"
                             android:textSize="16dp"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
 
-                        <LinearLayout
+                        <RadioGroup
+                            android:id="@+id/main_rd7"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="18dp"
-                            android:layout_marginRight="18dp"
-                            android:layout_marginTop="18dp"
-                            android:layout_marginBottom="18dp"
-                            android:background="@drawable/round_border">
-
-                            <EditText
-                                android:id="@+id/et_client_13"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <RadioButton
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="#00000000"
-                                android:focusable="true"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Complaint"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
 
-                                android:focusableInTouchMode="true"
-                                android:hint="Tap here to edit"
-                                android:inputType="textCapWords|textCapSentences"
-                                android:padding="15dp"
-                                android:textSize="13dp" />
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Non-Complaint"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
 
-                        </LinearLayout>
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center_horizontal"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="#FFF"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="Sulphur (Max 20 kgs unless with approval from line manager)"
+                            android:textSize="16dp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/main_rd8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:gravity="center_vertical"
+                                android:text="Complaint"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Non-Complaint"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+                        </RadioGroup>
 
 
                     </LinearLayout>

@@ -112,7 +112,7 @@ String get_report;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pci_title__page_1);
+        setContentView(R.layout.pc_vir_title_1);
 
 
 

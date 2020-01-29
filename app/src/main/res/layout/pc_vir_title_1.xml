@@ -41,7 +41,7 @@
             <customfonts.TextViewSFProDisplayMedium
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PC VIR (Section 1 of 3)"
+                android:text="PC VIR (Section 1 of 7)"
                 android:textSize="19.2sp"
                 android:textStyle="bold"
                 android:textColor="#E63C06"/>
