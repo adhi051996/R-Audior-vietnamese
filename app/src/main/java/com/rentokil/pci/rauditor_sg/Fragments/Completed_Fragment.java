@@ -104,6 +104,11 @@ public class Completed_Fragment extends Fragment {
                 " ) AS Type from PCI_TITLE_1 where STATUS = 'Completed' or STATUS='SENT'" +
                 "UNION ALL\n" +
 
+                "select KEY_ID as KEY_ID,et1 as Customer_name,et2 as Conducted_date,et3 as report_no,STATUS,COALESCE(" +
+                "  ('VIR')," +
+                "  'VIR'" +
+                " ) AS Type from PC_VIR_DB_TITLE_1 where STATUS = 'Completed' or STATUS='SENT'" +
+                "UNION ALL\n" +
 
                 "select KEY_ID as KEY_ID,et1 as Customer_name,et2 as Conducted_date,et3 as report_no,STATUS,COALESCE(" +
                 "  ('PTI')," +

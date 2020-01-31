@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rootView"
     android:layout_width="match_parent"
-    android:layout_height="600dp"
+    android:layout_height="match_parent"
     android:background="@android:color/black"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="547dp" />
+        app:layout_constraintGuide_end="?attr/actionBarSize" />
 
     <ja.burhanrashid52.photoeditor.PhotoEditorView
         android:id="@+id/photoEditorView"
@@ -151,8 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:visibility="gone"
-        android:src="@drawable/ic_save"
-        tools:ignore="MissingConstraints" />
+        android:src="@drawable/ic_save" />
 
 
 

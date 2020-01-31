@@ -565,7 +565,7 @@
                             android:background="@drawable/round_border">
 
                             <EditText
-                                android:id="@+id/et_client_13"
+                                android:id="@+id/et_remarks_7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="#00000000"

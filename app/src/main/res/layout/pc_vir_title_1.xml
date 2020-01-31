@@ -115,7 +115,7 @@
                             android:background="@drawable/round_border">
 
                             <EditText
-                                android:id="@+id/et_cond_date_2"
+                                android:id="@+id/et_cond_date_1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="#00000000"
@@ -172,7 +172,7 @@
                             android:background="@drawable/round_border">
 
                             <EditText
-                                android:id="@+id/et_client_1"
+                                android:id="@+id/et_vehicle_2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="#00000000"
@@ -231,7 +231,7 @@
                             android:background="@drawable/round_border">
 
                             <EditText
-                                android:id="@+id/et_cus_6"
+                                android:id="@+id/et_driver_3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="#00000000"
@@ -290,7 +290,7 @@
                             android:background="@drawable/round_border">
 
                             <EditText
-                                android:id="@+id/et_cont_7"
+                                android:id="@+id/et_team_4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="#00000000"

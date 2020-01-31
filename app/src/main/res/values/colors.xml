@@ -12,6 +12,10 @@
     <color name="year">#999999</color>
     <color name="title">#222222</color>
 
+    <color name="tedbottompicker_camera">#000</color>
+    <color name="tedbottompicker_gallery">#ccc</color>
+    <color name="tedbottompicker_selected">#f0f0f0</color>
+
     <color name="black">#000000</color>
     <color name="blue_color_picker">#0066FF</color>
     <color name="brown_color_picker">#AF593E</color>

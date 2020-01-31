@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
 
@@ -15,6 +16,10 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="editor_size">35dp</dimen>
     <dimen name="normal_margin">8dp</dimen>
-    <dimen name="large_margin">16dp</dimen>z
+    <dimen name="large_margin">16dp</dimen>
+
+    <dimen name="tedbottompicker_grid_layout_margin">1dp</dimen>
+
+    <dimen name="tedbottompicker_selected_image_height">90dp</dimen>
 
 </resources>

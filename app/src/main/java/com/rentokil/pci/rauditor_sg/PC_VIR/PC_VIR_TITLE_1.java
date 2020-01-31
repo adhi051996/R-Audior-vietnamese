@@ -29,7 +29,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -45,10 +44,8 @@ import com.rentokil.pci.rauditor_sg.BuildConfig;
 import com.rentokil.pci.rauditor_sg.Category_Type_Activity;
 import com.rentokil.pci.rauditor_sg.Database.DatabaseHelper;
 import com.rentokil.pci.rauditor_sg.GPSTracker;
-import com.rentokil.pci.rauditor_sg.PCI.PCI_Audit_Page_2;
 import com.rentokil.pci.rauditor_sg.R;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -56,7 +53,7 @@ import java.util.Locale;
 
 public class PC_VIR_TITLE_1 extends AppCompatActivity {
 
-    EditText et_client_1,et_cond_date_2,et_prepared_3,et_loc_4,et_report_5,et_cus_name_6,et_contact_7;
+
     private SimpleDateFormat dateFormatter;
     private long mLastClickTime = 0;
     DatePickerDialog picker;
@@ -92,17 +89,16 @@ public class PC_VIR_TITLE_1 extends AppCompatActivity {
 
     Button sub_title_1,back_title_1;
 
-    String get_client,get_conduct_date,get_prepared_by,get_location,get_cus_name,get_cont_no;
+    String get_cond_date_1,get_vehicle_2,get_driver_3,get_team_4;
 
 
     DatabaseHelper db;
     SQLiteDatabase sd;
     ContentValues cv1;
     ContentValues cv2,cv_off;
-
+    EditText et_cond_date_1,et_vehicle_2,et_driver_3,et_team_4;
     String versionName = BuildConfig.VERSION_NAME;
 
-String get_report;
     private SimpleDateFormat mSimpleDateFormat;
     private Calendar mCalendar;
     private Activity mActivity;
@@ -114,14 +110,8 @@ String get_report;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pc_vir_title_1);
 
-
-
-
         mActivity = this;
         mSimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-
-
-
 
 
         db = new DatabaseHelper(PC_VIR_TITLE_1.this);
@@ -154,28 +144,24 @@ String get_report;
 
 
 
+        et_cond_date_1 =(EditText) findViewById(R.id.et_cond_date_1);
+        et_vehicle_2 =(EditText) findViewById(R.id.et_vehicle_2);
+        et_driver_3 =(EditText) findViewById(R.id.et_driver_3);
+
+        et_cond_date_1.setFocusable(false);
+        et_cond_date_1.setClickable(true);
 
 
-        et_client_1 =(EditText) findViewById(R.id.et_client_1);
-        et_cond_date_2 =(EditText) findViewById(R.id.et_cond_date_2);
-        et_prepared_3 =(EditText) findViewById(R.id.et_prepared_3);
+        et_team_4 =(EditText) findViewById(R.id.et_team_4);
 
-        et_cond_date_2.setFocusable(false);
-        et_cond_date_2.setClickable(true);
-
-
-        et_loc_4 =(EditText) findViewById(R.id.et_loc_4);
-        et_report_5 =(EditText) findViewById(R.id.et_report_5);
-        et_cus_name_6 =(EditText) findViewById(R.id.et_cus_6);
-        et_contact_7 =(EditText) findViewById(R.id.et_cont_7);
         back_title_1 =(Button) findViewById(R.id.back_title_1);
         sub_title_1 =(Button) findViewById(R.id.sub_title_1);
 
 
-        et_client_1.setSingleLine(false);
-        et_cond_date_2.setSingleLine(false);
-        et_prepared_3.setSingleLine(false);
-        et_loc_4.setSingleLine(false);
+        et_cond_date_1.setSingleLine(false);
+        et_vehicle_2.setSingleLine(false);
+        et_driver_3.setSingleLine(false);
+        et_team_4.setSingleLine(false);
 
         Intent intent1=getIntent();
         key_id=intent1.getStringExtra("key_id");
@@ -225,12 +211,12 @@ String get_report;
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String formattedDate = df.format(c.getTime());
 
-        et_cond_date_2.setText(formattedDate);
+        et_cond_date_1.setText(formattedDate);
         setDateTimeField();
         mContext = this;
         EnableRuntimePermission();
 
-        et_cond_date_2.setOnClickListener(new View.OnClickListener() {
+        et_cond_date_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mCalendar = Calendar.getInstance();
@@ -239,78 +225,7 @@ String get_report;
             }
         });
 
-        getlocations = (TextView) findViewById(R.id.et_img_loc);
 
-        getlocations.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                geocoder = new Geocoder(PC_VIR_TITLE_1.this, Locale.getDefault());
-
-
-                try {
-
-                    if (ContextCompat.checkSelfPermission(mContext,
-                            Manifest.permission.ACCESS_FINE_LOCATION)
-
-                            != PackageManager.PERMISSION_GRANTED
-
-                            && ActivityCompat.checkSelfPermission(mContext,
-                            Manifest.permission.ACCESS_COARSE_LOCATION)
-
-                            != PackageManager.PERMISSION_GRANTED) {
-                        ActivityCompat.requestPermissions(PC_VIR_TITLE_1.this,
-                                new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-
-                    } else {
-
-                        gps = new GPSTracker(mContext, PC_VIR_TITLE_1.this);
-
-                        // Check if GPS enabled
-
-                        if (gps.canGetLocation()) {
-
-                            latitude = gps.getLatitude();
-                            longitude = gps.getLongitude();
-
-                            // \n is for new line
-
-
-                            lati = Double.toString(latitude);
-                            longi = Double.toString(longitude);
-
-                        } else {
-                            // Can't get location.
-
-                            // GPS or network is not enabled.
-
-                            // Ask user to enable GPS/network in settings.
-
-                            gps.showSettingsAlert();
-                        }
-                    }
-
-                    addressList = geocoder.getFromLocation(latitude,longitude,1);
-                    try {
-                        String addressStr = addressList.get(0).getAddressLine(0);
-                        String areaStr = addressList.get(0).getLocality();
-                        String cityStr = addressList.get(0).getAdminArea();
-                        String countryStr = addressList.get(0).getCountryName();
-                        String postalcodeStr = addressList.get(0).getPostalCode();
-
-                        String fullAddress = addressStr+", "+areaStr+", "+cityStr+", "+countryStr+", "+postalcodeStr;
-
-                        et_loc_4.setText(fullAddress);
-                    } catch (Exception e) {
-
-                        Toast.makeText(getApplicationContext(),"Press Again To Get Address",Toast.LENGTH_SHORT).show();
-                        e.printStackTrace();
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
 
         if (key_id!=null) {
 
@@ -320,7 +235,7 @@ String get_report;
 
         else
         {
-            et_cond_date_2.setText(formattedDate);
+            et_cond_date_1.setText(formattedDate);
 
         }
 
@@ -343,7 +258,7 @@ String get_report;
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
             mCalendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
             mCalendar.set(Calendar.MINUTE, minute);
-            et_cond_date_2.setText(mSimpleDateFormat.format(mCalendar.getTime()));
+            et_cond_date_1.setText(mSimpleDateFormat.format(mCalendar.getTime()));
         }
     };
 
@@ -355,18 +270,16 @@ String get_report;
         Log.e("MMMMMMCC","status = "+status);
 
 
-        get_client = et_client_1.getText().toString();
-        get_conduct_date = et_cond_date_2.getText().toString();
-        get_prepared_by = et_prepared_3.getText().toString();
-        get_location = et_loc_4.getText().toString();
+        get_cond_date_1 = et_cond_date_1.getText().toString();
+        get_vehicle_2 = et_vehicle_2.getText().toString();
+        get_driver_3 = et_driver_3.getText().toString();
+        get_team_4 = et_team_4.getText().toString();
+
         cv_off.put(db.MAIN_ID, "" + Main_ID);
-        cv_off.put(db.et1, "" + get_client);
-        cv_off.put(db.et2, "" + get_conduct_date);
-        cv_off.put(db.et3, "" + get_prepared_by);
-        cv_off.put(db.et4, "" + get_location);
-        cv_off.put(db.et5, "" + get_report);
-        cv_off.put(db.et6, "" + get_cus_name);
-        cv_off.put(db.et7, "" + get_cont_no);
+        cv_off.put(db.et1, "" + get_cond_date_1);
+        cv_off.put(db.et2, "" + get_vehicle_2);
+        cv_off.put(db.et3, "" + get_driver_3);
+        cv_off.put(db.et4, "" + get_team_4);
         cv_off.put(db.VERSION_NAME, "" + versionName);
 
 
@@ -374,63 +287,26 @@ String get_report;
             cv_off.put(db.STATUS, "Pending");
 
             Log.e("HHHHHH","status"+status);
-            sd.insert(db.PCI_TITLE_1, null, cv_off);
-            Intent intent = new Intent(getApplicationContext(), PCI_Audit_Page_2.class);
-            intent.putExtra("key_id", ""+db.get_last_id_PCI(sd));
+            sd.insert(db.PC_VIR_DB_TITLE_1, null, cv_off);
+            Intent intent = new Intent(getApplicationContext(), PC_VIR_BODY_2.class);
+            intent.putExtra("key_id", ""+db.get_last_id_VIR(sd));
             startActivity(intent);
-            Log.e("MMMMMMH","last id = "+db.get_last_id_PCI(sd));
+            Log.e("MMMMMMH","last id = "+db.get_last_id_VIR(sd));
         }else {
             Log.e("JJJJJJN","status = "+status);
-            sd.update(db.PCI_TITLE_1,  cv_off,"KEY_ID = '" + key_id + "'",null);
-            Intent intent = new Intent(getApplicationContext(), PCI_Audit_Page_2.class);
+            sd.update(db.PC_VIR_DB_TITLE_1,  cv_off,"KEY_ID = '" + key_id + "'",null);
+            Intent intent = new Intent(getApplicationContext(), PC_VIR_BODY_2.class);
             intent.putExtra("key_id", "" + key_id);
             startActivity(intent);
 
         }
 
 
-//
-//        if(key_id==null) {
-//
-//
-//            Log.e("HHHHHH","status"+status);
-//            sd.insert(db.PCI_TITLE_1, null, cv_off);
-//            Intent intent = new Intent(getApplicationContext(), RIID_GPP_INFOR_2.class);
-//            intent.putExtra("key_id", "" + get_last_id());
-//            startActivity(intent);
-//
-//            Log.e("MMMMMMH","last id = "+get_last_id());
-//
-//
-//        }else {
-//            Log.e("HHHHHH","e3");
-//            sd.update(db.PCI_TITLE_1,  cv_off,"KEY_ID = '" + status + "'",null);
-//            Intent intent = new Intent(getApplicationContext(), RIID_GPP_INFOR_2.class);
-//            intent.putExtra("key_id", "" + key_id);
-//            startActivity(intent);
-//
-//        }
-
-
-//        Cursor c5;
-//        c5 = sd.rawQuery("Select * from " + db.PCI_TITLE_1, null);
-//        c5.moveToFirst();
-//
-//        Log.e("HHHNNN","main id = "+c5.getString(c5.getColumnIndex(db.MAIN_ID)));
-//        Log.e("HHHNNN","et1 = "+c5.getString(c5.getColumnIndex(db.et1)));
-//        Log.e("HHHNNN","et2 = "+c5.getString(c5.getColumnIndex(db.et2)));
-//        Log.e("HHHNNN","et3 = "+c5.getString(c5.getColumnIndex(db.et3)));
-//        Log.e("HHHNNN","et4 = "+c5.getString(c5.getColumnIndex(db.et4)));
-//        Log.e("HHHNNN","status = "+c5.getString(c5.getColumnIndex(db.STATUS)));
-//
-//
-
-
 
     }
 
     public int check_data(String key_id){
-        String Query="select * from "+db.PCI_TITLE_1 +" where KEY_ID = '"+key_id+"'";
+        String Query="select * from "+db.PC_VIR_DB_TITLE_1 +" where KEY_ID = '"+key_id+"'";
         Cursor cursor = sd.rawQuery(Query, null);
         cursor.moveToFirst();
 
@@ -440,7 +316,7 @@ String get_report;
 
     public int get_last_id(){
         Cursor c8;
-        c8 = sd.rawQuery("Select * from " + db.PCI_TITLE_1, null);
+        c8 = sd.rawQuery("Select * from " + db.PC_VIR_DB_TITLE_1, null);
         c8.moveToLast();
 
         return c8.getInt(c8.getColumnIndex(db.KEY_ID));
@@ -450,7 +326,7 @@ String get_report;
     public void get_offline(String id){
 
         Log.e("GGGRRRR","E2"  + id);
-        String Query="select * from "+db.PCI_TITLE_1 +" where KEY_ID = '"+id+"'";
+        String Query="select * from "+db.PC_VIR_DB_TITLE_1 +" where KEY_ID = '"+id+"'";
         Cursor cursor = sd.rawQuery(Query, null);
         cursor.moveToFirst();
 
@@ -466,18 +342,12 @@ String get_report;
                 String met2 = cursor.getString(cursor.getColumnIndex(db.et2));
                 String met3 = cursor.getString(cursor.getColumnIndex(db.et3));
                 String met4 = cursor.getString(cursor.getColumnIndex(db.et4));
-                String met5 = cursor.getString(cursor.getColumnIndex(db.et5));
-                String met6 = cursor.getString(cursor.getColumnIndex(db.et6));
-                String met7 = cursor.getString(cursor.getColumnIndex(db.et7));
 
 
-                et_client_1.setText(met1);
-                et_cond_date_2.setText(met2);
-                et_prepared_3.setText(met3);
-                et_loc_4.setText(met4);
-                et_report_5.setText(met5);
-                et_cus_name_6.setText(met6);
-                et_contact_7.setText(met7);
+                et_cond_date_1.setText(met1);
+                et_vehicle_2.setText(met2);
+                et_driver_3.setText(met3);
+                et_team_4.setText(met4);
 
 
             } catch (Exception e) {
@@ -649,7 +519,7 @@ String get_report;
                         Calendar newDate = Calendar.getInstance();
                         newDate.set(year, monthOfYear, dayOfMonth);
                         if (true) {
-                            et_cond_date_2.setText
+                            et_cond_date_1.setText
 
                                     (dateFormatter.format(newDate.getTime()));
                         }
@@ -679,7 +549,7 @@ String get_report;
 
                                 startDay);
                         if (follow == 1) {
-                            et_cond_date_2.setText
+                            et_cond_date_1.setText
 
 
                                     (dateFormatter.format(cal.getTime()));
@@ -715,49 +585,30 @@ String get_report;
     public boolean validation(){
 
 
-
-        get_client = et_client_1.getText().toString();
-        get_conduct_date = et_cond_date_2.getText().toString();
-        get_prepared_by = et_prepared_3.getText().toString();
-        get_location = et_loc_4.getText().toString();
-        get_report = et_report_5.getText().toString();
-        get_cus_name = et_cus_name_6.getText().toString();
-        get_cont_no = et_contact_7.getText().toString();
+        get_cond_date_1 = et_cond_date_1.getText().toString();
+        get_vehicle_2 = et_vehicle_2.getText().toString();
+        get_driver_3 = et_driver_3.getText().toString();
+        get_team_4 = et_team_4.getText().toString();
 
 
+        if(TextUtils.isEmpty(get_cond_date_1 ) || TextUtils.isEmpty(get_vehicle_2) ||TextUtils.isEmpty(get_driver_3)
+                ||TextUtils.isEmpty(get_team_4)) {
 
-
-        if(TextUtils.isEmpty(get_client ) || TextUtils.isEmpty(get_conduct_date) ||TextUtils.isEmpty(get_prepared_by)
-                ||TextUtils.isEmpty(get_location)||TextUtils.isEmpty(get_report)||TextUtils.isEmpty(get_cus_name)
-                ||TextUtils.isEmpty(get_cont_no)) {
-
-            if(TextUtils.isEmpty(get_client )){
-                et_client_1.setError("Required");
+            if(TextUtils.isEmpty(get_cond_date_1 )){
+                et_cond_date_1.setError("Required");
             }
 
-            if(TextUtils.isEmpty(get_conduct_date)) {
-                et_cond_date_2.setError("Required");
+            if(TextUtils.isEmpty(get_vehicle_2)) {
+                et_vehicle_2.setError("Required");
 
 
             }
-            if(TextUtils.isEmpty(get_prepared_by)) {
-                et_prepared_3.setError("Required");
+            if(TextUtils.isEmpty(get_driver_3)) {
+                et_driver_3.setError("Required");
 
             }
-            if(TextUtils.isEmpty(get_location)) {
-                et_loc_4.setError("Required");
-
-            }
-            if(TextUtils.isEmpty(get_report)) {
-                et_report_5.setError("Required");
-
-            }
-            if(TextUtils.isEmpty(get_cus_name)) {
-                et_cus_name_6.setError("Required");
-
-            }
-            if(TextUtils.isEmpty(get_cont_no)) {
-                et_contact_7.setError("Required");
+            if(TextUtils.isEmpty(get_team_4)) {
+                et_team_4.setError("Required");
 
             }
 
@@ -767,8 +618,8 @@ String get_report;
 
 
 
-        if(get_client.length()==0||get_conduct_date.length()==0||get_prepared_by.length()==0||
-                get_location.length()==0||get_report.length()==0||get_cont_no.length()==0||get_cus_name.length()==0){
+        if(get_cond_date_1.length()==0||get_vehicle_2.length()==0||get_driver_3.length()==0||
+                get_team_4.length()==0){
             return false;
         }else {
             return  true;

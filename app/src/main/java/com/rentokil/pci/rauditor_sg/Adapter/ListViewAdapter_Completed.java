@@ -22,6 +22,7 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.rentokil.pci.rauditor_sg.Database.DatabaseHelper;
 import com.rentokil.pci.rauditor_sg.PCI.PCI_Title_Page_1;
+import com.rentokil.pci.rauditor_sg.PC_VIR.PC_VIR_TITLE_1;
 import com.rentokil.pci.rauditor_sg.PTI.PTI_Title_Page_1;
 import com.rentokil.pci.rauditor_sg.R;
 
@@ -149,6 +150,12 @@ public class ListViewAdapter_Completed extends BaseAdapter {
                                             sd.update(db.PTI_TITLE_1, cv, "KEY_ID = '" + List_Item_Methodes.get(position).getId() + "'", null);
                                         }
 
+                                        if (List_Item_Methodes.get(position).getAudi_name().equalsIgnoreCase("VIR")) {
+                                            holder.View_Bt.setText("NOT SEND");
+                                            cv.put(db.STATUS, "Completed");
+                                            sd.update(db.PC_VIR_DB_TITLE_1, cv, "KEY_ID = '" + List_Item_Methodes.get(position).getId() + "'", null);
+                                        }
+
 
                                         try {
                                             //  get_offline();
@@ -172,6 +179,14 @@ public class ListViewAdapter_Completed extends BaseAdapter {
                                     i.putExtra("key_id", "" + List_Item_Methodes.get(position).getId());
                                     mContext.startActivity(i);
                                 }
+
+                              if (List_Item_Methodes.get(position).getAudi_name().equalsIgnoreCase("VIR")) {
+                                    Intent i = new Intent(mContext, PC_VIR_TITLE_1.class);
+                                    i.putExtra("key_id", "" + List_Item_Methodes.get(position).getId());
+                                    mContext.startActivity(i);
+                                }
+
+
 
                                 dialog.dismiss();
 

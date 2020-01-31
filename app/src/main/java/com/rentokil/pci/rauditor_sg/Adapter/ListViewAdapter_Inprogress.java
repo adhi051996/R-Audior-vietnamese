@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.rentokil.pci.rauditor_sg.PCI.PCI_Title_Page_1;
+import com.rentokil.pci.rauditor_sg.PC_VIR.PC_VIR_TITLE_1;
 import com.rentokil.pci.rauditor_sg.PTI.PTI_Title_Page_1;
 import com.rentokil.pci.rauditor_sg.R;
 
@@ -155,6 +156,12 @@ public class ListViewAdapter_Inprogress extends BaseAdapter {
                                                           }
                                                           if(List_Item_Methodes_incomplete.get(position).getAudi_name().equalsIgnoreCase("PTI")){
                                                               Intent i = new Intent(mContext, PTI_Title_Page_1.class);
+                                                              i.putExtra("key_id",""+List_Item_Methodes_incomplete.get(position).getId());
+                                                              mContext.startActivity(i);
+                                                          }
+
+                                                          if(List_Item_Methodes_incomplete.get(position).getAudi_name().equalsIgnoreCase("VIR")){
+                                                              Intent i = new Intent(mContext, PC_VIR_TITLE_1.class);
                                                               i.putExtra("key_id",""+List_Item_Methodes_incomplete.get(position).getId());
                                                               mContext.startActivity(i);
                                                           }

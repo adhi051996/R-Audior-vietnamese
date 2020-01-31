@@ -30,6 +30,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
 
     public static final String BRANCH_END_DATE = "BRANCH_END_DATE";
+    public static final String IMG_URL_1 = "IMG_URL_1";
+    public static final String IMG_URL_2 = "IMG_URL_2";
+    public static final String IMG_URL_3 = "IMG_URL_3";
+    public static final String IMG_URL_4 = "IMG_URL_4";
+
+    public static final String et26 = "et26";
+    public static final String et27 = "et27";
+    public static final String et28 = "et28";
+    public static final String et29 = "et29";
+    public static final String et30 = "et30";
+    public static final String et31 = "et31";
+    public static final String et32 = "et32";
+    public static final String et33 = "et33";
+    public static final String et34 = "et34";
+    public static final String et35 = "et35";
+    public static final String et36 = "et36";
+    public static final String et37 = "et37";
+    public static final String et38 = "et38";
+    public static final String et39 = "et39";
+    public static final String et40 = "et40";
+    public static final String et41 = "et41";
 
     public static final String COMPLETED_DATE = "COMPLETED_DATE";
     public static final String MOBILE_MODEL_TABLE = "MOBILE_MODEL_TABLE";
@@ -48,6 +69,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String PTI_TITLE_1 = "PTI_TITLE_1";
     public static final String PTI_INSPEC_2 = "PTI_INSPEC_2";
     public static final String PTI_SIGN_3 = "PTI_SIGN_3";
+
+    public static final String PC_VIR_DB_TITLE_1 = "PC_VIR_DB_TITLE_1";
+    public static final String PC_VIR_DB_BODY_2 = "PC_VIR_DB_BODY_2";
+    public static final String PC_VIR_DB_FUNCTION_3 = "PC_VIR_DB_FUNCTION_3";
+    public static final String PC_VIR_DB_GENERAL_4 = "PC_VIR_DB_GENERAL_4";
+    public static final String PC_VIR_DB_PPE_5 = "PC_VIR_DB_PPE_5";
+    public static final String PC_VIR_DB_STANDARD_6 = "PC_VIR_DB_STANDARD_6";
+    public static final String PC_VIR_DB_OTHER_7 = "PC_VIR_DB_OTHER_7";
 
 
 
@@ -125,6 +154,148 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + CUSTOMER_SIGN + " BLOB,"
             + BRANCH_END_DATE + " DATETIME,"
             + DELETED + " INTEGER)";
+
+
+    String CREATE_PC_VIR_TITLE_1 = "CREATE TABLE " + PC_VIR_DB_TITLE_1 + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MAIN_ID + " INTEGER,"
+            + et1 + " TEXT,"
+            + et2 + " TEXT,"
+            + et3 + " TEXT,"
+            + et4 + " TEXT,"
+            + STATUS + " TEXT,"
+            + COMPLETED_DATE + " DATETIME,"
+            + VERSION_NAME + " TEXT,"
+            + DELETED + " INTEGER)";
+
+
+    String CREATE_PC_VIR_BODY_2 = "CREATE TABLE " + PC_VIR_DB_BODY_2 + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MAIN_ID + " INTEGER,"
+            +IMG_URL_1+" TEXT,"
+            +IMG_URL_2+" TEXT,"
+            +IMG_URL_3+" TEXT,"
+            +IMG_URL_4+" TEXT,"
+            +et1+" TEXT,"
+            + DELETED + " INTEGER)";
+
+    String CREATE_PC_VIR_FUNCTION_3 = "CREATE TABLE " + PC_VIR_DB_FUNCTION_3 + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MAIN_ID + " INTEGER,"
+            +et1+" TEXT,"
+            +et2+" TEXT,"
+            +et3+" TEXT,"
+            +et4+" TEXT,"
+            +et5+" TEXT,"
+            +et6+" TEXT,"
+            +et7+" TEXT,"
+            +et8+" TEXT,"
+            +et9+" TEXT,"
+            +et10+" TEXT,"
+            +et11+" TEXT,"
+            +et12+" TEXT,"
+            +et13+" TEXT,"
+            +et14+" TEXT,"
+            + DELETED + " INTEGER)";
+
+
+    String CREATE_PC_VIR_GENERAL_4 = "CREATE TABLE " + PC_VIR_DB_GENERAL_4 + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MAIN_ID + " INTEGER,"
+            +et1+" TEXT,"
+            +et2+" TEXT,"
+            +et3+" TEXT,"
+            +et4+" TEXT,"
+            +et5+" TEXT,"
+            +et6+" TEXT,"
+            +et7+" TEXT,"
+            + DELETED + " INTEGER)";
+
+
+    String CREATE_PC_VIR_DB_PPE_5 = "CREATE TABLE " + PC_VIR_DB_PPE_5 + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MAIN_ID + " INTEGER,"
+            +et1+" TEXT,"
+            +et2+" TEXT,"
+            +et3+" TEXT,"
+            +et4+" TEXT,"
+            +et5+" TEXT,"
+            +et6+" TEXT,"
+            +et7+" TEXT,"
+            +et8+" TEXT,"
+            +et9+" TEXT,"
+            +et10+" TEXT,"
+            +et11+" TEXT,"
+            +et12+" TEXT,"
+            +et13+" TEXT,"
+            +et14+" TEXT,"
+            +et15+" TEXT,"
+            +et16+" TEXT,"
+            +et17+" TEXT,"
+            +et18+" TEXT,"
+            +et19+" TEXT,"
+            +et20+" TEXT,"
+            +et21+" TEXT,"
+            +et22+" TEXT,"
+            +et23+" TEXT,"
+            +et24+" TEXT,"
+            +et25+" TEXT,"
+            +et26+" TEXT,"
+            +et27+" TEXT,"
+            +et28+" TEXT,"
+            +et29+" TEXT,"
+            +et30+" TEXT,"
+            +et31+" TEXT,"
+            +et32+" TEXT,"
+            +et33+" TEXT,"
+            +et34+" TEXT,"
+            +et35+" TEXT,"
+            +et36+" TEXT,"
+            +et37+" TEXT,"
+            +et38+" TEXT,"
+            +et39+" TEXT,"
+            +et40+" TEXT,"
+            +et41+" TEXT,"
+            + DELETED + " INTEGER)";
+
+
+    String CREATE_PC_VIR_STANDARD_6 = "CREATE TABLE " + PC_VIR_DB_STANDARD_6 + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MAIN_ID + " INTEGER,"
+            +et1+" TEXT,"
+            +et2+" TEXT,"
+            +et3+" TEXT,"
+            +et4+" TEXT,"
+            +et5+" TEXT,"
+            +et6+" TEXT,"
+            +et7+" TEXT,"
+            +et8+" TEXT,"
+            +et9+" TEXT,"
+            +et10+" TEXT,"
+            +et11+" TEXT,"
+            +et12+" TEXT,"
+            +et13+" TEXT,"
+            +et14+" TEXT,"
+            +et15+" TEXT,"
+            +et16+" TEXT,"
+            +et17+" TEXT,"
+            +et18+" TEXT,"
+            +et19+" TEXT,"
+            +et20+" TEXT,"
+            +et21+" TEXT,"
+            +et22+" TEXT,"
+            + DELETED + " INTEGER)";
+
+
+    String CREATE_PC_VIR_OTHER_7 = "CREATE TABLE " + PC_VIR_DB_OTHER_7 + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MAIN_ID + " INTEGER,"
+            +et1+" TEXT,"
+            +et2+" TEXT,"
+            +et3+" TEXT,"
+            +et4+" TEXT,"
+            +et5+" TEXT,"
+            +et6+" TEXT,"
+            +et7+" TEXT,"
+            +et8+" TEXT,"
+            + BRANCH_END_DATE + " DATETIME,"
+            + DELETED + " INTEGER)";
+
+
+
 
 
 
@@ -229,6 +400,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_PTI_TITLE_1);
         db.execSQL(CREATE_PTI_INSPEC_2);
         db.execSQL(CREATE_PTI_SIGN_3);
+        db.execSQL(CREATE_PC_VIR_TITLE_1);
+        db.execSQL(CREATE_PC_VIR_BODY_2);
+        db.execSQL(CREATE_PC_VIR_FUNCTION_3);
+        db.execSQL(CREATE_PC_VIR_GENERAL_4);
+        db.execSQL(CREATE_PC_VIR_DB_PPE_5);
+        db.execSQL(CREATE_PC_VIR_STANDARD_6);
+        db.execSQL(CREATE_PC_VIR_OTHER_7);
 
 
     }
@@ -517,6 +695,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public int get_last_id_VIR(SQLiteDatabase sd){
+        int last_id=0;
+        Cursor c5;
+        c5 = sd.rawQuery("Select * from " + PC_VIR_DB_TITLE_1, null);
+        c5.moveToLast();
+        if(c5.getCount()!=0){
+            last_id=c5.getInt(c5.getColumnIndex(KEY_ID));
+        }
+        c5.close();
+        return last_id;
+
+    }
+
+
 
     public int get_last_id_PTI(SQLiteDatabase sd){
         int last_id=0;
@@ -543,6 +735,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public int get_pti_completed_count(SQLiteDatabase sd){
         String Status  ="Completed";
         String selectQuery = "SELECT * FROM "+PTI_TITLE_1+" where STATUS ='"+Status+"'";
+        Cursor cursor = sd.rawQuery(selectQuery, null);
+        cursor.moveToFirst();
+        cursor.close();
+        return cursor.getCount();
+    }
+
+
+    public int get_vir_completed_count(SQLiteDatabase sd){
+        String Status  ="Completed";
+        String selectQuery = "SELECT * FROM "+PC_VIR_DB_TITLE_1+" where STATUS ='"+Status+"'";
         Cursor cursor = sd.rawQuery(selectQuery, null);
         cursor.moveToFirst();
         cursor.close();

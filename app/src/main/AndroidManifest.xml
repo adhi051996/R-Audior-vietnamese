@@ -30,6 +30,7 @@
         <activity android:name=".PC_VIR.PC_VIR_GENERAL_4" />
         <activity android:name=".PC_VIR.PC_VIR_FUNCTION_3" />
         <activity android:name=".PC_VIR.PC_VIR_BODY_2" />
+        <activity android:name=".PC_VIR.PC_VIR_TITLE_1" />
         <activity android:name=".PDFViewActivity" />
         <activity android:name=".LIST_TEST.date_pick" />
         <activity

@@ -2,6 +2,19 @@
 <resources>
 
 
+    <declare-styleable name="TedBottomPickerImageView">
+        <attr name="foreground" format="reference"/>
+        <attr name="fit_mode" format="string"/>
+    </declare-styleable>
+
+
+
+    <declare-styleable name="TedBottomPickerSquareView">
+        <attr name="matchHeightToWidth" format="boolean"/>
+        <attr name="matchWidthToHeight" format="boolean"/>
+    </declare-styleable>
+
+
     <declare-styleable name="StickyScrollView">
         <attr name="stuckShadowHeight" format="dimension" />
         <attr name="stuckShadowDrawable" format="reference" />
@@ -10,5 +23,7 @@
     <declare-styleable name="AspectRatioView">
         <attr name="view_aspectRatio" format="float"/>
     </declare-styleable>
+
+
 
 </resources>

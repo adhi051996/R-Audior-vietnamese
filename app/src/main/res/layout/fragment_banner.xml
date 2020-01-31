@@ -6,6 +6,8 @@
     android:layout_height="wrap_content"
     >
 
+
+
     <ExataClass.Corner_Image
         android:id="@+id/imageView"
         android:layout_width="match_parent"
@@ -13,5 +15,7 @@
         android:src="@drawable/white_img"
         android:layout_marginRight="22.3dp"
         android:scaleType="fitXY" />
+
+
 
 </LinearLayout>

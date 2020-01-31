@@ -23,6 +23,7 @@ import com.chootdev.recycleclick.RecycleClick;
 import com.rentokil.pci.rauditor_sg.Adapter.recyclerAdapter;
 import com.rentokil.pci.rauditor_sg.Database.DatabaseHelper;
 import com.rentokil.pci.rauditor_sg.PCI.PCI_Title_Page_1;
+import com.rentokil.pci.rauditor_sg.PC_VIR.PC_VIR_TITLE_1;
 import com.rentokil.pci.rauditor_sg.PTI.PTI_Title_Page_1;
 
 import java.util.ArrayList;
@@ -88,6 +89,11 @@ public class Recyclerview extends Fragment {
                     Intent i = new Intent(getActivity(), PTI_Title_Page_1.class);
                     startActivity(i);
                 }
+
+                if(Name.equalsIgnoreCase("PC-VEHICLE INSPECTION REPORT")){
+                    Intent i = new Intent(getActivity(), PC_VIR_TITLE_1.class);
+                    startActivity(i);
+                }
             }
         });
         productList = new ArrayList<>();
@@ -113,6 +119,15 @@ public class Recyclerview extends Fragment {
                         "All Customers",
 
                         R.drawable.rentokilpest));
+
+        productList.add(
+                new recyclercons(
+
+                        "PC-VEHICLE INSPECTION REPORT",
+                        "All Customers",
+
+                        R.drawable.rentokilpest));
+
 
 
 

@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.ProgressDialog;
 import android.app.TaskStackBuilder;
 import android.content.ContentValues;
 import android.content.Context;
@@ -16,9 +17,11 @@ import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
@@ -39,6 +42,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.VolleyError;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -55,6 +59,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -63,7 +68,7 @@ import dmax.dialog.SpotsDialog;
 
 
 public class Category_Type_Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+    ProgressDialog progressDialog_vir;
     private Toolbar toolbar;
     Boolean isInternetPresent = false;
     private android.app.AlertDialog pd;
@@ -74,7 +79,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
     SQLiteDatabase sd;
     public static String User_Login_Mail = "";
     DatabaseHelper db;
-    ContentValues cv, cv2, cv3, cv4, cv5, cv6, cv7, cv_send,cv_nka_send;
+    ContentValues cv, cv2, cv3, cv4, cv5, cv6, cv7, cv_send,cv_nka_send,cv_send_VIR;
     String db_user_name, db_user_mail, db_branch, db_country;
     ConnectivityManager cManager;
     NetworkInfo nInfo;
@@ -95,7 +100,34 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
     Bitmap bitmap_man_tir_q;
     Bitmap bitmap_man_pt_q;
     String post_pc_q_cus_sign,post_pt_q_cus_sign;
+
+    String IMG_URL_1,IMG_URL_2,IMG_URL_3,IMG_URL_4;
+    String pc_vir_body_e1;
+    int VIR_POST_KEY = 0;
     String versionname = BuildConfig.VERSION_NAME;
+    Map<String, String> params_vir = new HashMap<String, String>();
+    String VIR_FUNC_3_1,VIR_FUNC_3_2,VIR_FUNC_3_3,VIR_FUNC_3_4,VIR_FUNC_3_5,VIR_FUNC_3_6,VIR_FUNC_3_7,VIR_FUNC_3_8,VIR_FUNC_3_9,VIR_FUNC_3_10,
+            VIR_FUNC_3_11,VIR_FUNC_3_12,VIR_FUNC_3_13,VIR_FUNC_3_14;
+
+
+    String VIR_GENERAL_4_1,VIR_GENERAL_4_2,VIR_GENERAL_4_3,VIR_GENERAL_4_4,VIR_GENERAL_4_5,VIR_GENERAL_4_6,VIR_GENERAL_4_7;
+
+    String VIR_PPE_5_1,VIR_PPE_5_2,VIR_PPE_5_3,VIR_PPE_5_4,VIR_PPE_5_5,VIR_PPE_5_6,VIR_PPE_5_7,VIR_PPE_5_8,VIR_PPE_5_9,VIR_PPE_5_10,
+            VIR_PPE_5_11,VIR_PPE_5_12,VIR_PPE_5_13,VIR_PPE_5_14,VIR_PPE_5_15,VIR_PPE_5_16,VIR_PPE_5_17,VIR_PPE_5_18,VIR_PPE_5_19,VIR_PPE_5_20,
+            VIR_PPE_5_21,VIR_PPE_5_22,VIR_PPE_5_23,VIR_PPE_5_24,VIR_PPE_5_25,VIR_PPE_5_26,VIR_PPE_5_27,VIR_PPE_5_28,VIR_PPE_5_29,VIR_PPE_5_30,
+            VIR_PPE_5_31,VIR_PPE_5_32,VIR_PPE_5_33,VIR_PPE_5_34,VIR_PPE_5_35,VIR_PPE_5_36,VIR_PPE_5_37,VIR_PPE_5_38,VIR_PPE_5_39,VIR_PPE_5_40,VIR_PPE_5_41;
+
+
+
+    String VIR_STAND_6_1,VIR_STAND_6_2,VIR_STAND_6_3,VIR_STAND_6_4,VIR_STAND_6_5,VIR_STAND_6_6,VIR_STAND_6_7,VIR_STAND_6_8,VIR_STAND_6_9,VIR_STAND_6_10,
+            VIR_STAND_6_11,VIR_STAND_6_12,VIR_STAND_6_13,VIR_STAND_6_14,VIR_STAND_6_15,VIR_STAND_6_16,VIR_STAND_6_17,VIR_STAND_6_18,VIR_STAND_6_19,VIR_STAND_6_20,
+            VIR_STAND_6_21,VIR_STAND_6_22;
+
+    String VIR_OTHER_7_1,VIR_OTHER_7_2,VIR_OTHER_7_3,VIR_OTHER_7_4,VIR_OTHER_7_5,VIR_OTHER_7_6,VIR_OTHER_7_7,VIR_OTHER_7_8,VIR_OTHER_7_9;
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,6 +152,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         cv6 = new ContentValues();
         cv7 = new ContentValues();
         cv_send = new ContentValues();
+        cv_send_VIR = new ContentValues();
         cv_nka_send = new ContentValues();
         sd = db.getReadableDatabase();
 
@@ -164,18 +197,26 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
 
         if (isInternetPresent) {
 
-                 pd.show();
+
 
                 get_profile_db();
 
                 Log.e("ACXZASC","Entering");
 
                 if (db.get_pci_completed_count(sd) != 0) {
+
+                    pd.show();
                     sync_pci();
 
                 }
                 else if (db.get_pti_completed_count(sd) != 0) {
+                    pd.show();
                     sync_pti();
+                }
+
+                else if (db.get_vir_completed_count(sd) != 0) {
+
+                    sync_vir();
                 }
                 else  {
                     pd.dismiss();
@@ -331,14 +372,20 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                 disableConnectionReuseIfNecessary();
                 enableHttpResponseCache();
                 get_profile_db();
-                pd.show();
+
 
                 if (db.get_pci_completed_count(sd) != 0) {
+                    pd.show();
                     sync_pci();
 
                 }
                 else if (db.get_pti_completed_count(sd) != 0) {
+                    pd.show();
                     sync_pti();
+                }
+
+                else if (db.get_vir_completed_count(sd) != 0) {
+                    sync_vir();
                 }
                 else  {
                     pd.dismiss();
@@ -359,6 +406,457 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void sync_vir() {
+        //pd.show();
+        String Status = "Completed";
+        String selectQuery = "SELECT * FROM " + db.PC_VIR_DB_TITLE_1 + " where STATUS ='" + Status + "'";
+        Cursor cursor = sd.rawQuery(selectQuery, null);
+        cursor.moveToFirst();
+        Toast.makeText(getApplicationContext(), "Syncing Data ....", Toast.LENGTH_LONG).show();
+        if (cursor.getCount() != 0) {
+            //    sync_off_sir("" + cursor.getInt(cursor.getColumnIndex(db.KEY_ID)));
+
+            progressDialog_vir = new ProgressDialog(Category_Type_Activity.this);
+            progressDialog_vir.setTitle("Posting Data - VIR");
+            progressDialog_vir.setMessage("Syncing in Progress...");
+            progressDialog_vir.setProgressStyle(progressDialog_vir.STYLE_SPINNER);
+            progressDialog_vir.setCancelable(false);
+            progressDialog_vir.show();
+
+
+            VIR_POST_KEY = cursor.getInt(cursor.getColumnIndex(db.KEY_ID));
+            AsyncTaskRunner_vir runner = new AsyncTaskRunner_vir();
+            runner.execute("pos");
+        } else {
+            pd.dismiss();
+        }
+        cursor.close();
+    }
+
+    private class AsyncTaskRunner_vir extends AsyncTask<String, String, String> {
+
+        private String resp = "Update";
+
+        @Override
+        protected String doInBackground(String... params1) {
+            String Query = "select * from " + db.PC_VIR_DB_TITLE_1 + " where KEY_ID = '" + VIR_POST_KEY + "'";
+            Cursor cursor = sd.rawQuery(Query, null);
+            cursor.moveToFirst();
+
+            if (cursor.getCount() != 0) {
+                params_vir.put("conducted_on",""+ cursor.getString(cursor.getColumnIndex(db.et1)));
+                params_vir.put("checked_by", ""+db_user_name);
+                params_vir.put("vehicle_no", ""+cursor.getString(cursor.getColumnIndex(db.et2)));
+                params_vir.put("driver_name", ""+cursor.getString(cursor.getColumnIndex(db.et3)));
+                params_vir.put("team", ""+cursor.getString(cursor.getColumnIndex(db.et4)));
+                params_vir.put("comp_status", ""+cursor.getString(cursor.getColumnIndex(db.STATUS)));
+                params_vir.put("date_complete", ""+cursor.getString(cursor.getColumnIndex(db.COMPLETED_DATE)));
+                params_vir.put("version", ""+versionname);
+                Log.e("AAXXCCSAA","vehicle = "+cursor.getString(cursor.getColumnIndex(db.et2)));
+            }
+
+            get_profile_db();
+
+            cursor.close();
+            //SIR TABLE 22
+
+
+
+            Log.e("AAXXCCSAA","mail = "+db_user_mail);
+
+            Log.e("AAXXCCSAA","post key = "+VIR_POST_KEY);
+
+            params_vir.put("user_mail", db_user_mail);
+
+
+            try {
+                get_vir_function_3("" + VIR_POST_KEY);
+                get_vir_general_4("" + VIR_POST_KEY);
+                get_vir_ppe_5("" + VIR_POST_KEY);
+                get_vir_standard_6("" + VIR_POST_KEY);
+                get_vir_other_7("" + VIR_POST_KEY);
+
+
+            } catch (Exception e) {
+
+                Log.e("AAGSGSHHDD", "error = " + e.getMessage());
+                progressDialog_vir.dismiss();
+                e.printStackTrace();
+            }
+
+
+
+
+            try {
+                String Query2 = "select * from " + db.PC_VIR_DB_BODY_2 + " where KEY_ID = '" + VIR_POST_KEY + "'";
+                Cursor cursor2 = sd.rawQuery(Query2, null);
+                cursor2.moveToFirst();
+
+
+                if (cursor2.getCount() != 0) {
+                    IMG_URL_1 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_1));
+                    IMG_URL_2 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_2));
+                    IMG_URL_3 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_3));
+                    IMG_URL_4 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_4));
+                    pc_vir_body_e1 = cursor2.getString(cursor2.getColumnIndex(db.et1));
+
+                    if (pc_vir_body_e1 == null) {
+                        pc_vir_body_e1 = "";
+                    }
+
+                    params_vir.put("remarks_2", ""+pc_vir_body_e1);
+
+
+                    if (IMG_URL_1 != null) {
+                        String strNew = IMG_URL_1.replace("[", "");
+                        String strNew_1 = strNew.replace("]", "");
+                        List<String> myOld = new ArrayList<String>(Arrays.asList(strNew_1.split(", ")));
+
+
+                        if (myOld.size() != 0) {
+                            for (int p = 0; p < myOld.size(); p++) {
+                                try {
+                                    if (Uri.parse(myOld.get(p)) != null) {
+                                        Context c;
+                                        Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
+                                                Uri.parse(myOld.get(p)));
+                                        ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                                        bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
+                                        //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
+                                        params_vir.put("front_c"+ "_" + p, "" + getStringImage(bitmap_x));
+
+
+                                    }
+                                } catch (Exception e) {
+                                    Log.e("LLLLLLLLL", "else\t" + e.getMessage());
+                                    //handle exception
+                                }
+                            }
+                        }
+
+                    }
+
+
+                    if (IMG_URL_2 != null) {
+                        String strNew2 = IMG_URL_2.replace("[", "");
+                        String strNew_2 = strNew2.replace("]", "");
+                        List<String> myOld2 = new ArrayList<String>(Arrays.asList(strNew_2.split(", ")));
+
+
+                        if (myOld2.size() != 0) {
+                            for (int p = 0; p < myOld2.size(); p++) {
+                                try {
+                                    if (Uri.parse(myOld2.get(p)) != null) {
+                                        Context c;
+                                        Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
+                                                Uri.parse(myOld2.get(p)));
+                                        ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                                        bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
+                                        //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
+                                        params_vir.put("side_1_c"+ "_" + p, "" + getStringImage(bitmap_x));
+
+
+                                    }
+                                } catch (Exception e) {
+                                    Log.e("LLLLLLLLL", "else\t" + e.getMessage());
+                                    //handle exception
+                                }
+                            }
+                        }
+
+                    }
+
+
+                    if (IMG_URL_3 != null) {
+                        String strNew3 = IMG_URL_3.replace("[", "");
+                        String strNew_3 = strNew3.replace("]", "");
+                        List<String> myOld3 = new ArrayList<String>(Arrays.asList(strNew_3.split(", ")));
+
+
+                        if (myOld3.size() != 0) {
+                            for (int p = 0; p < myOld3.size(); p++) {
+                                try {
+                                    if (Uri.parse(myOld3.get(p)) != null) {
+                                        Context c;
+                                        Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
+                                                Uri.parse(myOld3.get(p)));
+                                        ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                                        bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
+                                        //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
+                                        params_vir.put("side_2_c"+ "_" + p, "" + getStringImage(bitmap_x));
+
+
+                                    }
+                                } catch (Exception e) {
+                                    Log.e("LLLLLLLLL", "else\t" + e.getMessage());
+                                    //handle exception
+                                }
+                            }
+                        }
+
+                    }
+
+
+                    if (IMG_URL_4 != null) {
+                        String strNew4 = IMG_URL_4.replace("[", "");
+                        String strNew_4 = strNew4.replace("]", "");
+                        List<String> myOld4 = new ArrayList<String>(Arrays.asList(strNew_4.split(", ")));
+
+
+                        if (myOld4.size() != 0) {
+                            for (int p = 0; p < myOld4.size(); p++) {
+                                try {
+                                    if (Uri.parse(myOld4.get(p)) != null) {
+                                        Context c;
+                                        Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
+                                                Uri.parse(myOld4.get(p)));
+                                        ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                                        bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
+                                        //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
+                                        params_vir.put("rear_c"+ "_" + p, "" + getStringImage(bitmap_x));
+
+
+                                    }
+                                } catch (Exception e) {
+                                    Log.e("LLLLLLLLL", "else\t" + e.getMessage());
+                                    //handle exception
+                                }
+                            }
+                        }
+
+                    }
+
+
+                }
+            } catch (Exception e) {
+
+                Log.e("JJHHGAFFAF","func 1 = "+e.getMessage());
+                e.printStackTrace();
+            }
+
+
+            Log.e("FFASAASSSSA","func 1 = "+VIR_FUNC_3_1);
+
+            params_vir.put("v_fun_1", ""+ VIR_FUNC_3_1);
+            params_vir.put("v_fun_2",""+  VIR_FUNC_3_2);
+            params_vir.put("v_fun_3",""+  VIR_FUNC_3_3);
+            params_vir.put("v_fun_4",""+  VIR_FUNC_3_4);
+            params_vir.put("v_fun_5",""+  VIR_FUNC_3_5);
+            params_vir.put("v_fun_6",""+  VIR_FUNC_3_6);
+            params_vir.put("v_fun_7",""+  VIR_FUNC_3_7);
+            params_vir.put("v_fun_8",""+  VIR_FUNC_3_8);
+            params_vir.put("v_fun_10",""+  VIR_FUNC_3_9);
+            params_vir.put("v_fun_11",""+  VIR_FUNC_3_10);
+            params_vir.put("v_fun_12",""+  VIR_FUNC_3_11);
+            params_vir.put("v_fun_13",""+  VIR_FUNC_3_12);
+            params_vir.put("remarks_3",""+  VIR_FUNC_3_13);
+            params_vir.put("v_fun_9",""+  VIR_FUNC_3_14);
+
+
+
+            try {
+
+                params_vir.put("g_check_1", ""+ VIR_GENERAL_4_1);
+                params_vir.put("g_check_2",""+  VIR_GENERAL_4_2);
+                params_vir.put("g_check_3",""+  VIR_GENERAL_4_3);
+                params_vir.put("g_check_4",""+  VIR_GENERAL_4_4);
+                params_vir.put("g_check_5",""+  VIR_GENERAL_4_5);
+                params_vir.put("g_check_6",""+  VIR_GENERAL_4_6);
+                params_vir.put("remarks_4",""+  VIR_GENERAL_4_7);
+
+
+            } catch (Exception e) {
+                Log.e("VVVVVVV", "Sign = " + e.getMessage());
+                e.printStackTrace();
+            }
+
+
+            try {
+
+                params_vir.put("ppe_1", ""+ VIR_PPE_5_1);
+                params_vir.put("ppe_2",""+  VIR_PPE_5_2);
+                params_vir.put("ppe_3",""+  VIR_PPE_5_3);
+                params_vir.put("ppe_4",""+  VIR_PPE_5_4);
+                params_vir.put("ppe_5",""+  VIR_PPE_5_5);
+                params_vir.put("ppe_6",""+  VIR_PPE_5_6);
+                params_vir.put("ppe_7",""+  VIR_PPE_5_7);
+                params_vir.put("ppe_8",""+  VIR_PPE_5_8);
+                params_vir.put("ppe_9",""+  VIR_PPE_5_9);
+                params_vir.put("ppe_10",""+  VIR_PPE_5_10);
+                params_vir.put("ppe_11",""+  VIR_PPE_5_11);
+                params_vir.put("ppe_12",""+  VIR_PPE_5_12);
+                params_vir.put("ppe_13",""+  VIR_PPE_5_13);
+                params_vir.put("ppe_14",""+  VIR_PPE_5_14);
+                params_vir.put("ppe_15",""+  VIR_PPE_5_15);
+                params_vir.put("ppe_16",""+  VIR_PPE_5_16);
+                params_vir.put("ppe_17",""+  VIR_PPE_5_17);
+                params_vir.put("ppe_18",""+  VIR_PPE_5_18);
+                params_vir.put("ppe_19",""+  VIR_PPE_5_19);
+                params_vir.put("ppe_20",""+  VIR_PPE_5_20);
+                params_vir.put("tool_1",""+  VIR_PPE_5_21);
+                params_vir.put("tool_2",""+  VIR_PPE_5_22);
+                params_vir.put("tool_3",""+  VIR_PPE_5_23);
+                params_vir.put("tool_4",""+  VIR_PPE_5_24);
+                params_vir.put("tool_5",""+  VIR_PPE_5_25);
+                params_vir.put("tool_6",""+  VIR_PPE_5_26);
+                params_vir.put("tool_7",""+  VIR_PPE_5_27);
+                params_vir.put("tool_8",""+  VIR_PPE_5_28);
+                params_vir.put("tool_9",""+  VIR_PPE_5_29);
+                params_vir.put("tool_10",""+  VIR_PPE_5_30);
+                params_vir.put("tool_11",""+  VIR_PPE_5_31);
+                params_vir.put("tool_12",""+  VIR_PPE_5_32);
+                params_vir.put("tool_13",""+  VIR_PPE_5_33);
+                params_vir.put("tool_14",""+  VIR_PPE_5_34);
+                params_vir.put("tool_15",""+  VIR_PPE_5_35);
+                params_vir.put("tool_16",""+  VIR_PPE_5_36);
+                params_vir.put("tool_17",""+  VIR_PPE_5_37);
+                params_vir.put("tool_18",""+  VIR_PPE_5_38);
+                params_vir.put("tool_19",""+  VIR_PPE_5_39);
+                params_vir.put("tool_20",""+  VIR_PPE_5_40);
+                params_vir.put("remarks_5",""+  VIR_PPE_5_41);
+
+
+            } catch (Exception e) {
+                Log.e("VVVVVVV", "Sign = " + e.getMessage());
+                e.printStackTrace();
+            }
+
+
+            try {
+
+                params_vir.put("s_item_1", ""+ VIR_STAND_6_1);
+                params_vir.put("s_item_2",""+  VIR_STAND_6_2);
+                params_vir.put("s_item_3",""+  VIR_STAND_6_3);
+                params_vir.put("s_item_4",""+  VIR_STAND_6_4);
+                params_vir.put("s_item_5",""+  VIR_STAND_6_5);
+                params_vir.put("s_item_6",""+  VIR_STAND_6_6);
+                params_vir.put("s_item_7",""+  VIR_STAND_6_7);
+                params_vir.put("s_item_8",""+  VIR_STAND_6_8);
+                params_vir.put("s_item_9",""+  VIR_STAND_6_9);
+                params_vir.put("s_item_10",""+  VIR_STAND_6_10);
+                params_vir.put("s_item_11",""+  VIR_STAND_6_11);
+                params_vir.put("s_item_12",""+  VIR_STAND_6_12);
+                params_vir.put("s_item_13",""+  VIR_STAND_6_13);
+                params_vir.put("s_item_14",""+  VIR_STAND_6_14);
+                params_vir.put("s_item_15",""+  VIR_STAND_6_15);
+                params_vir.put("s_item_16",""+  VIR_STAND_6_16);
+                params_vir.put("s_item_17",""+  VIR_STAND_6_17);
+                params_vir.put("s_item_18",""+  VIR_STAND_6_18);
+                params_vir.put("s_item_19",""+  VIR_STAND_6_19);
+                params_vir.put("s_item_20",""+  VIR_STAND_6_20);
+                params_vir.put("s_item_21",""+  VIR_STAND_6_21);
+                params_vir.put("s_item_22",""+  VIR_STAND_6_22);
+
+
+
+            } catch (Exception e) {
+                Log.e("VVVVVVV", "Sign = " + e.getMessage());
+                e.printStackTrace();
+            }
+
+
+            try {
+
+                params_vir.put("other_item_1", ""+ VIR_OTHER_7_1);
+                params_vir.put("other_item_2",""+  VIR_OTHER_7_2);
+                params_vir.put("other_item_3",""+  VIR_OTHER_7_3);
+                params_vir.put("other_item_4",""+  VIR_OTHER_7_4);
+                params_vir.put("other_item_5",""+  VIR_OTHER_7_5);
+                params_vir.put("other_item_6",""+  VIR_OTHER_7_6);
+                params_vir.put("other_item_7",""+  VIR_OTHER_7_7);
+                params_vir.put("other_item_8",""+  VIR_OTHER_7_8);
+                params_vir.put("remarks_7",""+  VIR_OTHER_7_9);
+
+                Log.e("AASSDEEFFF", "other = " +VIR_OTHER_7_1);
+
+
+            } catch (Exception e) {
+                Log.e("VVVVVVV", "Sign = " + e.getMessage());
+                e.printStackTrace();
+            }
+
+
+            Log.e("AAHHASJSJSX","param = "+params_vir);
+
+
+
+            return resp;
+        }
+
+
+        @Override
+        protected void onPostExecute(String result) {
+            // execution of result of Long time consuming operation
+            sync_off_vir("" + VIR_POST_KEY);
+            progressDialog_vir.dismiss();
+
+        }
+
+
+        @Override
+        protected void onPreExecute() {
+        }
+
+
+        @Override
+        protected void onProgressUpdate(String... text) {
+            //  finalResult.setText(text[0]);
+            // progressDialog.setProgressPercentFormat(text[0]);
+
+        }
+    }
+
+    private void sync_off_vir(final String key_id) {
+        // get_profile_db();
+
+
+        VolleyDataRequester.withDefaultHttps(this)
+                .setUrl("https://rauditor-sg.riflows.com/rAuditor/Android/PC_Vehicle/insert_offline_data.php")
+                .setBody(params_vir)
+                .setMethod(VolleyDataRequester.Method.POST)
+                .setRetryPolicy(new DefaultRetryPolicy(
+                        40000,
+                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                ))
+                .setStringResponseListener(new VolleyDataRequester.StringResponseListener() {
+                    @Override
+                    public void onResponse(String response) {
+                        progressDialog_vir.dismiss();
+                        if (response != null && response.length() > 0) {
+
+                        }
+                        Log.e("TEST123 RES", "res  = " + response);
+                        cv_send.clear();
+
+
+                        cv_send_VIR.put(db.STATUS, "SENT");
+                        sd.update(db.PC_VIR_DB_TITLE_1, cv_send_VIR, "KEY_ID = '" + key_id + "'", null);
+                        params_vir.clear();
+
+                    }
+                })
+                .setResponseErrorListener(new VolleyDataRequester.ResponseErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("TEST123 ERR", "error  = " + error.getMessage());
+                        cv_send.clear();
+                        cv_send_VIR.put(db.STATUS, "SENT");
+                        sd.update(db.PC_VIR_DB_TITLE_1, cv_send_VIR, "KEY_ID = '" + key_id + "'", null);
+                        if (db.get_vir_completed_count(sd) != 0) {
+                            sync_vir();
+                        }
+                        progressDialog_vir.dismiss();
+                        params_vir.clear();
+
+                    }
+                })
+                .requestString();
+
+    }
+
+
 
     private boolean haveNetworkConnection(Context context) {
         boolean haveConnectedWifi = false;
@@ -415,6 +913,10 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
 
 
 
+
+
+
+
     public void get_profile_db() {
         Cursor c5;
         c5 = sd.rawQuery("Select * from " + db.USER_PROFILE_TABLE, null);
@@ -460,6 +962,525 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         } catch (Exception httpResponseCacheNotAvailable) {
         }
     }
+
+
+
+    public void get_vir_function_3(String key_id) {
+
+        Log.e("JJHHGAFFAF","key ids =  "+key_id);
+
+
+
+        String Query = "select * from " + db.PC_VIR_DB_FUNCTION_3 + " where KEY_ID = '" + key_id + "'";
+        Cursor cursor = sd.rawQuery(Query, null);
+        cursor.moveToFirst();
+
+        Log.e("JJHHGAFFAF","count =  "+cursor.getCount());
+        if (cursor.getCount() != 0) {
+            VIR_FUNC_3_1 = cursor.getString(cursor.getColumnIndex(db.et1));
+            VIR_FUNC_3_2 = cursor.getString(cursor.getColumnIndex(db.et2));
+            VIR_FUNC_3_3 = cursor.getString(cursor.getColumnIndex(db.et3));
+            VIR_FUNC_3_4 = cursor.getString(cursor.getColumnIndex(db.et4));
+            VIR_FUNC_3_5 = cursor.getString(cursor.getColumnIndex(db.et5));
+            VIR_FUNC_3_6 = cursor.getString(cursor.getColumnIndex(db.et6));
+            VIR_FUNC_3_7 = cursor.getString(cursor.getColumnIndex(db.et7));
+            VIR_FUNC_3_8 = cursor.getString(cursor.getColumnIndex(db.et8));
+            VIR_FUNC_3_9 = cursor.getString(cursor.getColumnIndex(db.et9));
+            VIR_FUNC_3_10 = cursor.getString(cursor.getColumnIndex(db.et10));
+            VIR_FUNC_3_11 = cursor.getString(cursor.getColumnIndex(db.et11));
+            VIR_FUNC_3_12 = cursor.getString(cursor.getColumnIndex(db.et12));
+            VIR_FUNC_3_13 = cursor.getString(cursor.getColumnIndex(db.et13));
+            VIR_FUNC_3_14 = cursor.getString(cursor.getColumnIndex(db.et14));
+
+
+            Log.e("JJHHGAFFAF","VIR_6=  "+VIR_FUNC_3_6);
+
+
+            if (VIR_FUNC_3_1 == null) {
+                VIR_FUNC_3_1 = "";
+            }
+
+            if (VIR_FUNC_3_2 == null) {
+                VIR_FUNC_3_2 = "";
+            }
+
+
+            if (VIR_FUNC_3_3 == null) {
+                VIR_FUNC_3_3 = "";
+            }
+
+
+            if (VIR_FUNC_3_4 == null) {
+                VIR_FUNC_3_4 = "";
+            }
+
+            if (VIR_FUNC_3_5 == null) {
+                VIR_FUNC_3_5 = "";
+            }
+
+            if (VIR_FUNC_3_6 == null) {
+                VIR_FUNC_3_6 = "";
+            }
+
+            if (VIR_FUNC_3_7 == null) {
+                VIR_FUNC_3_7 = "";
+            }
+
+            if (VIR_FUNC_3_8 == null) {
+                VIR_FUNC_3_8 = "";
+            }
+
+            if (VIR_FUNC_3_9 == null) {
+                VIR_FUNC_3_9 = "";
+            }
+
+            if (VIR_FUNC_3_10 == null) {
+                VIR_FUNC_3_10 = "";
+            }
+
+            if (VIR_FUNC_3_11 == null) {
+                VIR_FUNC_3_11 = "";
+            }
+            if (VIR_FUNC_3_12 == null) {
+                VIR_FUNC_3_12 = "";
+            }
+
+            if (VIR_FUNC_3_13 == null) {
+                VIR_FUNC_3_13 = "";
+            }
+
+            if (VIR_FUNC_3_14 == null) {
+                VIR_FUNC_3_14 = "";
+            }
+
+
+        }
+
+    }
+
+
+    public void get_vir_general_4(String key_id) {
+        String Query = "select * from " + db.PC_VIR_DB_GENERAL_4 + " where KEY_ID = '" + key_id + "'";
+        Cursor cursor = sd.rawQuery(Query, null);
+        cursor.moveToFirst();
+
+
+        if (cursor.getCount() != 0) {
+            VIR_GENERAL_4_1 = cursor.getString(cursor.getColumnIndex(db.et1));
+            VIR_GENERAL_4_2 = cursor.getString(cursor.getColumnIndex(db.et2));
+            VIR_GENERAL_4_3 = cursor.getString(cursor.getColumnIndex(db.et3));
+            VIR_GENERAL_4_4 = cursor.getString(cursor.getColumnIndex(db.et4));
+            VIR_GENERAL_4_5 = cursor.getString(cursor.getColumnIndex(db.et5));
+            VIR_GENERAL_4_6 = cursor.getString(cursor.getColumnIndex(db.et6));
+            VIR_GENERAL_4_7 = cursor.getString(cursor.getColumnIndex(db.et7));
+
+
+
+            if (VIR_GENERAL_4_1 == null) {
+                VIR_GENERAL_4_1 = "";
+            }
+
+            if (VIR_GENERAL_4_2 == null) {
+                VIR_GENERAL_4_2 = "";
+            }
+
+
+            if (VIR_GENERAL_4_3 == null) {
+                VIR_GENERAL_4_3 = "";
+            }
+
+
+            if (VIR_GENERAL_4_4 == null) {
+                VIR_GENERAL_4_4 = "";
+            }
+
+            if (VIR_GENERAL_4_5 == null) {
+                VIR_GENERAL_4_5 = "";
+            }
+
+            if (VIR_GENERAL_4_6 == null) {
+                VIR_GENERAL_4_6 = "";
+            }
+
+            if (VIR_GENERAL_4_7 == null) {
+                VIR_GENERAL_4_7 = "";
+            }
+
+
+        }
+
+    }
+
+
+    public void get_vir_ppe_5(String key_id) {
+        String Query = "select * from " + db.PC_VIR_DB_PPE_5 + " where KEY_ID = '" + key_id + "'";
+        Cursor cursor = sd.rawQuery(Query, null);
+        cursor.moveToFirst();
+
+
+        if (cursor.getCount() != 0) {
+            VIR_PPE_5_1 = cursor.getString(cursor.getColumnIndex(db.et1));
+            VIR_PPE_5_2 = cursor.getString(cursor.getColumnIndex(db.et2));
+            VIR_PPE_5_3 = cursor.getString(cursor.getColumnIndex(db.et3));
+            VIR_PPE_5_4 = cursor.getString(cursor.getColumnIndex(db.et4));
+            VIR_PPE_5_5 = cursor.getString(cursor.getColumnIndex(db.et5));
+            VIR_PPE_5_6 = cursor.getString(cursor.getColumnIndex(db.et6));
+            VIR_PPE_5_7 = cursor.getString(cursor.getColumnIndex(db.et7));
+            VIR_PPE_5_8 = cursor.getString(cursor.getColumnIndex(db.et8));
+            VIR_PPE_5_9 = cursor.getString(cursor.getColumnIndex(db.et9));
+            VIR_PPE_5_10 = cursor.getString(cursor.getColumnIndex(db.et10));
+            VIR_PPE_5_11 = cursor.getString(cursor.getColumnIndex(db.et11));
+            VIR_PPE_5_12 = cursor.getString(cursor.getColumnIndex(db.et12));
+            VIR_PPE_5_13 = cursor.getString(cursor.getColumnIndex(db.et13));
+            VIR_PPE_5_14 = cursor.getString(cursor.getColumnIndex(db.et14));
+            VIR_PPE_5_15 = cursor.getString(cursor.getColumnIndex(db.et15));
+            VIR_PPE_5_16 = cursor.getString(cursor.getColumnIndex(db.et16));
+            VIR_PPE_5_17 = cursor.getString(cursor.getColumnIndex(db.et17));
+            VIR_PPE_5_18 = cursor.getString(cursor.getColumnIndex(db.et18));
+            VIR_PPE_5_19 = cursor.getString(cursor.getColumnIndex(db.et19));
+            VIR_PPE_5_20 = cursor.getString(cursor.getColumnIndex(db.et20));
+            VIR_PPE_5_21 = cursor.getString(cursor.getColumnIndex(db.et21));
+            VIR_PPE_5_22 = cursor.getString(cursor.getColumnIndex(db.et22));
+            VIR_PPE_5_23 = cursor.getString(cursor.getColumnIndex(db.et23));
+            VIR_PPE_5_24 = cursor.getString(cursor.getColumnIndex(db.et24));
+            VIR_PPE_5_25 = cursor.getString(cursor.getColumnIndex(db.et25));
+            VIR_PPE_5_26 = cursor.getString(cursor.getColumnIndex(db.et26));
+            VIR_PPE_5_27 = cursor.getString(cursor.getColumnIndex(db.et27));
+            VIR_PPE_5_28 = cursor.getString(cursor.getColumnIndex(db.et28));
+            VIR_PPE_5_29 = cursor.getString(cursor.getColumnIndex(db.et29));
+            VIR_PPE_5_30 = cursor.getString(cursor.getColumnIndex(db.et30));
+            VIR_PPE_5_31 = cursor.getString(cursor.getColumnIndex(db.et31));
+            VIR_PPE_5_32 = cursor.getString(cursor.getColumnIndex(db.et32));
+            VIR_PPE_5_33 = cursor.getString(cursor.getColumnIndex(db.et33));
+            VIR_PPE_5_34 = cursor.getString(cursor.getColumnIndex(db.et34));
+            VIR_PPE_5_35 = cursor.getString(cursor.getColumnIndex(db.et35));
+            VIR_PPE_5_36 = cursor.getString(cursor.getColumnIndex(db.et36));
+            VIR_PPE_5_37 = cursor.getString(cursor.getColumnIndex(db.et37));
+            VIR_PPE_5_38 = cursor.getString(cursor.getColumnIndex(db.et38));
+            VIR_PPE_5_39 = cursor.getString(cursor.getColumnIndex(db.et39));
+            VIR_PPE_5_40 = cursor.getString(cursor.getColumnIndex(db.et40));
+            VIR_PPE_5_41 = cursor.getString(cursor.getColumnIndex(db.et41));
+
+
+
+            if (VIR_PPE_5_1 == null) {
+                VIR_PPE_5_1 = "";
+            }
+
+            if (VIR_PPE_5_2 == null) {
+                VIR_PPE_5_2 = "";
+            }
+
+
+            if (VIR_PPE_5_3 == null) {
+                VIR_PPE_5_3 = "";
+            }
+
+
+            if (VIR_PPE_5_4 == null) {
+                VIR_PPE_5_4 = "";
+            }
+
+            if (VIR_PPE_5_5 == null) {
+                VIR_PPE_5_5 = "";
+            }
+
+            if (VIR_PPE_5_6 == null) {
+                VIR_PPE_5_6 = "";
+            }
+
+            if (VIR_PPE_5_7 == null) {
+                VIR_PPE_5_7 = "";
+            }
+            if (VIR_PPE_5_8 == null) {
+                VIR_PPE_5_8 = "";
+            }
+            if (VIR_PPE_5_9 == null) {
+                VIR_PPE_5_9 = "";
+            }
+            if (VIR_PPE_5_10 == null) {
+                VIR_PPE_5_10 = "";
+            }
+
+            if (VIR_PPE_5_11 == null) {
+                VIR_PPE_5_11 = "";
+            }
+
+            if (VIR_PPE_5_12 == null) {
+                VIR_PPE_5_12 = "";
+            }
+            if (VIR_PPE_5_13 == null) {
+                VIR_PPE_5_13 = "";
+            }
+            if (VIR_PPE_5_14 == null) {
+                VIR_PPE_5_14 = "";
+            }
+            if (VIR_PPE_5_15 == null) {
+                VIR_PPE_5_15 = "";
+            }
+            if (VIR_PPE_5_16 == null) {
+                VIR_PPE_5_16 = "";
+            }
+            if (VIR_PPE_5_17 == null) {
+                VIR_PPE_5_17 = "";
+            }
+            if (VIR_PPE_5_18 == null) {
+                VIR_PPE_5_18 = "";
+            }
+            if (VIR_PPE_5_19 == null) {
+                VIR_PPE_5_19 = "";
+            }
+            if (VIR_PPE_5_20 == null) {
+                VIR_PPE_5_20 = "";
+            }
+            if (VIR_PPE_5_21 == null) {
+                VIR_PPE_5_21 = "";
+            }
+
+            if (VIR_PPE_5_22 == null) {
+                VIR_PPE_5_22 = "";
+            }
+            if (VIR_PPE_5_23 == null) {
+                VIR_PPE_5_23 = "";
+            }
+            if (VIR_PPE_5_24 == null) {
+                VIR_PPE_5_24 = "";
+            }
+            if (VIR_PPE_5_25 == null) {
+                VIR_PPE_5_25 = "";
+            }
+            if (VIR_PPE_5_26 == null) {
+                VIR_PPE_5_26 = "";
+            }
+            if (VIR_PPE_5_27 == null) {
+                VIR_PPE_5_27 = "";
+            }
+            if (VIR_PPE_5_28 == null) {
+                VIR_PPE_5_28 = "";
+            }
+            if (VIR_PPE_5_29 == null) {
+                VIR_PPE_5_29 = "";
+            }
+            if (VIR_PPE_5_30 == null) {
+                VIR_PPE_5_30 = "";
+            }
+            if (VIR_PPE_5_31 == null) {
+                VIR_PPE_5_31 = "";
+            }
+            if (VIR_PPE_5_32 == null) {
+                VIR_PPE_5_32 = "";
+            }
+            if (VIR_PPE_5_33 == null) {
+                VIR_PPE_5_33 = "";
+            }
+            if (VIR_PPE_5_34 == null) {
+                VIR_PPE_5_34 = "";
+            }
+            if (VIR_PPE_5_35 == null) {
+                VIR_PPE_5_35 = "";
+            }
+            if (VIR_PPE_5_36 == null) {
+                VIR_PPE_5_36 = "";
+            }
+            if (VIR_PPE_5_37 == null) {
+                VIR_PPE_5_37 = "";
+            }
+            if (VIR_PPE_5_38 == null) {
+                VIR_PPE_5_38 = "";
+            }
+            if (VIR_PPE_5_39 == null) {
+                VIR_PPE_5_39 = "";
+            }
+            if (VIR_PPE_5_40 == null) {
+                VIR_PPE_5_40 = "";
+            }
+            if (VIR_PPE_5_41 == null) {
+                VIR_PPE_5_41 = "";
+            }
+
+
+
+        }
+
+    }
+
+    public void get_vir_standard_6(String key_id) {
+        String Query = "select * from " + db.PC_VIR_DB_STANDARD_6 + " where KEY_ID = '" + key_id + "'";
+        Cursor cursor = sd.rawQuery(Query, null);
+        cursor.moveToFirst();
+
+
+        if (cursor.getCount() != 0) {
+            VIR_STAND_6_1 = cursor.getString(cursor.getColumnIndex(db.et1));
+            VIR_STAND_6_2 = cursor.getString(cursor.getColumnIndex(db.et2));
+            VIR_STAND_6_3 = cursor.getString(cursor.getColumnIndex(db.et3));
+            VIR_STAND_6_4 = cursor.getString(cursor.getColumnIndex(db.et4));
+            VIR_STAND_6_5 = cursor.getString(cursor.getColumnIndex(db.et5));
+            VIR_STAND_6_6 = cursor.getString(cursor.getColumnIndex(db.et6));
+            VIR_STAND_6_7 = cursor.getString(cursor.getColumnIndex(db.et7));
+            VIR_STAND_6_8 = cursor.getString(cursor.getColumnIndex(db.et8));
+            VIR_STAND_6_9 = cursor.getString(cursor.getColumnIndex(db.et9));
+            VIR_STAND_6_10 = cursor.getString(cursor.getColumnIndex(db.et10));
+            VIR_STAND_6_11 = cursor.getString(cursor.getColumnIndex(db.et11));
+            VIR_STAND_6_12 = cursor.getString(cursor.getColumnIndex(db.et12));
+            VIR_STAND_6_13 = cursor.getString(cursor.getColumnIndex(db.et13));
+            VIR_STAND_6_14 = cursor.getString(cursor.getColumnIndex(db.et14));
+            VIR_STAND_6_15 = cursor.getString(cursor.getColumnIndex(db.et15));
+            VIR_STAND_6_16 = cursor.getString(cursor.getColumnIndex(db.et16));
+            VIR_STAND_6_17 = cursor.getString(cursor.getColumnIndex(db.et17));
+            VIR_STAND_6_18 = cursor.getString(cursor.getColumnIndex(db.et18));
+            VIR_STAND_6_19 = cursor.getString(cursor.getColumnIndex(db.et19));
+            VIR_STAND_6_20 = cursor.getString(cursor.getColumnIndex(db.et20));
+            VIR_STAND_6_21 = cursor.getString(cursor.getColumnIndex(db.et21));
+            VIR_STAND_6_22 = cursor.getString(cursor.getColumnIndex(db.et22));
+
+
+            if (VIR_STAND_6_1 == null) {
+                VIR_STAND_6_1 = "";
+            }
+
+            if (VIR_STAND_6_2 == null) {
+                VIR_STAND_6_2 = "";
+            }
+
+
+            if (VIR_STAND_6_3 == null) {
+                VIR_STAND_6_3 = "";
+            }
+
+
+            if (VIR_STAND_6_4 == null) {
+                VIR_STAND_6_4 = "";
+            }
+
+            if (VIR_STAND_6_5 == null) {
+                VIR_STAND_6_5 = "";
+            }
+
+            if (VIR_STAND_6_6 == null) {
+                VIR_STAND_6_6 = "";
+            }
+
+            if (VIR_STAND_6_7 == null) {
+                VIR_STAND_6_7 = "";
+            }
+            if (VIR_STAND_6_8 == null) {
+                VIR_STAND_6_8 = "";
+            }
+            if (VIR_STAND_6_9 == null) {
+                VIR_STAND_6_9 = "";
+            }
+            if (VIR_STAND_6_10 == null) {
+                VIR_STAND_6_10 = "";
+            }
+
+            if (VIR_STAND_6_11 == null) {
+                VIR_STAND_6_11 = "";
+            }
+
+            if (VIR_STAND_6_12 == null) {
+                VIR_STAND_6_12 = "";
+            }
+            if (VIR_STAND_6_13 == null) {
+                VIR_STAND_6_13 = "";
+            }
+            if (VIR_STAND_6_14 == null) {
+                VIR_STAND_6_14 = "";
+            }
+            if (VIR_STAND_6_15 == null) {
+                VIR_STAND_6_15 = "";
+            }
+            if (VIR_STAND_6_16 == null) {
+                VIR_STAND_6_16 = "";
+            }
+            if (VIR_STAND_6_17 == null) {
+                VIR_STAND_6_17 = "";
+            }
+            if (VIR_STAND_6_18 == null) {
+                VIR_STAND_6_18 = "";
+            }
+            if (VIR_STAND_6_19 == null) {
+                VIR_STAND_6_19 = "";
+            }
+            if (VIR_STAND_6_20 == null) {
+                VIR_STAND_6_20 = "";
+            }
+            if (VIR_STAND_6_21 == null) {
+                VIR_STAND_6_21 = "";
+            }
+
+            if (VIR_STAND_6_22 == null) {
+                VIR_STAND_6_22 = "";
+            }
+
+
+        }
+
+    }
+
+
+    public void get_vir_other_7(String key_id) {
+        String Query = "select * from " + db.PC_VIR_DB_OTHER_7 + " where KEY_ID = '" + key_id + "'";
+        Cursor cursor = sd.rawQuery(Query, null);
+        cursor.moveToFirst();
+
+
+        if (cursor.getCount() != 0) {
+
+            VIR_OTHER_7_1 = cursor.getString(cursor.getColumnIndex(db.et1));
+            VIR_OTHER_7_2 = cursor.getString(cursor.getColumnIndex(db.et2));
+            VIR_OTHER_7_3 = cursor.getString(cursor.getColumnIndex(db.et3));
+            VIR_OTHER_7_4 = cursor.getString(cursor.getColumnIndex(db.et4));
+            VIR_OTHER_7_5 = cursor.getString(cursor.getColumnIndex(db.et5));
+            VIR_OTHER_7_6 = cursor.getString(cursor.getColumnIndex(db.et6));
+            VIR_OTHER_7_7 = cursor.getString(cursor.getColumnIndex(db.et7));
+            VIR_OTHER_7_8 = cursor.getString(cursor.getColumnIndex(db.et8));
+            VIR_OTHER_7_9 = cursor.getString(cursor.getColumnIndex(db.BRANCH_END_DATE));
+
+            if (VIR_OTHER_7_1 == null) {
+                VIR_OTHER_7_1 = "";
+            }
+
+            if (VIR_OTHER_7_2 == null) {
+                VIR_OTHER_7_2 = "";
+            }
+
+
+            if (VIR_OTHER_7_3 == null) {
+                VIR_OTHER_7_3 = "";
+            }
+
+
+            if (VIR_OTHER_7_4 == null) {
+                VIR_OTHER_7_4 = "";
+            }
+
+            if (VIR_OTHER_7_5 == null) {
+                VIR_OTHER_7_5 = "";
+            }
+
+            if (VIR_OTHER_7_6 == null) {
+                VIR_OTHER_7_6 = "";
+            }
+
+            if (VIR_OTHER_7_7 == null) {
+                VIR_OTHER_7_7 = "";
+            }
+            if (VIR_OTHER_7_8 == null) {
+                VIR_OTHER_7_8 = "";
+            }
+            if (VIR_OTHER_7_9 == null) {
+                VIR_OTHER_7_9 = "";
+            }
+
+
+        }
+
+    }
+
+
+
+
 
 
 
@@ -1155,6 +2176,21 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         cursor.close();
     }
 
+//    public void sync_vir() {
+//        pd.show();
+//        String Status = "Completed";
+//        String selectQuery = "SELECT * FROM " + db.PC_VIR_DB_TITLE_1 + " where STATUS ='" + Status + "'";
+//        Cursor cursor = sd.rawQuery(selectQuery, null);
+//        cursor.moveToFirst();
+//        Toast.makeText(getApplicationContext(), "Syncing Data ....", Toast.LENGTH_LONG).show();
+//        if (cursor.getCount() != 0) {
+//            sync_off_line_vir_data("" + cursor.getInt(cursor.getColumnIndex(db.KEY_ID)));
+//        } else {
+//            pd.dismiss();
+//        }
+//        cursor.close();
+//    }
+
 
 
 
@@ -1178,6 +2214,461 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
             return null;
         }
     }
+    private void sync_off_line_vir_data(final String key_id) {
+        get_profile_db();
+        Map<String, String> params = new HashMap<String, String>();
+        String Query = "select * from " + db.PC_VIR_DB_TITLE_1 + " where KEY_ID = '" + key_id + "'";
+        Cursor cursor = sd.rawQuery(Query, null);
+        cursor.moveToFirst();
 
+        get_profile_db();
+        //   Log.e("UUUUUUU 1", "NNNN Ess" + cursor.getCount());
+
+        if (cursor.getCount() != 0) {
+            params.put("conducted_on",""+ cursor.getString(cursor.getColumnIndex(db.et1)));
+            params.put("checked_by", ""+db_user_name);
+            params.put("vehicle_no", ""+cursor.getString(cursor.getColumnIndex(db.et2)));
+            params.put("driver_name", ""+cursor.getString(cursor.getColumnIndex(db.et3)));
+            params.put("team", ""+cursor.getString(cursor.getColumnIndex(db.et4)));
+            params.put("comp_status", ""+cursor.getString(cursor.getColumnIndex(db.STATUS)));
+            params.put("date_complete", ""+cursor.getString(cursor.getColumnIndex(db.COMPLETED_DATE)));
+            params.put("version", ""+versionname);
+
+        }
+
+        params.put("user_mail", ""+db_user_mail);
+
+        Log.e("KKKLHHHTTT","mail = "+db_user_mail);
+        get_vir_function_3(key_id);
+        get_vir_general_4(key_id);
+        get_vir_ppe_5(key_id);
+        get_vir_standard_6(key_id);
+        get_vir_other_7(key_id);
+
+
+        try {
+            String Query2 = "select * from " + db.PC_VIR_DB_BODY_2 + " where KEY_ID = '" + key_id + "'";
+            Cursor cursor2 = sd.rawQuery(Query2, null);
+            cursor2.moveToFirst();
+
+
+            if (cursor2.getCount() != 0) {
+                IMG_URL_1 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_1));
+                IMG_URL_2 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_2));
+                IMG_URL_3 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_3));
+                IMG_URL_4 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_4));
+                pc_vir_body_e1 = cursor2.getString(cursor2.getColumnIndex(db.et1));
+
+                if (pc_vir_body_e1 == null) {
+                    pc_vir_body_e1 = "";
+                }
+
+                params.put("version_name", ""+pc_vir_body_e1);
+
+
+                if (IMG_URL_1 != null) {
+                    String strNew = IMG_URL_1.replace("[", "");
+                    String strNew_1 = strNew.replace("]", "");
+                    List<String> myOld = new ArrayList<String>(Arrays.asList(strNew_1.split(", ")));
+
+
+                    if (myOld.size() != 0) {
+                        for (int p = 0; p < myOld.size(); p++) {
+                            try {
+                                if (Uri.parse(myOld.get(p)) != null) {
+                                    Context c;
+                                    Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
+                                            Uri.parse(myOld.get(p)));
+                                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                                    bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
+                                    //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
+                                    params.put("front_c"+ "_" + p, "" + getStringImage(bitmap_x));
+
+
+                                }
+                            } catch (Exception e) {
+                                Log.e("LLLLLLLLL", "else\t" + e.getMessage());
+                                //handle exception
+                            }
+                        }
+                    }
+
+                }
+
+
+                if (IMG_URL_2 != null) {
+                    String strNew2 = IMG_URL_2.replace("[", "");
+                    String strNew_2 = strNew2.replace("]", "");
+                    List<String> myOld2 = new ArrayList<String>(Arrays.asList(strNew_2.split(", ")));
+
+
+                    if (myOld2.size() != 0) {
+                        for (int p = 0; p < myOld2.size(); p++) {
+                            try {
+                                if (Uri.parse(myOld2.get(p)) != null) {
+                                    Context c;
+                                    Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
+                                            Uri.parse(myOld2.get(p)));
+                                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                                    bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
+                                    //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
+                                    params.put("side_1_c"+ "_" + p, "" + getStringImage(bitmap_x));
+
+
+                                }
+                            } catch (Exception e) {
+                                Log.e("LLLLLLLLL", "else\t" + e.getMessage());
+                                //handle exception
+                            }
+                        }
+                    }
+
+                }
+
+
+                if (IMG_URL_3 != null) {
+                    String strNew3 = IMG_URL_3.replace("[", "");
+                    String strNew_3 = strNew3.replace("]", "");
+                    List<String> myOld3 = new ArrayList<String>(Arrays.asList(strNew_3.split(", ")));
+
+
+                    if (myOld3.size() != 0) {
+                        for (int p = 0; p < myOld3.size(); p++) {
+                            try {
+                                if (Uri.parse(myOld3.get(p)) != null) {
+                                    Context c;
+                                    Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
+                                            Uri.parse(myOld3.get(p)));
+                                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                                    bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
+                                    //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
+                                    params.put("side_2_c"+ "_" + p, "" + getStringImage(bitmap_x));
+
+
+                                }
+                            } catch (Exception e) {
+                                Log.e("LLLLLLLLL", "else\t" + e.getMessage());
+                                //handle exception
+                            }
+                        }
+                    }
+
+                }
+
+
+                if (IMG_URL_4 != null) {
+                    String strNew4 = IMG_URL_4.replace("[", "");
+                    String strNew_4 = strNew4.replace("]", "");
+                    List<String> myOld4 = new ArrayList<String>(Arrays.asList(strNew_4.split(", ")));
+
+
+                    if (myOld4.size() != 0) {
+                        for (int p = 0; p < myOld4.size(); p++) {
+                            try {
+                                if (Uri.parse(myOld4.get(p)) != null) {
+                                    Context c;
+                                    Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
+                                            Uri.parse(myOld4.get(p)));
+                                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                                    bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
+                                    //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
+                                    params.put("rear_c"+ "_" + p, "" + getStringImage(bitmap_x));
+
+
+                                }
+                            } catch (Exception e) {
+                                Log.e("LLLLLLLLL", "else\t" + e.getMessage());
+                                //handle exception
+                            }
+                        }
+                    }
+
+                }
+
+
+            }
+        } catch (Exception e) {
+
+            Log.e("JJHHGAFFAF","func 1 = "+e.getMessage());
+            e.printStackTrace();
+        }
+
+
+        try {
+
+
+            Log.e("JJHHGAFFAF","func 1 = "+VIR_FUNC_3_1);
+            Log.e("JJHHGAFFAF","func 2 = "+VIR_FUNC_3_2);
+            Log.e("JJHHGAFFAF","func 3 = "+VIR_FUNC_3_3);
+            Log.e("JJHHGAFFAF","func 4 = "+VIR_FUNC_3_4);
+
+            params.put("v_fun_1", ""+ VIR_FUNC_3_1);
+            params.put("v_fun_2",""+  VIR_FUNC_3_2);
+            params.put("v_fun_3",""+  VIR_FUNC_3_3);
+            params.put("v_fun_4",""+  VIR_FUNC_3_4);
+            params.put("v_fun_5",""+  VIR_FUNC_3_5);
+            params.put("v_fun_6",""+  VIR_FUNC_3_6);
+            params.put("v_fun_7",""+  VIR_FUNC_3_7);
+            params.put("v_fun_8",""+  VIR_FUNC_3_8);
+            params.put("v_fun_10",""+  VIR_FUNC_3_9);
+            params.put("v_fun_11",""+  VIR_FUNC_3_10);
+            params.put("v_fun_12",""+  VIR_FUNC_3_11);
+            params.put("v_fun_13",""+  VIR_FUNC_3_12);
+            params.put("remarks_3",""+  VIR_FUNC_3_13);
+            params.put("v_fun_9",""+  VIR_FUNC_3_14);
+
+        } catch (Exception e) {
+            Log.e("VVVVVVV", "Sign = " + e.getMessage());
+            e.printStackTrace();
+        }
+
+
+        try {
+
+            params.put("g_check_1", ""+ VIR_GENERAL_4_1);
+            params.put("g_check_2",""+  VIR_GENERAL_4_2);
+            params.put("g_check_3",""+  VIR_GENERAL_4_3);
+            params.put("g_check_4",""+  VIR_GENERAL_4_4);
+            params.put("g_check_5",""+  VIR_GENERAL_4_5);
+            params.put("g_check_6",""+  VIR_GENERAL_4_6);
+            params.put("remarks_4",""+  VIR_GENERAL_4_7);
+
+
+        } catch (Exception e) {
+            Log.e("VVVVVVV", "Sign = " + e.getMessage());
+            e.printStackTrace();
+        }
+
+
+        try {
+
+            params.put("ppe_1", ""+ VIR_PPE_5_1);
+            params.put("ppe_2",""+  VIR_PPE_5_2);
+            params.put("ppe_3",""+  VIR_PPE_5_3);
+            params.put("ppe_4",""+  VIR_PPE_5_4);
+            params.put("ppe_5",""+  VIR_PPE_5_5);
+            params.put("ppe_6",""+  VIR_PPE_5_6);
+            params.put("ppe_7",""+  VIR_PPE_5_7);
+            params.put("ppe_8",""+  VIR_PPE_5_8);
+            params.put("ppe_9",""+  VIR_PPE_5_9);
+            params.put("ppe_10",""+  VIR_PPE_5_10);
+            params.put("ppe_11",""+  VIR_PPE_5_11);
+            params.put("ppe_12",""+  VIR_PPE_5_12);
+            params.put("ppe_13",""+  VIR_PPE_5_13);
+            params.put("ppe_14",""+  VIR_PPE_5_14);
+            params.put("ppe_15",""+  VIR_PPE_5_15);
+            params.put("ppe_16",""+  VIR_PPE_5_16);
+            params.put("ppe_17",""+  VIR_PPE_5_17);
+            params.put("ppe_18",""+  VIR_PPE_5_18);
+            params.put("ppe_19",""+  VIR_PPE_5_19);
+            params.put("ppe_20",""+  VIR_PPE_5_20);
+            params.put("tool_1",""+  VIR_PPE_5_21);
+            params.put("tool_2",""+  VIR_PPE_5_22);
+            params.put("tool_3",""+  VIR_PPE_5_23);
+            params.put("tool_4",""+  VIR_PPE_5_24);
+            params.put("tool_5",""+  VIR_PPE_5_25);
+            params.put("tool_6",""+  VIR_PPE_5_26);
+            params.put("tool_7",""+  VIR_PPE_5_27);
+            params.put("tool_8",""+  VIR_PPE_5_28);
+            params.put("tool_9",""+  VIR_PPE_5_29);
+            params.put("tool_10",""+  VIR_PPE_5_30);
+            params.put("tool_11",""+  VIR_PPE_5_31);
+            params.put("tool_12",""+  VIR_PPE_5_32);
+            params.put("tool_13",""+  VIR_PPE_5_33);
+            params.put("tool_14",""+  VIR_PPE_5_34);
+            params.put("tool_15",""+  VIR_PPE_5_35);
+            params.put("tool_16",""+  VIR_PPE_5_36);
+            params.put("tool_17",""+  VIR_PPE_5_37);
+            params.put("tool_18",""+  VIR_PPE_5_38);
+            params.put("tool_19",""+  VIR_PPE_5_39);
+            params.put("tool_20",""+  VIR_PPE_5_40);
+            params.put("remarks_5",""+  VIR_PPE_5_41);
+
+
+        } catch (Exception e) {
+            Log.e("VVVVVVV", "Sign = " + e.getMessage());
+            e.printStackTrace();
+        }
+
+
+        try {
+
+            params.put("s_item_1", ""+ VIR_STAND_6_1);
+            params.put("s_item_2",""+  VIR_STAND_6_2);
+            params.put("s_item_3",""+  VIR_STAND_6_3);
+            params.put("s_item_4",""+  VIR_STAND_6_4);
+            params.put("s_item_5",""+  VIR_STAND_6_5);
+            params.put("s_item_6",""+  VIR_STAND_6_6);
+            params.put("s_item_7",""+  VIR_STAND_6_7);
+            params.put("s_item_8",""+  VIR_STAND_6_8);
+            params.put("s_item_9",""+  VIR_STAND_6_9);
+            params.put("s_item_10",""+  VIR_STAND_6_10);
+            params.put("s_item_11",""+  VIR_STAND_6_11);
+            params.put("s_item_12",""+  VIR_STAND_6_12);
+            params.put("s_item_13",""+  VIR_STAND_6_13);
+            params.put("s_item_14",""+  VIR_STAND_6_14);
+            params.put("s_item_15",""+  VIR_STAND_6_15);
+            params.put("s_item_16",""+  VIR_STAND_6_16);
+            params.put("s_item_17",""+  VIR_STAND_6_17);
+            params.put("s_item_18",""+  VIR_STAND_6_18);
+            params.put("s_item_19",""+  VIR_STAND_6_19);
+            params.put("s_item_20",""+  VIR_STAND_6_20);
+            params.put("s_item_21",""+  VIR_STAND_6_21);
+            params.put("s_item_22",""+  VIR_STAND_6_22);
+
+
+
+        } catch (Exception e) {
+            Log.e("VVVVVVV", "Sign = " + e.getMessage());
+            e.printStackTrace();
+        }
+
+
+        try {
+
+            params.put("other_item_1", ""+ VIR_OTHER_7_1);
+            params.put("other_item_2",""+  VIR_OTHER_7_2);
+            params.put("other_item_3",""+  VIR_OTHER_7_3);
+            params.put("other_item_4",""+  VIR_OTHER_7_4);
+            params.put("other_item_5",""+  VIR_OTHER_7_5);
+            params.put("other_item_6",""+  VIR_OTHER_7_6);
+            params.put("other_item_7",""+  VIR_OTHER_7_7);
+            params.put("other_item_8",""+  VIR_OTHER_7_8);
+            params.put("remarks_7",""+  VIR_OTHER_7_9);
+
+            Log.e("AASSDEEFFF", "other = " +VIR_OTHER_7_1);
+
+
+        } catch (Exception e) {
+            Log.e("VVVVVVV", "Sign = " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        Log.e("VVVVGGGG3", "paramas = " +params);
+
+        VolleyDataRequester.withDefaultHttps(this)
+                .setUrl("https://rauditor-sg.riflows.com/rAuditor/Android/PC_Vehicle/insert_offline_data.php")
+                .setBody(params)
+                .setMethod(VolleyDataRequester.Method.POST)
+                .setStringResponseListener(new VolleyDataRequester.StringResponseListener() {
+                    @Override
+                    public void onResponse(String response) {
+                        pd.dismiss();
+
+                        Log.e("LLLLPPPV", "response = " +response);
+
+                        cv_send_VIR.put(db.STATUS, "SENT");
+                        sd.update(db.PC_VIR_DB_TITLE_1, cv_send_VIR, "KEY_ID = '" + key_id + "'", null);
+
+                        if (db.get_pti_completed_count(sd) != 0) {
+                            sync_pti();
+                        }
+                        else if (db.get_pci_completed_count(sd) != 0) {
+                            sync_pci();
+                        }
+                        else if (db.get_vir_completed_count(sd) != 0) {
+                            sync_vir();
+                        }
+                        else  {
+                            pd.dismiss();
+                        }
+
+
+                        String CHANNEL_ID = "my_channel_01";
+                        int notificationId = 1;
+                        Intent notificationIntent = new Intent(Category_Type_Activity.this, Category_Type_Activity.class);
+                        int importance = NotificationManager.IMPORTANCE_HIGH;
+                        NotificationManager notificationManager = (NotificationManager) Category_Type_Activity.this.getSystemService(Context.NOTIFICATION_SERVICE);
+
+
+                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                            NotificationChannel mChannel = new NotificationChannel(
+                                    CHANNEL_ID, "Ashvin", importance);
+                            notificationManager.createNotificationChannel(mChannel);
+                        }
+                        pd.dismiss();
+                        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(Category_Type_Activity.this, CHANNEL_ID)
+                                .setSmallIcon(R.drawable.app_logo)
+                                .setContentTitle("Report Synced Successfully")
+                                .setContentText("Kindly Check Your Mail");
+
+
+
+                        TaskStackBuilder stackBuilder = TaskStackBuilder.create(Category_Type_Activity.this);
+                        stackBuilder.addNextIntent(notificationIntent);
+                        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(
+                                0,
+                                PendingIntent.FLAG_UPDATE_CURRENT
+                        );
+                        mBuilder.setContentIntent(resultPendingIntent);
+
+                        notificationManager.notify(notificationId, mBuilder.build());
+
+
+
+
+
+                        Log.e("DDDDDDSS RIID SUC", "  = " + response);
+
+
+                    }
+                })
+                .setResponseErrorListener(new VolleyDataRequester.ResponseErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        pd.dismiss();
+                        Log.e("KKKJJJJMMH TIR ERR", "error  = " + error.getMessage());
+
+                        cv_send_VIR.put(db.STATUS, "SENT");
+                        sd.update(db.PC_VIR_DB_TITLE_1, cv_send_VIR, "KEY_ID = '" + key_id + "'", null);
+
+
+                        if (db.get_pti_completed_count(sd) != 0) {
+                            sync_pti();
+                        }
+                        else if (db.get_pci_completed_count(sd) != 0) {
+                            sync_pci();
+                        }
+                        else if (db.get_vir_completed_count(sd) != 0) {
+                            sync_vir();
+                        }
+                        else  {
+                            pd.dismiss();
+                        }
+
+                        String CHANNEL_ID = "my_channel_01";
+                        int notificationId = 1;
+                        Intent notificationIntent = new Intent(Category_Type_Activity.this, Category_Type_Activity.class);
+                        int importance = NotificationManager.IMPORTANCE_HIGH;
+                        NotificationManager notificationManager = (NotificationManager) Category_Type_Activity.this.getSystemService(Context.NOTIFICATION_SERVICE);
+
+
+                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                            NotificationChannel mChannel = new NotificationChannel(
+                                    CHANNEL_ID, "Ashvin", importance);
+                            notificationManager.createNotificationChannel(mChannel);
+                        }
+                        pd.dismiss();
+                        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(Category_Type_Activity.this, CHANNEL_ID)
+                                .setSmallIcon(R.drawable.app_logo)
+                                .setContentTitle("Report Synced Successfully")
+                                .setContentText("Kindly Check Your Mail");
+
+
+
+                        TaskStackBuilder stackBuilder = TaskStackBuilder.create(Category_Type_Activity.this);
+                        stackBuilder.addNextIntent(notificationIntent);
+                        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(
+                                0,
+                                PendingIntent.FLAG_UPDATE_CURRENT
+                        );
+                        mBuilder.setContentIntent(resultPendingIntent);
+
+                        notificationManager.notify(notificationId, mBuilder.build());
+                    }
+                })
+                .requestString();
+
+    }
 
 }
