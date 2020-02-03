@@ -76,23 +76,23 @@ public class CardJson extends AppCompatActivity {
         cursor.moveToFirst();
         Log.e("HHHHHH count",""+cursor.getCount());
         List_Item_Methodes wp;
-        if(cursor.getCount()!=0){
-            for (int i=0;i<cursor.getCount();i++) {
-                wp = new List_Item_Methodes( Integer.parseInt(cursor.getString(cursor.getColumnIndex("KEY_ID"))),
-                        cursor.getString(cursor.getColumnIndex("Type")),
-                        cursor.getString(cursor.getColumnIndex("Customer_name")) ,
-                        cursor.getString(cursor.getColumnIndex("Conducted_date")),
-                        "","");
-                arraylist.add( wp );
-                cursor.moveToNext();
-            }
-
-            CustomAdapter customAdapter = new CustomAdapter(CardJson.this, arraylist);
-            lst.setAdapter(customAdapter);
-            customAdapter.notifyDataSetChanged();
-
-
-        }
+//        if(cursor.getCount()!=0){
+//            for (int i=0;i<cursor.getCount();i++) {
+//                wp = new List_Item_Methodes( Integer.parseInt(cursor.getString(cursor.getColumnIndex("KEY_ID"))),
+//                        cursor.getString(cursor.getColumnIndex("Type")),
+//                        cursor.getString(cursor.getColumnIndex("Customer_name")) ,
+//                        cursor.getString(cursor.getColumnIndex("Conducted_date")),
+//                        "","");
+//                arraylist.add( wp );
+//                cursor.moveToNext();
+//            }
+//
+//            CustomAdapter customAdapter = new CustomAdapter(CardJson.this, arraylist);
+//            lst.setAdapter(customAdapter);
+//            customAdapter.notifyDataSetChanged();
+//
+//
+//        }
 
 //        String selectQuery_tir_4 = "SELECT * FROM " + db.PTI_INSPEC_2 + " where MAIN_ID ='" + key_id + "'";
 //        Cursor cursor_tir_4 = sd.rawQuery(selectQuery_tir_4, null);
@@ -104,11 +104,11 @@ public class CardJson extends AppCompatActivity {
 //
 //            byte[] byteArray_4_1, byteArray_4_2, byteArray_4_3;
 //            for (int m = 0; m < cursor_tir_4.getCount(); m++) {
-//
-//                post_pt_B1 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et1));
+//pt_B1 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et1));
 //                post_pt_B2 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et2));
 //                post_pt_B3 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et3));
 //
+//                post_
 //                Log.e("AACCSDS","B1 = "+post_pt_B1);
 //                Log.e("AACCSDS","B2 = "+post_pt_B2);
 //                Log.e("AACCSDS","B3 = "+post_pt_B3);

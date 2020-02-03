@@ -20,8 +20,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +28,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.rentokil.pci.rauditor_sg.Adapter.List_Item_Methodes;
+import com.rentokil.pci.rauditor_sg.Adapter.List_Item_Methodes_PDF;
 import com.rentokil.pci.rauditor_sg.Database.DatabaseHelper;
 
 import java.io.File;
@@ -44,16 +43,19 @@ public class Main4Activity extends AppCompatActivity implements View.OnClickList
     Button btn_generate;
     TextView tv_link;
     ImageView iv_image;
-    LinearLayout ll_pdflayout;
+    RelativeLayout ll_pdflayout;
     public static int REQUEST_PERMISSIONS = 1;
     boolean boolean_permission;
     boolean boolean_save;
     Bitmap bitmap;
     ProgressDialog progressDialog;
 TextView txt_1,txt_2,txt_3,txt_4,txt_5,txt_head;
-    ArrayList<List_Item_Methodes> arraylist;
+    ArrayList<List_Item_Methodes_PDF> arraylist;
 String get_et1_1,get_et1_2,get_et1_3,get_et1_4,get_et1_5,get_et1_6,get_et1_7,get_status;
-    ListView lst;
+    com.rentokil.pci.rauditor_sg.NonScrollListView lst;
+    private int listViewTouchAction;
+
+
   @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,8 +67,10 @@ String get_et1_1,get_et1_2,get_et1_3,get_et1_4,get_et1_5,get_et1_6,get_et1_7,get
       Intent intent1=getIntent();
       key_id=intent1.getStringExtra("key_id");
       Log.e("AAXCCSAA"," id 1 = "+key_id);
-      lst = (ListView) findViewById(R.id.lst);
-      arraylist = new ArrayList<List_Item_Methodes>();
+      lst = (com.rentokil.pci.rauditor_sg.NonScrollListView) findViewById(R.id.lst);
+      arraylist = new ArrayList<List_Item_Methodes_PDF>();
+
+
 
 
       get_pc_page_1(key_id);
@@ -94,6 +98,8 @@ String get_et1_1,get_et1_2,get_et1_3,get_et1_4,get_et1_5,get_et1_6,get_et1_7,get
       
     }
 
+
+
     public void get_pc_page_1(String key){
         String et1,et2;
         String Query="select * from "+db.PCI_TITLE_1 +" where KEY_ID = '" +key+"'";
@@ -120,9 +126,9 @@ String get_et1_1,get_et1_2,get_et1_3,get_et1_4,get_et1_5,get_et1_6,get_et1_7,get
 
     private void init(){
         btn_generate = (Button)findViewById(R.id.btn_generate);
-        tv_link = (TextView)findViewById(R.id.tv_link);
+//        tv_link = (TextView)findViewById(R.id.tv_link);
         iv_image = (ImageView) findViewById(R.id.iv_image);
-        ll_pdflayout = (LinearLayout) findViewById(R.id.ll_pdflayout);
+        ll_pdflayout = (RelativeLayout) findViewById(R.id.ll_pdflayout);
 
     }
 
@@ -257,24 +263,26 @@ String get_et1_1,get_et1_2,get_et1_3,get_et1_4,get_et1_5,get_et1_6,get_et1_7,get
     public void request(String key) {
 
 arraylist.clear();
-        String selectQuery = "select * from (select KEY_ID as KEY_ID,et1 as Customer_name,et2 as Conducted_date,et3 as report_no,COALESCE(" +
+        String selectQuery = "select * from (select KEY_ID as KEY_ID,et1 as Customer_name,et2 as Conducted_date,COUNT as COUNT,et3 as et3,IMAGE_1 as IMAGE_1,COALESCE(" +
                 "  ('PCI')," +
                 "  'PCI'" +
                 " ) AS Type from PCI_INSPEC_2 where MAIN_ID = '" + key_id + "'" +
-                " )tbl order by KEY_ID desc";
+                " )tbl ";
 
 
         Cursor cursor = sd.rawQuery(selectQuery, null);
         cursor.moveToFirst();
         Log.e("HHHHHH count",""+cursor.getCount());
-        List_Item_Methodes wp;
+        List_Item_Methodes_PDF wp;
         if(cursor.getCount()!=0){
             for (int i=0;i<cursor.getCount();i++) {
-                wp = new List_Item_Methodes( Integer.parseInt(cursor.getString(cursor.getColumnIndex("KEY_ID"))),
+                wp = new List_Item_Methodes_PDF( Integer.parseInt(cursor.getString(cursor.getColumnIndex("KEY_ID"))),
                         cursor.getString(cursor.getColumnIndex("Type")),
                         cursor.getString(cursor.getColumnIndex("Customer_name")) ,
                         cursor.getString(cursor.getColumnIndex("Conducted_date")),
-                        "","");
+                        cursor.getString(cursor.getColumnIndex("COUNT")),
+                        cursor.getString(cursor.getColumnIndex("et3")),
+                        cursor.getString(cursor.getColumnIndex("IMAGE_1")));
                 arraylist.add( wp );
                 cursor.moveToNext();
             }

@@ -195,36 +195,36 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         Log.e("MMMMMMMMQ", "" + db.get_check_audit(sd, "MSOT"));
 
 
-        if (isInternetPresent) {
-
-
-
-                get_profile_db();
-
-                Log.e("ACXZASC","Entering");
-
-                if (db.get_pci_completed_count(sd) != 0) {
-
-                    pd.show();
-                    sync_pci();
-
-                }
-                else if (db.get_pti_completed_count(sd) != 0) {
-                    pd.show();
-                    sync_pti();
-                }
-
-                else if (db.get_vir_completed_count(sd) != 0) {
-
-                    sync_vir();
-                }
-                else  {
-                    pd.dismiss();
-                    Toast.makeText(getApplicationContext(), "No Pending Records", Toast.LENGTH_SHORT).show();
-                }
-
-
-        }
+//        if (isInternetPresent) {
+//
+//
+//
+//                get_profile_db();
+//
+//                Log.e("ACXZASC","Entering");
+//
+//                if (db.get_pci_completed_count(sd) != 0) {
+//
+//                    pd.show();
+//                    sync_pci();
+//
+//                }
+//                else if (db.get_pti_completed_count(sd) != 0) {
+//                    pd.show();
+//                    sync_pti();
+//                }
+//
+//                else if (db.get_vir_completed_count(sd) != 0) {
+//
+//                    sync_vir();
+//                }
+//                else  {
+//                    pd.dismiss();
+//                    Toast.makeText(getApplicationContext(), "No Pending Records", Toast.LENGTH_SHORT).show();
+//                }
+//
+//
+//        }
 
 
         /*if(isInternetPresent){
@@ -501,6 +501,8 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                     IMG_URL_4 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_4));
                     pc_vir_body_e1 = cursor2.getString(cursor2.getColumnIndex(db.et1));
 
+
+
                     if (pc_vir_body_e1 == null) {
                         pc_vir_body_e1 = "";
                     }
@@ -524,7 +526,9 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                                         ByteArrayOutputStream bs = new ByteArrayOutputStream();
                                         bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
                                         //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                        params_vir.put("front_c"+ "_" + p, "" + getStringImage(bitmap_x));
+                                        params_vir.put("front_c_"+p, "" + getStringImage(bitmap_x));
+
+                                        Log.e("AAAAASSDFFVF",+p+" image = "+getStringImage(bitmap_x));
 
 
                                     }
@@ -538,6 +542,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                     }
 
 
+/*
                     if (IMG_URL_2 != null) {
                         String strNew2 = IMG_URL_2.replace("[", "");
                         String strNew_2 = strNew2.replace("]", "");
@@ -554,7 +559,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                                         ByteArrayOutputStream bs = new ByteArrayOutputStream();
                                         bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
                                         //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                        params_vir.put("side_1_c"+ "_" + p, "" + getStringImage(bitmap_x));
+                                        params_vir.put("side_1_c_"+p, "" + getStringImage(bitmap_x));
 
 
                                     }
@@ -566,6 +571,8 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                         }
 
                     }
+*/
+
 
 
                     if (IMG_URL_3 != null) {
@@ -584,7 +591,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                                         ByteArrayOutputStream bs = new ByteArrayOutputStream();
                                         bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
                                         //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                        params_vir.put("side_2_c"+ "_" + p, "" + getStringImage(bitmap_x));
+                                        params_vir.put("side_2_c_"+p, "" + getStringImage(bitmap_x));
 
 
                                     }
@@ -596,6 +603,8 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                         }
 
                     }
+
+
 
 
                     if (IMG_URL_4 != null) {
@@ -614,7 +623,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                                         ByteArrayOutputStream bs = new ByteArrayOutputStream();
                                         bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
                                         //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                        params_vir.put("rear_c"+ "_" + p, "" + getStringImage(bitmap_x));
+                                        params_vir.put("rear_c_"+ p, "" + getStringImage(bitmap_x));
 
 
                                     }
@@ -2282,7 +2291,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                                     ByteArrayOutputStream bs = new ByteArrayOutputStream();
                                     bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
                                     //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                    params.put("front_c"+ "_" + p, "" + getStringImage(bitmap_x));
+                                    params.put("front_c_"+p, "" + getStringImage(bitmap_x));
 
 
                                 }
@@ -2312,7 +2321,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                                     ByteArrayOutputStream bs = new ByteArrayOutputStream();
                                     bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
                                     //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                    params.put("side_1_c"+ "_" + p, "" + getStringImage(bitmap_x));
+                                    params.put("side_1_c_"+p, "" + getStringImage(bitmap_x));
 
 
                                 }
@@ -2342,7 +2351,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                                     ByteArrayOutputStream bs = new ByteArrayOutputStream();
                                     bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
                                     //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                    params.put("side_2_c"+ "_" + p, "" + getStringImage(bitmap_x));
+                                    params.put("side_2_c_"+p, "" + getStringImage(bitmap_x));
 
 
                                 }
@@ -2372,7 +2381,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                                     ByteArrayOutputStream bs = new ByteArrayOutputStream();
                                     bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
                                     //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                    params.put("rear_c"+ "_" + p, "" + getStringImage(bitmap_x));
+                                    params.put("rear_c_"+p, "" + getStringImage(bitmap_x));
 
 
                                 }

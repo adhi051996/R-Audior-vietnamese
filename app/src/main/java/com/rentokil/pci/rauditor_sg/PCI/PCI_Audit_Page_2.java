@@ -23,10 +23,14 @@ import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AnticipateOvershootInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,7 +47,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.transition.ChangeBounds;
 import androidx.transition.TransitionManager;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
+import com.bumptech.glide.request.RequestOptions;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
 import com.rentokil.pci.rauditor_sg.Database.DatabaseHelper;
+import com.rentokil.pci.rauditor_sg.MULTI_IMAGE_SELECTION.TedRxBottomPicker;
 import com.rentokil.pci.rauditor_sg.Photo_Editor.EditImageActivity;
 import com.rentokil.pci.rauditor_sg.Photo_Editor.EmojiBSFragment;
 import com.rentokil.pci.rauditor_sg.Photo_Editor.PropertiesBSFragment;
@@ -55,13 +65,16 @@ import com.rentokil.pci.rauditor_sg.Photo_Editor.tools.EditingToolsAdapter;
 import com.rentokil.pci.rauditor_sg.Photo_Editor.tools.ToolType;
 import com.rentokil.pci.rauditor_sg.R;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
+import io.reactivex.disposables.Disposable;
 import ja.burhanrashid52.photoeditor.OnPhotoEditorListener;
 import ja.burhanrashid52.photoeditor.PhotoEditor;
 import ja.burhanrashid52.photoeditor.PhotoEditorView;
@@ -89,8 +102,10 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
 
     TextView add_observation,txt_area_count;
 
-
-
+    TextView image_Q1;
+    private List<Uri> selectedUriList1;
+    private ViewGroup mSelectedImagesContainer1;
+    private RequestManager requestManager1;
     Bitmap bitmap_1,bitmap_2,bitmap_3,bitmap_4,bitmap_5;
 
 
@@ -102,7 +117,7 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
 
 
 
-    TextView image_Q1;
+
     public static final int RequestPermissionCode = 1;
     String Image_1;
     Bitmap bitmap_et1,bitmap_et1_1,bitmap_et1_2;
@@ -115,11 +130,7 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
 
     byte [] bytes_et1=null,bytes_et1_1=null,bytes_et1_2=null;
 
-    ByteArrayInputStream imageStream1,imageStream1_1,imageStream1_2;
 
-    Bitmap bitmapImage1,bitmapImage1_1,bitmapImage1_2;
-    String bitmapget1;
-    ImageView Image_layout_Q1,Image_layout_Q1_1,Image_layout_Q1_2;
 
 
     String ImageCheck = "";
@@ -158,7 +169,7 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
     ImageView imgGallery;
     ImageView imgSave;
     ImageView imgClose;
-
+    private Disposable multiImageDisposable1;
 
     EditText et_sum_1,et_sum_2;
 
@@ -186,16 +197,16 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
         dialog= new Dialog(PCI_Audit_Page_2.this,R.style.MyAlertDialogTheme);
 
 
-
+        image_Q1 = (TextView) findViewById(R.id.image_Q1);
 
         sub_info_4 = (Button) findViewById(R.id.sub_info_4);
         back_info_4 = (Button) findViewById(R.id.back_info_4);
 
+        requestManager1 = Glide.with(this);
 
 
 
-
-
+        mSelectedImagesContainer1 = findViewById(R.id.selected_photos_container1);
 
 
 
@@ -212,8 +223,54 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
 
 
 
+        image_Q1.setOnClickListener(view -> {
+            PermissionListener permissionlistener = new PermissionListener() {
+                @Override
+                public void onPermissionGranted() {
+
+                    multiImageDisposable1 = TedRxBottomPicker.with(PCI_Audit_Page_2.this)
+                            //.setPeekHeight(getResources().getDisplayMetrics().heightPixels/2)
+                            .setPeekHeight(1600)
+                            .showTitle(false)
+                            .setCompleteButtonText("Done")
+                            .setEmptySelectionText("No Select")
+
+                            .setSelectedUriList(selectedUriList1)
+                            .setSelectMaxCount(5)
+                            .showMultiImage()
+                            .subscribe(uris -> {
+                                selectedUriList1 = uris;
+                                Log.e("HJHJHJH URL", "" + selectedUriList1.size());
+                                Log.e("HJHJHJH URL", "" + selectedUriList1);
+                                showUriList_1(uris);
+                            }, Throwable::printStackTrace);
 
 
+                }
+
+                @Override
+                public void onPermissionDenied(ArrayList<String> deniedPermissions) {
+                    Toast.makeText(PCI_Audit_Page_2.this, "Permission Denied\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
+                }
+
+
+            };
+
+            checkPermission(permissionlistener);
+        });
+
+
+        mSelectedImagesContainer1.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                int position  = (Integer) v.getTag();
+                Toast.makeText(PCI_Audit_Page_2.this, ""+position, Toast.LENGTH_SHORT).show();
+
+                return false;
+            }
+
+
+        });
 
 
         add_observation = (TextView) findViewById(R.id.add_observation);
@@ -245,227 +302,6 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
             }
         });
 
-        TextView Q1_Imageview = (TextView) findViewById(R.id.image_Q1);
-        Image_layout_Q1 = (de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.image_layout_Q1);
-        Image_layout_Q1.setVisibility(View.GONE);
-
-        Image_layout_Q1_1 = (de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.image_layout_Q1_1);
-        Image_layout_Q1_1.setVisibility(View.GONE);
-
-        Image_layout_Q1_2 = (de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.image_layout_Q1_2);
-        Image_layout_Q1_2.setVisibility(View.GONE);
-
-
-
-
-
-
-        Image_layout_Q1.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-
-                if (Image_layout_Q1_1.getDrawable() == null& Image_layout_Q1_2.getDrawable()==null){
-
-                    Log.e("LLLKKMMMMM","enter 1 ") ;
-
-                    AlertDialog.Builder builder = new AlertDialog.Builder(PCI_Audit_Page_2.this);
-                    builder.setMessage(getString(R.string.dialog_delete_img));
-                    builder.setPositiveButton("OK",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-
-                                    Image_layout_Q1.setImageResource(0);
-
-                                    Toast.makeText(getApplicationContext(), "Image Deleted", Toast.LENGTH_SHORT).show();
-
-                                    img_count_1=1;
-
-                                    if (Image_layout_Q1.getDrawable() == null) {
-                                        Image_layout_Q1.setVisibility(View.GONE);
-                                    } else {
-                                        Image_layout_Q1.setVisibility(View.VISIBLE);
-                                    }
-                                }
-                            });
-                    builder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                        }
-                    });
-                    builder.setCancelable(false);
-                    builder.show();
-
-
-                    return false;
-                }
-
-                else if(Image_layout_Q1_1.getDrawable() != null& Image_layout_Q1_2.getDrawable()!=null){
-
-                    Log.e("LLLKKMMMMM","bit 1 = "+bitmap_et1_1);
-                    Log.e("LLLKKMMMMM","bit 2 = "+bitmap_et1_2);
-
-                    Toast.makeText(getApplicationContext(),"Please Delete Other Images 2 & 3 to Continue",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    AlertDialog.Builder builder = new AlertDialog.Builder(PCI_Audit_Page_2.this);
-                    builder.setMessage(getString(R.string.dialog_delete_img));
-                    builder.setPositiveButton("OK",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-
-                                    Image_layout_Q1.setImageResource(0);
-                                    img_count_1=1;
-                                    Toast.makeText(getApplicationContext(), "Image Deleted", Toast.LENGTH_SHORT).show();
-                                    if (Image_layout_Q1.getDrawable() == null) {
-                                        Image_layout_Q1.setVisibility(View.GONE);
-                                    } else {
-                                        Image_layout_Q1.setVisibility(View.VISIBLE);
-                                    }
-                                }
-                            });
-                    builder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                        }
-                    });
-                    builder.setCancelable(false);
-                    builder.show();
-
-
-                    return false;
-
-                }
-                return true;
-            }
-
-        });
-
-        Image_layout_Q1_1.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-
-
-
-                if (Image_layout_Q1_2.getDrawable() == null){
-
-                    AlertDialog.Builder builder = new AlertDialog.Builder(PCI_Audit_Page_2.this);
-                    builder.setMessage(getString(R.string.dialog_delete_img));
-                    builder.setPositiveButton("OK",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-
-                                    Image_layout_Q1_1.setImageResource(0);
-                                    img_count_1=2;
-                                    Toast.makeText(getApplicationContext(), "Image Deleted", Toast.LENGTH_SHORT).show();
-                                    if (Image_layout_Q1_1.getDrawable() == null) {
-                                        Image_layout_Q1_1.setVisibility(View.GONE);
-                                    } else {
-                                        Image_layout_Q1_1.setVisibility(View.VISIBLE);
-                                    }
-                                }
-                            });
-                    builder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                        }
-                    });
-                    builder.setCancelable(false);
-                    builder.show();
-
-
-                    return false;
-                }
-                else if(Image_layout_Q1_2.getDrawable() != null){
-
-                    Toast.makeText(getApplicationContext(),"Please Delete Other Images 3 to Continue",Toast.LENGTH_SHORT).show();
-
-                }
-                else{
-                    AlertDialog.Builder builder = new AlertDialog.Builder(PCI_Audit_Page_2.this);
-                    builder.setMessage(getString(R.string.dialog_delete_img));
-                    builder.setPositiveButton("OK",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-
-                                    Image_layout_Q1_1.setImageResource(0);
-                                    img_count_1=2;
-                                    Toast.makeText(getApplicationContext(), "Image Deleted", Toast.LENGTH_SHORT).show();
-                                    if (Image_layout_Q1_1.getDrawable() == null) {
-                                        Image_layout_Q1_1.setVisibility(View.GONE);
-                                    } else {
-                                        Image_layout_Q1_1.setVisibility(View.VISIBLE);
-                                    }
-                                }
-                            });
-                    builder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                        }
-                    });
-                    builder.setCancelable(false);
-                    builder.show();
-
-
-                }
-                return true;
-            }
-        });
-
-        Image_layout_Q1_2.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-
-
-
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(PCI_Audit_Page_2.this);
-                builder.setMessage(getString(R.string.dialog_delete_img));
-                builder.setPositiveButton("OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-
-                                Image_layout_Q1_2.setImageResource(0);
-                                img_count_1=3;
-                                Toast.makeText(getApplicationContext(), "Image Deleted", Toast.LENGTH_SHORT).show();
-                                if (Image_layout_Q1_2.getDrawable() == null) {
-                                    Image_layout_Q1_2.setVisibility(View.GONE);
-                                } else {
-                                    Image_layout_Q1_2.setVisibility(View.VISIBLE);
-                                }
-                            }
-                        });
-                builder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-                builder.setCancelable(false);
-                builder.show();
-
-
-                return false;
-
-
-            }
-        });
-
-        Q1_Imageview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                alert_instruction();
-                img_count_1=img_count_1+1;
-
-                if(img_count_1==2){
-                    ImageCheck = "1111";
-                }
-                else if(img_count_1==3){
-                    ImageCheck = "2222";
-                }
-                else if(img_count_1==4){
-                    ImageCheck = "3333";
-                }
-                else if(img_count_1==5){
-
-                    Toast.makeText(getApplicationContext(),"Only 3 Images Allowed",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
 
 
@@ -493,6 +329,45 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
             get_offline(key_id,counter);
         }
 
+
+    }
+
+    private void checkPermission(PermissionListener permissionlistener) {
+        TedPermission.with(PCI_Audit_Page_2.this)
+                .setPermissionListener(permissionlistener)
+                .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
+                .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .check();
+    }
+
+    private void showUriList_1(List<Uri> uriList) {
+        // Remove all views before
+        // adding the new ones.
+        Log.e("HJHJH900 JJJ0", "in" + uriList.size());
+        mSelectedImagesContainer1.removeAllViews();
+
+        //  iv_image.setVisibility(View.GONE);
+        mSelectedImagesContainer1.setVisibility(View.VISIBLE);
+
+        int widthPixel = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 100, getResources().getDisplayMetrics());
+        int heightPixel = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 100, getResources().getDisplayMetrics());
+
+
+        for (Uri uri : uriList) {
+            Log.e("HJHJH900 JJJ0", "in\t" + uri.toString());
+            View imageHolder = LayoutInflater.from(this).inflate(R.layout.image_item, null);
+            ImageView thumbnail = imageHolder.findViewById(R.id.media_image);
+
+            requestManager1
+                    .load(uri.toString())
+                    .apply(new RequestOptions().fitCenter())
+                    .into(thumbnail);
+
+            mSelectedImagesContainer1.addView(imageHolder);
+
+            thumbnail.setLayoutParams(new FrameLayout.LayoutParams(widthPixel, heightPixel));
+
+        }
 
     }
 
@@ -587,77 +462,11 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
         cv_off.put(db.et2, ""+get_sum_1);
         cv_off.put(db.et3, ""+get_sum_2);
 
-        try {
-            ins_bitmap_et1 = ((BitmapDrawable)Image_layout_Q1.getDrawable()).getBitmap();
 
-        } catch (Exception e) {
-
-            ins_bitmap_et1=null;
-            Log.e("KLLLMMMMAAQ","error = "+e.getMessage());
-            e.printStackTrace();
-        }
-
-        try {
-            ins_bitmap_et1_1 = ((BitmapDrawable)Image_layout_Q1_1.getDrawable()).getBitmap();
-
-        } catch (Exception e) {
-
-            ins_bitmap_et1_1=null;
-            Log.e("KLLLMMMMDD","error = "+e.getMessage());
-            e.printStackTrace();
-        }
-
-        try {
-            ins_bitmap_et1_2 = ((BitmapDrawable)Image_layout_Q1_2.getDrawable()).getBitmap();
-
-        } catch (Exception e) {
-
-            ins_bitmap_et1_2=null;
-            Log.e("KLLLMMMMDDG","error = "+e.getMessage());
-            e.printStackTrace();
-        }
-
-
-
-        if (ins_bitmap_et1!=null) {
-            Log.e("LLMMMMMMFF","img cout1 = "+img_count_1);
-            ByteArrayOutputStream stream_1 = new ByteArrayOutputStream();
-
-            ins_bitmap_et1 = Bitmap.createScaledBitmap(ins_bitmap_et1, 270, 270, true);
-            ins_bitmap_et1.compress(Bitmap.CompressFormat.PNG, 100, stream_1);
-            bytes_et1 = stream_1.toByteArray();
-            Log.e("GGGTTTDD","entermmm = "+bytes_et1);
-            cv_off.put(db.IMAGE_1,bytes_et1);
-
-        }
-
-
-
-        if (ins_bitmap_et1_1!=null) {
-
-            Log.e("LLMMMMMMFF","img cout1_1 = "+img_count_1);
-            ByteArrayOutputStream stream_1 = new ByteArrayOutputStream();
-
-            ins_bitmap_et1_1 = Bitmap.createScaledBitmap(ins_bitmap_et1_1, 270, 270, true);
-            ins_bitmap_et1_1.compress(Bitmap.CompressFormat.PNG, 100, stream_1);
-            bytes_et1_1 = stream_1.toByteArray();
-            Log.e("BBBBHHYY","entermmm = "+bytes_et1_1);
-            cv_off.put(db.IMAGE_1_1,bytes_et1_1);
-
-        }
-
-
-        if (ins_bitmap_et1_2!=null) {
-
-            Log.e("LLMMMMMMFF","img cout1_2 = "+img_count_1);
-            ByteArrayOutputStream stream_1 = new ByteArrayOutputStream();
-
-            ins_bitmap_et1_2 = Bitmap.createScaledBitmap(ins_bitmap_et1_2, 270, 270, true);
-            ins_bitmap_et1_2.compress(Bitmap.CompressFormat.PNG, 100, stream_1);
-            bytes_et1_2 = stream_1.toByteArray();
-            Log.e("KLLLMEEETTMMM","entermmm = "+bytes_et1_2);
-            cv_off.put(db.IMAGE_1_2,bytes_et1_2);
-
+        if (selectedUriList1 != null) {
+            if (selectedUriList1.size() != 0) {
+                cv_off.put(db.IMAGE_1, "" + selectedUriList1);
+            }
         }
 
 
@@ -722,12 +531,13 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
 
 
 
-        Image_layout_Q1.setImageDrawable(null);
-        Image_layout_Q1_1.setImageDrawable(null);
-        Image_layout_Q1_2.setImageDrawable(null);
+        if (selectedUriList1 != null) {
+            selectedUriList1.clear();
+        }
+        mSelectedImagesContainer1.removeAllViews();
 
-
-        img_count_1=1;
+        //  iv_image.setVisibility(View.GONE);
+        mSelectedImagesContainer1.setVisibility(View.GONE);
 
 
     }
@@ -802,6 +612,25 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
                 String met2 = cursor.getString(cursor.getColumnIndex(db.et2));
                 String met3 = cursor.getString(cursor.getColumnIndex(db.et3));
 
+                String met4 = cursor.getString(cursor.getColumnIndex(db.IMAGE_1));
+
+
+                if (met4 != null) {
+
+                    String strNew = met4.replace("[", "");
+                    String strNew_1 = strNew.replace("]", "");
+                    List<String> myOld = new ArrayList<String>(Arrays.asList(strNew_1.split(", ")));
+                    List<Uri> newList = new ArrayList<Uri>(myOld.size());
+
+                    for (String uri : myOld) {
+                        newList.add(Uri.parse(uri));
+                    }
+
+                    selectedUriList1 = newList;
+                    showUriList_1(newList);
+                }
+
+
                 txt_area_count = (TextView) findViewById(R.id.txt_area_count);
 
                 txt_area_count.setText(count_get);
@@ -813,45 +642,6 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
                 et_sum_2.setText(met3);
 
 
-                byte[] get_img1=cursor.getBlob(cursor.getColumnIndex(db.IMAGE_1));
-                byte[] get_img1_1=cursor.getBlob(cursor.getColumnIndex(db.IMAGE_1_1));
-                byte[] get_img1_2=cursor.getBlob(cursor.getColumnIndex(db.IMAGE_1_2));
-
-
-
-                Log.e("KKMMMMMQQ","byte  1 = "+get_img1);
-                Log.e("KKMMMMMQQ","byte  2 = "+get_img1_1);
-                Log.e("KKMMMMMQQ","byte  3 = "+get_img1_2);
-
-                if (get_img1!=null) {
-
-                    img_count_1 =1;
-                    imageStream1 = new ByteArrayInputStream(get_img1);
-                    get_bitmap_et1 = BitmapFactory.decodeStream(imageStream1);
-                    Image_layout_Q1.setImageBitmap(Bitmap.createScaledBitmap(get_bitmap_et1, 400, 400, false));
-                    Image_layout_Q1.setVisibility(View.VISIBLE);
-
-                }
-
-                if (get_img1_1!=null) {
-
-                    img_count_1 =2;
-                    imageStream1_1 = new ByteArrayInputStream(get_img1_1);
-                    get_bitmap_et1_1 = BitmapFactory.decodeStream(imageStream1_1);
-                    Image_layout_Q1_1.setImageBitmap(Bitmap.createScaledBitmap(get_bitmap_et1_1, 400, 400, false));
-                    Image_layout_Q1_1.setVisibility(View.VISIBLE);
-
-                }
-
-                if (get_img1_2!=null) {
-
-                    img_count_1 =3;
-                    imageStream1_2 = new ByteArrayInputStream(get_img1_2);
-                    get_bitmap_et1_2 = BitmapFactory.decodeStream(imageStream1_2);
-                    Image_layout_Q1_2.setImageBitmap(Bitmap.createScaledBitmap(get_bitmap_et1_2, 400, 400, false));
-                    Image_layout_Q1_2.setVisibility(View.VISIBLE);
-
-                }
 
 
             } catch (Exception e) {
@@ -1167,87 +957,8 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
                         e.printStackTrace();
                     }
 
-                    if (Image_layout_Q1.getDrawable() == null){
-
-                        img_count_1=1;
-                        ImageCheck="1111";
-                    }else if (Image_layout_Q1_1.getDrawable() == null){
-                        img_count_1=2;
-                        ImageCheck="2222";
-
-                    }else if (Image_layout_Q1_2.getDrawable() == null){
-                        img_count_1=3;
-                        ImageCheck="3333";
-                    }
 
 
-
-
-
-
-                    Log.e("LLKKKKK","no = "+ImageCheck);
-                    if(ImageCheck.equals("1111")){
-
-                        if (bitmap_et1!=null) {
-                            ByteArrayOutputStream stream_1 = new ByteArrayOutputStream();
-                            bitmap_et1.compress(Bitmap.CompressFormat.PNG, 100, stream_1);
-                            bytes_et1 = stream_1.toByteArray();
-
-                            Bitmap bmp = BitmapFactory.decodeByteArray(bytes_et1, 0, bytes_et1.length);
-
-                            Log.e("LLLMMMMJJ","bit = "+bmp);
-
-                            Image_layout_Q1.setVisibility(View.VISIBLE);
-                            Image_layout_Q1.setImageBitmap(bmp);
-                            Image_layout_Q1.setVisibility(View.VISIBLE);
-
-                            dialog.cancel();
-
-                        }
-
-                    }
-
-                    if(ImageCheck.equals("2222")){
-
-                        if (bitmap_et1_1!=null) {
-                            ByteArrayOutputStream stream_1 = new ByteArrayOutputStream();
-                            bitmap_et1_1.compress(Bitmap.CompressFormat.PNG, 100, stream_1);
-                            bytes_et1_1 = stream_1.toByteArray();
-
-                            Bitmap bmp = BitmapFactory.decodeByteArray(bytes_et1_1, 0, bytes_et1_1.length);
-
-                            Log.e("LLLMMMMJJ","bit = "+bmp);
-
-                            Image_layout_Q1_1.setVisibility(View.VISIBLE);
-                            Image_layout_Q1_1.setImageBitmap(bmp);
-                            Image_layout_Q1_1.setVisibility(View.VISIBLE);
-
-                            dialog.cancel();
-
-                        }
-
-                    }
-
-                    if(ImageCheck.equals("3333")){
-
-                        if (bitmap_et1_2!=null) {
-                            ByteArrayOutputStream stream_1 = new ByteArrayOutputStream();
-                            bitmap_et1_2.compress(Bitmap.CompressFormat.PNG, 100, stream_1);
-                            bytes_et1_2 = stream_1.toByteArray();
-
-                            Bitmap bmp = BitmapFactory.decodeByteArray(bytes_et1_2, 0, bytes_et1_2.length);
-
-                            Log.e("LLLMMMMJJ","bit = "+bmp);
-
-                            Image_layout_Q1_2.setVisibility(View.VISIBLE);
-                            Image_layout_Q1_2.setImageBitmap(bmp);
-                            Image_layout_Q1_2.setVisibility(View.VISIBLE);
-
-                            dialog.cancel();
-
-                        }
-
-                    }
 
                     Log.e("LLKKKKK","no = "+ImageCheck);
 
@@ -1420,18 +1131,7 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
             } else {
                 //            super.onBackPressed();
 
-                if (Image_layout_Q1.getDrawable() == null){
 
-                    img_count_1=1;
-
-                }else if (Image_layout_Q1_1.getDrawable() == null){
-                    img_count_1=2;
-
-
-                }else if (Image_layout_Q1_2.getDrawable() == null){
-                    img_count_1=3;
-
-                }
 
 
                 dialog.cancel();
