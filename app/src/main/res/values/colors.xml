@@ -11,7 +11,8 @@
     <color name="Indicator_tabSelectedTextColor">#e92324</color>
     <color name="year">#999999</color>
     <color name="title">#222222</color>
-
+    <color name="edit_text_color">#238708</color>
+    <color name="edit_text_color_new">#970E38</color>
     <color name="tedbottompicker_camera">#000</color>
     <color name="tedbottompicker_gallery">#ccc</color>
     <color name="tedbottompicker_selected">#f0f0f0</color>

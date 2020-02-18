@@ -25,6 +25,7 @@ import com.rentokil.pci.rauditor_sg.Database.DatabaseHelper;
 import com.rentokil.pci.rauditor_sg.Main4Activity;
 import com.rentokil.pci.rauditor_sg.PCI.PCI_Title_Page_1;
 import com.rentokil.pci.rauditor_sg.PC_VIR.PC_VIR_TITLE_1;
+import com.rentokil.pci.rauditor_sg.PDF_VIEWER;
 import com.rentokil.pci.rauditor_sg.PTI.PTI_Title_Page_1;
 import com.rentokil.pci.rauditor_sg.R;
 
@@ -206,7 +207,12 @@ public class ListViewAdapter_Completed extends BaseAdapter {
                             }
 
                             if (List_Item_Methodes.get(position).getAudi_name().equalsIgnoreCase("PTI")) {
-                                Toast.makeText(mContext,"Under Development",Toast.LENGTH_SHORT).show();
+
+                                Intent i = new Intent(mContext, PDF_VIEWER.class);
+                                i.putExtra("key_id", "" + List_Item_Methodes.get(position).getId());
+                                mContext.startActivity(i);
+
+
                             }
 
                             if (List_Item_Methodes.get(position).getAudi_name().equalsIgnoreCase("VIR")) {

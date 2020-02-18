@@ -16,6 +16,7 @@
     <application xmlns:tools="http://schemas.android.com/tools"
         android:name=".volley.VolleyHelperApplication"
         android:allowBackup="false"
+        android:fullBackupContent="false"
         android:icon="@drawable/app_logo"
         android:label="@string/app_name"
         android:largeHeap="true"
@@ -24,6 +25,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="allowBackup,supportsRtl">
+
+        <activity android:name=".PDF_MAIL"></activity>
+        <activity android:name=".PDF_VIEWER" />
         <activity android:name=".PC_VIR.PC_VIR_OTHER_7" />
         <activity android:name=".PC_VIR.PC_VIR_STANDARD_6" />
         <activity android:name=".PC_VIR.PC_VIR_PPE_5" />

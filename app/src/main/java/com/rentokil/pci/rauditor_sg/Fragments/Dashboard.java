@@ -40,7 +40,7 @@ public class Dashboard extends Fragment {
     TextView Y_INC_T,Y_COM_T,M_INC_T,M_COM_T,W_INC_T,W_COM_T;
 
     String [] values =
-            {"RIID-GPP","RIID-MOM","RIID-INSPECTION REPORT"};
+            {"PCI","PTI","VIR"};
     DatabaseHelper db;
     SQLiteDatabase sd;
     ContentValues cv;
@@ -114,7 +114,7 @@ public class Dashboard extends Fragment {
 
 
                 Log.e("KKJJJHHH","audit type = "+audit_type);
-                if(audit_type.equalsIgnoreCase("RIID-GPP")){
+                if(audit_type.equalsIgnoreCase("PCI")){
                     if(type.equalsIgnoreCase("Month")){
                         M_COM_T.setText(cursor.getString(cursor.getColumnIndex(db.COMPLETED)));
                         M_INC_T.setText(cursor.getString(cursor.getColumnIndex(db.IN_PROGRESS)));
@@ -129,7 +129,7 @@ public class Dashboard extends Fragment {
 
                 }
 
-                if(audit_type.equalsIgnoreCase("RIID-MOM")){
+                if(audit_type.equalsIgnoreCase("PTI")){
                     if(type.equalsIgnoreCase("Month")){
                         M_COM_T.setText(cursor.getString(cursor.getColumnIndex(db.COMPLETED)));
                         M_INC_T.setText(cursor.getString(cursor.getColumnIndex(db.IN_PROGRESS)));
@@ -144,7 +144,7 @@ public class Dashboard extends Fragment {
 
                 }
 
-                if(audit_type.equalsIgnoreCase("RIID-INSPECTION REPORT")){
+                if(audit_type.equalsIgnoreCase("PVC")){
                     if(type.equalsIgnoreCase("Month")){
                         M_COM_T.setText(cursor.getString(cursor.getColumnIndex(db.COMPLETED)));
                         M_INC_T.setText(cursor.getString(cursor.getColumnIndex(db.IN_PROGRESS)));

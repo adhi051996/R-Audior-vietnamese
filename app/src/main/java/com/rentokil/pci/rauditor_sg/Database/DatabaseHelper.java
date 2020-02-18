@@ -139,9 +139,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + et1 + " TEXT,"
             + et2 + " TEXT,"
             + et3 + " TEXT,"
-            + IMAGE_1 + " BLOB,"
-            + IMAGE_1_1 + " BLOB,"
-            + IMAGE_1_2 + " BLOB,"
+            + IMAGE_1 + " TEXT,"
             + COUNT + " INTEGER,"
             + DELETED + " INTEGER)";
 

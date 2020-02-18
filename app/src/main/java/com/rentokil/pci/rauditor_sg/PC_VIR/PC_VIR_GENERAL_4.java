@@ -4,9 +4,13 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -14,7 +18,10 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
+import com.rentokil.pci.rauditor_sg.Category_Type_Activity;
 import com.rentokil.pci.rauditor_sg.Database.DatabaseHelper;
 import com.rentokil.pci.rauditor_sg.R;
 
@@ -43,6 +50,15 @@ public class PC_VIR_GENERAL_4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pc_vir_general_4);
 
+        Toolbar mTopToolbar;
+
+        mTopToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mTopToolbar.setTitle("");
+        mTopToolbar.setSubtitle("");
+        setSupportActionBar(mTopToolbar);
+
+        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(),R.drawable.menuicon);
+        mTopToolbar.setOverflowIcon(drawable);
 
         db = new DatabaseHelper(PC_VIR_GENERAL_4.this);
         sd = db.getReadableDatabase();
@@ -350,12 +366,12 @@ public class PC_VIR_GENERAL_4 extends AppCompatActivity {
 
                 }
 //////////////////////rd5//////////
-                if(met5.equalsIgnoreCase("Complaint")){
+                if(met5.equalsIgnoreCase("complaint")){
                     ((RadioButton) main_rd5.getChildAt(0)).setChecked(true);
 
 
                 }
-                else if(met5.equalsIgnoreCase("Non-Complaint")){
+                else if(met5.equalsIgnoreCase("Non-complaint")){
 
                     ((RadioButton) main_rd5.getChildAt(1)).setChecked(true);
 
@@ -396,6 +412,80 @@ public class PC_VIR_GENERAL_4 extends AppCompatActivity {
     }
 
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.popup_menu_vir, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.vir_home:
+                Intent sir_home = new Intent(PC_VIR_GENERAL_4.this, Category_Type_Activity.class);
+                sir_home.putExtra("key_id", key_id);
+                startActivity(sir_home);
+                break;
+            case R.id.vir_title_page_1:
+                if (key_id != null) {
+                    Intent sir_customer = new Intent(PC_VIR_GENERAL_4.this, PC_VIR_TITLE_1.class);
+                    sir_customer.putExtra("key_id", key_id);
+                    startActivity(sir_customer);
+                } else {
+                }
+                break;
+            case R.id.vir_body_2:
+                if (key_id != null) {
+                    Intent sir_customer = new Intent(PC_VIR_GENERAL_4.this, PC_VIR_BODY_2.class);
+                    sir_customer.putExtra("key_id", key_id);
+                    startActivity(sir_customer);
+                } else {
+                }
+                break;
+            case R.id.vir_funct_3:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PC_VIR_GENERAL_4.this, PC_VIR_FUNCTION_3.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+                break;
+
+            case R.id.vir_gen_4:
+                Toast.makeText(getApplicationContext(),"Already,You Are in Same Page",Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.vir_ppe_5:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PC_VIR_GENERAL_4.this, PC_VIR_PPE_5.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+                break;
+
+            case R.id.vir_stan_6:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PC_VIR_GENERAL_4.this, PC_VIR_STANDARD_6.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+                break;
+
+            case R.id.vir_other_7:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PC_VIR_GENERAL_4.this, PC_VIR_OTHER_7.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    
 
 
 }

@@ -21,6 +21,9 @@ import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -33,6 +36,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import com.rentokil.pci.rauditor_sg.Category_Type_Activity;
 import com.rentokil.pci.rauditor_sg.Database.DatabaseHelper;
@@ -91,13 +96,20 @@ public class PCI_SIGN_3 extends AppCompatActivity {
     androidx.cardview.widget.CardView free_txt;
     String get_reason;
     EditText et_reason;
-
+    Toolbar mTopToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pci__sign_3);
 
+        mTopToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mTopToolbar.setTitle("");
+        mTopToolbar.setSubtitle("");
+        setSupportActionBar(mTopToolbar);
+
+        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(),R.drawable.menuicon);
+        mTopToolbar.setOverflowIcon(drawable);
 
         Intent intent2 = getIntent();
         key_id = intent2.getStringExtra("key_id");
@@ -467,7 +479,7 @@ public class PCI_SIGN_3 extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    
+        Toast.makeText(getApplicationContext(),"Report Completed Successfully,Please Sync",Toast.LENGTH_SHORT).show();
         try {
             bitmap_branch_manager=((BitmapDrawable) T_signature.getDrawable()).getBitmap();
         } catch (Exception e) {
@@ -579,6 +591,47 @@ public class PCI_SIGN_3 extends AppCompatActivity {
 
             Log.e("XXXDDDD","NNNN Ess");
         }
+    }
+
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.popup_menu_pci, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.pci_home:
+                Intent sir_home = new Intent(PCI_SIGN_3.this, Category_Type_Activity.class);
+                sir_home.putExtra("key_id", key_id);
+                startActivity(sir_home);
+                break;
+            case R.id.pci_title_page_1:
+                if (key_id != null) {
+                    Intent sir_customer = new Intent(PCI_SIGN_3.this, PCI_Title_Page_1.class);
+                    sir_customer.putExtra("key_id", key_id);
+                    startActivity(sir_customer);
+                } else {
+                }
+                break;
+            case R.id.pci_obs_2:
+
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PCI_SIGN_3.this, PCI_Audit_Page_2.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+
+                break;
+            case R.id.pci_sign_3:
+                Toast.makeText(getApplicationContext(),"Already,You Are in Same Page",Toast.LENGTH_SHORT).show();
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

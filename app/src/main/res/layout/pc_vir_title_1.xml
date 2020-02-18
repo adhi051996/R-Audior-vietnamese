@@ -120,6 +120,8 @@
                                 android:layout_height="wrap_content"
                                 android:background="#00000000"
                                 android:focusable="true"
+                                android:textStyle="bold"
+                                android:textColor="#8C09A0"
                                 android:focusableInTouchMode="true"
                                 android:hint="Tap here to edit"
                                 android:inputType="textCapWords|textCapSentences"
@@ -177,7 +179,8 @@
                                 android:layout_height="wrap_content"
                                 android:background="#00000000"
                                 android:focusable="true"
-
+                                android:textStyle="bold"
+                                android:textColor="@color/edit_text_color"
                                 android:focusableInTouchMode="true"
                                 android:hint="Tap here to edit"
                                 android:inputType="textCapWords|textCapSentences"
@@ -236,7 +239,8 @@
                                 android:layout_height="wrap_content"
                                 android:background="#00000000"
                                 android:focusable="true"
-
+                                android:textStyle="bold"
+                                android:textColor="@color/edit_text_color"
                                 android:focusableInTouchMode="true"
                                 android:hint="Tap here to edit"
                                 android:inputType="textCapWords|textCapSentences"
@@ -295,7 +299,8 @@
                                 android:layout_height="wrap_content"
                                 android:background="#00000000"
                                 android:focusable="true"
-
+                                android:textStyle="bold"
+                                android:textColor="@color/edit_text_color"
                                 android:focusableInTouchMode="true"
                                 android:hint="Tap here to edit"
                                 android:inputType="textCapWords|textCapSentences"

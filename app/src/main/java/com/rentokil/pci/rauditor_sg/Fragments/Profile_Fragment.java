@@ -77,7 +77,7 @@ public class Profile_Fragment extends Fragment {
 
     String get_spinner_country,get_spinner_branch;
     private android.app.AlertDialog pd;
-
+     Dialog dl;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -255,7 +255,7 @@ public class Profile_Fragment extends Fragment {
 
     public void alert_nav_logout() {
         Button yes, no;
-        final Dialog dl = new Dialog(getActivity());
+        dl = new Dialog(getActivity());
 
         dl.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dl.setContentView(R.layout.logout);

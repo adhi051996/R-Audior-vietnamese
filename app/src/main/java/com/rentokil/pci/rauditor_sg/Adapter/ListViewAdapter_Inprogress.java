@@ -121,7 +121,7 @@ public class ListViewAdapter_Inprogress extends BaseAdapter {
 
         }else {
             Log.e("KKKKK","in");
-            holder.Bt_Tech.setText("Pending"/*,List_Item_Methodes_incomplete.get(position).getcount_disp()*/);
+            holder.Bt_Tech.setText("Pending");
             holder.Bt_Branch.setVisibility(View.GONE);
         }
 /*

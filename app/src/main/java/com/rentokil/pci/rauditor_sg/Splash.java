@@ -94,7 +94,7 @@ public class Splash extends AppCompatActivity {
         sd.delete( db.DASHBOARD_TB, null, null );
 
        // Log.e("DDDDDD mail",mail+"");
-        String  url="https://rauditor-id.riflows.com/rauditor/Android/ia_audit_access.php?user_mail="+mail;
+        String  url="https://rauditor-sg.riflows.com/rAuditor/Android/audit_dashboard.php?user_mail="+mail;
 
 
         Log.e("KKMMJJJJDDSS","mail = "+url);
@@ -115,13 +115,7 @@ public class Splash extends AppCompatActivity {
                             jsonArray_get_A = jsonObject_get_A.getJSONArray("result");
                             jsonArray_get_B = jsonObject_get_A.getJSONArray("result_dash");
 
-
-                            //   id=new String[jsonArray_get.length()];
-
-                      /*      Log.e("DDDDDD Count A",jsonArray_get_A.length()+"");
-                            Log.e("DDDDDD Count B",jsonArray_get_B+"");
-                            Log.e("DDDDDD Count A",jsonArray_get_A+"");
-                      */      if (jsonArray_get_A!=null) {
+                            if (jsonArray_get_A!=null) {
                                 if (jsonArray_get_A.length()!=0) {
                                     for (int i = 0; i < jsonArray_get_A.length(); i++) {
 

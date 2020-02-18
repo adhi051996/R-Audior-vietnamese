@@ -15,6 +15,7 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,6 +26,9 @@ import android.util.Base64;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnticipateOvershootInterpolator;
@@ -38,9 +42,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -52,6 +58,7 @@ import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.RequestOptions;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
+import com.rentokil.pci.rauditor_sg.Category_Type_Activity;
 import com.rentokil.pci.rauditor_sg.Database.DatabaseHelper;
 import com.rentokil.pci.rauditor_sg.MULTI_IMAGE_SELECTION.TedRxBottomPicker;
 import com.rentokil.pci.rauditor_sg.Photo_Editor.EditImageActivity;
@@ -100,13 +107,15 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
 
     EditText et_area_1;
 
-    TextView add_observation,txt_area_count;
+    TextView txt_area_count;
 
     TextView image_Q1;
     private List<Uri> selectedUriList1;
     private ViewGroup mSelectedImagesContainer1;
     private RequestManager requestManager1;
     Bitmap bitmap_1,bitmap_2,bitmap_3,bitmap_4,bitmap_5;
+
+    customfonts.Button_SF_Pro_Display_Semibold add_location_2,previous_obs;
 
 
     DatabaseHelper db;
@@ -175,13 +184,19 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
 
     String get_area_1,get_txt2,get_txt2_1,get_txt3,get_txt3_2,get_sum_1,get_sum_2;
 
-
-
+    Toolbar mTopToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pci__audit__page_2);
 
+        mTopToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mTopToolbar.setTitle("");
+        mTopToolbar.setSubtitle("");
+        setSupportActionBar(mTopToolbar);
+
+        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(),R.drawable.menuicon);
+        mTopToolbar.setOverflowIcon(drawable);
 
         EnableRuntimePermission();
         db = new DatabaseHelper(PCI_Audit_Page_2.this);
@@ -204,7 +219,8 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
 
         requestManager1 = Glide.with(this);
 
-
+        add_location_2 = (customfonts.Button_SF_Pro_Display_Semibold) findViewById(R.id.add_location_2);
+        previous_obs = (customfonts.Button_SF_Pro_Display_Semibold) findViewById(R.id.previous_obs);
 
         mSelectedImagesContainer1 = findViewById(R.id.selected_photos_container1);
 
@@ -273,7 +289,7 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
         });
 
 
-        add_observation = (TextView) findViewById(R.id.add_observation);
+
         txt_area_count = (TextView) findViewById(R.id.txt_area_count);
 
 
@@ -307,7 +323,7 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
 
 
 
-        add_observation.setOnClickListener(new View.OnClickListener() {
+        add_location_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -322,6 +338,28 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
 
             }
         });
+
+        previous_obs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                if (counter > 0) {
+                    if (counter != 1) {
+                        counter--;
+                    }
+                    txt_area_count.setText(" " + counter);
+                    try {
+                        get_offline(key_id, counter);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "No Observation", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 
         if(key_id!=null){
             Log.e("KKKMMMM In",""+key_id);
@@ -450,9 +488,6 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
 
 
         get_area_1=et_area_1.getText().toString();
-
-
-
         get_sum_1=et_sum_1.getText().toString();
         get_sum_2=et_sum_2.getText().toString();
 
@@ -1140,6 +1175,45 @@ public class PCI_Audit_Page_2 extends AppCompatActivity implements OnPhotoEditor
             e.printStackTrace();
         }
     }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.popup_menu_pci, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.pci_home:
+                Intent sir_home = new Intent(PCI_Audit_Page_2.this, Category_Type_Activity.class);
+                sir_home.putExtra("key_id", key_id);
+                startActivity(sir_home);
+                break;
+            case R.id.pci_title_page_1:
+                if (key_id != null) {
+                    Intent sir_customer = new Intent(PCI_Audit_Page_2.this, PCI_Title_Page_1.class);
+                    sir_customer.putExtra("key_id", key_id);
+                    startActivity(sir_customer);
+                } else {
+                }
+                break;
+            case R.id.pci_obs_2:
+                Toast.makeText(getApplicationContext(),"Already,You Are in Same Page",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.pci_sign_3:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PCI_Audit_Page_2.this, PCI_SIGN_3.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
 
 }

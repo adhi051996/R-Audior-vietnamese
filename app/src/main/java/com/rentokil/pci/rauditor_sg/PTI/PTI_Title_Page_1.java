@@ -12,6 +12,7 @@ import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.LocationManager;
@@ -19,6 +20,9 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -28,6 +32,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -99,6 +104,8 @@ public class PTI_Title_Page_1 extends AppCompatActivity {
     ContentValues cv1;
     ContentValues cv2,cv_off;
 
+    String db_user_name="";
+
     String versionName = BuildConfig.VERSION_NAME;
 
 String get_report;
@@ -106,7 +113,7 @@ String get_report;
     private Calendar mCalendar;
     private Activity mActivity;
 
-
+    Toolbar mTopToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,7 +121,13 @@ String get_report;
         setContentView(R.layout.pti_title__page_1);
 
 
+        mTopToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mTopToolbar.setTitle("");
+        mTopToolbar.setSubtitle("");
+        setSupportActionBar(mTopToolbar);
 
+        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(),R.drawable.menuicon);
+        mTopToolbar.setOverflowIcon(drawable);
 
         mActivity = this;
         mSimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
@@ -133,7 +146,7 @@ String get_report;
         // Todo Location Already on  ... start
         final LocationManager manager = (LocationManager) PTI_Title_Page_1.this.getSystemService(Context.LOCATION_SERVICE);
         if (manager.isProviderEnabled(LocationManager.GPS_PROVIDER) && hasGPSDevice(PTI_Title_Page_1.this)) {
-//            Toast.makeText(PCI_Title_Page_1.this,"Gps already enabled",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(PTI_Title_Page_1.this,"Gps already enabled",Toast.LENGTH_SHORT).show();
 
         }
         // Todo Location Already on  ... end
@@ -148,11 +161,11 @@ String get_report;
             enableLoc();
         }else{
             Log.e("keshav","Gps already enabled");
-//            Toast.makeText(PCI_Title_Page_1.this,"Gps already enabled",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(PTI_Title_Page_1.this,"Gps already enabled",Toast.LENGTH_SHORT).show();
         }
 
 
-
+        get_profile_db();
 
 
         et_client_1 =(EditText) findViewById(R.id.et_client_1);
@@ -175,6 +188,8 @@ String get_report;
         et_cond_date_2.setSingleLine(false);
         et_prepared_3.setSingleLine(false);
         et_loc_4.setSingleLine(false);
+
+        et_prepared_3.setText(db_user_name);
 
         Intent intent1=getIntent();
         key_id=intent1.getStringExtra("key_id");
@@ -772,6 +787,60 @@ String get_report;
         }else {
             return  true;
         }
+    }
+
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.popup_menu_pti, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.pti_home:
+                Intent sir_home = new Intent(PTI_Title_Page_1.this, Category_Type_Activity.class);
+                sir_home.putExtra("key_id", key_id);
+                startActivity(sir_home);
+                break;
+            case R.id.pti_title_page_1:
+                Toast.makeText(getApplicationContext(),"Already,You Are in Same Page",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.pti_obs_2:
+                if (key_id != null) {
+                    Intent sir_customer = new Intent(PTI_Title_Page_1.this, PTI_Audit_Page_2.class);
+                    sir_customer.putExtra("key_id", key_id);
+                    startActivity(sir_customer);
+                } else {
+                }
+                break;
+            case R.id.pti_sign_3:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PTI_Title_Page_1.this, PTI_SIGN_3.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void get_profile_db() {
+        Cursor c5;
+        c5 = sd.rawQuery("Select * from " + db.USER_PROFILE_TABLE, null);
+        c5.moveToFirst();
+
+        if (c5 != null) {
+
+            db_user_name = c5.getString(c5.getColumnIndex(db.USER_NAME));
+
+
+        }
+        c5.close();
+
     }
 
 

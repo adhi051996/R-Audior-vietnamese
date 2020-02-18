@@ -36,7 +36,6 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.material.snackbar.Snackbar;
 import com.rentokil.pci.rauditor_sg.Database.DatabaseHelper;
-
 import com.rentokil.pci.rauditor_sg.volley.VolleyDataRequester;
 
 import org.json.JSONArray;
@@ -86,6 +85,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
 
 
 
@@ -566,12 +566,11 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
 
         Log.e("GGGG","sub");
-        String deviceName = android.os.Build.MANUFACTURER + " " + android.os.Build.MODEL;
-
+        String versionname = BuildConfig.VERSION_NAME;
         Map<String, String> params = new HashMap<String, String>();
         params.put("pos_et1",mobile_model);
         params.put("pos_et2",email);
-        params.put("version",deviceName);
+        params.put("version",versionname);
 
         Log.e("FFFDD","params"+params);
 

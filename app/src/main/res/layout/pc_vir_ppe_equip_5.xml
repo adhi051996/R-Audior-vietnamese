@@ -874,7 +874,7 @@
                                 android:layout_weight="1"
                                 android:checked="false"
                                 android:gravity="center_vertical"
-                                android:text="Complaint"
+                                android:text="complaint"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -882,7 +882,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Non-Complaint"
+                                android:text="Non-complaint"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -939,7 +939,7 @@
                                 android:layout_weight="1"
                                 android:checked="false"
                                 android:gravity="center_vertical"
-                                android:text="Complaint"
+                                android:text="complaint"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -947,7 +947,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Non-Complaint"
+                                android:text="Non-complaint"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -3059,7 +3059,8 @@
                                 android:layout_height="wrap_content"
                                 android:background="#00000000"
                                 android:focusable="true"
-
+                                android:textStyle="bold"
+                                android:textColor="@color/edit_text_color"
                                 android:focusableInTouchMode="true"
                                 android:hint="Tap here to edit"
                                 android:inputType="textCapWords|textCapSentences"

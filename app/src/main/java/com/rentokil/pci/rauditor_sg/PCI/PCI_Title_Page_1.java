@@ -12,6 +12,7 @@ import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.LocationManager;
@@ -19,6 +20,9 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -28,6 +32,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -94,13 +99,15 @@ public class PCI_Title_Page_1 extends AppCompatActivity {
     String get_client,get_conduct_date,get_prepared_by,get_location,get_cus_name,get_cont_no;
 
 
+    String db_user_name="";
+
     DatabaseHelper db;
     SQLiteDatabase sd;
     ContentValues cv1;
     ContentValues cv2,cv_off;
 
     String versionName = BuildConfig.VERSION_NAME;
-
+    Toolbar mTopToolbar;
 String get_report;
     private SimpleDateFormat mSimpleDateFormat;
     private Calendar mCalendar;
@@ -115,6 +122,16 @@ String get_report;
 
 
 
+
+
+
+        mTopToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mTopToolbar.setTitle("");
+        mTopToolbar.setSubtitle("");
+        setSupportActionBar(mTopToolbar);
+
+        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(),R.drawable.menuicon);
+        mTopToolbar.setOverflowIcon(drawable);
 
         mActivity = this;
         mSimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
@@ -153,7 +170,7 @@ String get_report;
 
 
 
-
+        get_profile_db();
 
         et_client_1 =(EditText) findViewById(R.id.et_client_1);
         et_cond_date_2 =(EditText) findViewById(R.id.et_cond_date_2);
@@ -178,7 +195,9 @@ String get_report;
 
         Intent intent1=getIntent();
         key_id=intent1.getStringExtra("key_id");
-        Log.e("DDDDDDX"," id 1 = "+key_id);
+        Log.e("JJHHHGSGD"," user = "+db_user_name);
+
+        et_prepared_3.setText(db_user_name);
 
 
         sub_title_1.setOnClickListener(new View.OnClickListener() {
@@ -773,5 +792,61 @@ String get_report;
             return  true;
         }
     }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.popup_menu_pci, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.pci_home:
+                Intent sir_home = new Intent(PCI_Title_Page_1.this, Category_Type_Activity.class);
+                sir_home.putExtra("key_id", key_id);
+                startActivity(sir_home);
+                break;
+            case R.id.pci_title_page_1:
+                Toast.makeText(getApplicationContext(),"Already,You Are in Same Page",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.pci_obs_2:
+                if (key_id != null) {
+                    Intent sir_customer = new Intent(PCI_Title_Page_1.this, PCI_Audit_Page_2.class);
+                    sir_customer.putExtra("key_id", key_id);
+                    startActivity(sir_customer);
+                } else {
+                }
+                break;
+            case R.id.pci_sign_3:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PCI_Title_Page_1.this, PCI_SIGN_3.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void get_profile_db() {
+        Cursor c5;
+        c5 = sd.rawQuery("Select * from " + db.USER_PROFILE_TABLE, null);
+        c5.moveToFirst();
+
+        if (c5 != null) {
+
+            db_user_name = c5.getString(c5.getColumnIndex(db.USER_NAME));
+
+
+        }
+        c5.close();
+
+    }
+
+
+
 
 }

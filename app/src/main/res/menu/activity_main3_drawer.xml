@@ -13,6 +13,12 @@
 
             android:icon="@drawable/sync_icon"
             android:title="Sync" />
+
+           <item
+                   android:id="@+id/online"
+
+               android:icon="@drawable/ic_share_black_24dp"
+               android:title="Report View / Share" />
         <!--<item-->
             <!--android:id="@+id/sir_menu"-->
             <!--android:icon="@drawable/star_icon"-->

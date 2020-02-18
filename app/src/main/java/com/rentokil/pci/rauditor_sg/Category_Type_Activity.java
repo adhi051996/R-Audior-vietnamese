@@ -57,7 +57,6 @@ import com.rentokil.pci.rauditor_sg.volley.VolleyDataRequester;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -69,6 +68,8 @@ import dmax.dialog.SpotsDialog;
 
 public class Category_Type_Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     ProgressDialog progressDialog_vir;
+    ProgressDialog progressDialog_pci;
+    ProgressDialog progressDialog_pti;
     private Toolbar toolbar;
     Boolean isInternetPresent = false;
     private android.app.AlertDialog pd;
@@ -79,7 +80,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
     SQLiteDatabase sd;
     public static String User_Login_Mail = "";
     DatabaseHelper db;
-    ContentValues cv, cv2, cv3, cv4, cv5, cv6, cv7, cv_send,cv_nka_send,cv_send_VIR;
+    ContentValues cv, cv2, cv3, cv4, cv5, cv6, cv7,cv_send_VIR,cv_send_PCI,cv_send_PTI;
     String db_user_name, db_user_mail, db_branch, db_country;
     ConnectivityManager cManager;
     NetworkInfo nInfo;
@@ -104,8 +105,12 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
     String IMG_URL_1,IMG_URL_2,IMG_URL_3,IMG_URL_4;
     String pc_vir_body_e1;
     int VIR_POST_KEY = 0;
+    int PCI_POST_KEY = 0;
+    int PTI_POST_KEY = 0;
     String versionname = BuildConfig.VERSION_NAME;
     Map<String, String> params_vir = new HashMap<String, String>();
+    Map<String, String> params_pci = new HashMap<String, String>();
+    Map<String, String> params_pti = new HashMap<String, String>();
     String VIR_FUNC_3_1,VIR_FUNC_3_2,VIR_FUNC_3_3,VIR_FUNC_3_4,VIR_FUNC_3_5,VIR_FUNC_3_6,VIR_FUNC_3_7,VIR_FUNC_3_8,VIR_FUNC_3_9,VIR_FUNC_3_10,
             VIR_FUNC_3_11,VIR_FUNC_3_12,VIR_FUNC_3_13,VIR_FUNC_3_14;
 
@@ -151,9 +156,10 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         cv5 = new ContentValues();
         cv6 = new ContentValues();
         cv7 = new ContentValues();
-        cv_send = new ContentValues();
+        cv_send_PCI = new ContentValues();
+        cv_send_PTI = new ContentValues();
         cv_send_VIR = new ContentValues();
-        cv_nka_send = new ContentValues();
+
         sd = db.getReadableDatabase();
 
         viewPager = (ViewPager) findViewById(R.id.pager);
@@ -401,11 +407,46 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
 
     }
 
+        if (id == R.id.online) {
+
+            Intent i = new Intent(Category_Type_Activity.this,PDF_VIEWER.class);
+            startActivity(i);
+        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+    public void sync_pti() {
+        pd.show();
+        String Status = "Completed";
+        String selectQuery = "SELECT * FROM " + db.PTI_TITLE_1 + " where STATUS ='" + Status + "'";
+        Cursor cursor = sd.rawQuery(selectQuery, null);
+        cursor.moveToFirst();
+        Toast.makeText(getApplicationContext(), "Syncing Data ....", Toast.LENGTH_LONG).show();
+        if (cursor.getCount() != 0) {
+            //    sync_off_sir("" + cursor.getInt(cursor.getColumnIndex(db.KEY_ID)));
+
+            progressDialog_pti = new ProgressDialog(Category_Type_Activity.this);
+            progressDialog_pti.setTitle("Posting Data - PTI");
+            progressDialog_pti.setMessage("Syncing in Progress...");
+            progressDialog_pti.setProgressStyle(progressDialog_pti.STYLE_SPINNER);
+            progressDialog_pti.setCancelable(false);
+            progressDialog_pti.show();
+
+
+            PTI_POST_KEY = cursor.getInt(cursor.getColumnIndex(db.KEY_ID));
+            AsyncTaskRunner_pti runner = new AsyncTaskRunner_pti();
+            runner.execute("pos");
+        } else {
+            pd.dismiss();
+        }
+        cursor.close();
+    }
+
 
     public void sync_vir() {
         //pd.show();
@@ -432,6 +473,188 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
             pd.dismiss();
         }
         cursor.close();
+    }
+
+    public void sync_pci() {
+        pd.show();
+        String Status = "Completed";
+        String selectQuery = "SELECT * FROM " + db.PCI_TITLE_1 + " where STATUS ='" + Status + "'";
+        Cursor cursor = sd.rawQuery(selectQuery, null);
+        cursor.moveToFirst();
+        Toast.makeText(getApplicationContext(), "Syncing Data ....", Toast.LENGTH_LONG).show();
+        if (cursor.getCount() != 0) {
+            //    sync_off_sir("" + cursor.getInt(cursor.getColumnIndex(db.KEY_ID)));
+
+            progressDialog_pci = new ProgressDialog(Category_Type_Activity.this);
+            progressDialog_pci.setTitle("Posting Data - PCI");
+            progressDialog_pci.setMessage("Syncing in Progress...");
+            progressDialog_pci.setProgressStyle(progressDialog_pci.STYLE_SPINNER);
+            progressDialog_pci.setCancelable(false);
+            progressDialog_pci.show();
+
+
+            PCI_POST_KEY = cursor.getInt(cursor.getColumnIndex(db.KEY_ID));
+            AsyncTaskRunner_pci runner = new AsyncTaskRunner_pci();
+            runner.execute("pos");
+        } else {
+            pd.dismiss();
+        }
+        cursor.close();
+    }
+
+    private class AsyncTaskRunner_pti extends AsyncTask<String, String, String> {
+
+        private String resp = "Update";
+
+        @Override
+        protected String doInBackground(String... params1) {
+
+            get_profile_db();
+
+            String Query = "select * from " + db.PTI_TITLE_1 + " where KEY_ID = '" + PTI_POST_KEY + "'";
+            Cursor cursor = sd.rawQuery(Query, null);
+            cursor.moveToFirst();
+
+            get_profile_db();
+            //   Log.e("UUUUUUU 1", "NNNN Ess" + cursor.getCount());
+
+            if (cursor.getCount() != 0) {
+                params_pti.put("title_1",""+ cursor.getString(cursor.getColumnIndex(db.et1)));
+                params_pti.put("title_2", ""+cursor.getString(cursor.getColumnIndex(db.et2)));
+                params_pti.put("title_3", ""+cursor.getString(cursor.getColumnIndex(db.et3)));
+                params_pti.put("title_4", ""+cursor.getString(cursor.getColumnIndex(db.et4)));
+                params_pti.put("title_5", ""+cursor.getString(cursor.getColumnIndex(db.et5)));
+                params_pti.put("title_6", ""+cursor.getString(cursor.getColumnIndex(db.et6)));
+                params_pti.put("title_7", ""+cursor.getString(cursor.getColumnIndex(db.et7)));
+                params_pti.put("comp_status", ""+cursor.getString(cursor.getColumnIndex(db.STATUS)));
+                params_pti.put("date_complete", ""+cursor.getString(cursor.getColumnIndex(db.COMPLETED_DATE)));
+                params_pti.put("version_name", ""+versionname);
+
+                Log.e("AFJFAJFJCAM","version = "+versionname);
+
+            }
+
+            params_pti.put("user_mail", ""+db_user_mail);
+
+            Log.e("KKKLHHHTTT","mail = "+db_user_mail);
+
+            get_pti_sign("" + PTI_POST_KEY);
+
+            String selectQuery_tir_4 = "SELECT * FROM " + db.PTI_INSPEC_2 + " where MAIN_ID ='" + PTI_POST_KEY + "'";
+            Cursor cursor_tir_4 = sd.rawQuery(selectQuery_tir_4, null);
+            cursor_tir_4.moveToFirst();
+            params_pti.put("pti_b_count", "" + cursor_tir_4.getCount());
+            byte[] byteArray_pt_5_1=null,byteArray_pt_5_1_1=null,byteArray_pt_5_1_2=null;
+            if (cursor_tir_4.getCount() != 0) {
+
+                String Str_PTI_2_URL="";
+
+
+                for (int m = 0; m < cursor_tir_4.getCount(); m++) {
+
+                    post_pt_B1 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et1));
+                    post_pt_B2 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et2));
+                    post_pt_B3 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et3));
+
+
+                    Str_PTI_2_URL = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.IMAGE_1));
+
+                    if (Str_PTI_2_URL != null) {
+                        String strNew = Str_PTI_2_URL.replace("[", "");
+                        String strNew_1 = strNew.replace("]", "");
+                        List<String> myOld = new ArrayList<String>(Arrays.asList(strNew_1.split(", ")));
+
+                        params_pti.put("main_img_c_" + m, "" + myOld.size());
+
+                        //  Log.e("JKJKJOPO", "22 count\t" + myOld.size());
+                        if (myOld.size() != 0) {
+                            for (int p = 0; p < myOld.size(); p++) {
+                                try {
+                                    if (Uri.parse(myOld.get(p)) != null) {
+                                        Context c;
+                                        Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getContentResolver(),
+                                                Uri.parse(myOld.get(p)));
+                                        ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                                        bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
+                                        //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
+                                        params_pti.put("sub_c" + m + "_" + p, "" + getStringImage(bitmap_x));
+
+                                        Log.e("VVBBDSSAAZ", "image = " + getStringImage(bitmap_x));
+                                    }
+                                } catch (Exception e) {
+                                    Log.e("LLLLLLLLL", "else\t" + e.getMessage());
+                                    //handle exception
+                                }
+                            }
+                        }
+
+                    }
+
+
+                    if (post_pt_B1 == null) {
+                        post_pt_B1 = "";
+                    }
+                    if (post_pt_B2 == null) {
+                        post_pt_B2 = "";
+                    }
+                    if (post_pt_B3 == null) {
+                        post_pt_B3 = "";
+                    }
+
+                    params_pti.put("pt_ir_1"+ m,""+ post_pt_B1);
+                    params_pti.put("pt_ir_2"+ m,""+  post_pt_B2);
+                    params_pti.put("pt_ir_3"+ m,""+  post_pt_B3);
+
+
+                    cursor_tir_4.moveToNext();
+
+                }
+            }
+
+
+
+
+
+            try {
+
+                params_pti.put("pt_cus_sign", ""+ post_pt_q_cus_sign);
+                params_pti.put("pt_comp_date",""+  post_pt_q_complete_DATE);
+                params_pti.put("pt_cus_name",""+  post_pt_q_CUS_SIGN_2);
+                params_pti.put("pt_reason",""+  post_pt_q_reason);
+
+            } catch (Exception e) {
+                Log.e("VVVVVVV", "Sign = " + e.getMessage());
+                e.printStackTrace();
+            }
+
+
+
+
+
+            return resp;
+        }
+
+
+        @Override
+        protected void onPostExecute(String result) {
+            // execution of result of Long time consuming operation
+            sync_off_line_pti_data("" + PTI_POST_KEY);
+            progressDialog_pti.dismiss();
+
+        }
+
+
+        @Override
+        protected void onPreExecute() {
+        }
+
+
+        @Override
+        protected void onProgressUpdate(String... text) {
+            //  finalResult.setText(text[0]);
+            // progressDialog.setProgressPercentFormat(text[0]);
+
+        }
     }
 
     private class AsyncTaskRunner_vir extends AsyncTask<String, String, String> {
@@ -510,6 +733,9 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                     params_vir.put("remarks_2", ""+pc_vir_body_e1);
 
 
+
+
+
                     if (IMG_URL_1 != null) {
                         String strNew = IMG_URL_1.replace("[", "");
                         String strNew_1 = strNew.replace("]", "");
@@ -528,7 +754,6 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                                         //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
                                         params_vir.put("front_c_"+p, "" + getStringImage(bitmap_x));
 
-                                        Log.e("AAAAASSDFFVF",+p+" image = "+getStringImage(bitmap_x));
 
 
                                     }
@@ -542,7 +767,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                     }
 
 
-/*
+
                     if (IMG_URL_2 != null) {
                         String strNew2 = IMG_URL_2.replace("[", "");
                         String strNew_2 = strNew2.replace("]", "");
@@ -571,7 +796,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                         }
 
                     }
-*/
+
 
 
 
@@ -777,7 +1002,6 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                 params_vir.put("other_item_8",""+  VIR_OTHER_7_8);
                 params_vir.put("remarks_7",""+  VIR_OTHER_7_9);
 
-                Log.e("AASSDEEFFF", "other = " +VIR_OTHER_7_1);
 
 
             } catch (Exception e) {
@@ -786,7 +1010,6 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
             }
 
 
-            Log.e("AAHHASJSJSX","param = "+params_vir);
 
 
 
@@ -823,6 +1046,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         VolleyDataRequester.withDefaultHttps(this)
                 .setUrl("https://rauditor-sg.riflows.com/rAuditor/Android/PC_Vehicle/insert_offline_data.php")
                 .setBody(params_vir)
+
                 .setMethod(VolleyDataRequester.Method.POST)
                 .setRetryPolicy(new DefaultRetryPolicy(
                         40000,
@@ -836,21 +1060,68 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                         if (response != null && response.length() > 0) {
 
                         }
-                        Log.e("TEST123 RES", "res  = " + response);
-                        cv_send.clear();
+                        Log.e("TEST123 VI PC", "res  = " + response);
+
 
 
                         cv_send_VIR.put(db.STATUS, "SENT");
                         sd.update(db.PC_VIR_DB_TITLE_1, cv_send_VIR, "KEY_ID = '" + key_id + "'", null);
                         params_vir.clear();
+                        if (db.get_pti_completed_count(sd) != 0) {
+                            sync_pti();
+                        }
+                        else if (db.get_pci_completed_count(sd) != 0) {
+                            sync_pci();
+                        }
+                        else if (db.get_vir_completed_count(sd) != 0) {
+                            sync_vir();
+                        }
+                        else  {
+                            pd.dismiss();
+                        }
+
+
+                        String CHANNEL_ID = "my_channel_01";
+                        int notificationId = 1;
+                        Intent notificationIntent = new Intent(Category_Type_Activity.this, Category_Type_Activity.class);
+                        int importance = NotificationManager.IMPORTANCE_HIGH;
+                        NotificationManager notificationManager = (NotificationManager) Category_Type_Activity.this.getSystemService(Context.NOTIFICATION_SERVICE);
+
+
+                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                            NotificationChannel mChannel = new NotificationChannel(
+                                    CHANNEL_ID, "Ashvin", importance);
+                            notificationManager.createNotificationChannel(mChannel);
+                        }
+                        pd.dismiss();
+                        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(Category_Type_Activity.this, CHANNEL_ID)
+                                .setSmallIcon(R.drawable.app_logo)
+                                .setContentTitle("Report Synced Successfully")
+                                .setContentText("Kindly Check Your Mail");
+
+
+
+                        TaskStackBuilder stackBuilder = TaskStackBuilder.create(Category_Type_Activity.this);
+                        stackBuilder.addNextIntent(notificationIntent);
+                        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(
+                                0,
+                                PendingIntent.FLAG_UPDATE_CURRENT
+                        );
+                        mBuilder.setContentIntent(resultPendingIntent);
+
+                        notificationManager.notify(notificationId, mBuilder.build());
+
+
+
+
 
                     }
                 })
                 .setResponseErrorListener(new VolleyDataRequester.ResponseErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.e("TEST123 ERR", "error  = " + error.getMessage());
-                        cv_send.clear();
+                        Log.e("TEST123 VI PC", "error  = " + error.getMessage());
+
                         cv_send_VIR.put(db.STATUS, "SENT");
                         sd.update(db.PC_VIR_DB_TITLE_1, cv_send_VIR, "KEY_ID = '" + key_id + "'", null);
                         if (db.get_vir_completed_count(sd) != 0) {
@@ -859,13 +1130,58 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                         progressDialog_vir.dismiss();
                         params_vir.clear();
 
+                        if (db.get_pti_completed_count(sd) != 0) {
+                            sync_pti();
+                        }
+                        else if (db.get_pci_completed_count(sd) != 0) {
+                            sync_pci();
+                        }
+                        else if (db.get_vir_completed_count(sd) != 0) {
+                            sync_vir();
+                        }
+                        else  {
+                            pd.dismiss();
+                        }
+
+
+                        String CHANNEL_ID = "my_channel_01";
+                        int notificationId = 1;
+                        Intent notificationIntent = new Intent(Category_Type_Activity.this, Category_Type_Activity.class);
+                        int importance = NotificationManager.IMPORTANCE_HIGH;
+                        NotificationManager notificationManager = (NotificationManager) Category_Type_Activity.this.getSystemService(Context.NOTIFICATION_SERVICE);
+
+
+                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                            NotificationChannel mChannel = new NotificationChannel(
+                                    CHANNEL_ID, "Ashvin", importance);
+                            notificationManager.createNotificationChannel(mChannel);
+                        }
+                        pd.dismiss();
+                        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(Category_Type_Activity.this, CHANNEL_ID)
+                                .setSmallIcon(R.drawable.app_logo)
+                                .setContentTitle("Report Synced Successfully")
+                                .setContentText("Kindly Check Your Mail");
+
+
+
+                        TaskStackBuilder stackBuilder = TaskStackBuilder.create(Category_Type_Activity.this);
+                        stackBuilder.addNextIntent(notificationIntent);
+                        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(
+                                0,
+                                PendingIntent.FLAG_UPDATE_CURRENT
+                        );
+                        mBuilder.setContentIntent(resultPendingIntent);
+
+                        notificationManager.notify(notificationId, mBuilder.build());
+
+
+
+
                     }
                 })
                 .requestString();
 
     }
-
-
 
     private boolean haveNetworkConnection(Context context) {
         boolean haveConnectedWifi = false;
@@ -918,14 +1234,6 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         }
         return haveConnectedWifi || haveConnectedMobile;
     }
-
-
-
-
-
-
-
-
     public void get_profile_db() {
         Cursor c5;
         c5 = sd.rawQuery("Select * from " + db.USER_PROFILE_TABLE, null);
@@ -941,8 +1249,6 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         c5.close();
 
     }
-
-
     public String getStringImage(Bitmap bmp) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
@@ -950,17 +1256,12 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
         return encodedImage;
     }
-
-
-
-
     private void disableConnectionReuseIfNecessary() {
         // HTTP connection reuse which was buggy pre-froyo
         if (Integer.parseInt(Build.VERSION.SDK) < Build.VERSION_CODES.FROYO) {
             System.setProperty("http.keepAlive", "false");
         }
     }
-
     private void enableHttpResponseCache() {
         try {
             long httpCacheSize = 10 * 1024 * 1024; // 10 MiB
@@ -971,7 +1272,6 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         } catch (Exception httpResponseCacheNotAvailable) {
         }
     }
-
 
 
     public void get_vir_function_3(String key_id) {
@@ -1119,7 +1419,6 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         }
 
     }
-
 
     public void get_vir_ppe_5(String key_id) {
         String Query = "select * from " + db.PC_VIR_DB_PPE_5 + " where KEY_ID = '" + key_id + "'";
@@ -1427,7 +1726,6 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
 
     }
 
-
     public void get_vir_other_7(String key_id) {
         String Query = "select * from " + db.PC_VIR_DB_OTHER_7 + " where KEY_ID = '" + key_id + "'";
         Cursor cursor = sd.rawQuery(Query, null);
@@ -1486,15 +1784,6 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         }
 
     }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1615,172 +1904,175 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
     }
 
 
+    private class AsyncTaskRunner_pci extends AsyncTask<String, String, String> {
+
+        private String resp = "Update";
+
+        @Override
+        protected String doInBackground(String... params1) {
+            String Query = "select * from " + db.PCI_TITLE_1 + " where KEY_ID = '" + PCI_POST_KEY + "'";
+            Cursor cursor = sd.rawQuery(Query, null);
+            cursor.moveToFirst();
+
+            get_profile_db();
+            //   Log.e("UUUUUUU 1", "NNNN Ess" + cursor.getCount());
+
+            if (cursor.getCount() != 0) {
+                params_pci.put("title_1",""+ cursor.getString(cursor.getColumnIndex(db.et1)));
+                params_pci.put("title_2", ""+cursor.getString(cursor.getColumnIndex(db.et2)));
+                params_pci.put("title_3", ""+cursor.getString(cursor.getColumnIndex(db.et3)));
+                params_pci.put("title_4", ""+cursor.getString(cursor.getColumnIndex(db.et4)));
+                params_pci.put("title_5", ""+cursor.getString(cursor.getColumnIndex(db.et5)));
+                params_pci.put("title_6", ""+cursor.getString(cursor.getColumnIndex(db.et6)));
+                params_pci.put("title_7", ""+cursor.getString(cursor.getColumnIndex(db.et7)));
+                params_pci.put("comp_status", ""+cursor.getString(cursor.getColumnIndex(db.STATUS)));
+                params_pci.put("date_complete", ""+cursor.getString(cursor.getColumnIndex(db.COMPLETED_DATE)));
+                params_pci.put("version_name", ""+versionname);
+
+            }
+
+            params_pci.put("user_mail", ""+db_user_mail);
+
+            Log.e("KKKLHHHTTT","mail = "+db_user_mail);
+
+            get_pci_sign("" + PCI_POST_KEY);
+
+            //SIR TABLE 2
+
+            String selectQuery_tir_4 = "SELECT * FROM " + db.PCI_INSPEC_2 + " where MAIN_ID ='" + PCI_POST_KEY + "'";
+            Cursor cursor_tir_4 = sd.rawQuery(selectQuery_tir_4, null);
+            cursor_tir_4.moveToFirst();
+            params_pci.put("pci_b_count", "" + cursor_tir_4.getCount());
+            byte[] byteArray_pc_5_1=null,byteArray_pc_5_1_1=null,byteArray_pc_5_1_2=null;
+            if (cursor_tir_4.getCount() != 0) {
+
+                String Str_PCI_2_URL="";
+
+                for (int m = 0; m < cursor_tir_4.getCount(); m++) {
+
+                    post_pc_B1 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et1));
+                    post_pc_B2 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et2));
+                    post_pc_B3 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et3));
+                    Str_PCI_2_URL = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.IMAGE_1));
+
+                    if (Str_PCI_2_URL != null) {
+                        String strNew = Str_PCI_2_URL.replace("[", "");
+                        String strNew_1 = strNew.replace("]", "");
+                        List<String> myOld = new ArrayList<String>(Arrays.asList(strNew_1.split(", ")));
+
+                        params_pci.put("main_img_c_" + m, "" + myOld.size());
+
+                        //  Log.e("JKJKJOPO", "22 count\t" + myOld.size());
+                        if (myOld.size() != 0) {
+                            for (int p = 0; p < myOld.size(); p++) {
+                                try {
+                                    if (Uri.parse(myOld.get(p)) != null) {
+                                        Context c;
+                                        Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getContentResolver(),
+                                                Uri.parse(myOld.get(p)));
+                                        ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                                        bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
+                                        //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
+                                        params_pci.put("sub_c" + m + "_" + p, "" + getStringImage(bitmap_x));
 
 
+                                    }
+                                } catch (Exception e) {
+                                    Log.e("LLLLLLLLL", "else\t" + e.getMessage());
+                                    //handle exception
+                                }
+                            }
+                        }
+
+                    }
+
+
+
+
+                    if (post_pc_B1 == null) {
+                        post_pc_B1 = "";
+                    }
+                    if (post_pc_B2 == null) {
+                        post_pc_B2 = "";
+                    }
+                    if (post_pc_B3 == null) {
+                        post_pc_B3 = "";
+                    }
+
+                    params_pci.put("pc_ir_1"+ m,""+ post_pc_B1);
+                    params_pci.put("pc_ir_2"+ m,""+  post_pc_B2);
+                    params_pci.put("pc_ir_3"+ m,""+  post_pc_B3);
+
+
+                    cursor_tir_4.moveToNext();
+
+                }
+            }
+
+
+
+
+
+            try {
+
+                params_pci.put("pc_cus_sign", ""+ post_pc_q_cus_sign);
+                params_pci.put("pc_comp_date",""+  post_pc_q_complete_DATE);
+                params_pci.put("pc_cus_name",""+  post_pc_q_CUS_SIGN_2);
+                params_pci.put("pc_reason",""+  post_pc_q_reason);
+
+            } catch (Exception e) {
+                Log.e("VVVVVVV", "Sign = " + e.getMessage());
+                e.printStackTrace();
+            }
+
+
+
+
+
+
+
+            return resp;
+        }
+
+
+        @Override
+        protected void onPostExecute(String result) {
+            // execution of result of Long time consuming operation
+            sync_off_line_pci_data("" + PCI_POST_KEY);
+            progressDialog_pci.dismiss();
+
+        }
+
+
+        @Override
+        protected void onPreExecute() {
+        }
+
+
+        @Override
+        protected void onProgressUpdate(String... text) {
+            //  finalResult.setText(text[0]);
+            // progressDialog.setProgressPercentFormat(text[0]);
+
+        }
+    }
 
 
     private void sync_off_line_pci_data(final String key_id) {
-          get_profile_db();
-        Map<String, String> params = new HashMap<String, String>();
-        String Query = "select * from " + db.PCI_TITLE_1 + " where KEY_ID = '" + key_id + "'";
-        Cursor cursor = sd.rawQuery(Query, null);
-        cursor.moveToFirst();
-
-          get_profile_db();
-        //   Log.e("UUUUUUU 1", "NNNN Ess" + cursor.getCount());
-
-        if (cursor.getCount() != 0) {
-            params.put("title_1",""+ cursor.getString(cursor.getColumnIndex(db.et1)));
-            params.put("title_2", ""+cursor.getString(cursor.getColumnIndex(db.et2)));
-            params.put("title_3", ""+cursor.getString(cursor.getColumnIndex(db.et3)));
-            params.put("title_4", ""+cursor.getString(cursor.getColumnIndex(db.et4)));
-            params.put("title_5", ""+cursor.getString(cursor.getColumnIndex(db.et5)));
-            params.put("title_6", ""+cursor.getString(cursor.getColumnIndex(db.et6)));
-            params.put("title_7", ""+cursor.getString(cursor.getColumnIndex(db.et7)));
-            params.put("comp_status", ""+cursor.getString(cursor.getColumnIndex(db.STATUS)));
-            params.put("date_complete", ""+cursor.getString(cursor.getColumnIndex(db.COMPLETED_DATE)));
-            params.put("version_name", ""+versionname);
-
-        }
-
-        params.put("user_mail", ""+db_user_mail);
-
-        Log.e("KKKLHHHTTT","mail = "+db_user_mail);
-        get_pci_sign(key_id);
-
-        String selectQuery_tir_4 = "SELECT * FROM " + db.PCI_INSPEC_2 + " where MAIN_ID ='" + key_id + "'";
-        Cursor cursor_tir_4 = sd.rawQuery(selectQuery_tir_4, null);
-        cursor_tir_4.moveToFirst();
-        params.put("pci_b_count", "" + cursor_tir_4.getCount());
-        byte[] byteArray_pc_5_1=null,byteArray_pc_5_1_1=null,byteArray_pc_5_1_2=null;
-        if (cursor_tir_4.getCount() != 0) {
-
-            for (int m = 0; m < cursor_tir_4.getCount(); m++) {
-
-                post_pc_B1 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et1));
-                post_pc_B2 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et2));
-                post_pc_B3 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et3));
-
-
-
-                try {
-                    byteArray_pc_5_1 = cursor_tir_4.getBlob(cursor_tir_4.getColumnIndex(db.IMAGE_1));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                try {
-                    byteArray_pc_5_1_1 = cursor_tir_4.getBlob(cursor_tir_4.getColumnIndex(db.IMAGE_1_1));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                try {
-                    byteArray_pc_5_1_2 = cursor_tir_4.getBlob(cursor_tir_4.getColumnIndex(db.IMAGE_1_2));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-
-
-                if (byteArray_pc_5_1 != null) {
-                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
-                    imageStream_pc_5_1 = new ByteArrayInputStream(byteArray_pc_5_1);
-                    bitmap_pc_5_1 = BitmapFactory.decodeStream(imageStream_pc_5_1);
-                    bitmap_pc_5_1.compress(Bitmap.CompressFormat.PNG, 100, bs);
-
-                    Bitmap resized1 = Bitmap.createScaledBitmap(bitmap_pc_5_1, 270, 270, true);
-                    pos_img_pc_5_1 = getStringImage(resized1);
-
-                } else {
-                    pos_img_pc_5_1 = "";
-                }
-
-                Log.e("GGGTTTTTTTTT","byte = "+bitmap_pc_5_1_1);
-
-                if (byteArray_pc_5_1_1 != null) {
-                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
-                    imageStream_pc_5_1_1 = new ByteArrayInputStream(byteArray_pc_5_1_1);
-                    bitmap_pc_5_1_1 = BitmapFactory.decodeStream(imageStream_pc_5_1_1);
-                    bitmap_pc_5_1_1.compress(Bitmap.CompressFormat.PNG, 100, bs);
-
-                    Bitmap resized2 = Bitmap.createScaledBitmap(bitmap_pc_5_1_1, 270, 270, true);
-                    pos_img_pc_5_1_1 = getStringImage(resized2);
-
-
-
-                } else {
-                    pos_img_pc_5_1_1 = "";
-                }
-
-                if (byteArray_pc_5_1_2 != null) {
-                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
-                    imageStream_pc_5_1_2 = new ByteArrayInputStream(byteArray_pc_5_1_2);
-                    bitmap_pc_5_1_2 = BitmapFactory.decodeStream(imageStream_pc_5_1_2);
-                    bitmap_pc_5_1_2.compress(Bitmap.CompressFormat.PNG, 100, bs);
-
-                    Bitmap resized3 = Bitmap.createScaledBitmap(bitmap_pc_5_1_2, 270, 270, true);
-
-                    pos_img_pc_5_1_2 = getStringImage(resized3);
-
-                } else {
-                    pos_img_pc_5_1_2 = "";
-                }
-
-
-                if (post_pc_B1 == null) {
-                    post_pc_B1 = "";
-                }
-                if (post_pc_B2 == null) {
-                    post_pc_B2 = "";
-                }
-                if (post_pc_B3 == null) {
-                    post_pc_B3 = "";
-                }
-
-                params.put("pc_ir_1"+ m,""+ post_pc_B1);
-                params.put("pc_ir_2"+ m,""+  post_pc_B2);
-                params.put("pc_ir_3"+ m,""+  post_pc_B3);
-
-                params.put("pc_ir_img_4_1" + m, ""+ pos_img_pc_5_1);
-                params.put("pc_ir_img_4_2" + m,""+  pos_img_pc_5_1_1);
-                params.put("pc_ir_img_4_3" + m, ""+ pos_img_pc_5_1_2);
-
-
-                cursor_tir_4.moveToNext();
-
-            }
-        }
-
-
-
-
-
-        try {
-
-            params.put("pc_cus_sign", ""+ post_pc_q_cus_sign);
-            params.put("pc_comp_date",""+  post_pc_q_complete_DATE);
-            params.put("pc_cus_name",""+  post_pc_q_CUS_SIGN_2);
-            params.put("pc_reason",""+  post_pc_q_reason);
-
-        } catch (Exception e) {
-            Log.e("VVVVVVV", "Sign = " + e.getMessage());
-            e.printStackTrace();
-        }
-
-        Log.e("VVVVGGGG3", "paramas = " +params);
 
         VolleyDataRequester.withDefaultHttps(this)
                 .setUrl("https://rauditor-sg.riflows.com/rAuditor/Android/PCI/insert_pc_offline.php")
-                .setBody(params)
+                .setBody(params_pci)
                 .setMethod(VolleyDataRequester.Method.POST)
                 .setStringResponseListener(new VolleyDataRequester.StringResponseListener() {
                     @Override
                     public void onResponse(String response) {
                         pd.dismiss();
-
+                        progressDialog_pci.dismiss();
                         Log.e("LLLLPPPV", "response = " +response);
 
-                        cv_send.put(db.STATUS, "SENT");
-                        sd.update(db.PCI_TITLE_1, cv_send, "KEY_ID = '" + key_id + "'", null);
+                        cv_send_PCI.put(db.STATUS, "SENT");
+                        sd.update(db.PCI_TITLE_1, cv_send_PCI, "KEY_ID = '" + key_id + "'", null);
 
                         if (db.get_pci_completed_count(sd) != 0) {
                             sync_pci();
@@ -1788,9 +2080,14 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                         else if (db.get_pti_completed_count(sd) != 0) {
                             sync_pti();
                         }
+                        else if (db.get_vir_completed_count(sd) != 0) {
+                            sync_vir();
+                        }
                         else  {
                             pd.dismiss();
                         }
+
+                        params_pci.clear();
 
 
                         String CHANNEL_ID = "my_channel_01";
@@ -1833,15 +2130,20 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         pd.dismiss();
+                        progressDialog_pci.dismiss();
                         Log.e("KKKJJJJMMH TIR ERR", "error  = " + error.getMessage());
-                        cv_send.put(db.STATUS, "SENT");
-                        sd.update(db.PCI_TITLE_1, cv_send, "KEY_ID = '" + key_id + "'", null);
+                        cv_send_PCI.put(db.STATUS, "SENT");
+                        sd.update(db.PCI_TITLE_1, cv_send_PCI, "KEY_ID = '" + key_id + "'", null);
+                        params_pci.clear();
 
                         if (db.get_pci_completed_count(sd) != 0) {
                             sync_pci();
                         }
                         else if (db.get_pti_completed_count(sd) != 0) {
                             sync_pti();
+                        }
+                        else if (db.get_vir_completed_count(sd) != 0) {
+                            sync_vir();
                         }
                         else  {
                             pd.dismiss();
@@ -1883,179 +2185,32 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
     }
 
 
-
-
     private void sync_off_line_pti_data(final String key_id) {
-        get_profile_db();
-        Map<String, String> params = new HashMap<String, String>();
-        String Query = "select * from " + db.PTI_TITLE_1 + " where KEY_ID = '" + key_id + "'";
-        Cursor cursor = sd.rawQuery(Query, null);
-        cursor.moveToFirst();
 
-        get_profile_db();
-        //   Log.e("UUUUUUU 1", "NNNN Ess" + cursor.getCount());
-
-        if (cursor.getCount() != 0) {
-            params.put("title_1",""+ cursor.getString(cursor.getColumnIndex(db.et1)));
-            params.put("title_2", ""+cursor.getString(cursor.getColumnIndex(db.et2)));
-            params.put("title_3", ""+cursor.getString(cursor.getColumnIndex(db.et3)));
-            params.put("title_4", ""+cursor.getString(cursor.getColumnIndex(db.et4)));
-            params.put("title_5", ""+cursor.getString(cursor.getColumnIndex(db.et5)));
-            params.put("title_6", ""+cursor.getString(cursor.getColumnIndex(db.et6)));
-            params.put("title_7", ""+cursor.getString(cursor.getColumnIndex(db.et7)));
-            params.put("comp_status", ""+cursor.getString(cursor.getColumnIndex(db.STATUS)));
-            params.put("date_complete", ""+cursor.getString(cursor.getColumnIndex(db.COMPLETED_DATE)));
-            params.put("version_name", ""+versionname);
-
-            Log.e("AFJFAJFJCAM","version = "+versionname);
-
-        }
-
-        params.put("user_mail", ""+db_user_mail);
-
-        Log.e("KKKLHHHTTT","mail = "+db_user_mail);
-        get_pti_sign(key_id);
-
-        String selectQuery_tir_4 = "SELECT * FROM " + db.PTI_INSPEC_2 + " where MAIN_ID ='" + key_id + "'";
-        Cursor cursor_tir_4 = sd.rawQuery(selectQuery_tir_4, null);
-        cursor_tir_4.moveToFirst();
-        params.put("pti_b_count", "" + cursor_tir_4.getCount());
-        byte[] byteArray_pt_5_1=null,byteArray_pt_5_1_1=null,byteArray_pt_5_1_2=null;
-        if (cursor_tir_4.getCount() != 0) {
-
-            byte[] byteArray_4_1,byteArray_4_2,byteArray_4_3;
-            for (int m = 0; m < cursor_tir_4.getCount(); m++) {
-
-                post_pt_B1 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et1));
-                post_pt_B2 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et2));
-                post_pt_B3 = cursor_tir_4.getString(cursor_tir_4.getColumnIndex(db.et3));
-
-
-
-                try {
-                    byteArray_pt_5_1 = cursor_tir_4.getBlob(cursor_tir_4.getColumnIndex(db.IMAGE_1));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                try {
-                    byteArray_pt_5_1_1 = cursor_tir_4.getBlob(cursor_tir_4.getColumnIndex(db.IMAGE_1_1));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                try {
-                    byteArray_pt_5_1_2 = cursor_tir_4.getBlob(cursor_tir_4.getColumnIndex(db.IMAGE_1_2));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-
-
-                if (byteArray_pt_5_1 != null) {
-                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
-                    imageStream_pt_5_1 = new ByteArrayInputStream(byteArray_pt_5_1);
-                    bitmap_pt_5_1 = BitmapFactory.decodeStream(imageStream_pt_5_1);
-                    bitmap_pt_5_1.compress(Bitmap.CompressFormat.PNG, 100, bs);
-
-                    Bitmap resized1 = Bitmap.createScaledBitmap(bitmap_pt_5_1, 270, 270, true);
-                    pos_img_pt_5_1 = getStringImage(resized1);
-
-                } else {
-                    pos_img_pt_5_1 = "";
-                }
-
-                Log.e("GGGTTTTTTTTT","byte = "+byteArray_pt_5_1_1);
-
-                if (byteArray_pt_5_1_1 != null) {
-                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
-                    imageStream_pt_5_1_1 = new ByteArrayInputStream(byteArray_pt_5_1_1);
-                    bitmap_pt_5_1_1 = BitmapFactory.decodeStream(imageStream_pt_5_1_1);
-                    bitmap_pt_5_1_1.compress(Bitmap.CompressFormat.PNG, 100, bs);
-
-                    Bitmap resized2 = Bitmap.createScaledBitmap(bitmap_pt_5_1_1, 270, 270, true);
-                    pos_img_pt_5_1_1 = getStringImage(resized2);
-
-
-
-                } else {
-                    pos_img_pt_5_1_1 = "";
-                }
-
-                if (byteArray_pt_5_1_2 != null) {
-                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
-                    imageStream_pt_5_1_2 = new ByteArrayInputStream(byteArray_pt_5_1_2);
-                    bitmap_pt_5_1_2 = BitmapFactory.decodeStream(imageStream_pt_5_1_2);
-                    bitmap_pt_5_1_2.compress(Bitmap.CompressFormat.PNG, 100, bs);
-
-                    Bitmap resized3 = Bitmap.createScaledBitmap(bitmap_pt_5_1_2, 270, 270, true);
-
-                    pos_img_pt_5_1_2 = getStringImage(resized3);
-
-                } else {
-                    pos_img_pt_5_1_2 = "";
-                }
-
-
-                if (post_pt_B1 == null) {
-                    post_pt_B1 = "";
-                }
-                if (post_pt_B2 == null) {
-                    post_pt_B2 = "";
-                }
-                if (post_pt_B3 == null) {
-                    post_pt_B3 = "";
-                }
-
-                params.put("pt_ir_1"+ m,""+ post_pt_B1);
-                params.put("pt_ir_2"+ m,""+  post_pt_B2);
-                params.put("pt_ir_3"+ m,""+  post_pt_B3);
-
-                params.put("pt_ir_img_4_1" + m, ""+ pos_img_pt_5_1);
-                params.put("pt_ir_img_4_2" + m,""+  pos_img_pt_5_1_1);
-                params.put("pt_ir_img_4_3" + m, ""+ pos_img_pt_5_1_2);
-
-
-                cursor_tir_4.moveToNext();
-
-            }
-        }
-
-
-
-
-
-        try {
-
-            params.put("pt_cus_sign", ""+ post_pt_q_cus_sign);
-            params.put("pt_comp_date",""+  post_pt_q_complete_DATE);
-            params.put("pt_cus_name",""+  post_pt_q_CUS_SIGN_2);
-            params.put("pt_reason",""+  post_pt_q_reason);
-
-        } catch (Exception e) {
-            Log.e("VVVVVVV", "Sign = " + e.getMessage());
-            e.printStackTrace();
-        }
-
-        Log.e("VVVVGGGG3", "paramas = " +params);
 
         VolleyDataRequester.withDefaultHttps(this)
                 .setUrl("https://rauditor-sg.riflows.com/rAuditor/Android/PTI/insert_pt_offline.php")
-                .setBody(params)
+                .setBody(params_pti)
                 .setMethod(VolleyDataRequester.Method.POST)
                 .setStringResponseListener(new VolleyDataRequester.StringResponseListener() {
                     @Override
                     public void onResponse(String response) {
                         pd.dismiss();
+                        progressDialog_pti.dismiss();
 
                         Log.e("LLLLPPPV", "response = " +response);
 
-                        cv_send.put(db.STATUS, "SENT");
-                        sd.update(db.PTI_TITLE_1, cv_send, "KEY_ID = '" + key_id + "'", null);
+                        cv_send_PTI.put(db.STATUS, "SENT");
+                        sd.update(db.PTI_TITLE_1, cv_send_PTI, "KEY_ID = '" + key_id + "'", null);
 
                         if (db.get_pti_completed_count(sd) != 0) {
                             sync_pti();
                         }
                         else if (db.get_pci_completed_count(sd) != 0) {
                             sync_pci();
+                        }
+                        else if (db.get_vir_completed_count(sd) != 0) {
+                            sync_vir();
                         }
                         else  {
                             pd.dismiss();
@@ -2105,9 +2260,10 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         pd.dismiss();
+                        progressDialog_pti.dismiss();
                         Log.e("KKKJJJJMMH TIR ERR", "error  = " + error.getMessage());
-                        cv_send.put(db.STATUS, "SENT");
-                        sd.update(db.PTI_TITLE_1, cv_send, "KEY_ID = '" + key_id + "'", null);
+                        cv_send_PTI.put(db.STATUS, "SENT");
+                        sd.update(db.PTI_TITLE_1, cv_send_PTI, "KEY_ID = '" + key_id + "'", null);
 
 
                          if (db.get_pti_completed_count(sd) != 0) {
@@ -2116,6 +2272,9 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                          else if (db.get_pci_completed_count(sd) != 0) {
                             sync_pci();
                         }
+                         else if (db.get_vir_completed_count(sd) != 0) {
+                             sync_vir();
+                         }
                         else  {
                             pd.dismiss();
                         }
@@ -2156,528 +2315,6 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
     }
     
 
-    public void sync_pci() {
-        pd.show();
-        String Status = "Completed";
-        String selectQuery = "SELECT * FROM " + db.PCI_TITLE_1 + " where STATUS ='" + Status + "'";
-        Cursor cursor = sd.rawQuery(selectQuery, null);
-        cursor.moveToFirst();
-        Toast.makeText(getApplicationContext(), "Syncing Data ....", Toast.LENGTH_LONG).show();
-        if (cursor.getCount() != 0) {
-            sync_off_line_pci_data("" + cursor.getInt(cursor.getColumnIndex(db.KEY_ID)));
-        } else {
-            pd.dismiss();
-        }
-        cursor.close();
-    }
-    public void sync_pti() {
-        pd.show();
-        String Status = "Completed";
-        String selectQuery = "SELECT * FROM " + db.PTI_TITLE_1 + " where STATUS ='" + Status + "'";
-        Cursor cursor = sd.rawQuery(selectQuery, null);
-        cursor.moveToFirst();
-        Toast.makeText(getApplicationContext(), "Syncing Data ....", Toast.LENGTH_LONG).show();
-        if (cursor.getCount() != 0) {
-            sync_off_line_pti_data("" + cursor.getInt(cursor.getColumnIndex(db.KEY_ID)));
-        } else {
-            pd.dismiss();
-        }
-        cursor.close();
-    }
 
-//    public void sync_vir() {
-//        pd.show();
-//        String Status = "Completed";
-//        String selectQuery = "SELECT * FROM " + db.PC_VIR_DB_TITLE_1 + " where STATUS ='" + Status + "'";
-//        Cursor cursor = sd.rawQuery(selectQuery, null);
-//        cursor.moveToFirst();
-//        Toast.makeText(getApplicationContext(), "Syncing Data ....", Toast.LENGTH_LONG).show();
-//        if (cursor.getCount() != 0) {
-//            sync_off_line_vir_data("" + cursor.getInt(cursor.getColumnIndex(db.KEY_ID)));
-//        } else {
-//            pd.dismiss();
-//        }
-//        cursor.close();
-//    }
-
-
-
-
-    public Bitmap getBitmap(String path) {
-        try {
-            Bitmap bitmap = null;
-            File f = new File(path);
-            BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-
-            bitmap = BitmapFactory.decodeStream(new FileInputStream(f), null, options);
-//            image.setImageBitmap(bitmap);
-            bitmap.compress(Bitmap.CompressFormat.PNG, 75, stream);
-
-            return bitmap;
-        } catch (Exception e) {
-
-            Log.e("KKKKGGG", "error = " + e.getMessage());
-            e.printStackTrace();
-            return null;
-        }
-    }
-    private void sync_off_line_vir_data(final String key_id) {
-        get_profile_db();
-        Map<String, String> params = new HashMap<String, String>();
-        String Query = "select * from " + db.PC_VIR_DB_TITLE_1 + " where KEY_ID = '" + key_id + "'";
-        Cursor cursor = sd.rawQuery(Query, null);
-        cursor.moveToFirst();
-
-        get_profile_db();
-        //   Log.e("UUUUUUU 1", "NNNN Ess" + cursor.getCount());
-
-        if (cursor.getCount() != 0) {
-            params.put("conducted_on",""+ cursor.getString(cursor.getColumnIndex(db.et1)));
-            params.put("checked_by", ""+db_user_name);
-            params.put("vehicle_no", ""+cursor.getString(cursor.getColumnIndex(db.et2)));
-            params.put("driver_name", ""+cursor.getString(cursor.getColumnIndex(db.et3)));
-            params.put("team", ""+cursor.getString(cursor.getColumnIndex(db.et4)));
-            params.put("comp_status", ""+cursor.getString(cursor.getColumnIndex(db.STATUS)));
-            params.put("date_complete", ""+cursor.getString(cursor.getColumnIndex(db.COMPLETED_DATE)));
-            params.put("version", ""+versionname);
-
-        }
-
-        params.put("user_mail", ""+db_user_mail);
-
-        Log.e("KKKLHHHTTT","mail = "+db_user_mail);
-        get_vir_function_3(key_id);
-        get_vir_general_4(key_id);
-        get_vir_ppe_5(key_id);
-        get_vir_standard_6(key_id);
-        get_vir_other_7(key_id);
-
-
-        try {
-            String Query2 = "select * from " + db.PC_VIR_DB_BODY_2 + " where KEY_ID = '" + key_id + "'";
-            Cursor cursor2 = sd.rawQuery(Query2, null);
-            cursor2.moveToFirst();
-
-
-            if (cursor2.getCount() != 0) {
-                IMG_URL_1 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_1));
-                IMG_URL_2 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_2));
-                IMG_URL_3 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_3));
-                IMG_URL_4 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_4));
-                pc_vir_body_e1 = cursor2.getString(cursor2.getColumnIndex(db.et1));
-
-                if (pc_vir_body_e1 == null) {
-                    pc_vir_body_e1 = "";
-                }
-
-                params.put("version_name", ""+pc_vir_body_e1);
-
-
-                if (IMG_URL_1 != null) {
-                    String strNew = IMG_URL_1.replace("[", "");
-                    String strNew_1 = strNew.replace("]", "");
-                    List<String> myOld = new ArrayList<String>(Arrays.asList(strNew_1.split(", ")));
-
-
-                    if (myOld.size() != 0) {
-                        for (int p = 0; p < myOld.size(); p++) {
-                            try {
-                                if (Uri.parse(myOld.get(p)) != null) {
-                                    Context c;
-                                    Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
-                                            Uri.parse(myOld.get(p)));
-                                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
-                                    bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
-                                    //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                    params.put("front_c_"+p, "" + getStringImage(bitmap_x));
-
-
-                                }
-                            } catch (Exception e) {
-                                Log.e("LLLLLLLLL", "else\t" + e.getMessage());
-                                //handle exception
-                            }
-                        }
-                    }
-
-                }
-
-
-                if (IMG_URL_2 != null) {
-                    String strNew2 = IMG_URL_2.replace("[", "");
-                    String strNew_2 = strNew2.replace("]", "");
-                    List<String> myOld2 = new ArrayList<String>(Arrays.asList(strNew_2.split(", ")));
-
-
-                    if (myOld2.size() != 0) {
-                        for (int p = 0; p < myOld2.size(); p++) {
-                            try {
-                                if (Uri.parse(myOld2.get(p)) != null) {
-                                    Context c;
-                                    Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
-                                            Uri.parse(myOld2.get(p)));
-                                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
-                                    bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
-                                    //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                    params.put("side_1_c_"+p, "" + getStringImage(bitmap_x));
-
-
-                                }
-                            } catch (Exception e) {
-                                Log.e("LLLLLLLLL", "else\t" + e.getMessage());
-                                //handle exception
-                            }
-                        }
-                    }
-
-                }
-
-
-                if (IMG_URL_3 != null) {
-                    String strNew3 = IMG_URL_3.replace("[", "");
-                    String strNew_3 = strNew3.replace("]", "");
-                    List<String> myOld3 = new ArrayList<String>(Arrays.asList(strNew_3.split(", ")));
-
-
-                    if (myOld3.size() != 0) {
-                        for (int p = 0; p < myOld3.size(); p++) {
-                            try {
-                                if (Uri.parse(myOld3.get(p)) != null) {
-                                    Context c;
-                                    Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
-                                            Uri.parse(myOld3.get(p)));
-                                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
-                                    bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
-                                    //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                    params.put("side_2_c_"+p, "" + getStringImage(bitmap_x));
-
-
-                                }
-                            } catch (Exception e) {
-                                Log.e("LLLLLLLLL", "else\t" + e.getMessage());
-                                //handle exception
-                            }
-                        }
-                    }
-
-                }
-
-
-                if (IMG_URL_4 != null) {
-                    String strNew4 = IMG_URL_4.replace("[", "");
-                    String strNew_4 = strNew4.replace("]", "");
-                    List<String> myOld4 = new ArrayList<String>(Arrays.asList(strNew_4.split(", ")));
-
-
-                    if (myOld4.size() != 0) {
-                        for (int p = 0; p < myOld4.size(); p++) {
-                            try {
-                                if (Uri.parse(myOld4.get(p)) != null) {
-                                    Context c;
-                                    Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
-                                            Uri.parse(myOld4.get(p)));
-                                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
-                                    bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
-                                    //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                    params.put("rear_c_"+p, "" + getStringImage(bitmap_x));
-
-
-                                }
-                            } catch (Exception e) {
-                                Log.e("LLLLLLLLL", "else\t" + e.getMessage());
-                                //handle exception
-                            }
-                        }
-                    }
-
-                }
-
-
-            }
-        } catch (Exception e) {
-
-            Log.e("JJHHGAFFAF","func 1 = "+e.getMessage());
-            e.printStackTrace();
-        }
-
-
-        try {
-
-
-            Log.e("JJHHGAFFAF","func 1 = "+VIR_FUNC_3_1);
-            Log.e("JJHHGAFFAF","func 2 = "+VIR_FUNC_3_2);
-            Log.e("JJHHGAFFAF","func 3 = "+VIR_FUNC_3_3);
-            Log.e("JJHHGAFFAF","func 4 = "+VIR_FUNC_3_4);
-
-            params.put("v_fun_1", ""+ VIR_FUNC_3_1);
-            params.put("v_fun_2",""+  VIR_FUNC_3_2);
-            params.put("v_fun_3",""+  VIR_FUNC_3_3);
-            params.put("v_fun_4",""+  VIR_FUNC_3_4);
-            params.put("v_fun_5",""+  VIR_FUNC_3_5);
-            params.put("v_fun_6",""+  VIR_FUNC_3_6);
-            params.put("v_fun_7",""+  VIR_FUNC_3_7);
-            params.put("v_fun_8",""+  VIR_FUNC_3_8);
-            params.put("v_fun_10",""+  VIR_FUNC_3_9);
-            params.put("v_fun_11",""+  VIR_FUNC_3_10);
-            params.put("v_fun_12",""+  VIR_FUNC_3_11);
-            params.put("v_fun_13",""+  VIR_FUNC_3_12);
-            params.put("remarks_3",""+  VIR_FUNC_3_13);
-            params.put("v_fun_9",""+  VIR_FUNC_3_14);
-
-        } catch (Exception e) {
-            Log.e("VVVVVVV", "Sign = " + e.getMessage());
-            e.printStackTrace();
-        }
-
-
-        try {
-
-            params.put("g_check_1", ""+ VIR_GENERAL_4_1);
-            params.put("g_check_2",""+  VIR_GENERAL_4_2);
-            params.put("g_check_3",""+  VIR_GENERAL_4_3);
-            params.put("g_check_4",""+  VIR_GENERAL_4_4);
-            params.put("g_check_5",""+  VIR_GENERAL_4_5);
-            params.put("g_check_6",""+  VIR_GENERAL_4_6);
-            params.put("remarks_4",""+  VIR_GENERAL_4_7);
-
-
-        } catch (Exception e) {
-            Log.e("VVVVVVV", "Sign = " + e.getMessage());
-            e.printStackTrace();
-        }
-
-
-        try {
-
-            params.put("ppe_1", ""+ VIR_PPE_5_1);
-            params.put("ppe_2",""+  VIR_PPE_5_2);
-            params.put("ppe_3",""+  VIR_PPE_5_3);
-            params.put("ppe_4",""+  VIR_PPE_5_4);
-            params.put("ppe_5",""+  VIR_PPE_5_5);
-            params.put("ppe_6",""+  VIR_PPE_5_6);
-            params.put("ppe_7",""+  VIR_PPE_5_7);
-            params.put("ppe_8",""+  VIR_PPE_5_8);
-            params.put("ppe_9",""+  VIR_PPE_5_9);
-            params.put("ppe_10",""+  VIR_PPE_5_10);
-            params.put("ppe_11",""+  VIR_PPE_5_11);
-            params.put("ppe_12",""+  VIR_PPE_5_12);
-            params.put("ppe_13",""+  VIR_PPE_5_13);
-            params.put("ppe_14",""+  VIR_PPE_5_14);
-            params.put("ppe_15",""+  VIR_PPE_5_15);
-            params.put("ppe_16",""+  VIR_PPE_5_16);
-            params.put("ppe_17",""+  VIR_PPE_5_17);
-            params.put("ppe_18",""+  VIR_PPE_5_18);
-            params.put("ppe_19",""+  VIR_PPE_5_19);
-            params.put("ppe_20",""+  VIR_PPE_5_20);
-            params.put("tool_1",""+  VIR_PPE_5_21);
-            params.put("tool_2",""+  VIR_PPE_5_22);
-            params.put("tool_3",""+  VIR_PPE_5_23);
-            params.put("tool_4",""+  VIR_PPE_5_24);
-            params.put("tool_5",""+  VIR_PPE_5_25);
-            params.put("tool_6",""+  VIR_PPE_5_26);
-            params.put("tool_7",""+  VIR_PPE_5_27);
-            params.put("tool_8",""+  VIR_PPE_5_28);
-            params.put("tool_9",""+  VIR_PPE_5_29);
-            params.put("tool_10",""+  VIR_PPE_5_30);
-            params.put("tool_11",""+  VIR_PPE_5_31);
-            params.put("tool_12",""+  VIR_PPE_5_32);
-            params.put("tool_13",""+  VIR_PPE_5_33);
-            params.put("tool_14",""+  VIR_PPE_5_34);
-            params.put("tool_15",""+  VIR_PPE_5_35);
-            params.put("tool_16",""+  VIR_PPE_5_36);
-            params.put("tool_17",""+  VIR_PPE_5_37);
-            params.put("tool_18",""+  VIR_PPE_5_38);
-            params.put("tool_19",""+  VIR_PPE_5_39);
-            params.put("tool_20",""+  VIR_PPE_5_40);
-            params.put("remarks_5",""+  VIR_PPE_5_41);
-
-
-        } catch (Exception e) {
-            Log.e("VVVVVVV", "Sign = " + e.getMessage());
-            e.printStackTrace();
-        }
-
-
-        try {
-
-            params.put("s_item_1", ""+ VIR_STAND_6_1);
-            params.put("s_item_2",""+  VIR_STAND_6_2);
-            params.put("s_item_3",""+  VIR_STAND_6_3);
-            params.put("s_item_4",""+  VIR_STAND_6_4);
-            params.put("s_item_5",""+  VIR_STAND_6_5);
-            params.put("s_item_6",""+  VIR_STAND_6_6);
-            params.put("s_item_7",""+  VIR_STAND_6_7);
-            params.put("s_item_8",""+  VIR_STAND_6_8);
-            params.put("s_item_9",""+  VIR_STAND_6_9);
-            params.put("s_item_10",""+  VIR_STAND_6_10);
-            params.put("s_item_11",""+  VIR_STAND_6_11);
-            params.put("s_item_12",""+  VIR_STAND_6_12);
-            params.put("s_item_13",""+  VIR_STAND_6_13);
-            params.put("s_item_14",""+  VIR_STAND_6_14);
-            params.put("s_item_15",""+  VIR_STAND_6_15);
-            params.put("s_item_16",""+  VIR_STAND_6_16);
-            params.put("s_item_17",""+  VIR_STAND_6_17);
-            params.put("s_item_18",""+  VIR_STAND_6_18);
-            params.put("s_item_19",""+  VIR_STAND_6_19);
-            params.put("s_item_20",""+  VIR_STAND_6_20);
-            params.put("s_item_21",""+  VIR_STAND_6_21);
-            params.put("s_item_22",""+  VIR_STAND_6_22);
-
-
-
-        } catch (Exception e) {
-            Log.e("VVVVVVV", "Sign = " + e.getMessage());
-            e.printStackTrace();
-        }
-
-
-        try {
-
-            params.put("other_item_1", ""+ VIR_OTHER_7_1);
-            params.put("other_item_2",""+  VIR_OTHER_7_2);
-            params.put("other_item_3",""+  VIR_OTHER_7_3);
-            params.put("other_item_4",""+  VIR_OTHER_7_4);
-            params.put("other_item_5",""+  VIR_OTHER_7_5);
-            params.put("other_item_6",""+  VIR_OTHER_7_6);
-            params.put("other_item_7",""+  VIR_OTHER_7_7);
-            params.put("other_item_8",""+  VIR_OTHER_7_8);
-            params.put("remarks_7",""+  VIR_OTHER_7_9);
-
-            Log.e("AASSDEEFFF", "other = " +VIR_OTHER_7_1);
-
-
-        } catch (Exception e) {
-            Log.e("VVVVVVV", "Sign = " + e.getMessage());
-            e.printStackTrace();
-        }
-
-        Log.e("VVVVGGGG3", "paramas = " +params);
-
-        VolleyDataRequester.withDefaultHttps(this)
-                .setUrl("https://rauditor-sg.riflows.com/rAuditor/Android/PC_Vehicle/insert_offline_data.php")
-                .setBody(params)
-                .setMethod(VolleyDataRequester.Method.POST)
-                .setStringResponseListener(new VolleyDataRequester.StringResponseListener() {
-                    @Override
-                    public void onResponse(String response) {
-                        pd.dismiss();
-
-                        Log.e("LLLLPPPV", "response = " +response);
-
-                        cv_send_VIR.put(db.STATUS, "SENT");
-                        sd.update(db.PC_VIR_DB_TITLE_1, cv_send_VIR, "KEY_ID = '" + key_id + "'", null);
-
-                        if (db.get_pti_completed_count(sd) != 0) {
-                            sync_pti();
-                        }
-                        else if (db.get_pci_completed_count(sd) != 0) {
-                            sync_pci();
-                        }
-                        else if (db.get_vir_completed_count(sd) != 0) {
-                            sync_vir();
-                        }
-                        else  {
-                            pd.dismiss();
-                        }
-
-
-                        String CHANNEL_ID = "my_channel_01";
-                        int notificationId = 1;
-                        Intent notificationIntent = new Intent(Category_Type_Activity.this, Category_Type_Activity.class);
-                        int importance = NotificationManager.IMPORTANCE_HIGH;
-                        NotificationManager notificationManager = (NotificationManager) Category_Type_Activity.this.getSystemService(Context.NOTIFICATION_SERVICE);
-
-
-                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                            NotificationChannel mChannel = new NotificationChannel(
-                                    CHANNEL_ID, "Ashvin", importance);
-                            notificationManager.createNotificationChannel(mChannel);
-                        }
-                        pd.dismiss();
-                        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(Category_Type_Activity.this, CHANNEL_ID)
-                                .setSmallIcon(R.drawable.app_logo)
-                                .setContentTitle("Report Synced Successfully")
-                                .setContentText("Kindly Check Your Mail");
-
-
-
-                        TaskStackBuilder stackBuilder = TaskStackBuilder.create(Category_Type_Activity.this);
-                        stackBuilder.addNextIntent(notificationIntent);
-                        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(
-                                0,
-                                PendingIntent.FLAG_UPDATE_CURRENT
-                        );
-                        mBuilder.setContentIntent(resultPendingIntent);
-
-                        notificationManager.notify(notificationId, mBuilder.build());
-
-
-
-
-
-                        Log.e("DDDDDDSS RIID SUC", "  = " + response);
-
-
-                    }
-                })
-                .setResponseErrorListener(new VolleyDataRequester.ResponseErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        pd.dismiss();
-                        Log.e("KKKJJJJMMH TIR ERR", "error  = " + error.getMessage());
-
-                        cv_send_VIR.put(db.STATUS, "SENT");
-                        sd.update(db.PC_VIR_DB_TITLE_1, cv_send_VIR, "KEY_ID = '" + key_id + "'", null);
-
-
-                        if (db.get_pti_completed_count(sd) != 0) {
-                            sync_pti();
-                        }
-                        else if (db.get_pci_completed_count(sd) != 0) {
-                            sync_pci();
-                        }
-                        else if (db.get_vir_completed_count(sd) != 0) {
-                            sync_vir();
-                        }
-                        else  {
-                            pd.dismiss();
-                        }
-
-                        String CHANNEL_ID = "my_channel_01";
-                        int notificationId = 1;
-                        Intent notificationIntent = new Intent(Category_Type_Activity.this, Category_Type_Activity.class);
-                        int importance = NotificationManager.IMPORTANCE_HIGH;
-                        NotificationManager notificationManager = (NotificationManager) Category_Type_Activity.this.getSystemService(Context.NOTIFICATION_SERVICE);
-
-
-                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                            NotificationChannel mChannel = new NotificationChannel(
-                                    CHANNEL_ID, "Ashvin", importance);
-                            notificationManager.createNotificationChannel(mChannel);
-                        }
-                        pd.dismiss();
-                        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(Category_Type_Activity.this, CHANNEL_ID)
-                                .setSmallIcon(R.drawable.app_logo)
-                                .setContentTitle("Report Synced Successfully")
-                                .setContentText("Kindly Check Your Mail");
-
-
-
-                        TaskStackBuilder stackBuilder = TaskStackBuilder.create(Category_Type_Activity.this);
-                        stackBuilder.addNextIntent(notificationIntent);
-                        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(
-                                0,
-                                PendingIntent.FLAG_UPDATE_CURRENT
-                        );
-                        mBuilder.setContentIntent(resultPendingIntent);
-
-                        notificationManager.notify(notificationId, mBuilder.build());
-                    }
-                })
-                .requestString();
-
-    }
 
 }

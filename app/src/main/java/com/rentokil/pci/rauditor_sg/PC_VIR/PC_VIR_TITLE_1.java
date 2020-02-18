@@ -12,6 +12,7 @@ import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.LocationManager;
@@ -19,6 +20,9 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -28,7 +32,9 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -91,7 +97,7 @@ public class PC_VIR_TITLE_1 extends AppCompatActivity {
 
     String get_cond_date_1,get_vehicle_2,get_driver_3,get_team_4;
 
-
+    String db_user_name="";
     DatabaseHelper db;
     SQLiteDatabase sd;
     ContentValues cv1;
@@ -105,11 +111,21 @@ public class PC_VIR_TITLE_1 extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pc_vir_title_1);
 
+        Toolbar mTopToolbar;
+
+        mTopToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mTopToolbar.setTitle("");
+        mTopToolbar.setSubtitle("");
+        setSupportActionBar(mTopToolbar);
+
+        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(),R.drawable.menuicon);
+        mTopToolbar.setOverflowIcon(drawable);
         mActivity = this;
         mSimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
 
@@ -124,7 +140,7 @@ public class PC_VIR_TITLE_1 extends AppCompatActivity {
         // Todo Location Already on  ... start
         final LocationManager manager = (LocationManager) PC_VIR_TITLE_1.this.getSystemService(Context.LOCATION_SERVICE);
         if (manager.isProviderEnabled(LocationManager.GPS_PROVIDER) && hasGPSDevice(PC_VIR_TITLE_1.this)) {
-//            Toast.makeText(PCI_Title_Page_1.this,"Gps already enabled",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(PC_VIR_TITLE_1.this,"Gps already enabled",Toast.LENGTH_SHORT).show();
 
         }
         // Todo Location Already on  ... end
@@ -139,10 +155,10 @@ public class PC_VIR_TITLE_1 extends AppCompatActivity {
             enableLoc();
         }else{
             Log.e("keshav","Gps already enabled");
-//            Toast.makeText(PCI_Title_Page_1.this,"Gps already enabled",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(PC_VIR_TITLE_1.this,"Gps already enabled",Toast.LENGTH_SHORT).show();
         }
 
-
+        get_profile_db();
 
         et_cond_date_1 =(EditText) findViewById(R.id.et_cond_date_1);
         et_vehicle_2 =(EditText) findViewById(R.id.et_vehicle_2);
@@ -625,5 +641,98 @@ public class PC_VIR_TITLE_1 extends AppCompatActivity {
             return  true;
         }
     }
+
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.popup_menu_vir, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.vir_home:
+                Intent sir_home = new Intent(PC_VIR_TITLE_1.this, Category_Type_Activity.class);
+                sir_home.putExtra("key_id", key_id);
+                startActivity(sir_home);
+                break;
+            case R.id.vir_title_page_1:
+                Toast.makeText(getApplicationContext(),"Already,You Are in Same Page",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.vir_body_2:
+                if (key_id != null) {
+                    Intent sir_customer = new Intent(PC_VIR_TITLE_1.this, PC_VIR_BODY_2.class);
+                    sir_customer.putExtra("key_id", key_id);
+                    startActivity(sir_customer);
+                } else {
+                }
+                break;
+            case R.id.vir_funct_3:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PC_VIR_TITLE_1.this, PC_VIR_FUNCTION_3.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+
+                } else {
+                }
+                break;
+
+                case R.id.vir_gen_4:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PC_VIR_TITLE_1.this, PC_VIR_GENERAL_4.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+
+                }
+                break;
+
+                case R.id.vir_ppe_5:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PC_VIR_TITLE_1.this, PC_VIR_PPE_5.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+                break;
+
+                case R.id.vir_stan_6:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PC_VIR_TITLE_1.this, PC_VIR_STANDARD_6.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+                break;
+
+                case R.id.vir_other_7:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PC_VIR_TITLE_1.this, PC_VIR_OTHER_7.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void get_profile_db() {
+        Cursor c5;
+        c5 = sd.rawQuery("Select * from " + db.USER_PROFILE_TABLE, null);
+        c5.moveToFirst();
+
+        if (c5 != null) {
+
+            db_user_name = c5.getString(c5.getColumnIndex(db.USER_NAME));
+
+
+        }
+        c5.close();
+
+    }
+
 
 }

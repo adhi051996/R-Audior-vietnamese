@@ -21,6 +21,9 @@ import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -33,6 +36,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import com.rentokil.pci.rauditor_sg.Category_Type_Activity;
 import com.rentokil.pci.rauditor_sg.Database.DatabaseHelper;
@@ -95,11 +100,19 @@ public class PTI_SIGN_3 extends AppCompatActivity {
     String get_reason;
     EditText et_reason;
 
-
+    Toolbar mTopToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pti__sign_3);
+
+        mTopToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mTopToolbar.setTitle("");
+        mTopToolbar.setSubtitle("");
+        setSupportActionBar(mTopToolbar);
+
+        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(),R.drawable.menuicon);
+        mTopToolbar.setOverflowIcon(drawable);
 
 
         Intent intent2 = getIntent();
@@ -478,6 +491,8 @@ public class PTI_SIGN_3 extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        Toast.makeText(getApplicationContext(),"Report Completed Successfully,Please Sync",Toast.LENGTH_SHORT).show();
+
        
         if (bitmap_branch_manager!=null) {
             ByteArrayOutputStream stream_1 = new ByteArrayOutputStream();
@@ -585,5 +600,47 @@ public class PTI_SIGN_3 extends AppCompatActivity {
     }
 
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.popup_menu_pti, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.pti_home:
+                Intent sir_home = new Intent(PTI_SIGN_3.this, Category_Type_Activity.class);
+                sir_home.putExtra("key_id", key_id);
+                startActivity(sir_home);
+                break;
+            case R.id.pti_title_page_1:
+
+                if (key_id != null) {
+                    Intent sir_customer = new Intent(PTI_SIGN_3.this, PTI_Title_Page_1.class);
+                    sir_customer.putExtra("key_id", key_id);
+                    startActivity(sir_customer);
+                } else {
+                }
+                break;
+            case R.id.pti_obs_2:
+
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PTI_SIGN_3.this, PTI_Audit_Page_2.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+
+                break;
+            case R.id.pti_sign_3:
+
+                Toast.makeText(getApplicationContext(),"Already,You Are in Same Page",Toast.LENGTH_SHORT).show();
+
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 }

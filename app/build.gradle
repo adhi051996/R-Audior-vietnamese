@@ -17,6 +17,7 @@ repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
 apply plugin: 'io.fabric'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
@@ -25,8 +26,8 @@ android {
         applicationId "com.rentokil.pci.rauditor_sg"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 3
-        versionName "1.2"
+        versionCode 4
+        versionName "1.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
 
@@ -119,6 +120,8 @@ dependencies {
     implementation 'gun0912.ted:tedpermission:2.2.0'
     implementation "io.reactivex.rxjava2:rxjava:2.2.6"
     implementation 'gun0912.ted:tedonactivityresult:1.0.6'
+    implementation 'com.google.firebase:firebase-crash:10.2.0'
+    implementation 'id.zelory:compressor:2.1.0'
 
 
 //    implementation project(path:':tedbottompicker', configuration: 'default')

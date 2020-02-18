@@ -5,11 +5,15 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -19,12 +23,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.RequestOptions;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
+import com.rentokil.pci.rauditor_sg.Category_Type_Activity;
 import com.rentokil.pci.rauditor_sg.Database.DatabaseHelper;
 import com.rentokil.pci.rauditor_sg.MULTI_IMAGE_SELECTION.TedRxBottomPicker;
 import com.rentokil.pci.rauditor_sg.R;
@@ -59,6 +66,15 @@ String get_remarks;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pc_vir_body_2);
+
+        Toolbar mTopToolbar;
+
+        mTopToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mTopToolbar.setTitle("");
+        mTopToolbar.setSubtitle("");
+        setSupportActionBar(mTopToolbar);
+        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(),R.drawable.menuicon);
+        mTopToolbar.setOverflowIcon(drawable);
 
         db = new DatabaseHelper(PC_VIR_BODY_2.this);
         sd = db.getReadableDatabase();
@@ -604,6 +620,79 @@ String get_remarks;
     }
 
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.popup_menu_vir, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.vir_home:
+                Intent sir_home = new Intent(PC_VIR_BODY_2.this, Category_Type_Activity.class);
+                sir_home.putExtra("key_id", key_id);
+                startActivity(sir_home);
+                break;
+            case R.id.vir_title_page_1:
+                if (key_id != null) {
+                    Intent sir_customer = new Intent(PC_VIR_BODY_2.this, PC_VIR_TITLE_1.class);
+                    sir_customer.putExtra("key_id", key_id);
+                    startActivity(sir_customer);
+                } else {
+                }
+                break;
+            case R.id.vir_body_2:
+                Toast.makeText(getApplicationContext(),"Already,You Are in Same Page",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.vir_funct_3:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PC_VIR_BODY_2.this, PC_VIR_FUNCTION_3.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+                break;
+
+            case R.id.vir_gen_4:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PC_VIR_BODY_2.this, PC_VIR_GENERAL_4.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+                break;
+
+            case R.id.vir_ppe_5:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PC_VIR_BODY_2.this, PC_VIR_PPE_5.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+                break;
+
+            case R.id.vir_stan_6:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PC_VIR_BODY_2.this, PC_VIR_STANDARD_6.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+                break;
+
+            case R.id.vir_other_7:
+                if (key_id != null) {
+                    Intent sir_observation = new Intent(PC_VIR_BODY_2.this, PC_VIR_OTHER_7.class);
+                    sir_observation.putExtra("key_id", key_id);
+                    startActivity(sir_observation);
+                } else {
+                }
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 
 }

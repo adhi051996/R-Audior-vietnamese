@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/vir_home"
+        android:icon="@drawable/back1"
+        android:title="Home" />
+    <item
+        android:id="@+id/vir_title_page_1"
+        android:icon="@drawable/back1"
+        android:title="TITLE PAGE" />
+    <item
+        android:id="@+id/vir_body_2"
+        android:icon="@drawable/back1"
+        android:title="Vehicle Body" />
+    <item
+        android:id="@+id/vir_funct_3"
+        android:icon="@drawable/back1"
+        android:title="Vehicle Functionality" />
+
+    <item
+        android:id="@+id/vir_gen_4"
+        android:icon="@drawable/back1"
+        android:title="General Checklist" />
+
+    <item
+        android:id="@+id/vir_ppe_5"
+        android:icon="@drawable/back1"
+        android:title="PPE &amp; Eqiupment" />
+
+    <item
+        android:id="@+id/vir_stan_6"
+        android:icon="@drawable/back1"
+        android:title="Standard Items" />
+
+    <item
+        android:id="@+id/vir_other_7"
+        android:icon="@drawable/back1"
+        android:title="Other Items" />
+
+
+
+</menu>
