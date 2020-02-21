@@ -57,6 +57,7 @@ import com.rentokil.pci.rauditor_sg.volley.VolleyDataRequester;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -67,6 +68,7 @@ import dmax.dialog.SpotsDialog;
 
 
 public class Category_Type_Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    ProgressDialog progressDialog_fsv;
     ProgressDialog progressDialog_vir;
     ProgressDialog progressDialog_pci;
     ProgressDialog progressDialog_pti;
@@ -80,7 +82,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
     SQLiteDatabase sd;
     public static String User_Login_Mail = "";
     DatabaseHelper db;
-    ContentValues cv, cv2, cv3, cv4, cv5, cv6, cv7,cv_send_VIR,cv_send_PCI,cv_send_PTI;
+    ContentValues cv, cv2, cv3, cv4, cv5, cv6, cv7,cv_send_VIR,cv_send_FSV,cv_send_PCI,cv_send_PTI;
     String db_user_name, db_user_mail, db_branch, db_country;
     ConnectivityManager cManager;
     NetworkInfo nInfo;
@@ -93,26 +95,43 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
     Bitmap bitmap_pc_5_1,bitmap_pc_5_1_1,bitmap_pc_5_1_2;
     String pos_img_pc_5_1,pos_img_pc_5_1_1,pos_img_pc_5_1_2;
     String pos_img_pt_5_1,pos_img_pt_5_1_1,pos_img_pt_5_1_2;
-    byte[] byteArray_man_pc=null,byteArray_man_pt=null;
-    String post_pc_q_complete_DATE = "",post_pt_q_complete_DATE = "";
+    byte[] byteArray_man_pc=null,byteArray_man_pt=null,byteArray_man_fsv=null;
+    String post_pc_q_complete_DATE = "",post_pt_q_complete_DATE = "",post_fsv_q_complete_DATE = "";
     String post_pc_q_CUS_SIGN_2,post_pc_q_reason;
+    String post_fsv_q_CUS_SIGN_2,post_fsv_q_reason;
     String post_pt_q_CUS_SIGN_2,post_pt_q_reason;
-    ByteArrayInputStream imageStream_man_pc,imageStream_man_pt;
+    ByteArrayInputStream imageStream_man_pc,imageStream_man_pt,imageStream_man_fsv;
     Bitmap bitmap_man_tir_q;
     Bitmap bitmap_man_pt_q;
-    String post_pc_q_cus_sign,post_pt_q_cus_sign;
+    Bitmap bitmap_man_fsv_q;
+    String post_pc_q_cus_sign,post_pt_q_cus_sign,post_fsv_q_cus_sign;
 
     String IMG_URL_1,IMG_URL_2,IMG_URL_3,IMG_URL_4;
     String pc_vir_body_e1;
+    String pc_fsv_body_e1;
     int VIR_POST_KEY = 0;
     int PCI_POST_KEY = 0;
     int PTI_POST_KEY = 0;
+    int FSV_POST_KEY = 0;
     String versionname = BuildConfig.VERSION_NAME;
     Map<String, String> params_vir = new HashMap<String, String>();
     Map<String, String> params_pci = new HashMap<String, String>();
     Map<String, String> params_pti = new HashMap<String, String>();
+    Map<String, String> params_fsv = new HashMap<String, String>();
     String VIR_FUNC_3_1,VIR_FUNC_3_2,VIR_FUNC_3_3,VIR_FUNC_3_4,VIR_FUNC_3_5,VIR_FUNC_3_6,VIR_FUNC_3_7,VIR_FUNC_3_8,VIR_FUNC_3_9,VIR_FUNC_3_10,
             VIR_FUNC_3_11,VIR_FUNC_3_12,VIR_FUNC_3_13,VIR_FUNC_3_14;
+
+    String FSV_GEN_3_1,FSV_GEN_3_2,FSV_GEN_3_3,FSV_GEN_3_4,FSV_GEN_3_5,FSV_GEN_3_6,FSV_GEN_3_7,FSV_GEN_3_8,FSV_GEN_3_9,FSV_GEN_3_10,
+            FSV_GEN_3_11,FSV_GEN_3_12,FSV_GEN_3_13,FSV_GEN_3_14,FSV_GEN_3_15,FSV_GEN_3_16,FSV_GEN_3_17,FSV_GEN_3_18,FSV_GEN_3_19,FSV_GEN_CHECK_YES,FSV_GEN_CHECK_NO;
+
+    String FSV_STA_TOOL_4_1,FSV_STA_TOOL_4_2,FSV_STA_TOOL_4_3,FSV_STA_TOOL_4_4,FSV_STA_TOOL_4_5,FSV_STA_TOOL_4_6,FSV_STA_TOOL_4_7,FSV_STA_TOOL_4_8,FSV_STA_TOOL_4_9,FSV_STA_TOOL_4_10,
+            FSV_STA_TOOL_4_11,FSV_STA_TOOL_4_12,FSV_STA_TOOL_4_13,FSV_STA_TOOL_4_14,FSV_STA_TOOL_4_15,FSV_STA_TOOL_4_16,FSV_STA_TOOL_4_17,FSV_STA_TOOL_4_18,FSV_STA_TOOL_4_19,FSV_STA_TOOL_4_20,FSV_STA_TOOL_4_21,FSV_STA_TOOL_4_22,FSV_STA_TOOL_NA,FSV_STA_TOOL_NO;
+
+    String FSV_STA_ITEM_5_1,FSV_STA_ITEM_5_2,FSV_STA_ITEM_5_3,FSV_STA_ITEM_5_4,FSV_STA_ITEM_5_5,FSV_STA_ITEM_5_6,FSV_STA_ITEM_5_7,FSV_STA_ITEM_5_8,FSV_STA_ITEM_5_9,FSV_STA_ITEM_5_10,
+            FSV_STA_ITEM_5_11,FSV_STA_ITEM_5_12,FSV_STA_ITEM_5_13,FSV_STA_ITEM_5_14,FSV_STA_ITEM_5_15,FSV_STA_ITEM_5_16,FSV_STA_ITEM_5_17,FSV_STA_ITEM_5_18,FSV_STA_ITEM_5_19,FSV_STA_ITEM_5_20,FSV_STA_ITEM_5_21,FSV_STA_ITEM_5_22,FSV_STA_ITEM_NA,FSV_STA_ITEM_NO;
+
+    String FSV_STA_EMER_6_1,FSV_STA_EMER_6_2,FSV_STA_EMER_6_3,FSV_STA_EMER_6_4,FSV_STA_EMER_6_5,FSV_STA_EMER_6_6,FSV_STA_EMER_6_7,FSV_STA_EMER_6_8,FSV_STA_EMER_6_9,FSV_STA_EMER_6_10,
+            FSV_STA_EMER_NA,FSV_STA_EMER_NO;
 
 
     String VIR_GENERAL_4_1,VIR_GENERAL_4_2,VIR_GENERAL_4_3,VIR_GENERAL_4_4,VIR_GENERAL_4_5,VIR_GENERAL_4_6,VIR_GENERAL_4_7;
@@ -159,6 +178,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         cv_send_PCI = new ContentValues();
         cv_send_PTI = new ContentValues();
         cv_send_VIR = new ContentValues();
+        cv_send_FSV = new ContentValues();
 
         sd = db.getReadableDatabase();
 
@@ -393,6 +413,10 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                 else if (db.get_vir_completed_count(sd) != 0) {
                     sync_vir();
                 }
+
+                else if (db.get_fsv_completed_count(sd) != 0) {
+                    sync_fsv();
+                }
                 else  {
                     pd.dismiss();
                     Toast.makeText(getApplicationContext(), "No Pending Records", Toast.LENGTH_SHORT).show();
@@ -468,6 +492,33 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
 
             VIR_POST_KEY = cursor.getInt(cursor.getColumnIndex(db.KEY_ID));
             AsyncTaskRunner_vir runner = new AsyncTaskRunner_vir();
+            runner.execute("pos");
+        } else {
+            pd.dismiss();
+        }
+        cursor.close();
+    }
+
+    public void sync_fsv() {
+        //pd.show();
+        String Status = "Completed";
+        String selectQuery = "SELECT * FROM " + db.FSV_DB_TITLE_1 + " where STATUS ='" + Status + "'";
+        Cursor cursor = sd.rawQuery(selectQuery, null);
+        cursor.moveToFirst();
+        Toast.makeText(getApplicationContext(), "Syncing Data ....", Toast.LENGTH_LONG).show();
+        if (cursor.getCount() != 0) {
+            //    sync_off_sir("" + cursor.getInt(cursor.getColumnIndex(db.KEY_ID)));
+
+            progressDialog_fsv = new ProgressDialog(Category_Type_Activity.this);
+            progressDialog_fsv.setTitle("Posting Data - FSV");
+            progressDialog_fsv.setMessage("Syncing in Progress...");
+            progressDialog_fsv.setProgressStyle(progressDialog_fsv.STYLE_SPINNER);
+            progressDialog_fsv.setCancelable(false);
+            progressDialog_fsv.show();
+
+
+            FSV_POST_KEY = cursor.getInt(cursor.getColumnIndex(db.KEY_ID));
+            AsyncTaskRunner_fsv runner = new AsyncTaskRunner_fsv();
             runner.execute("pos");
         } else {
             pd.dismiss();
@@ -572,14 +623,14 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                                 try {
                                     if (Uri.parse(myOld.get(p)) != null) {
                                         Context c;
-                                        Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getContentResolver(),
+                                      /*  Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getContentResolver(),
                                                 Uri.parse(myOld.get(p)));
                                         ByteArrayOutputStream bs = new ByteArrayOutputStream();
                                         bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
                                         //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                        params_pti.put("sub_c" + m + "_" + p, "" + getStringImage(bitmap_x));
+                                      */  params_pti.put("sub_c" + m + "_" + p, "" + getStringImage_1(myOld.get(p)));
 
-                                        Log.e("VVBBDSSAAZ", "image = " + getStringImage(bitmap_x));
+                                    //    Log.e("VVBBDSSAAZ", "image = " + getStringImage(bitmap_x));
                                     }
                                 } catch (Exception e) {
                                     Log.e("LLLLLLLLL", "else\t" + e.getMessage());
@@ -673,9 +724,11 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                 params_vir.put("vehicle_no", ""+cursor.getString(cursor.getColumnIndex(db.et2)));
                 params_vir.put("driver_name", ""+cursor.getString(cursor.getColumnIndex(db.et3)));
                 params_vir.put("team", ""+cursor.getString(cursor.getColumnIndex(db.et4)));
+                params_vir.put("prepared_by", ""+cursor.getString(cursor.getColumnIndex(db.et5)));
                 params_vir.put("comp_status", ""+cursor.getString(cursor.getColumnIndex(db.STATUS)));
                 params_vir.put("date_complete", ""+cursor.getString(cursor.getColumnIndex(db.COMPLETED_DATE)));
                 params_vir.put("version", ""+versionname);
+
                 Log.e("AAXXCCSAA","vehicle = "+cursor.getString(cursor.getColumnIndex(db.et2)));
             }
 
@@ -712,7 +765,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
 
 
             try {
-                String Query2 = "select * from " + db.PC_VIR_DB_BODY_2 + " where KEY_ID = '" + VIR_POST_KEY + "'";
+                String Query2 = "select * from " + db.PC_VIR_DB_BODY_2 + " where KEY_ID = '" + FSV_POST_KEY + "'";
                 Cursor cursor2 = sd.rawQuery(Query2, null);
                 cursor2.moveToFirst();
 
@@ -752,7 +805,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                                         ByteArrayOutputStream bs = new ByteArrayOutputStream();
                                         bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
                                         //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                        params_vir.put("front_c_"+p, "" + getStringImage(bitmap_x));
+                                        params_vir.put("front_c_"+p, "" +getStringImage_1(myOld.get(p)));
 
 
 
@@ -784,7 +837,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                                         ByteArrayOutputStream bs = new ByteArrayOutputStream();
                                         bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
                                         //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                        params_vir.put("side_1_c_"+p, "" + getStringImage(bitmap_x));
+                                        params_vir.put("side_1_c_"+p, "" + getStringImage_1(myOld2.get(p)));
 
 
                                     }
@@ -816,7 +869,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                                         ByteArrayOutputStream bs = new ByteArrayOutputStream();
                                         bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
                                         //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                        params_vir.put("side_2_c_"+p, "" + getStringImage(bitmap_x));
+                                        params_vir.put("side_2_c_"+p, "" + getStringImage_1(myOld3.get(p)));
 
 
                                     }
@@ -848,7 +901,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                                         ByteArrayOutputStream bs = new ByteArrayOutputStream();
                                         bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
                                         //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                        params_vir.put("rear_c_"+ p, "" + getStringImage(bitmap_x));
+                                        params_vir.put("rear_c_"+ p, "" + getStringImage_1(myOld4.get(p)));
 
 
                                     }
@@ -1037,6 +1090,523 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
             // progressDialog.setProgressPercentFormat(text[0]);
 
         }
+    }
+
+
+    private class AsyncTaskRunner_fsv extends AsyncTask<String, String, String> {
+
+        private String resp = "Update";
+
+        @Override
+        protected String doInBackground(String... params1) {
+            String Query = "select * from " + db.FSV_DB_TITLE_1 + " where KEY_ID = '" + FSV_POST_KEY + "'";
+            Cursor cursor = sd.rawQuery(Query, null);
+            cursor.moveToFirst();
+            if (cursor.getCount() != 0) {
+                params_fsv.put("conducted_on",""+ cursor.getString(cursor.getColumnIndex(db.et1)));
+                params_fsv.put("checked_by", ""+db_user_name);
+                params_fsv.put("vehicle_no", ""+cursor.getString(cursor.getColumnIndex(db.et2)));
+                params_fsv.put("driver_name", ""+cursor.getString(cursor.getColumnIndex(db.et3)));
+                params_fsv.put("team", ""+cursor.getString(cursor.getColumnIndex(db.et4)));
+                params_fsv.put("prepared_by", ""+cursor.getString(cursor.getColumnIndex(db.et5)));
+                params_fsv.put("comp_status", ""+cursor.getString(cursor.getColumnIndex(db.STATUS)));
+                params_fsv.put("date_complete", ""+cursor.getString(cursor.getColumnIndex(db.COMPLETED_DATE)));
+                params_fsv.put("version", ""+versionname);
+                Log.e("AAXXCCSAA","vehicle = "+cursor.getString(cursor.getColumnIndex(db.et2)));
+            }
+
+            get_profile_db();
+
+            cursor.close();
+            //SIR TABLE 22
+
+
+
+            Log.e("AAXXCCSAA","mail = "+db_user_mail);
+
+            Log.e("AAXXCCSAA","post key = "+FSV_POST_KEY);
+
+            params_fsv.put("user_mail", db_user_mail);
+
+
+            try {
+                get_fsv_general_3("" + FSV_POST_KEY);
+                get_fsv_stand_tool_4("" + FSV_POST_KEY);
+                get_fsv_stand_item_5("" + FSV_POST_KEY);
+                get_fsv_emer_6("" + FSV_POST_KEY);
+                get_fsv_sign("" + FSV_POST_KEY);
+
+
+            } catch (Exception e) {
+
+                Log.e("AAGSGSHHDD", "error = " + e.getMessage());
+                progressDialog_fsv.dismiss();
+                e.printStackTrace();
+            }
+
+
+
+
+            try {
+                String Query2 = "select * from " + db.FSV_DB_BODY_2 + " where KEY_ID = '" + FSV_POST_KEY + "'";
+                Cursor cursor2 = sd.rawQuery(Query2, null);
+                cursor2.moveToFirst();
+
+
+                if (cursor2.getCount() != 0) {
+                    IMG_URL_1 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_1));
+                    IMG_URL_2 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_2));
+                    IMG_URL_3 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_3));
+                    IMG_URL_4 = cursor2.getString(cursor2.getColumnIndex(db.IMG_URL_4));
+                    pc_fsv_body_e1 = cursor2.getString(cursor2.getColumnIndex(db.et1));
+
+
+
+                    if (pc_fsv_body_e1 == null) {
+                        pc_fsv_body_e1 = "";
+                    }
+
+                    params_fsv.put("remarks_2", ""+pc_fsv_body_e1);
+
+
+
+
+
+                    if (IMG_URL_1 != null) {
+                        String strNew = IMG_URL_1.replace("[", "");
+                        String strNew_1 = strNew.replace("]", "");
+                        List<String> myOld = new ArrayList<String>(Arrays.asList(strNew_1.split(", ")));
+
+
+                        if (myOld.size() != 0) {
+                            for (int p = 0; p < myOld.size(); p++) {
+                                try {
+                                    if (Uri.parse(myOld.get(p)) != null) {
+                                        Context c;
+                                        Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
+                                                Uri.parse(myOld.get(p)));
+                                        ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                                        bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
+                                        //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
+                                        params_fsv.put("front_c_"+p, "" +getStringImage_1(myOld.get(p)));
+
+
+
+                                    }
+                                } catch (Exception e) {
+                                    Log.e("LLLLLLLLL", "else\t" + e.getMessage());
+                                    //handle exception
+                                }
+                            }
+                        }
+
+                    }
+
+
+
+                    if (IMG_URL_2 != null) {
+                        String strNew2 = IMG_URL_2.replace("[", "");
+                        String strNew_2 = strNew2.replace("]", "");
+                        List<String> myOld2 = new ArrayList<String>(Arrays.asList(strNew_2.split(", ")));
+
+
+                        if (myOld2.size() != 0) {
+                            for (int p = 0; p < myOld2.size(); p++) {
+                                try {
+                                    if (Uri.parse(myOld2.get(p)) != null) {
+                                        Context c;
+                                        Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
+                                                Uri.parse(myOld2.get(p)));
+                                        ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                                        bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
+                                        //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
+                                        params_fsv.put("side_1_c_"+p, "" + getStringImage_1(myOld2.get(p)));
+
+
+                                    }
+                                } catch (Exception e) {
+                                    Log.e("LLLLLLLLL", "else\t" + e.getMessage());
+                                    //handle exception
+                                }
+                            }
+                        }
+
+                    }
+
+
+
+
+                    if (IMG_URL_3 != null) {
+                        String strNew3 = IMG_URL_3.replace("[", "");
+                        String strNew_3 = strNew3.replace("]", "");
+                        List<String> myOld3 = new ArrayList<String>(Arrays.asList(strNew_3.split(", ")));
+
+
+                        if (myOld3.size() != 0) {
+                            for (int p = 0; p < myOld3.size(); p++) {
+                                try {
+                                    if (Uri.parse(myOld3.get(p)) != null) {
+                                        Context c;
+                                        Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
+                                                Uri.parse(myOld3.get(p)));
+                                        ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                                        bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
+                                        //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
+                                        params_fsv.put("side_2_c_"+p, "" + getStringImage_1(myOld3.get(p)));
+
+
+                                    }
+                                } catch (Exception e) {
+                                    Log.e("LLLLLLLLL", "else\t" + e.getMessage());
+                                    //handle exception
+                                }
+                            }
+                        }
+
+                    }
+
+
+
+
+                    if (IMG_URL_4 != null) {
+                        String strNew4 = IMG_URL_4.replace("[", "");
+                        String strNew_4 = strNew4.replace("]", "");
+                        List<String> myOld4 = new ArrayList<String>(Arrays.asList(strNew_4.split(", ")));
+
+
+                        if (myOld4.size() != 0) {
+                            for (int p = 0; p < myOld4.size(); p++) {
+                                try {
+                                    if (Uri.parse(myOld4.get(p)) != null) {
+                                        Context c;
+                                        Bitmap bitmap_x = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),
+                                                Uri.parse(myOld4.get(p)));
+                                        ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                                        bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
+                                        //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
+                                        params_fsv.put("rear_c_"+ p, "" + getStringImage_1(myOld4.get(p)));
+
+
+                                    }
+                                } catch (Exception e) {
+                                    Log.e("LLLLLLLLL", "else\t" + e.getMessage());
+                                    //handle exception
+                                }
+                            }
+                        }
+
+                    }
+
+
+                }
+            } catch (Exception e) {
+
+                Log.e("JJHHGAFFAF","func 1 = "+e.getMessage());
+                e.printStackTrace();
+            }
+
+
+            Log.e("FFASAASSSSA","func 1 = "+VIR_FUNC_3_1);
+            
+
+            params_fsv.put("FSV_GEN_3_1", ""+ FSV_GEN_3_1);
+            params_fsv.put("FSV_GEN_3_2",""+  FSV_GEN_3_2);
+            params_fsv.put("FSV_GEN_3_3",""+  FSV_GEN_3_3);
+            params_fsv.put("FSV_GEN_3_4",""+  FSV_GEN_3_4);
+            params_fsv.put("FSV_GEN_3_5",""+  FSV_GEN_3_5);
+            params_fsv.put("FSV_GEN_3_6",""+  FSV_GEN_3_6);
+            params_fsv.put("FSV_GEN_3_7",""+  FSV_GEN_3_7);
+            params_fsv.put("FSV_GEN_3_8",""+  FSV_GEN_3_8);
+            params_fsv.put("FSV_GEN_3_9",""+  FSV_GEN_3_9);
+            params_fsv.put("FSV_GEN_3_10",""+  FSV_GEN_3_10);
+            params_fsv.put("FSV_GEN_3_11",""+  FSV_GEN_3_11);
+            params_fsv.put("FSV_GEN_3_12",""+  FSV_GEN_3_12);
+            params_fsv.put("FSV_GEN_3_13",""+  FSV_GEN_3_13);
+            params_fsv.put("FSV_GEN_3_14",""+  FSV_GEN_3_14);
+            params_fsv.put("FSV_GEN_3_15",""+  FSV_GEN_3_15);
+            params_fsv.put("FSV_GEN_3_16",""+  FSV_GEN_3_16);
+            params_fsv.put("FSV_GEN_3_17",""+  FSV_GEN_3_17);
+            params_fsv.put("FSV_GEN_3_18",""+  FSV_GEN_3_18);
+            params_fsv.put("FSV_GEN_3_19",""+  FSV_GEN_3_19);
+
+
+
+            try {
+                
+                params_fsv.put("FSV_STA_TOOL_4_1", ""+ FSV_STA_TOOL_4_1);
+                params_fsv.put("FSV_STA_TOOL_4_2",""+  FSV_STA_TOOL_4_2);
+                params_fsv.put("FSV_STA_TOOL_4_3",""+  FSV_STA_TOOL_4_3);
+                params_fsv.put("FSV_STA_TOOL_4_4",""+  FSV_STA_TOOL_4_4);
+                params_fsv.put("FSV_STA_TOOL_4_5",""+  FSV_STA_TOOL_4_5);
+                params_fsv.put("FSV_STA_TOOL_4_6",""+  FSV_STA_TOOL_4_6);
+                params_fsv.put("FSV_STA_TOOL_4_7",""+  FSV_STA_TOOL_4_7);
+                params_fsv.put("FSV_STA_TOOL_4_8",""+  FSV_STA_TOOL_4_8);
+                params_fsv.put("FSV_STA_TOOL_4_9",""+  FSV_STA_TOOL_4_9);
+                params_fsv.put("FSV_STA_TOOL_4_10",""+  FSV_STA_TOOL_4_10);
+                params_fsv.put("FSV_STA_TOOL_4_11",""+  FSV_STA_TOOL_4_11);
+                params_fsv.put("FSV_STA_TOOL_4_12",""+  FSV_STA_TOOL_4_12);
+                params_fsv.put("FSV_STA_TOOL_4_13",""+  FSV_STA_TOOL_4_13);
+                params_fsv.put("FSV_STA_TOOL_4_14",""+  FSV_STA_TOOL_4_14);
+                params_fsv.put("FSV_STA_TOOL_4_15",""+  FSV_STA_TOOL_4_15);
+                params_fsv.put("FSV_STA_TOOL_4_16",""+  FSV_STA_TOOL_4_16);
+                params_fsv.put("FSV_STA_TOOL_4_17",""+  FSV_STA_TOOL_4_17);
+                params_fsv.put("FSV_STA_TOOL_4_18",""+  FSV_STA_TOOL_4_18);
+                params_fsv.put("FSV_STA_TOOL_4_19",""+  FSV_STA_TOOL_4_19);
+                params_fsv.put("FSV_STA_TOOL_4_20",""+  FSV_STA_TOOL_4_20);
+                params_fsv.put("FSV_STA_TOOL_4_21",""+  FSV_STA_TOOL_4_21);
+                params_fsv.put("FSV_STA_TOOL_4_22",""+  FSV_STA_TOOL_4_22);
+
+
+            } catch (Exception e) {
+                Log.e("VVVVVVV", "Sign = " + e.getMessage());
+                e.printStackTrace();
+            }
+
+
+            try {
+                params_fsv.put("FSV_STA_ITEM_5_1", ""+ FSV_STA_ITEM_5_1);
+                params_fsv.put("FSV_STA_ITEM_5_2",""+  FSV_STA_ITEM_5_2);
+                params_fsv.put("FSV_STA_ITEM_5_3",""+  FSV_STA_ITEM_5_3);
+                params_fsv.put("FSV_STA_ITEM_5_4",""+  FSV_STA_ITEM_5_4);
+                params_fsv.put("FSV_STA_ITEM_5_5",""+  FSV_STA_ITEM_5_5);
+                params_fsv.put("FSV_STA_ITEM_5_6",""+  FSV_STA_ITEM_5_6);
+                params_fsv.put("FSV_STA_ITEM_5_7",""+  FSV_STA_ITEM_5_7);
+                params_fsv.put("FSV_STA_ITEM_5_8",""+  FSV_STA_ITEM_5_8);
+                params_fsv.put("FSV_STA_ITEM_5_9",""+  FSV_STA_ITEM_5_9);
+                params_fsv.put("FSV_STA_ITEM_5_10",""+  FSV_STA_ITEM_5_10);
+                params_fsv.put("FSV_STA_ITEM_5_11",""+  FSV_STA_ITEM_5_11);
+                params_fsv.put("FSV_STA_ITEM_5_12",""+  FSV_STA_ITEM_5_12);
+                params_fsv.put("FSV_STA_ITEM_5_13",""+  FSV_STA_ITEM_5_13);
+                params_fsv.put("FSV_STA_ITEM_5_14",""+  FSV_STA_ITEM_5_14);
+                params_fsv.put("FSV_STA_ITEM_5_15",""+  FSV_STA_ITEM_5_15);
+                params_fsv.put("FSV_STA_ITEM_5_16",""+  FSV_STA_ITEM_5_16);
+                params_fsv.put("FSV_STA_ITEM_5_17",""+  FSV_STA_ITEM_5_17);
+                params_fsv.put("FSV_STA_ITEM_5_18",""+  FSV_STA_ITEM_5_18);
+                params_fsv.put("FSV_STA_ITEM_5_19",""+  FSV_STA_ITEM_5_19);
+                params_fsv.put("FSV_STA_ITEM_5_20",""+  FSV_STA_ITEM_5_20);
+                params_fsv.put("FSV_STA_ITEM_5_21",""+  FSV_STA_ITEM_5_21);
+                params_fsv.put("FSV_STA_ITEM_5_22",""+  FSV_STA_ITEM_5_22);
+
+
+
+            } catch (Exception e) {
+                Log.e("VVVVVVV", "Sign = " + e.getMessage());
+                e.printStackTrace();
+            }
+
+
+            try {
+
+                params_fsv.put("FSV_STA_EMER_6_1", ""+ FSV_STA_EMER_6_1);
+                params_fsv.put("FSV_STA_EMER_6_2",""+  FSV_STA_EMER_6_2);
+                params_fsv.put("FSV_STA_EMER_6_3",""+  FSV_STA_EMER_6_3);
+                params_fsv.put("FSV_STA_EMER_6_4",""+  FSV_STA_EMER_6_4);
+                params_fsv.put("FSV_STA_EMER_6_5",""+  FSV_STA_EMER_6_5);
+                params_fsv.put("FSV_STA_EMER_6_6",""+  FSV_STA_EMER_6_6);
+                params_fsv.put("FSV_STA_EMER_6_7",""+  FSV_STA_EMER_6_7);
+                params_fsv.put("FSV_STA_EMER_6_8",""+  FSV_STA_EMER_6_8);
+                params_fsv.put("FSV_STA_EMER_6_9",""+  FSV_STA_EMER_6_9);
+                params_fsv.put("FSV_STA_EMER_6_10",""+  FSV_STA_EMER_6_10);
+
+            } catch (Exception e) {
+                Log.e("VVVVVVV", "Sign = " + e.getMessage());
+                e.printStackTrace();
+            }
+
+
+
+
+            try {
+
+                params_fsv.put("fsv_cus_sign", ""+ post_fsv_q_cus_sign);
+                params_fsv.put("fsv_comp_date",""+  post_fsv_q_complete_DATE);
+                params_fsv.put("fsv_cus_name",""+  post_fsv_q_CUS_SIGN_2);
+                params_fsv.put("fsv_reason",""+  post_fsv_q_reason);
+
+            } catch (Exception e) {
+                Log.e("VVVVVVV", "Sign = " + e.getMessage());
+                e.printStackTrace();
+            }
+
+
+
+
+
+
+            return resp;
+        }
+
+
+        @Override
+        protected void onPostExecute(String result) {
+            // execution of result of Long time consuming operation
+            sync_off_fsv("" + FSV_POST_KEY);
+            progressDialog_fsv.dismiss();
+
+        }
+
+
+        @Override
+        protected void onPreExecute() {
+        }
+
+
+        @Override
+        protected void onProgressUpdate(String... text) {
+            //  finalResult.setText(text[0]);
+            // progressDialog.setProgressPercentFormat(text[0]);
+
+        }
+    }
+
+    private void sync_off_fsv(final String key_id) {
+        // get_profile_db();
+
+
+        VolleyDataRequester.withDefaultHttps(this)
+                .setUrl("https://rauditor-sg.riflows.com/rAuditor/Android/PC_Vehicle/insert_offline_data.php")
+                .setBody(params_fsv)
+
+                .setMethod(VolleyDataRequester.Method.POST)
+                .setRetryPolicy(new DefaultRetryPolicy(
+                        40000,
+                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                ))
+                .setStringResponseListener(new VolleyDataRequester.StringResponseListener() {
+                    @Override
+                    public void onResponse(String response) {
+                        progressDialog_fsv.dismiss();
+                        if (response != null && response.length() > 0) {
+
+                        }
+                        Log.e("TEST123 VI PC", "res  = " + response);
+
+
+
+                        cv_send_FSV.put(db.STATUS, "SENT");
+                        sd.update(db.FSV_DB_TITLE_1, cv_send_FSV, "KEY_ID = '" + key_id + "'", null);
+                        params_fsv.clear();
+                        if (db.get_pti_completed_count(sd) != 0) {
+                            sync_pti();
+                        }
+                        else if (db.get_pci_completed_count(sd) != 0) {
+                            sync_pci();
+                        }
+                        else if (db.get_vir_completed_count(sd) != 0) {
+                            sync_vir();
+                        }
+                        else if (db.get_fsv_completed_count(sd) != 0) {
+                            sync_fsv();
+                        }
+                        else  {
+                            pd.dismiss();
+                        }
+
+
+                        String CHANNEL_ID = "my_channel_01";
+                        int notificationId = 1;
+                        Intent notificationIntent = new Intent(Category_Type_Activity.this, Category_Type_Activity.class);
+                        int importance = NotificationManager.IMPORTANCE_HIGH;
+                        NotificationManager notificationManager = (NotificationManager) Category_Type_Activity.this.getSystemService(Context.NOTIFICATION_SERVICE);
+
+
+                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                            NotificationChannel mChannel = new NotificationChannel(
+                                    CHANNEL_ID, "Ashvin", importance);
+                            notificationManager.createNotificationChannel(mChannel);
+                        }
+                        pd.dismiss();
+                        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(Category_Type_Activity.this, CHANNEL_ID)
+                                .setSmallIcon(R.drawable.app_logo)
+                                .setContentTitle("Report Synced Successfully")
+                                .setContentText("Kindly Check Your Mail");
+
+
+
+                        TaskStackBuilder stackBuilder = TaskStackBuilder.create(Category_Type_Activity.this);
+                        stackBuilder.addNextIntent(notificationIntent);
+                        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(
+                                0,
+                                PendingIntent.FLAG_UPDATE_CURRENT
+                        );
+                        mBuilder.setContentIntent(resultPendingIntent);
+
+                        notificationManager.notify(notificationId, mBuilder.build());
+
+
+
+
+
+                    }
+                })
+                .setResponseErrorListener(new VolleyDataRequester.ResponseErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("TEST123 VI PC", "error  = " + error.getMessage());
+
+                        cv_send_FSV.put(db.STATUS, "SENT");
+                        sd.update(db.FSV_DB_TITLE_1, cv_send_FSV, "KEY_ID = '" + key_id + "'", null);
+                        if (db.get_vir_completed_count(sd) != 0) {
+                            sync_vir();
+                        }
+                        progressDialog_fsv.dismiss();
+                        params_fsv.clear();
+
+                        if (db.get_pti_completed_count(sd) != 0) {
+                            sync_pti();
+                        }
+                        else if (db.get_pci_completed_count(sd) != 0) {
+                            sync_pci();
+                        }
+                        else if (db.get_vir_completed_count(sd) != 0) {
+                            sync_vir();
+                        }
+                        else if (db.get_fsv_completed_count(sd) != 0) {
+                            sync_fsv();
+                        }
+                        else  {
+                            pd.dismiss();
+                        }
+
+
+                        String CHANNEL_ID = "my_channel_01";
+                        int notificationId = 1;
+                        Intent notificationIntent = new Intent(Category_Type_Activity.this, Category_Type_Activity.class);
+                        int importance = NotificationManager.IMPORTANCE_HIGH;
+                        NotificationManager notificationManager = (NotificationManager) Category_Type_Activity.this.getSystemService(Context.NOTIFICATION_SERVICE);
+
+
+                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                            NotificationChannel mChannel = new NotificationChannel(
+                                    CHANNEL_ID, "Ashvin", importance);
+                            notificationManager.createNotificationChannel(mChannel);
+                        }
+                        pd.dismiss();
+                        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(Category_Type_Activity.this, CHANNEL_ID)
+                                .setSmallIcon(R.drawable.app_logo)
+                                .setContentTitle("Report Synced Successfully")
+                                .setContentText("Kindly Check Your Mail");
+
+
+
+                        TaskStackBuilder stackBuilder = TaskStackBuilder.create(Category_Type_Activity.this);
+                        stackBuilder.addNextIntent(notificationIntent);
+                        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(
+                                0,
+                                PendingIntent.FLAG_UPDATE_CURRENT
+                        );
+                        mBuilder.setContentIntent(resultPendingIntent);
+
+                        notificationManager.notify(notificationId, mBuilder.build());
+
+
+
+
+                    }
+                })
+                .requestString();
+
     }
 
     private void sync_off_vir(final String key_id) {
@@ -1256,6 +1826,20 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
         return encodedImage;
     }
+    public String getStringImage_1(String link) {
+        String encodedImage = null;
+        try {
+            Bitmap bm =  MediaStore.Images.Media.getBitmap(getContentResolver(),
+                    Uri.parse(link));
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bm.compress(Bitmap.CompressFormat.JPEG, 70, baos); //bm is the bitmap object
+            byte[] b = baos.toByteArray();
+            encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return encodedImage;
+    }
     private void disableConnectionReuseIfNecessary() {
         // HTTP connection reuse which was buggy pre-froyo
         if (Integer.parseInt(Build.VERSION.SDK) < Build.VERSION_CODES.FROYO) {
@@ -1272,6 +1856,523 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
         } catch (Exception httpResponseCacheNotAvailable) {
         }
     }
+
+
+    public void get_fsv_general_3(String key_id) {
+
+        Log.e("JJHHGAFFAF","key ids =  "+key_id);
+
+
+
+        String Query = "select * from " + db.FSV_GENERAL_3 + " where KEY_ID = '" + key_id + "'";
+        Cursor cursor = sd.rawQuery(Query, null);
+        cursor.moveToFirst();
+
+ 
+
+        Log.e("JJHHGAFFAF","count =  "+cursor.getCount());
+        if (cursor.getCount() != 0) {
+            FSV_GEN_3_1 = cursor.getString(cursor.getColumnIndex(db.et1));
+            FSV_GEN_3_2 = cursor.getString(cursor.getColumnIndex(db.et2));
+            FSV_GEN_3_3 = cursor.getString(cursor.getColumnIndex(db.et3));
+            FSV_GEN_3_4 = cursor.getString(cursor.getColumnIndex(db.et4));
+            FSV_GEN_3_5 = cursor.getString(cursor.getColumnIndex(db.et5));
+            FSV_GEN_3_6 = cursor.getString(cursor.getColumnIndex(db.et6));
+            FSV_GEN_3_7 = cursor.getString(cursor.getColumnIndex(db.et7));
+            FSV_GEN_3_8 = cursor.getString(cursor.getColumnIndex(db.et8));
+            FSV_GEN_3_9 = cursor.getString(cursor.getColumnIndex(db.et9));
+            FSV_GEN_3_10 = cursor.getString(cursor.getColumnIndex(db.et10));
+            FSV_GEN_3_11 = cursor.getString(cursor.getColumnIndex(db.et11));
+            FSV_GEN_3_12 = cursor.getString(cursor.getColumnIndex(db.et12));
+            FSV_GEN_3_13 = cursor.getString(cursor.getColumnIndex(db.et13));
+            FSV_GEN_3_14 = cursor.getString(cursor.getColumnIndex(db.et14));
+            FSV_GEN_3_15 = cursor.getString(cursor.getColumnIndex(db.et15));
+            FSV_GEN_3_16 = cursor.getString(cursor.getColumnIndex(db.et16));
+            FSV_GEN_3_17 = cursor.getString(cursor.getColumnIndex(db.et17));
+            FSV_GEN_3_18= cursor.getString(cursor.getColumnIndex(db.et18));
+            FSV_GEN_3_19 = cursor.getString(cursor.getColumnIndex(db.et19));
+            FSV_GEN_CHECK_YES = cursor.getString(cursor.getColumnIndex(db.CHECK_COUNT_YES));
+            FSV_GEN_CHECK_NO = cursor.getString(cursor.getColumnIndex(db.CHECK_COUNT_NO));
+
+
+            Log.e("JJHHGAFFAF","VIR_6=  "+VIR_FUNC_3_6);
+
+
+            if (FSV_GEN_3_1 == null) {
+                FSV_GEN_3_1 = "";
+            }
+
+            if (FSV_GEN_3_2 == null) {
+                FSV_GEN_3_2 = "";
+            }
+
+
+            if (FSV_GEN_3_3 == null) {
+                FSV_GEN_3_3 = "";
+            }
+
+
+            if (FSV_GEN_3_4 == null) {
+                FSV_GEN_3_4 = "";
+            }
+
+            if (FSV_GEN_3_5 == null) {
+                FSV_GEN_3_5 = "";
+            }
+
+            if (FSV_GEN_3_6 == null) {
+                FSV_GEN_3_6 = "";
+            }
+
+            if (FSV_GEN_3_7 == null) {
+                FSV_GEN_3_7 = "";
+            }
+
+            if (FSV_GEN_3_8 == null) {
+                FSV_GEN_3_8 = "";
+            }
+
+            if (FSV_GEN_3_9 == null) {
+                FSV_GEN_3_9 = "";
+            }
+
+            if (FSV_GEN_3_10 == null) {
+                FSV_GEN_3_10 = "";
+            }
+
+            if (FSV_GEN_3_11 == null) {
+                FSV_GEN_3_11 = "";
+            }
+            if (FSV_GEN_3_12 == null) {
+                FSV_GEN_3_12 = "";
+            }
+
+            if (FSV_GEN_3_13 == null) {
+                FSV_GEN_3_13 = "";
+            }
+
+            if (FSV_GEN_3_14 == null) {
+                FSV_GEN_3_14 = "";
+            }
+
+            if (FSV_GEN_3_15 == null) {
+                FSV_GEN_3_15 = "";
+            }
+
+            if (FSV_GEN_3_16 == null) {
+                FSV_GEN_3_16 = "";
+            }
+
+            if (FSV_GEN_3_17 == null) {
+                FSV_GEN_3_17 = "";
+            }
+
+            if (FSV_GEN_3_18 == null) {
+                FSV_GEN_3_18 = "";
+            }
+            if (FSV_GEN_3_19 == null) {
+                FSV_GEN_3_19 = "";
+            }
+
+            if (FSV_GEN_CHECK_YES == null) {
+                FSV_GEN_CHECK_YES = "";
+            }
+            
+            if (FSV_GEN_CHECK_NO == null) {
+                FSV_GEN_CHECK_NO = "";
+            }
+            
+
+
+        }
+
+    }
+    
+    public void get_fsv_stand_tool_4(String key_id) {
+
+        Log.e("JJHHGAFFAF","key ids =  "+key_id);
+
+
+
+        String Query = "select * from " + db.FSV_STAND_TOOL_4 + " where KEY_ID = '" + key_id + "'";
+        Cursor cursor = sd.rawQuery(Query, null);
+        cursor.moveToFirst();
+
+ 
+
+        Log.e("JJHHGAFFAF","count =  "+cursor.getCount());
+        if (cursor.getCount() != 0) {
+            
+            FSV_STA_TOOL_4_1 = cursor.getString(cursor.getColumnIndex(db.et1));
+            FSV_STA_TOOL_4_2 = cursor.getString(cursor.getColumnIndex(db.et2));
+            FSV_STA_TOOL_4_3 = cursor.getString(cursor.getColumnIndex(db.et3));
+            FSV_STA_TOOL_4_4 = cursor.getString(cursor.getColumnIndex(db.et4));
+            FSV_STA_TOOL_4_5 = cursor.getString(cursor.getColumnIndex(db.et5));
+            FSV_STA_TOOL_4_6 = cursor.getString(cursor.getColumnIndex(db.et6));
+            FSV_STA_TOOL_4_7 = cursor.getString(cursor.getColumnIndex(db.et7));
+            FSV_STA_TOOL_4_8 = cursor.getString(cursor.getColumnIndex(db.et8));
+            FSV_STA_TOOL_4_9 = cursor.getString(cursor.getColumnIndex(db.et9));
+            FSV_STA_TOOL_4_10 = cursor.getString(cursor.getColumnIndex(db.et10));
+            FSV_STA_TOOL_4_11 = cursor.getString(cursor.getColumnIndex(db.et11));
+            FSV_STA_TOOL_4_12 = cursor.getString(cursor.getColumnIndex(db.et12));
+            FSV_STA_TOOL_4_13 = cursor.getString(cursor.getColumnIndex(db.et13));
+            FSV_STA_TOOL_4_14 = cursor.getString(cursor.getColumnIndex(db.et14));
+            FSV_STA_TOOL_4_15 = cursor.getString(cursor.getColumnIndex(db.et15));
+            FSV_STA_TOOL_4_16 = cursor.getString(cursor.getColumnIndex(db.et16));
+            FSV_STA_TOOL_4_17 = cursor.getString(cursor.getColumnIndex(db.et17));
+            FSV_STA_TOOL_4_18= cursor.getString(cursor.getColumnIndex(db.et18));
+            FSV_STA_TOOL_4_19 = cursor.getString(cursor.getColumnIndex(db.et19));
+            FSV_STA_TOOL_4_20 = cursor.getString(cursor.getColumnIndex(db.et20));
+            FSV_STA_TOOL_4_21 = cursor.getString(cursor.getColumnIndex(db.et21));
+            FSV_STA_TOOL_4_22 = cursor.getString(cursor.getColumnIndex(db.et22));
+            FSV_STA_TOOL_NO = cursor.getString(cursor.getColumnIndex(db.NO_COUNT));
+            FSV_STA_TOOL_NA = cursor.getString(cursor.getColumnIndex(db.NA_COUNT));
+
+
+
+            Log.e("JJHHGAFFAF","VIR_6=  "+VIR_FUNC_3_6);
+
+
+            if (FSV_STA_TOOL_4_1 == null) {
+                FSV_STA_TOOL_4_1 = "";
+            }
+
+            if (FSV_STA_TOOL_4_2 == null) {
+                FSV_STA_TOOL_4_2 = "";
+            }
+
+
+            if (FSV_STA_TOOL_4_3 == null) {
+                FSV_STA_TOOL_4_3 = "";
+            }
+
+
+            if (FSV_STA_TOOL_4_4 == null) {
+                FSV_STA_TOOL_4_4 = "";
+            }
+
+            if (FSV_STA_TOOL_4_5 == null) {
+                FSV_STA_TOOL_4_5 = "";
+            }
+
+            if (FSV_STA_TOOL_4_6 == null) {
+                FSV_STA_TOOL_4_6 = "";
+            }
+
+            if (FSV_STA_TOOL_4_7 == null) {
+                FSV_STA_TOOL_4_7 = "";
+            }
+
+            if (FSV_STA_TOOL_4_8 == null) {
+                FSV_STA_TOOL_4_8 = "";
+            }
+
+            if (FSV_STA_TOOL_4_9 == null) {
+                FSV_STA_TOOL_4_9 = "";
+            }
+
+            if (FSV_STA_TOOL_4_10 == null) {
+                FSV_STA_TOOL_4_10 = "";
+            }
+
+            if (FSV_STA_TOOL_4_11 == null) {
+                FSV_STA_TOOL_4_11 = "";
+            }
+            if (FSV_STA_TOOL_4_12 == null) {
+                FSV_STA_TOOL_4_12 = "";
+            }
+
+            if (FSV_STA_TOOL_4_13 == null) {
+                FSV_STA_TOOL_4_13 = "";
+            }
+
+            if (FSV_STA_TOOL_4_14 == null) {
+                FSV_STA_TOOL_4_14 = "";
+            }
+
+            if (FSV_STA_TOOL_4_15 == null) {
+                FSV_STA_TOOL_4_15 = "";
+            }
+
+            if (FSV_STA_TOOL_4_16 == null) {
+                FSV_STA_TOOL_4_16 = "";
+            }
+
+            if (FSV_STA_TOOL_4_17 == null) {
+                FSV_STA_TOOL_4_17 = "";
+            }
+
+            if (FSV_STA_TOOL_4_18 == null) {
+                FSV_STA_TOOL_4_18 = "";
+            }
+            if (FSV_STA_TOOL_4_19 == null) {
+                FSV_STA_TOOL_4_19 = "";
+            }
+
+            if (FSV_STA_TOOL_4_20 == null) {
+                FSV_STA_TOOL_4_20 = "";
+            }
+
+
+            if (FSV_STA_TOOL_4_21 == null) {
+                FSV_STA_TOOL_4_21 = "";
+            }
+
+
+            if (FSV_STA_TOOL_4_22 == null) {
+                FSV_STA_TOOL_4_22 = "";
+            }
+
+
+            if (FSV_STA_TOOL_NO == null) {
+                FSV_STA_TOOL_NO = "";
+            }
+
+            if (FSV_STA_TOOL_NA == null) {
+                FSV_STA_TOOL_NA = "";
+            }
+        }
+
+    }
+
+    public void get_fsv_stand_item_5(String key_id) {
+
+        Log.e("JJHHGAFFAF","key ids =  "+key_id);
+
+
+
+        String Query = "select * from " + db.FSV_STAND_ITEM_5 + " where KEY_ID = '" + key_id + "'";
+        Cursor cursor = sd.rawQuery(Query, null);
+        cursor.moveToFirst();
+
+
+
+        Log.e("JJHHGAFFAF","count =  "+cursor.getCount());
+        if (cursor.getCount() != 0) {
+
+
+            FSV_STA_ITEM_5_1 = cursor.getString(cursor.getColumnIndex(db.et1));
+            FSV_STA_ITEM_5_2 = cursor.getString(cursor.getColumnIndex(db.et2));
+            FSV_STA_ITEM_5_3 = cursor.getString(cursor.getColumnIndex(db.et3));
+            FSV_STA_ITEM_5_4 = cursor.getString(cursor.getColumnIndex(db.et4));
+            FSV_STA_ITEM_5_5 = cursor.getString(cursor.getColumnIndex(db.et5));
+            FSV_STA_ITEM_5_6 = cursor.getString(cursor.getColumnIndex(db.et6));
+            FSV_STA_ITEM_5_7 = cursor.getString(cursor.getColumnIndex(db.et7));
+            FSV_STA_ITEM_5_8 = cursor.getString(cursor.getColumnIndex(db.et8));
+            FSV_STA_ITEM_5_9 = cursor.getString(cursor.getColumnIndex(db.et9));
+            FSV_STA_ITEM_5_10 = cursor.getString(cursor.getColumnIndex(db.et10));
+            FSV_STA_ITEM_5_11 = cursor.getString(cursor.getColumnIndex(db.et11));
+            FSV_STA_ITEM_5_12 = cursor.getString(cursor.getColumnIndex(db.et12));
+            FSV_STA_ITEM_5_13 = cursor.getString(cursor.getColumnIndex(db.et13));
+            FSV_STA_ITEM_5_14 = cursor.getString(cursor.getColumnIndex(db.et14));
+            FSV_STA_ITEM_5_15 = cursor.getString(cursor.getColumnIndex(db.et15));
+            FSV_STA_ITEM_5_16 = cursor.getString(cursor.getColumnIndex(db.et16));
+            FSV_STA_ITEM_5_17 = cursor.getString(cursor.getColumnIndex(db.et17));
+            FSV_STA_ITEM_5_18= cursor.getString(cursor.getColumnIndex(db.et18));
+            FSV_STA_ITEM_5_19 = cursor.getString(cursor.getColumnIndex(db.et19));
+            FSV_STA_ITEM_5_20 = cursor.getString(cursor.getColumnIndex(db.et20));
+            FSV_STA_ITEM_5_21 = cursor.getString(cursor.getColumnIndex(db.et21));
+            FSV_STA_ITEM_5_22 = cursor.getString(cursor.getColumnIndex(db.et22));
+            FSV_STA_ITEM_NO = cursor.getString(cursor.getColumnIndex(db.NO_COUNT));
+            FSV_STA_ITEM_NA = cursor.getString(cursor.getColumnIndex(db.NA_COUNT));
+
+
+
+            Log.e("JJHHGAFFAF","VIR_6=  "+VIR_FUNC_3_6);
+
+
+            if (FSV_STA_ITEM_5_1 == null) {
+                FSV_STA_ITEM_5_1 = "";
+            }
+
+            if (FSV_STA_ITEM_5_2 == null) {
+                FSV_STA_ITEM_5_2 = "";
+            }
+
+
+            if (FSV_STA_ITEM_5_3 == null) {
+                FSV_STA_ITEM_5_3 = "";
+            }
+
+
+            if (FSV_STA_ITEM_5_4 == null) {
+                FSV_STA_ITEM_5_4 = "";
+            }
+
+            if (FSV_STA_ITEM_5_5 == null) {
+                FSV_STA_ITEM_5_5 = "";
+            }
+
+            if (FSV_STA_ITEM_5_6 == null) {
+                FSV_STA_ITEM_5_6 = "";
+            }
+
+            if (FSV_STA_ITEM_5_7 == null) {
+                FSV_STA_ITEM_5_7 = "";
+            }
+
+            if (FSV_STA_ITEM_5_8 == null) {
+                FSV_STA_ITEM_5_8 = "";
+            }
+
+            if (FSV_STA_ITEM_5_9 == null) {
+                FSV_STA_ITEM_5_9 = "";
+            }
+
+            if (FSV_STA_ITEM_5_10 == null) {
+                FSV_STA_ITEM_5_10 = "";
+            }
+
+            if (FSV_STA_ITEM_5_11 == null) {
+                FSV_STA_ITEM_5_11 = "";
+            }
+            if (FSV_STA_ITEM_5_12 == null) {
+                FSV_STA_ITEM_5_12 = "";
+            }
+
+            if (FSV_STA_ITEM_5_13 == null) {
+                FSV_STA_ITEM_5_13 = "";
+            }
+
+            if (FSV_STA_ITEM_5_14 == null) {
+                FSV_STA_ITEM_5_14 = "";
+            }
+
+            if (FSV_STA_ITEM_5_15 == null) {
+                FSV_STA_ITEM_5_15 = "";
+            }
+
+            if (FSV_STA_ITEM_5_16 == null) {
+                FSV_STA_ITEM_5_16 = "";
+            }
+
+            if (FSV_STA_ITEM_5_17 == null) {
+                FSV_STA_ITEM_5_17 = "";
+            }
+
+            if (FSV_STA_ITEM_5_18 == null) {
+                FSV_STA_ITEM_5_18 = "";
+            }
+            if (FSV_STA_ITEM_5_19 == null) {
+                FSV_STA_ITEM_5_19 = "";
+            }
+
+            if (FSV_STA_ITEM_5_20 == null) {
+                FSV_STA_ITEM_5_20 = "";
+            }
+
+
+            if (FSV_STA_ITEM_5_21 == null) {
+                FSV_STA_ITEM_5_21 = "";
+            }
+
+
+            if (FSV_STA_ITEM_5_22 == null) {
+                FSV_STA_ITEM_5_22 = "";
+            }
+
+
+            if (FSV_STA_ITEM_NO == null) {
+                FSV_STA_ITEM_NO = "";
+            }
+
+            if (FSV_STA_ITEM_NA == null) {
+                FSV_STA_ITEM_NA = "";
+            }
+        }
+
+    }
+ 
+    public void get_fsv_emer_6(String key_id) {
+
+        Log.e("JJHHGAFFAF","key ids =  "+key_id);
+
+
+
+        String Query = "select * from " + db.FSV_EMERGENCY_6 + " where KEY_ID = '" + key_id + "'";
+        Cursor cursor = sd.rawQuery(Query, null);
+        cursor.moveToFirst();
+
+
+
+        Log.e("JJHHGAFFAF","count =  "+cursor.getCount());
+        if (cursor.getCount() != 0) {
+
+
+            FSV_STA_EMER_6_1 = cursor.getString(cursor.getColumnIndex(db.et1));
+            FSV_STA_EMER_6_2 = cursor.getString(cursor.getColumnIndex(db.et2));
+            FSV_STA_EMER_6_3 = cursor.getString(cursor.getColumnIndex(db.et3));
+            FSV_STA_EMER_6_4 = cursor.getString(cursor.getColumnIndex(db.et4));
+            FSV_STA_EMER_6_5 = cursor.getString(cursor.getColumnIndex(db.et5));
+            FSV_STA_EMER_6_6 = cursor.getString(cursor.getColumnIndex(db.et6));
+            FSV_STA_EMER_6_7 = cursor.getString(cursor.getColumnIndex(db.et7));
+            FSV_STA_EMER_6_8 = cursor.getString(cursor.getColumnIndex(db.et8));
+            FSV_STA_EMER_6_9 = cursor.getString(cursor.getColumnIndex(db.et9));
+            FSV_STA_EMER_6_10 = cursor.getString(cursor.getColumnIndex(db.et10));
+            FSV_STA_EMER_NO = cursor.getString(cursor.getColumnIndex(db.NO_COUNT));
+            FSV_STA_EMER_NA = cursor.getString(cursor.getColumnIndex(db.NA_COUNT));
+
+
+
+            Log.e("JJHHGAFFAF","VIR_6=  "+VIR_FUNC_3_6);
+
+
+            if (FSV_STA_EMER_6_1 == null) {
+                FSV_STA_EMER_6_1 = "";
+            }
+
+            if (FSV_STA_EMER_6_2 == null) {
+                FSV_STA_EMER_6_2 = "";
+            }
+
+
+            if (FSV_STA_EMER_6_3 == null) {
+                FSV_STA_EMER_6_3 = "";
+            }
+
+
+            if (FSV_STA_EMER_6_4 == null) {
+                FSV_STA_EMER_6_4 = "";
+            }
+
+            if (FSV_STA_EMER_6_5 == null) {
+                FSV_STA_EMER_6_5 = "";
+            }
+
+            if (FSV_STA_EMER_6_6 == null) {
+                FSV_STA_EMER_6_6 = "";
+            }
+
+            if (FSV_STA_EMER_6_7 == null) {
+                FSV_STA_EMER_6_7 = "";
+            }
+
+            if (FSV_STA_EMER_6_8 == null) {
+                FSV_STA_EMER_6_8 = "";
+            }
+
+            if (FSV_STA_EMER_6_9 == null) {
+                FSV_STA_EMER_6_9 = "";
+            }
+
+            if (FSV_STA_EMER_6_10 == null) {
+                FSV_STA_EMER_6_10 = "";
+            }
+
+
+
+            if (FSV_STA_EMER_NO == null) {
+                FSV_STA_EMER_NO = "";
+            }
+
+            if (FSV_STA_EMER_NA == null) {
+                FSV_STA_EMER_NA = "";
+            }
+        }
+
+    }
+
+
 
 
     public void get_vir_function_3(String key_id) {
@@ -1904,6 +3005,65 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
     }
 
 
+    public void get_fsv_sign(String key_id) {
+
+        String Query = "select * from " + db.FSV_SIGN_7 + " where MAIN_ID = '" + key_id + "'";
+        Cursor cursor = sd.rawQuery(Query, null);
+        cursor.moveToFirst();
+        Log.e("nnnnnnn count sign", "" + cursor.getCount());
+        if (cursor.getCount() != 0) {
+
+            try {
+                byteArray_man_fsv = cursor.getBlob(cursor.getColumnIndex(db.CUSTOMER_SIGN));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            post_fsv_q_complete_DATE = cursor.getString(cursor.getColumnIndex(db.BRANCH_END_DATE));
+            post_fsv_q_CUS_SIGN_2 = cursor.getString(cursor.getColumnIndex(db.CUSTOMER_NAME));
+            post_fsv_q_reason = cursor.getString(cursor.getColumnIndex(db.et1));
+
+            Log.e("ACMVMVA","date  = "+post_fsv_q_complete_DATE);
+
+        }
+
+
+        if (byteArray_man_fsv != null) {
+            ByteArrayOutputStream bs = new ByteArrayOutputStream();
+            imageStream_man_fsv = new ByteArrayInputStream(byteArray_man_fsv);
+            bitmap_man_fsv_q = BitmapFactory.decodeStream(imageStream_man_fsv);
+            bitmap_man_fsv_q.compress(Bitmap.CompressFormat.PNG, 100, bs);
+            post_fsv_q_cus_sign = getStringImage(bitmap_man_fsv_q);
+
+
+        }else{
+
+
+            post_fsv_q_cus_sign="";
+        }
+
+        if (post_fsv_q_complete_DATE == null) {
+            post_fsv_q_complete_DATE = "";
+        }
+
+        if (post_fsv_q_cus_sign == null) {
+            post_fsv_q_cus_sign = "";
+        }
+
+
+
+        if (post_fsv_q_CUS_SIGN_2 == null) {
+            post_fsv_q_CUS_SIGN_2 = "";
+        }
+
+        if (post_fsv_q_reason == null) {
+            post_fsv_q_reason = "";
+        }
+
+
+
+    }
+
+
     private class AsyncTaskRunner_pci extends AsyncTask<String, String, String> {
 
         private String resp = "Update";
@@ -1973,7 +3133,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                                         ByteArrayOutputStream bs = new ByteArrayOutputStream();
                                         bitmap_x.compress(Bitmap.CompressFormat.PNG, 50, bs);
                                         //Log.e("JKJKJOPO", "33 bit\t" + myOld.get(p)));
-                                        params_pci.put("sub_c" + m + "_" + p, "" + getStringImage(bitmap_x));
+                                        params_pci.put("sub_c" + m + "_" + p, "" + getStringImage_1(myOld.get(p)));
 
 
                                     }
@@ -2059,6 +3219,8 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
 
 
     private void sync_off_line_pci_data(final String key_id) {
+
+        Log.e("AJSJHSHA","param = "+params_pci);
 
         VolleyDataRequester.withDefaultHttps(this)
                 .setUrl("https://rauditor-sg.riflows.com/rAuditor/Android/PCI/insert_pc_offline.php")
@@ -2313,7 +3475,7 @@ public class Category_Type_Activity extends AppCompatActivity implements Navigat
                 .requestString();
 
     }
-    
+
 
 
 

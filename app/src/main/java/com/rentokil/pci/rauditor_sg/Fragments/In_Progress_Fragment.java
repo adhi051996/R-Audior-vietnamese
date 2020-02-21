@@ -181,10 +181,15 @@ public void get_offline(){
             "  'PCI'" +
             " ) AS Type from PCI_TITLE_1 where STATUS = 'Pending'" +"UNION ALL\n" +
 
-            "select KEY_ID as KEY_ID,et1 as Customer_name,et2 as Conducted_date,et3 as report_no,COALESCE(" +
+            "select KEY_ID as KEY_ID,et2 as Customer_name,et1    as Conducted_date,et3 as report_no,COALESCE(" +
             "  ('VIR')," +
             "  'VIR'" +
             " ) AS Type from PC_VIR_DB_TITLE_1 where STATUS = 'Pending'" +"UNION ALL\n" +
+
+            "select KEY_ID as KEY_ID,et2 as Customer_name,et1 as Conducted_date,et3 as report_no,COALESCE(" +
+            "  ('FSV')," +
+            "  'FSV'" +
+            " ) AS Type from FSV_DB_TITLE_1 where STATUS = 'Pending'" +"UNION ALL\n" +
 
             "select KEY_ID as KEY_ID,et1 as Customer_name,et2 as Conducted_date,et3 as report_no,COALESCE(" +
             "  ('PTI')," +

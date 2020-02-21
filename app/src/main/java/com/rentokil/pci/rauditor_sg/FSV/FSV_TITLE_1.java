@@ -1,4 +1,4 @@
-package com.rentokil.pci.rauditor_sg.PC_VIR;
+package com.rentokil.pci.rauditor_sg.FSV;
 
 import android.Manifest;
 import android.app.Activity;
@@ -50,6 +50,12 @@ import com.rentokil.pci.rauditor_sg.BuildConfig;
 import com.rentokil.pci.rauditor_sg.Category_Type_Activity;
 import com.rentokil.pci.rauditor_sg.Database.DatabaseHelper;
 import com.rentokil.pci.rauditor_sg.GPSTracker;
+import com.rentokil.pci.rauditor_sg.PC_VIR.PC_VIR_BODY_2;
+import com.rentokil.pci.rauditor_sg.PC_VIR.PC_VIR_FUNCTION_3;
+import com.rentokil.pci.rauditor_sg.PC_VIR.PC_VIR_GENERAL_4;
+import com.rentokil.pci.rauditor_sg.PC_VIR.PC_VIR_OTHER_7;
+import com.rentokil.pci.rauditor_sg.PC_VIR.PC_VIR_PPE_5;
+import com.rentokil.pci.rauditor_sg.PC_VIR.PC_VIR_STANDARD_6;
 import com.rentokil.pci.rauditor_sg.R;
 
 import java.text.SimpleDateFormat;
@@ -57,7 +63,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-public class PC_VIR_TITLE_1 extends AppCompatActivity {
+public class FSV_TITLE_1 extends AppCompatActivity {
 
 
     private SimpleDateFormat dateFormatter;
@@ -115,7 +121,7 @@ String get_prepared_by;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pc_vir_title_1);
+        setContentView(R.layout.fsv_title_1);
 
         Toolbar mTopToolbar;
 
@@ -130,7 +136,7 @@ String get_prepared_by;
         mSimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
         et_prepared_5 =(EditText) findViewById(R.id.et_prepared_5);
 
-        db = new DatabaseHelper(PC_VIR_TITLE_1.this);
+        db = new DatabaseHelper(FSV_TITLE_1.this);
         sd = db.getReadableDatabase();
         cv1 = new ContentValues();
         cv2 = new ContentValues();
@@ -138,20 +144,20 @@ String get_prepared_by;
 
         this.setFinishOnTouchOutside(true);
         // Todo Location Already on  ... start
-        final LocationManager manager = (LocationManager) PC_VIR_TITLE_1.this.getSystemService(Context.LOCATION_SERVICE);
-        if (manager.isProviderEnabled(LocationManager.GPS_PROVIDER) && hasGPSDevice(PC_VIR_TITLE_1.this)) {
+        final LocationManager manager = (LocationManager) FSV_TITLE_1.this.getSystemService(Context.LOCATION_SERVICE);
+        if (manager.isProviderEnabled(LocationManager.GPS_PROVIDER) && hasGPSDevice(FSV_TITLE_1.this)) {
 //            Toast.makeText(PC_VIR_TITLE_1.this,"Gps already enabled",Toast.LENGTH_SHORT).show();
 
         }
         // Todo Location Already on  ... end
 
-        if(!hasGPSDevice(PC_VIR_TITLE_1.this)){
-            Toast.makeText(PC_VIR_TITLE_1.this,"Gps not Supported",Toast.LENGTH_SHORT).show();
+        if(!hasGPSDevice(FSV_TITLE_1.this)){
+            Toast.makeText(FSV_TITLE_1.this,"Gps not Supported",Toast.LENGTH_SHORT).show();
         }
 
-        if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER) && hasGPSDevice(PC_VIR_TITLE_1.this)) {
+        if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER) && hasGPSDevice(FSV_TITLE_1.this)) {
             Log.e("keshav","Gps already enabled");
-            Toast.makeText(PC_VIR_TITLE_1.this,"Gps not enabled",Toast.LENGTH_SHORT).show();
+            Toast.makeText(FSV_TITLE_1.this,"Gps not enabled",Toast.LENGTH_SHORT).show();
             enableLoc();
         }else{
             Log.e("keshav","Gps already enabled");
@@ -218,7 +224,7 @@ String get_prepared_by;
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(PC_VIR_TITLE_1.this, Category_Type_Activity.class);
+                Intent i = new Intent(FSV_TITLE_1.this, Category_Type_Activity.class);
                 startActivity(i);
 
             }
@@ -309,15 +315,15 @@ String get_prepared_by;
             cv_off.put(db.STATUS, "Pending");
 
             Log.e("HHHHHH","status"+status);
-            sd.insert(db.PC_VIR_DB_TITLE_1, null, cv_off);
-            Intent intent = new Intent(getApplicationContext(), PC_VIR_BODY_2.class);
-            intent.putExtra("key_id", ""+db.get_last_id_VIR(sd));
+            sd.insert(db.FSV_DB_TITLE_1, null, cv_off);
+            Intent intent = new Intent(getApplicationContext(), FSV_BODY_2.class);
+            intent.putExtra("key_id", ""+db.get_last_id_FSV(sd));
             startActivity(intent);
-            Log.e("MMMMMMH","last id = "+db.get_last_id_VIR(sd));
+            Log.e("MMMMMMH","last id = "+db.get_last_id_FSV(sd));
         }else {
             Log.e("JJJJJJN","status = "+status);
-            sd.update(db.PC_VIR_DB_TITLE_1,  cv_off,"KEY_ID = '" + key_id + "'",null);
-            Intent intent = new Intent(getApplicationContext(), PC_VIR_BODY_2.class);
+            sd.update(db.FSV_DB_TITLE_1,  cv_off,"KEY_ID = '" + key_id + "'",null);
+            Intent intent = new Intent(getApplicationContext(), FSV_BODY_2.class);
             intent.putExtra("key_id", "" + key_id);
             startActivity(intent);
 
@@ -328,7 +334,7 @@ String get_prepared_by;
     }
 
     public int check_data(String key_id){
-        String Query="select * from "+db.PC_VIR_DB_TITLE_1 +" where KEY_ID = '"+key_id+"'";
+        String Query="select * from "+db.FSV_DB_TITLE_1 +" where KEY_ID = '"+key_id+"'";
         Cursor cursor = sd.rawQuery(Query, null);
         cursor.moveToFirst();
 
@@ -338,7 +344,7 @@ String get_prepared_by;
 
     public int get_last_id(){
         Cursor c8;
-        c8 = sd.rawQuery("Select * from " + db.PC_VIR_DB_TITLE_1, null);
+        c8 = sd.rawQuery("Select * from " + db.FSV_DB_TITLE_1, null);
         c8.moveToLast();
 
         return c8.getInt(c8.getColumnIndex(db.KEY_ID));
@@ -348,7 +354,7 @@ String get_prepared_by;
     public void get_offline(String id){
 
         Log.e("GGGRRRR","E2"  + id);
-        String Query="select * from "+db.PC_VIR_DB_TITLE_1 +" where KEY_ID = '"+id+"'";
+        String Query="select * from "+db.FSV_DB_TITLE_1 +" where KEY_ID = '"+id+"'";
         Cursor cursor = sd.rawQuery(Query, null);
         cursor.moveToFirst();
 
@@ -401,7 +407,7 @@ String get_prepared_by;
     private void enableLoc() {
 
         if (googleApiClient == null) {
-            googleApiClient = new GoogleApiClient.Builder(PC_VIR_TITLE_1.this)
+            googleApiClient = new GoogleApiClient.Builder(FSV_TITLE_1.this)
                     .addApi(LocationServices.API)
                     .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
                         @Override
@@ -443,7 +449,7 @@ String get_prepared_by;
                             try {
                                 // Show the dialog by calling startResolutionForResult(),
                                 // and check the result in onActivityResult().
-                                status.startResolutionForResult(PC_VIR_TITLE_1.this, REQUEST_LOCATION);
+                                status.startResolutionForResult(FSV_TITLE_1.this, REQUEST_LOCATION);
 
                                 finish();
                             } catch (IntentSender.SendIntentException e) {
@@ -459,16 +465,16 @@ String get_prepared_by;
 
     public void EnableRuntimePermission() {
 
-        if (ActivityCompat.shouldShowRequestPermissionRationale(PC_VIR_TITLE_1.this,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE) && ActivityCompat.shouldShowRequestPermissionRationale(PC_VIR_TITLE_1.this,
-                Manifest.permission.READ_EXTERNAL_STORAGE) && ActivityCompat.shouldShowRequestPermissionRationale(PC_VIR_TITLE_1.this,
+        if (ActivityCompat.shouldShowRequestPermissionRationale(FSV_TITLE_1.this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) && ActivityCompat.shouldShowRequestPermissionRationale(FSV_TITLE_1.this,
+                Manifest.permission.READ_EXTERNAL_STORAGE) && ActivityCompat.shouldShowRequestPermissionRationale(FSV_TITLE_1.this,
                 Manifest.permission.GET_ACCOUNTS)) {
 
-            Toast.makeText(PC_VIR_TITLE_1.this, "STORAGE and CONTACTS permission allows us to Access the app", Toast.LENGTH_LONG).show();
+            Toast.makeText(FSV_TITLE_1.this, "STORAGE and CONTACTS permission allows us to Access the app", Toast.LENGTH_LONG).show();
 
         } else {
 
-            ActivityCompat.requestPermissions(PC_VIR_TITLE_1.this, new String[]{
+            ActivityCompat.requestPermissions(FSV_TITLE_1.this, new String[]{
                     Manifest.permission.CAMERA, Manifest.permission.GET_ACCOUNTS, Manifest.permission.READ_EXTERNAL_STORAGE,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE},RequestPermissionCode);
 
@@ -491,7 +497,7 @@ String get_prepared_by;
 
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
-                    gps = new GPSTracker(mContext, PC_VIR_TITLE_1.this);
+                    gps = new GPSTracker(mContext, FSV_TITLE_1.this);
 
                     // Check if GPS enabled
 
@@ -667,7 +673,7 @@ String get_prepared_by;
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.vir_home:
-                Intent sir_home = new Intent(PC_VIR_TITLE_1.this, Category_Type_Activity.class);
+                Intent sir_home = new Intent(FSV_TITLE_1.this, Category_Type_Activity.class);
                 sir_home.putExtra("key_id", key_id);
                 startActivity(sir_home);
                 break;
@@ -676,7 +682,7 @@ String get_prepared_by;
                 break;
             case R.id.vir_body_2:
                 if (key_id != null) {
-                    Intent sir_customer = new Intent(PC_VIR_TITLE_1.this, PC_VIR_BODY_2.class);
+                    Intent sir_customer = new Intent(FSV_TITLE_1.this, PC_VIR_BODY_2.class);
                     sir_customer.putExtra("key_id", key_id);
                     startActivity(sir_customer);
                 } else {
@@ -684,7 +690,7 @@ String get_prepared_by;
                 break;
             case R.id.vir_funct_3:
                 if (key_id != null) {
-                    Intent sir_observation = new Intent(PC_VIR_TITLE_1.this, PC_VIR_FUNCTION_3.class);
+                    Intent sir_observation = new Intent(FSV_TITLE_1.this, PC_VIR_FUNCTION_3.class);
                     sir_observation.putExtra("key_id", key_id);
                     startActivity(sir_observation);
 
@@ -694,7 +700,7 @@ String get_prepared_by;
 
                 case R.id.vir_gen_4:
                 if (key_id != null) {
-                    Intent sir_observation = new Intent(PC_VIR_TITLE_1.this, PC_VIR_GENERAL_4.class);
+                    Intent sir_observation = new Intent(FSV_TITLE_1.this, PC_VIR_GENERAL_4.class);
                     sir_observation.putExtra("key_id", key_id);
                     startActivity(sir_observation);
                 } else {
@@ -704,7 +710,7 @@ String get_prepared_by;
 
                 case R.id.vir_ppe_5:
                 if (key_id != null) {
-                    Intent sir_observation = new Intent(PC_VIR_TITLE_1.this, PC_VIR_PPE_5.class);
+                    Intent sir_observation = new Intent(FSV_TITLE_1.this, PC_VIR_PPE_5.class);
                     sir_observation.putExtra("key_id", key_id);
                     startActivity(sir_observation);
                 } else {
@@ -713,7 +719,7 @@ String get_prepared_by;
 
                 case R.id.vir_stan_6:
                 if (key_id != null) {
-                    Intent sir_observation = new Intent(PC_VIR_TITLE_1.this, PC_VIR_STANDARD_6.class);
+                    Intent sir_observation = new Intent(FSV_TITLE_1.this, PC_VIR_STANDARD_6.class);
                     sir_observation.putExtra("key_id", key_id);
                     startActivity(sir_observation);
                 } else {
@@ -722,7 +728,7 @@ String get_prepared_by;
 
                 case R.id.vir_other_7:
                 if (key_id != null) {
-                    Intent sir_observation = new Intent(PC_VIR_TITLE_1.this, PC_VIR_OTHER_7.class);
+                    Intent sir_observation = new Intent(FSV_TITLE_1.this, PC_VIR_OTHER_7.class);
                     sir_observation.putExtra("key_id", key_id);
                     startActivity(sir_observation);
                 } else {

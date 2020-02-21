@@ -25,8 +25,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="allowBackup,supportsRtl">
-
-        <activity android:name=".PDF_MAIL"></activity>
+        <activity android:name=".FSV.FSV_EMERGENCY_6"></activity>
+        <activity android:name=".FSV.FSV_STANDARD_ITEM_5" />
+        <activity android:name=".FSV.FSV_STANDARD_TOOL_4" />
+        <activity android:name=".FSV.FSV_GENERAL_3" />
+        <activity android:name=".FSV.FSV_TITLE_1" />
+        <activity android:name=".FSV.FSV_BODY_2" />
+        <activity android:name=".FSV.FSV_SIGN_7" />
+        <activity android:name=".workout" />
+        <activity android:name=".kotlinActivity" />
+        <activity android:name=".PDF_MAIL" />
         <activity android:name=".PDF_VIEWER" />
         <activity android:name=".PC_VIR.PC_VIR_OTHER_7" />
         <activity android:name=".PC_VIR.PC_VIR_STANDARD_6" />

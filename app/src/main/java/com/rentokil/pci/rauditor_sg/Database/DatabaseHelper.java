@@ -52,6 +52,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String et40 = "et40";
     public static final String et41 = "et41";
 
+    public static final String NO_COUNT = "NO_COUNT";
+    public static final String NA_COUNT = "NA_COUNT";
+    public static final String CHECK_COUNT_YES = "CHECK_COUNT_YES";
+    public static final String CHECK_COUNT_NO = "CHECK_COUNT_NO";
+
     public static final String COMPLETED_DATE = "COMPLETED_DATE";
     public static final String MOBILE_MODEL_TABLE = "MOBILE_MODEL_TABLE";
     public static final String MOBILE_MODEL = "MOBILE_MODEL";
@@ -77,6 +82,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String PC_VIR_DB_PPE_5 = "PC_VIR_DB_PPE_5";
     public static final String PC_VIR_DB_STANDARD_6 = "PC_VIR_DB_STANDARD_6";
     public static final String PC_VIR_DB_OTHER_7 = "PC_VIR_DB_OTHER_7";
+
+    public static final String FSV_DB_TITLE_1 = "FSV_DB_TITLE_1";
+    public static final String FSV_DB_BODY_2 = "FSV_DB_BODY_2";
+    public static final String FSV_GENERAL_3 = "FSV_GENERAL_3";
+    public static final String FSV_STAND_TOOL_4 = "FSV_STAND_TOOL_4";
+    public static final String FSV_STAND_ITEM_5 = "FSV_STAND_ITEM_5";
+    public static final String FSV_EMERGENCY_6 = "FSV_EMERGENCY_6";
+    public static final String FSV_SIGN_7 = "FSV_SIGN_7";
 
 
 
@@ -158,6 +171,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + et2 + " TEXT,"
             + et3 + " TEXT,"
             + et4 + " TEXT,"
+            + et5 + " TEXT,"
             + STATUS + " TEXT,"
             + COMPLETED_DATE + " DATETIME,"
             + VERSION_NAME + " TEXT,"
@@ -247,6 +261,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             +et39+" TEXT,"
             +et40+" TEXT,"
             +et41+" TEXT,"
+
             + DELETED + " INTEGER)";
 
 
@@ -274,6 +289,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             +et20+" TEXT,"
             +et21+" TEXT,"
             +et22+" TEXT,"
+
             + DELETED + " INTEGER)";
 
 
@@ -293,6 +309,133 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
+    String CREATE_FSV_TITLE_1 = "CREATE TABLE " + FSV_DB_TITLE_1 + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MAIN_ID + " INTEGER,"
+            + et1 + " TEXT,"
+            + et2 + " TEXT,"
+            + et3 + " TEXT,"
+            + et4 + " TEXT,"
+            + et5 + " TEXT,"
+            + STATUS + " TEXT,"
+            + COMPLETED_DATE + " DATETIME,"
+            + VERSION_NAME + " TEXT,"
+            + DELETED + " INTEGER)";
+
+
+    String CREATE_FSV_BODY_2 = "CREATE TABLE " + FSV_DB_BODY_2 + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MAIN_ID + " INTEGER,"
+            +IMG_URL_1+" TEXT,"
+            +IMG_URL_2+" TEXT,"
+            +IMG_URL_3+" TEXT,"
+            +IMG_URL_4+" TEXT,"
+            +et1+" TEXT,"
+            +et2+" TEXT,"
+            + DELETED + " INTEGER)";
+
+    String CREATE_FSV_GENERAL_3 = "CREATE TABLE " + FSV_GENERAL_3 + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MAIN_ID + " INTEGER,"
+            +et1+" TEXT,"
+            +et2+" TEXT,"
+            +et3+" TEXT,"
+            +et4+" TEXT,"
+            +et5+" TEXT,"
+            +et6+" TEXT,"
+            +et7+" TEXT,"
+            +et8+" TEXT,"
+            +et9+" TEXT,"
+            +et10+" TEXT,"
+            +et11+" TEXT,"
+            +et12+" TEXT,"
+            +et13+" TEXT,"
+            +et14+" TEXT,"
+            +et15+" TEXT,"
+            +et16+" TEXT,"
+            +et17+" TEXT,"
+            +et18+" TEXT,"
+            +et19+" TEXT,"
+            +CHECK_COUNT_YES+" TEXT,"
+            +CHECK_COUNT_NO+" TEXT,"
+            + DELETED + " INTEGER)";
+
+    String CREATE_FSV_STAND_TOOL_4 = "CREATE TABLE " + FSV_STAND_TOOL_4 + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MAIN_ID + " INTEGER,"
+            +et1+" TEXT,"
+            +et2+" TEXT,"
+            +et3+" TEXT,"
+            +et4+" TEXT,"
+            +et5+" TEXT,"
+            +et6+" TEXT,"
+            +et7+" TEXT,"
+            +et8+" TEXT,"
+            +et9+" TEXT,"
+            +et10+" TEXT,"
+            +et11+" TEXT,"
+            +et12+" TEXT,"
+            +et13+" TEXT,"
+            +et14+" TEXT,"
+            +et15+" TEXT,"
+            +et16+" TEXT,"
+            +et17+" TEXT,"
+            +et18+" TEXT,"
+            +et19+" TEXT,"
+            +et20+" TEXT,"
+            +et21+" TEXT,"
+            +et22+" TEXT,"
+            +NO_COUNT+" TEXT,"
+            +NA_COUNT+" TEXT,"
+            + DELETED + " INTEGER)";
+
+    String CREATE_FSV_STAND_ITEM_5 = "CREATE TABLE " + FSV_STAND_ITEM_5 + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MAIN_ID + " INTEGER,"
+            +et1+" TEXT,"
+            +et2+" TEXT,"
+            +et3+" TEXT,"
+            +et4+" TEXT,"
+            +et5+" TEXT,"
+            +et6+" TEXT,"
+            +et7+" TEXT,"
+            +et8+" TEXT,"
+            +et9+" TEXT,"
+            +et10+" TEXT,"
+            +et11+" TEXT,"
+            +et12+" TEXT,"
+            +et13+" TEXT,"
+            +et14+" TEXT,"
+            +et15+" TEXT,"
+            +et16+" TEXT,"
+            +et17+" TEXT,"
+            +et18+" TEXT,"
+            +et19+" TEXT,"
+            +et20+" TEXT,"
+            +et21+" TEXT,"
+            +et22+" TEXT,"
+            +NO_COUNT+" TEXT,"
+            +NA_COUNT+" TEXT,"
+            + DELETED + " INTEGER)";
+
+    String CREATE_FSV_EMERGENCY_6 = "CREATE TABLE " + FSV_EMERGENCY_6 + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MAIN_ID + " INTEGER,"
+            +et1+" TEXT,"
+            +et2+" TEXT,"
+            +et3+" TEXT,"
+            +et4+" TEXT,"
+            +et5+" TEXT,"
+            +et6+" TEXT,"
+            +et7+" TEXT,"
+            +et8+" TEXT,"
+            +et9+" TEXT,"
+            +et10+" TEXT,"
+            +NO_COUNT+" TEXT,"
+            +NA_COUNT+" TEXT,"
+            + DELETED + " INTEGER)";
+
+    String CREATE_FSV_SIGN_7 = "CREATE TABLE " + FSV_SIGN_7 + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MAIN_ID + " INTEGER,"
+            + et1 + " TEXT,"
+            + CUSTOMER_NAME + " TEXT,"
+            + CUSTOMER_SIGN + " BLOB,"
+            + BRANCH_END_DATE + " DATETIME,"
+            + DELETED + " INTEGER)";
 
 
 
@@ -403,6 +546,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_PC_VIR_DB_PPE_5);
         db.execSQL(CREATE_PC_VIR_STANDARD_6);
         db.execSQL(CREATE_PC_VIR_OTHER_7);
+        db.execSQL(CREATE_FSV_TITLE_1);
+        db.execSQL(CREATE_FSV_BODY_2);
+        db.execSQL(CREATE_FSV_GENERAL_3);
+        db.execSQL(CREATE_FSV_STAND_TOOL_4);
+        db.execSQL(CREATE_FSV_STAND_ITEM_5);
+        db.execSQL(CREATE_FSV_EMERGENCY_6);
+        db.execSQL(CREATE_FSV_SIGN_7);
 
 
     }
@@ -705,6 +855,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public int get_last_id_FSV(SQLiteDatabase sd){
+        int last_id=0;
+        Cursor c5;
+        c5 = sd.rawQuery("Select * from " + FSV_DB_TITLE_1, null);
+        c5.moveToLast();
+        if(c5.getCount()!=0){
+            last_id=c5.getInt(c5.getColumnIndex(KEY_ID));
+        }
+        c5.close();
+        return last_id;
+
+    }
+
 
     public int get_last_id_PTI(SQLiteDatabase sd){
         int last_id=0;
@@ -741,6 +904,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public int get_vir_completed_count(SQLiteDatabase sd){
         String Status  ="Completed";
         String selectQuery = "SELECT * FROM "+PC_VIR_DB_TITLE_1+" where STATUS ='"+Status+"'";
+        Cursor cursor = sd.rawQuery(selectQuery, null);
+        cursor.moveToFirst();
+        cursor.close();
+        return cursor.getCount();
+    }
+
+    public int get_fsv_completed_count(SQLiteDatabase sd){
+        String Status  ="Completed";
+        String selectQuery = "SELECT * FROM "+FSV_DB_TITLE_1+" where STATUS ='"+Status+"'";
         Cursor cursor = sd.rawQuery(selectQuery, null);
         cursor.moveToFirst();
         cursor.close();

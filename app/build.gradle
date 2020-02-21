@@ -26,8 +26,8 @@ android {
         applicationId "com.rentokil.pci.rauditor_sg"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 4
-        versionName "1.4"
+        versionCode 5
+        versionName "1.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
 
@@ -127,5 +127,8 @@ dependencies {
 //    implementation project(path:':tedbottompicker', configuration: 'default')
 
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'

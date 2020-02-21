@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.chootdev.recycleclick.RecycleClick;
 import com.rentokil.pci.rauditor_sg.Adapter.recyclerAdapter;
 import com.rentokil.pci.rauditor_sg.Database.DatabaseHelper;
+import com.rentokil.pci.rauditor_sg.FSV.FSV_TITLE_1;
 import com.rentokil.pci.rauditor_sg.PCI.PCI_Title_Page_1;
 import com.rentokil.pci.rauditor_sg.PC_VIR.PC_VIR_TITLE_1;
 import com.rentokil.pci.rauditor_sg.PTI.PTI_Title_Page_1;
@@ -94,6 +95,11 @@ public class Recyclerview extends Fragment {
                     Intent i = new Intent(getActivity(), PC_VIR_TITLE_1.class);
                     startActivity(i);
                 }
+
+                if(Name.equalsIgnoreCase("FUMIGATION SERVICE VEHICLE AUDIT CHECKLIST")){
+                    Intent i = new Intent(getActivity(), FSV_TITLE_1.class);
+                    startActivity(i);
+                }
             }
         });
         productList = new ArrayList<>();
@@ -124,6 +130,14 @@ public class Recyclerview extends Fragment {
                 new recyclercons(
 
                         "PC-VEHICLE INSPECTION REPORT",
+                        "All Customers",
+
+                        R.drawable.rentokilpest));
+
+        productList.add(
+                new recyclercons(
+
+                        "FUMIGATION SERVICE VEHICLE AUDIT CHECKLIST",
                         "All Customers",
 
                         R.drawable.rentokilpest));
