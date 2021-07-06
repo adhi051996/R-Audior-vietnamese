@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.rentokil.pci.rauditor_sg">
+    package="com.rentokil.pci.rauditor_vn">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -12,6 +12,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
 
     <application xmlns:tools="http://schemas.android.com/tools"
         android:name=".volley.VolleyHelperApplication"
@@ -19,19 +22,28 @@
         android:fullBackupContent="false"
         android:icon="@drawable/app_logo"
         android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
         android:largeHeap="true"
         android:roundIcon="@drawable/app_logo"
         android:singleLine="false"
+        android:minSdkVersion="8"
+        android:requestLegacyExternalStorage="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="allowBackup,supportsRtl">
-        <activity android:name=".FSV.FSV_EMERGENCY_6"></activity>
+
+        <activity android:name=".STORE_INSPEC.SI_PAGE_3"></activity>
+        <activity android:name=".STORE_INSPEC.SI_PAGE_2" />
+        <activity android:name=".STORE_INSPEC.SI_Page_1" />
+        <activity android:name=".FSV.FSV_EMERGENCY_6" />
         <activity android:name=".FSV.FSV_STANDARD_ITEM_5" />
         <activity android:name=".FSV.FSV_STANDARD_TOOL_4" />
         <activity android:name=".FSV.FSV_GENERAL_3" />
         <activity android:name=".FSV.FSV_TITLE_1" />
         <activity android:name=".FSV.FSV_BODY_2" />
         <activity android:name=".FSV.FSV_SIGN_7" />
+        <activity android:name=".Compress_test" />
         <activity android:name=".workout" />
         <activity android:name=".kotlinActivity" />
         <activity android:name=".PDF_MAIL" />
@@ -111,7 +123,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.rentokil.pci.rauditor_sg.fileprovider"
+            android:authorities="com.rentokil.pci.rauditor_vn.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -122,6 +134,7 @@
         <activity android:name=".NetConnection" />
         <activity android:name=".FirebasePost" />
         <activity android:name=".FirebaseGet" />
+        <activity android:name=".DOODLE_IMAGE_EDIT.DemoActivity" />
 
         <meta-data
             android:name="io.fabric.ApiKey"
@@ -129,6 +142,28 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="9c383f35cb338c31600cde16490bc9d88ec6992b" />
+        <activity
+            android:name=".DOODLE_IMAGE_EDIT.Multiple_IMAGE_SELECTOR.ImagesSelectorActivity_pick"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name=".DOODLE_IMAGE_EDIT.Doodle.MosaicDemo" />
+        <activity android:name=".DOODLE_IMAGE_EDIT.Multiple_Display.Display_Main" />
+        <activity android:name=".DOODLE_IMAGE_EDIT.Doodle.ScaleGestureItemDemo" />
+        <activity android:name=".DOODLE_IMAGE_EDIT.Doodle.guide.DoodleGuideActivity"/>
+        <activity android:name=".DOODLE_IMAGE_EDIT.Doodle.MainActivity"/>
+        <activity android:name=".DOODLE_IMAGE_EDIT.Multiple_Display.CustomGalleryActivity" >
+            <intent-filter>
+                <action android:name="luminous.ACTION_PICK" />
+                <action android:name="luminous.ACTION_MULTIPLE_PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DOODLE_IMAGE_EDIT.Doodle_EDITING.DoodleActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden|navigation|keyboard"
+            />
+        <activity android:name=".DOODLE_IMAGE_EDIT.Doodle_EDITING.imageselector.ImageSelectorActivity_doodle"/>
+
+
     </application>
 
 </manifest>

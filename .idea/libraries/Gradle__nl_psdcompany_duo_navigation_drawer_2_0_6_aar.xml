@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: nl.psdcompany:duo-navigation-drawer:2.0.6@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4b4e2ace8f067996dfd1150eac303788/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4b4e2ace8f067996dfd1150eac303788/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4b4e2ace8f067996dfd1150eac303788/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nl.psdcompany/duo-navigation-drawer/2.0.6/806f7a44a57071289c0b6683c80e5ef9c39dc104/duo-navigation-drawer-2.0.6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nl.psdcompany/duo-navigation-drawer/2.0.6/204551e426d18b20f0df2d9a78f4d1b9d534b8d/duo-navigation-drawer-2.0.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -17,14 +17,13 @@
         >
     </FrameLayout>
     <ImageView
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_below="@+id/blr"
-
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-20dp"
+        android:layout_marginTop="-5dp"
         android:layout_gravity="center"
-        android:src="@drawable/rentokilpest" />
+        android:src="@drawable/logo_pci" />
 
 
     <LinearLayout
@@ -39,7 +38,7 @@
         <customfonts.MyTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="rAuditor SG"
+            android:text="rAuditor VN"
             android:textColor="#fff"
             android:textSize="34dp"
             android:layout_marginTop="70dp"

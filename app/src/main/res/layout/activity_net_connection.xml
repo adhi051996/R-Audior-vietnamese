@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.rentokil.pci.rauditor_sg.NetConnection">
+    tools:context="com.rentokil.pci.rauditor_vn.NetConnection">
 
     <Button
         android:id="@+id/button2"

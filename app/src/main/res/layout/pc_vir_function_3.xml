@@ -22,7 +22,7 @@
         android:paddingTop="12dp"
         android:text="Vehicle Functionality"
         android:textColor="#ffffff"
-        android:textSize="15dp" />
+        android:textSize="@dimen/answer_size" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -43,7 +43,7 @@
                 android:layout_height="match_parent"
                 android:text="PC VIR (Section 3 of 7)"
                 android:textColor="#E63C06"
-                android:textSize="19.2sp"
+                android:textSize="@dimen/heading_size"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -100,7 +100,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Seat belt"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -188,7 +188,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Headlight"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -273,7 +273,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Signal light"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -339,7 +339,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Horn"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -404,7 +404,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Wiper blade"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -470,7 +470,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Radiator fluid"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -536,7 +536,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Engine oil fluid"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -602,7 +602,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Brake fluid"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -668,7 +668,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Washer  fluid"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -733,7 +733,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Emergency hazard light"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -798,7 +798,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Tyre thread"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -871,7 +871,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Tyre pressure"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -944,7 +944,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Spare tyre"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -1016,7 +1016,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="25dp"
                             android:text="Remarks"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -1051,22 +1051,6 @@
 
 
                 </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

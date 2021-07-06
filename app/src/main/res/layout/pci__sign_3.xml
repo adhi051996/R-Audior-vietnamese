@@ -24,9 +24,9 @@
         android:textStyle="bold"
         android:paddingRight="90dp"
         android:paddingTop="12dp"
-        android:text="Signature"
+        android:text="@string/Signature"
         android:textColor="#ffffff"
-        android:textSize="15dp" />
+        android:textSize="@dimen/heading_size" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                         <customfonts.TextViewSFProDisplayMedium
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="PC Inspection Report (Section 3 of 3)"
+                            android:text="@string/PCInspectionReport_three"
                             android:textSize="19.2sp"
                             android:textStyle="bold"
                             android:textColor="#E63C06"/>
@@ -105,9 +105,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="3dp"
                             android:paddingLeft="25dp"
-                            android:text="Summary"
+                            android:text="@string/Summary"
                             android:textColor="#000000"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textStyle="bold" />
 
 
@@ -120,7 +120,7 @@
                             android:layout_marginBottom="18dp"
                             android:background="@drawable/round_border">
 
-                            <EditText
+                            <com.rentokil.pci.rauditor_vn.CustomEditTextWithBullets
                                 android:id="@+id/et_reason"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -129,10 +129,10 @@
                                 android:textColor="@color/edit_text_color"
                                 android:focusable="true"
                                 android:focusableInTouchMode="true"
-                                android:hint="Tap here to edit"
+                                android:hint="@string/Tapheretoedit"
                                 android:inputType="textCapWords|textCapSentences"
                                 android:padding="15dp"
-                                android:textSize="13dp" />
+                                android:textSize="@dimen/answer_size" />
 
                         </LinearLayout>
 
@@ -166,9 +166,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="3dp"
                             android:paddingLeft="25dp"
-                            android:text="Assessor's Name"
+                            android:text="@string/AssessorName"
                             android:textColor="#000000"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -189,10 +189,10 @@
                                 android:focusableInTouchMode="true"
                                 android:textStyle="bold"
                                 android:textColor="@color/edit_text_color"
-                                android:hint="Tap here to edit"
+                                android:hint="@string/Tapheretoedit"
                                 android:inputType="textCapWords|textCapSentences"
                                 android:padding="15dp"
-                                android:textSize="13dp" />
+                                android:textSize="@dimen/answer_size" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -215,8 +215,8 @@
                         android:layout_marginTop="10dp"
 
                         android:layout_marginLeft="20dp"
-                        android:text="Assessor's Signature"
-                        android:textSize="18dp"
+                        android:text="@string/AssessorSignature"
+                        android:textSize="@dimen/heading_size"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold" />
 
@@ -284,7 +284,7 @@
             android:textAllCaps="false"
             android:background="@drawable/black_rect"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:text="Back" />
+            android:text="@string/Back" />
         <customfonts.Button_SF_Pro_Display_Semibold
             android:layout_weight="1"
 
@@ -295,7 +295,7 @@
             android:layout_marginLeft="1dp"
             style="@style/Widget.AppCompat.Button.Colored"
             android:background="@drawable/black_rect"
-            android:text="Submit" />
+            android:text="@string/Submit" />
 
 
     </LinearLayout>

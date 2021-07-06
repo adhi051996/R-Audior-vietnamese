@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.rentokil.pci.rauditor_sg.MULTI_IMAGE_SELECTION.view.TedSquareFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.rentokil.pci.rauditor_vn.MULTI_IMAGE_SELECTION.view.TedSquareFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root"
     android:layout_width="match_parent"
@@ -11,7 +11,7 @@
 
     >
 
-    <com.rentokil.pci.rauditor_sg.MULTI_IMAGE_SELECTION.view.TedSquareImageView
+    <com.rentokil.pci.rauditor_vn.MULTI_IMAGE_SELECTION.view.TedSquareImageView
         android:id="@+id/iv_thumbnail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,4 +21,4 @@
         />
 
 
-</com.rentokil.pci.rauditor_sg.MULTI_IMAGE_SELECTION.view.TedSquareFrameLayout>
+</com.rentokil.pci.rauditor_vn.MULTI_IMAGE_SELECTION.view.TedSquareFrameLayout>

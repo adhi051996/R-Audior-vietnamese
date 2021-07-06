@@ -43,8 +43,8 @@
                         android:layout_weight="1"
                         android:textStyle="bold"
                         android:padding="1dp"
-
-                        android:text="Audit"
+                      android:textSize="@dimen/answer_size"
+                        android:text="@string/audit"
                         android:id="@+id/cust_name_main"
                         android:textColor="#7D1B7E"
                         android:gravity="center"/>
@@ -75,10 +75,12 @@
                         android:layout_height="match_parent"
                         android:textStyle="bold"
                         android:layout_weight="1"
+                        android:textSize="@dimen/answer_size"
+
                         android:textColor="#7D1B7E"
                         android:id="@+id/dsp_date_main"
                         android:padding="2dp"
-                        android:text="Customer Name"
+                        android:text="@string/CustomerName"
                         android:gravity="center"
                         />
 
@@ -89,10 +91,12 @@
                         android:layout_height="match_parent"
                         android:textStyle="bold"
                         android:layout_weight="1"
+                        android:textSize="@dimen/answer_size"
+
                         android:textColor="#7D1B7E"
                         android:id="@+id/soc_main"
                         android:padding="2dp"
-                        android:text="Date of Audit"
+                        android:text="@string/date_ofAudit"
                         android:gravity="center"
                         />
 
@@ -105,8 +109,10 @@
                         android:textStyle="bold"
                         android:id="@+id/con_quo_main"
                         android:textColor="#7D1B7E"
+                        android:textSize="@dimen/answer_size"
+
                         android:padding="2dp"
-                        android:text="Status"
+                        android:text="@string/status"
                         android:gravity="center"
                         />
 

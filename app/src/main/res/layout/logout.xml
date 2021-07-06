@@ -9,7 +9,7 @@
 
 
     <Button
-        android:text="Logout"
+        android:text="@string/Logout"
         android:layout_width="match_parent"
         android:background="#ffff"
         android:textStyle="bold"
@@ -32,7 +32,7 @@
         android:textSize="18dp"
         android:textColor="#000000"
         android:background="#fff"
-        android:text="Do you want to logout ?"
+        android:text="@string/Doyouwanttologout"
         android:ems="30" />
 
 
@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:textColor="#000000"
             android:background="#ffff"
-            android:text="Yes"
+            android:text="@string/Yes"
             android:textSize="16dp"
             android:textStyle="bold"
             android:layout_marginRight="1.5dp"
@@ -59,7 +59,7 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:text="No"
+            android:text="@string/No"
             android:textSize="16dp"
             android:textStyle="bold"
             android:id="@+id/no_edit"/>

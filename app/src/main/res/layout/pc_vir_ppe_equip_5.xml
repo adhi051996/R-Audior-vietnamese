@@ -22,7 +22,7 @@
         android:paddingTop="12dp"
         android:text="PPE &amp; Equipment"
         android:textColor="#ffffff"
-        android:textSize="15dp" />
+        android:textSize="@dimen/answer_size" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -43,7 +43,7 @@
                 android:layout_height="match_parent"
                 android:text="PC VIR (Section 5 of 7)"
                 android:textColor="#E63C06"
-                android:textSize="19.2sp"
+                android:textSize="@dimen/heading_size"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -90,7 +90,7 @@
                     android:layout_marginTop="20dp"
                     android:text="Safety items present and in good condition"
                     android:textColor="#ffffff"
-                    android:textSize="15dp" />
+                    android:textSize="@dimen/answer_size" />
 
 
 
@@ -120,7 +120,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Safety Shoes"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -203,7 +203,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Safety Goggles"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -287,7 +287,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Safety Helmet"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -359,7 +359,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Disposable Gloves (nitrile)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -429,7 +429,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Chemical Resistant Gloves"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -500,7 +500,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Ear Plug/Muffler"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -571,7 +571,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Fume Mask/ Canister Respirator"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -642,7 +642,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="High Visibility Vest (for each Technician)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -713,7 +713,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Protective Clothing (Long Sleeve Shirt)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -783,7 +783,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Spare Pair of Shirt and Trousers"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -853,7 +853,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Basic First Aid Kit"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -874,7 +874,7 @@
                                 android:layout_weight="1"
                                 android:checked="false"
                                 android:gravity="center_vertical"
-                                android:text="complaint"
+                                android:text="Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -882,7 +882,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Non-complaint"
+                                android:text="Non-Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -918,7 +918,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Fire Extinguisher"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -939,7 +939,7 @@
                                 android:layout_weight="1"
                                 android:checked="false"
                                 android:gravity="center_vertical"
-                                android:text="complaint"
+                                android:text="Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -947,7 +947,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Non-complaint"
+                                android:text="Non-Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -985,7 +985,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Soap &amp; Towel"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -1057,7 +1057,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="10 Litres of Clean Water ( New Container )"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -1128,7 +1128,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="20-litre Empty PVC Receptacle"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -1199,7 +1199,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Cotton Rags"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -1270,7 +1270,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Gunny Sacks (2 pcs)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -1341,7 +1341,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Safety Cones (at least 2 units per PC vehicle)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -1412,7 +1412,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Emergency Triangle"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -1483,7 +1483,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Sawdust/Absorbent Material (Rags)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -1549,19 +1549,19 @@
                     android:layout_marginTop="20dp"
                     android:text="Tools and Equipment present"
                     android:textColor="#ffffff"
-                    android:textSize="15dp" />
+                    android:textSize="@dimen/answer_size" />
 
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="110dp"
+                    android:layout_height="220dp"
                     android:layout_gravity="center_horizontal"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     card_view:cardElevation="5dp"
                     card_view:cardUseCompatPadding="true"
                     card_view:cardBackgroundColor="#FFF"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp">
 
 
@@ -1577,7 +1577,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Handheld Sprayer (with 'Rentokil' Sticker)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -1590,7 +1590,7 @@
                             android:layout_marginTop="12dp"
                             android:checked="false"
                             android:gravity="center"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
                             <RadioButton
 
@@ -1637,6 +1637,16 @@
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
                         </RadioGroup>
 
 
@@ -1649,14 +1659,14 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="110dp"
+                    android:layout_height="180dp"
                     android:layout_gravity="center_horizontal"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     card_view:cardElevation="5dp"
                     card_view:cardUseCompatPadding="true"
                     card_view:cardBackgroundColor="#FFF"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp">
 
                     <LinearLayout
@@ -1670,7 +1680,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Power duster"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -1683,7 +1693,7 @@
                             android:layout_marginTop="12dp"
                             android:checked="false"
                             android:gravity="center"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
                             <RadioButton
                                 android:layout_width="match_parent"
@@ -1718,6 +1728,16 @@
                                 android:text="Not Present"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
                         </RadioGroup>
 
                     </LinearLayout>
@@ -1726,14 +1746,14 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="110dp"
+                    android:layout_height="180dp"
                     android:layout_gravity="center_horizontal"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     card_view:cardElevation="5dp"
                     card_view:cardUseCompatPadding="true"
                     card_view:cardBackgroundColor="#FFF"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp">
 
                     <LinearLayout
@@ -1747,7 +1767,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Termikil duster"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -1760,7 +1780,7 @@
                             android:layout_marginTop="12dp"
                             android:checked="false"
                             android:gravity="center"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
                             <RadioButton
                                 android:layout_width="match_parent"
@@ -1795,6 +1815,14 @@
                                 android:text="Not Present"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
                         </RadioGroup>
 
                     </LinearLayout>
@@ -1803,14 +1831,14 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="110dp"
+                    android:layout_height="180dp"
                     android:layout_gravity="center_horizontal"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     card_view:cardElevation="5dp"
                     card_view:cardUseCompatPadding="true"
                     card_view:cardBackgroundColor="#FFF"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp">
 
                     <LinearLayout
@@ -1824,7 +1852,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Thermal fogger"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -1837,7 +1865,7 @@
                             android:layout_marginTop="12dp"
                             android:checked="false"
                             android:gravity="center"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
                             <RadioButton
                                 android:layout_width="match_parent"
@@ -1870,6 +1898,14 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Not Present"
+                                android:textColor="@color/text_color"
+                                android:theme="@style/SampleTheme_green" />
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="N/A"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
                         </RadioGroup>
@@ -1902,7 +1938,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Baiting Station Sticker (min 10 pcs)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -1972,7 +2008,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Date of Service Sticker (min 30 pcs)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -2041,7 +2077,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Manhole - Cover Lifting Key (1 pair)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -2111,7 +2147,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Measuring Cups (50 ml &amp; 1 litre)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -2181,7 +2217,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Filling Funnel"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -2251,7 +2287,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Spoon"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -2322,7 +2358,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Scraping Stick"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -2393,7 +2429,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Ladder"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -2464,7 +2500,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Ladder Stopper"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -2535,7 +2571,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Screw Driver"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -2607,7 +2643,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Torch with Batteries"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -2677,7 +2713,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Brush"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -2747,7 +2783,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Broom and Dustpan"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -2817,7 +2853,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Specimen Tubes (5 tubes)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -2889,7 +2925,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Batteries (for fogger and torch light)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -2959,7 +2995,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Fogger Toolkit"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -3039,7 +3075,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="25dp"
                             android:text="Remarks"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />

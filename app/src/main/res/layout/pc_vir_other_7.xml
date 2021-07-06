@@ -22,7 +22,7 @@
         android:paddingTop="12dp"
         android:text="Other Items (Optional)"
         android:textColor="#ffffff"
-        android:textSize="15dp" />
+        android:textSize="@dimen/answer_size" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -43,7 +43,7 @@
                 android:layout_height="match_parent"
                 android:text="PC VIR (Section 7 of 7)"
                 android:textColor="#E63C06"
-                android:textSize="19.2sp"
+                android:textSize="@dimen/heading_size"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -100,7 +100,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Goldben - No unauthorised storage (Max 5 kg)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -120,7 +120,7 @@
                                 android:layout_weight="1"
                                 android:checked="false"
                                 android:gravity="center_vertical"
-                                android:text="complaint"
+                                android:text="Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -128,7 +128,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Non-complaint"
+                                android:text="Non-Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -172,7 +172,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Newbait - No unauthorised storage (max 1 kg)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -192,7 +192,7 @@
                                 android:layout_weight="1"
                                 android:checked="false"
                                 android:gravity="center_vertical"
-                                android:text="complaint"
+                                android:text="Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -200,7 +200,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Non-complaint"
+                                android:text="Non-Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -243,7 +243,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Contrac Blox (Max 8kg)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -263,7 +263,7 @@
                                 android:layout_weight="1"
                                 android:checked="false"
                                 android:gravity="center_vertical"
-                                android:text="complaint"
+                                android:text="Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -271,7 +271,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Non-complaint"
+                                android:text="Non-Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -293,7 +293,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="180dp"
                     android:layout_gravity="center_horizontal"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     card_view:cardElevation="5dp"
@@ -314,7 +314,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Any Cockroach Gel Bait (Max 2 tube)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -334,7 +334,7 @@
                                 android:layout_weight="1"
                                 android:checked="false"
                                 android:gravity="center_vertical"
-                                android:text="complaint"
+                                android:text="Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -342,7 +342,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Non-complaint"
+                                android:text="Non-Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -385,7 +385,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Any Ant Gel Bait (Max 2 tube)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -405,7 +405,7 @@
                                 android:layout_weight="1"
                                 android:checked="false"
                                 android:gravity="center_vertical"
-                                android:text="complaint"
+                                android:text="Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -413,7 +413,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Non-complaint"
+                                android:text="Non-Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -435,7 +435,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="200dp"
                     android:layout_gravity="center_horizontal"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     card_view:cardElevation="5dp"
@@ -456,7 +456,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Anti Malaria Oil (Max 20 litres unless with approval from line manager)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -476,7 +476,7 @@
                                 android:layout_weight="1"
                                 android:checked="false"
                                 android:gravity="center_vertical"
-                                android:text="complaint"
+                                android:text="Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -484,7 +484,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Non-complaint"
+                                android:text="Non-Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -506,7 +506,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="200dp"
                     android:layout_gravity="center_horizontal"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     card_view:cardElevation="5dp"
@@ -527,7 +527,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Rid-Rat or Vertox Soft Bait (Max 2 tubes unless with approval from line manager)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -547,7 +547,7 @@
                                 android:layout_weight="1"
                                 android:checked="false"
                                 android:gravity="center_vertical"
-                                android:text="complaint"
+                                android:text="Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -555,7 +555,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Non-complaint"
+                                android:text="Non-Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -579,7 +579,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="180dp"
                     android:layout_gravity="center_horizontal"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     card_view:cardElevation="5dp"
@@ -600,7 +600,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
                             android:text="Sulphur (Max 20 kgs unless with approval from line manager)"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -620,7 +620,7 @@
                                 android:layout_weight="1"
                                 android:checked="false"
                                 android:gravity="center_vertical"
-                                android:text="complaint"
+                                android:text="Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -628,7 +628,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Non-complaint"
+                                android:text="Non-Compliant"
                                 android:textColor="@color/text_color"
                                 android:theme="@style/SampleTheme_green" />
 
@@ -646,19 +646,6 @@
 
 
                 </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

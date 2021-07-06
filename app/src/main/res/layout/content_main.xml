@@ -41,7 +41,7 @@
                         android:layout_weight="1"
                         android:textStyle="bold"
                         android:padding="1dp"
-                        android:text="Audit"
+                        android:text="@string/audit"
                         android:textColor="#7D1B7E"
                         android:gravity="center"/>
 
@@ -55,7 +55,7 @@
                         android:layout_weight="1"
                         android:textColor="#7D1B7E"
                         android:padding="2dp"
-                        android:text="Customer Name"
+                        android:text="@string/CustomerName"
                         android:gravity="center"
                         />
 
@@ -68,7 +68,7 @@
                         android:layout_weight="1"
                         android:textColor="#7D1B7E"
                         android:padding="2dp"
-                        android:text="Date of Audit"
+                        android:text="@string/date_ofAudit"
                         android:gravity="center"
                         />
 
@@ -95,7 +95,7 @@
                         android:textStyle="bold"
                         android:textColor="#7D1B7E"
                         android:padding="2dp"
-                        android:text="Status"
+                        android:text="@string/status"
                         android:gravity="center"
                         />
 

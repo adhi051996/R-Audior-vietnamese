@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="com.rentokil.pci.rauditor_sg.Fragments.Profile_Fragment">
+    tools:context="com.rentokil.pci.rauditor_vn.Fragments.Profile_Fragment">
 
 
     <ScrollView
@@ -32,11 +32,11 @@
 
 
                 <ImageView
-                    android:layout_width="90dp"
-                    android:layout_height="40dp"
+                    android:layout_width="160dp"
+                    android:layout_height="90dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="-60dp"
-                    android:background="@drawable/rentokilpest"
+                    android:layout_marginTop="-40dp"
+                    android:background="@drawable/logo_pci"
                     android:gravity="bottom"
                     android:textColor="#fff"
                     android:textSize="20dp" />
@@ -92,7 +92,7 @@
                                 android:layout_marginTop="60dp"
                                 android:layout_weight="0.6"
                                 android:padding="15dp"
-                                android:text="NAME"
+                                android:text="@string/NAME"
                                 android:textColor="#17202A"
                                 android:textSize="16dp"
                                 android:textStyle="bold" />
@@ -178,7 +178,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_weight="0.5"
                     android:padding="20dp"
-                    android:text="Email"
+                    android:text="@string/Email"
                     android:textColor="#17202A"
                     android:textSize="14dp"
                     android:textStyle="bold" />
@@ -217,7 +217,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_weight="0.5"
                     android:padding="20dp"
-                    android:text="Branch"
+                    android:text="@string/Branch"
                     android:textColor="#17202A"
                     android:textSize="14dp"
                     android:textStyle="bold" />
@@ -254,7 +254,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_weight="0.5"
                     android:padding="20dp"
-                    android:text="Country"
+                    android:text="@string/Country"
                     android:textColor="#17202A"
                     android:textSize="14dp"
                     android:textStyle="bold" />
@@ -304,7 +304,7 @@
             android:background="#0071A5"
 
             android:focusable="true"
-            android:text="SIGN OUT"
+            android:text="@string/sign_out"
             android:layout_marginRight="2dp"
 
             android:textColor="#FFFFFF" />
@@ -319,7 +319,7 @@
             android:background="#0071A5"
 
             android:focusable="true"
-            android:text="Refresh"
+            android:text="@string/Refresh"
             android:textColor="#FFFFFF" />
 
     </LinearLayout>

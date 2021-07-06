@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">rAuditor SG</string>
+    <string name="app_name">rAuditor VN</string>
     <string name="food">Food &amp; Drink experiences</string>
     <string name="facebook_app_id">pHMjJ3QLPUBBDbFDU6pB5U8f</string>
 
@@ -14,9 +14,11 @@
     <string name="default_web_client_ids">266032461783-4e9bv3ns14kvii1b68s0vh90k5eeb3pm.apps.googleusercontent.com</string>
 
     <string name="youAreNotUpdatedTitle">Update Available</string>
-    <string name="youAreNotUpdatedMessage">A new version of rAuditor SG is available. Please update to version\s</string>
+    <string name="youAreNotUpdatedMessage">A new version of rAuditor VN is available. Please update to version\s</string>
     <string name="youAreNotUpdatedMessage1">\s now</string>
     <string name="update">Update</string>
+    <string name="si_head">Referring to the latest License to Import, Store and Sell Hazardous Substances for this section.
+        Select \"Yes\" if the HS stored is within permitted quantity and purity, \"NA\" if the stock is not present, and \"No\" if the HS stored exceeds either the purity or quantity approved.</string>
 
     <string name="label_brush">Brush</string>
     <string name="label_emoji">Emoji</string>
@@ -266,9 +268,70 @@
 
 
     <string name="back">BACK</string>
-    <string name="clear">CLEAR</string>
-    <string name="save">SAVE</string>
-    <string name="cancel">CANCEL</string>
+    <string name="ContactNumber">Số điện thoại liên hệ</string>
+    <string name="Contact_Number">Số điện thoại liên hệ:</string>
+    <string name="Conductedon">Tiến hành vào</string>
+    <string name="Preparedby">Chuẩn bị bởi</string>
+    <string name="AccompaniedbyReportedto">Báo cáo cho</string>
+    <string name="Location">Địa điểm</string>
+    <string name="FindingsActions">Phát hiện/Hành động</string>
+    <string name="Photo">Hình ảnh</string>
+    <string name="Recommendation">Kiến nghị</string>
+    <string name="Summary">Tóm tắt</string>
+    <string name="TitlePage">Trang tiêu đề</string>
+    <string name="Title">Tiêuđề</string>
+    <string name="CustomerName">tênkháchhàng</string>
+    <string name="Tapheretoedit">Nhấn vào đây để chỉnh sửa</string>
+    <string name="Address_Location">Địachỉ/Vịtrí</string>
+    <string name="Enterorlocateyouraddress">Nhậphoặcxácđịnhđịachỉcủabạn</string>
+    <string name="Back">Trởlại</string>
+    <string name="NEXT">KẾTIẾP</string>
+    <string name="INSPECTION">KIỂMTRA</string>
+    <string name="PREVIOUS">Trước(-)</string>
+    <string name="Add">Thêm(+)</string>
+    <string name="Area">Khuvực</string>
+    <string name="Signature">Chữ ký</string>
+    <string name="ADDMEDIA">THÊMPHƯƠNGTIỆNTRUYỀNTHÔNG</string>
+    <string name="AssessorName">Tên người đánh giá</string>
+    <string name="Submit">Gửi đi</string>
+    <string name="AssessorSignature">Chữ ký của Người đánh giá</string>
+    <string name="ThisYear">Năm nay :-</string>
+    <string name="InProgress">Trong tiến trình</string>
+    <string name="Completed">Đã hoàn thành</string>
+    <string name="ThisMonth">Tháng này :-</string>
+    <string name="ThisWeek">Tuần này :-</string>
+    <string name="NAME">TÊN</string>
+    <string name="Email">E-mail</string>
+    <string name="Branch">Chi nhánh</string>
+    <string name="Country">Quốc gia</string>
+    <string name="sign_out">ĐĂNG XUẤT</string>
+    <string name="Refresh">Làm tươi</string>
+    <string name="VersionNo">Phiên bản Không:</string>
+    <string name="Dashboard">bảng điều khiển</string>
+    <string name="Sync">Đồng bộ hóa</string>
+    <string name="audit">Kiểm toán</string>
+    <string name="ReportView_Share">Báo cáo Xem / Chia sẻ</string>
+    <string name="About_Rentokil">Về Rentokil</string>
+    <string name="CheckForUpdates">Kiểm tra cập nhật</string>
+    <string name="date_ofAudit">Ngày kiểm tra</string>
+    <string name="status">Trạng thái</string>
+    <string name="Logout">Đăng xuất</string>
+    <string name="Yes">Đúng</string>
+    <string name="No">Đúng</string>
+    <string name="home">Trang Chủ</string>
+    <string name="titlepage">TRANG TIÊU ĐỀ</string>
+    <string name="signature">CHỮ KÝ</string>
+    <string name="observationpage">TRANG QUAN SÁT</string>
+    <string name="Doyouwanttologout">Bạn có muốn đăng xuất không?</string>
+    <string name="Brief_about_rentokil">Các bộ phận của công ty hoạt động dưới ba thương hiệu toàn cầu: Rentokil, Initial và Ambius.
+chẳng hạn như Western Exterminator</string>
+    <string name="PCInspectionReport">Báo cáo kiểm tra PCI (Phần 1/3)</string>
+    <string name="PCInspectionReport_two">Báo cáo kiểm tra PCI (Phần 2/3)</string>
+    <string name="PCInspectionReport_three">Báo cáo kiểm tra PCI (Phần 3/3)</string>
+
+    <string name="clear">THÔNG THOÁNG</string>
+    <string name="save">TIẾT KIỆM</string>
+    <string name="cancel">HỦY</string>
     <string name="edit">EDIT</string>
     <string name="page_a_1">1. Staff knows what to report and who to report to?</string>
     <string name="app_names">rAuditor</string>
@@ -352,5 +415,45 @@
     <string name="average_bandwidth">AVERAGE</string>
     <string name="good_bandwidth">GOOD</string>
 
+    <string name="doodle_app_name">Doodle</string>
+    <string name="mosaic">Mosaic</string>
+    <string name="scale_gesture_item">Scale gesture</string>
+    <string name="guide">Doodle Guide</string>
+    <string name="simple_doodle">Simple doodle</string>
+    <string name="middle_doodle">Middle doodle</string>
+    <string name="advanced_doodle">Advanced doodle</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="doodle_clear_screen">Clear</string>
+    <string name="doodle_cant_undo_after_clearing">Are you sure to clear all?</string>
+    <string name="doodle_saving_picture">Save all before exiting</string>
+    <string name="doodle_enter">Enter</string>
+    <string name="doodle_cancel">Cancel</string>
+    <string name="doodle_save">Save</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_pick">Pick From Gallery</string>
+    <string name="btn_pick_mul">Pick From Gallery (Multiple)</string>
+    <string name="doodle_edit">Edit</string>
+    <string name="doodle_remove">Delete</string>
+    <string name="doodle_top">Top</string>
+    <string name="doodle_bottom">Bottom</string>
+
+    <string name="doodle_select_image">Select a image</string>
+
+    <string name="doodle_edit_mode">Edit mode</string>
+
+    <string name="selector_folder_all">All Images</string>
+    <string name="selector_caption">Select Images</string>
+    <!--http://stackoverflow.com/questions/17502824/whats-wrong-with-this-format-string-->
+    <string name="selector_action_done">Done (%1$d/%2$d)</string>
+    <string name="selector_preview">Preview</string>
+
+    <string name="selector_reach_max_image_hint">You have selected %d images already!</string>
+    <string name="tip_take_photo">Take Photo</string>
+    <string name="msg_no_camera">Can\'t Launch Camera!</string>
+    <string name="camera_temp_file_error">Temp File Error!</string>
+
+    <string name="selector_permission_error">Permission rejected，failed to work properly！</string>
 
 </resources>

@@ -26,7 +26,7 @@
         android:paddingTop="12dp"
         android:text="Acknowledgement"
         android:textColor="#ffffff"
-        android:textSize="15dp" />
+        android:textSize="@dimen/answer_size" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -72,7 +72,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="FSV (Section 7 of 7)"
-                            android:textSize="19.2sp"
+                            android:textSize="@dimen/heading_size"
                             android:textStyle="bold"
                             android:textColor="#890F07"/>
 
@@ -107,7 +107,7 @@
                             android:paddingLeft="25dp"
                             android:text="Remarks"
                             android:textColor="#000000"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textStyle="bold" />
 
 
@@ -120,7 +120,7 @@
                             android:layout_marginBottom="18dp"
                             android:background="@drawable/round_border">
 
-                            <EditText
+                            <com.rentokil.pci.rauditor_sg.CustomEditTextWithBullets
                                 android:id="@+id/et_reason"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -132,7 +132,7 @@
                                 android:hint="Tap here to edit"
                                 android:inputType="textCapWords|textCapSentences"
                                 android:padding="15dp"
-                                android:textSize="13dp" />
+                                android:textSize="@dimen/answer_size" />
 
                         </LinearLayout>
 
@@ -168,7 +168,7 @@
                             android:paddingLeft="25dp"
                             android:text="Auditor's name"
                             android:textColor="#000000"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -192,7 +192,7 @@
                                 android:hint="Tap here to edit"
                                 android:inputType="textCapWords|textCapSentences"
                                 android:padding="15dp"
-                                android:textSize="13dp" />
+                                android:textSize="@dimen/answer_size" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -215,7 +215,7 @@
                         android:layout_marginTop="10dp"
                         android:textAlignment="center"
                         android:text="Auditor's Signature"
-                        android:textSize="18dp"
+                        android:textSize="@dimen/heading_size"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold" />
 
@@ -253,11 +253,6 @@
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
-
-
-
-
 
 
 

@@ -25,7 +25,7 @@
             android:layout_height="?attr/actionBarSize"
             android:gravity="center"
 
-            android:text="rAuditor SG (Rentokil)"
+            android:text="rAuditor VN (Rentokil)"
             android:textColor="#fff"
             android:textSize="15dp"
 

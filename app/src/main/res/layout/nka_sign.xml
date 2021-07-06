@@ -8,8 +8,7 @@
     <RelativeLayout
         android:id="@+id/mysignature"
         android:layout_width="fill_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/style">
+        android:layout_height="200dp">
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

@@ -3,22 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="navigation_view">
-<item android:title="Rentokil SINGAPORE">
+<item android:title="Rentokil VIETNAMESE">
        <menu>
         <item
             android:icon="@drawable/dashboard_icon"
-            android:title="Dashboard" />
+            android:title="@string/Dashboard" />
         <item
             android:id="@+id/sync_menu"
 
             android:icon="@drawable/sync_icon"
-            android:title="Sync" />
+            android:title="@string/Sync" />
 
            <item
                    android:id="@+id/online"
 
                android:icon="@drawable/ic_share_black_24dp"
-               android:title="Report View / Share" />
+               android:title="@string/ReportView_Share" />
         <!--<item-->
             <!--android:id="@+id/sir_menu"-->
             <!--android:icon="@drawable/star_icon"-->

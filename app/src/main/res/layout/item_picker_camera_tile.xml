@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.rentokil.pci.rauditor_sg.View.FitWidthRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.rentokil.pci.rauditor_vn.View.FitWidthRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,4 +12,4 @@
         android:src="@drawable/picker_icon_camera"
         android:layout_centerInParent="true"/>
 
-</com.rentokil.pci.rauditor_sg.View.FitWidthRelativeLayout>
+</com.rentokil.pci.rauditor_vn.View.FitWidthRelativeLayout>

@@ -26,7 +26,7 @@
         android:paddingTop="12dp"
         android:text="INSPECTION"
         android:textColor="#ffffff"
-        android:textSize="15dp" />
+        android:textSize="@dimen/answer_size" />
 
 
 
@@ -75,7 +75,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="PT Inspection Report (Section 2 of 3)"
-                            android:textSize="19.2sp"
+                            android:textSize="@dimen/heading_size"
                             android:textStyle="bold"
                             android:textColor="#E63C06"/>
 
@@ -139,7 +139,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="25dp"
                         android:text="Area"
-                        android:textSize="18dp"
+                        android:textSize="@dimen/heading_size"
                         android:textColor="#E50404"
 
                         android:layout_marginTop="10dp"
@@ -152,7 +152,7 @@
                         android:paddingLeft="25dp"
                         android:layout_marginLeft="120dp"
                         android:text="1"
-                        android:textSize="18dp"
+                        android:textSize="@dimen/heading_size"
                         android:textColor="#E50404"
 
                         android:layout_marginTop="10dp"
@@ -184,8 +184,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingLeft="25dp"
-                            android:text="Location"
-                            android:textSize="16dp"
+                            android:text="@string/Location"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -211,7 +211,7 @@
                                 android:hint="Tap here to edit"
                                 android:inputType="textCapWords|textCapSentences"
                                 android:padding="15dp"
-                                android:textSize="13dp" />
+                                android:textSize="@dimen/answer_size" />
 
                         </LinearLayout>
 
@@ -245,8 +245,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingLeft="25dp"
-                            android:text="Findings/Actions"
-                            android:textSize="16dp"
+                            android:text="@string/FindingsActions"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -260,7 +260,7 @@
                             android:layout_marginBottom="18dp"
                             android:background="@drawable/round_border">
 
-                            <EditText
+                            <com.rentokil.pci.rauditor_vn.CustomEditTextWithBullets
                                 android:id="@+id/et_sum_1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -272,7 +272,7 @@
                                 android:hint="Tap here to edit"
                                 android:inputType="textCapWords|textCapSentences"
                                 android:padding="15dp"
-                                android:textSize="13dp" />
+                                android:textSize="@dimen/answer_size" />
 
                         </LinearLayout>
 
@@ -295,9 +295,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
                         android:paddingLeft="25dp"
-                        android:text="Photo"
+                        android:text="@string/Photo"
                         android:textColor="#000000"
-                        android:textSize="16dp"
+                        android:textSize="@dimen/heading_size"
                         android:textStyle="bold" />
 
                     <TextView
@@ -314,7 +314,7 @@
                         android:padding="9dp"
                         android:text="ADD MEDIA"
                         android:textColor="#fff"
-                        android:textSize="16dp" />
+                        android:textSize="@dimen/answer_size" />
 
 
 
@@ -326,8 +326,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
+
                     android:layout_marginTop="5dp">
                     <HorizontalScrollView
                         android:layout_width="match_parent"
@@ -336,8 +335,7 @@
                         android:foregroundGravity="left">
 
                         <LinearLayout
-                            android:clickable="true"
-                            android:id="@+id/selected_photos_container1"
+                            android:id="@+id/selected_photos_container"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
@@ -347,16 +345,16 @@
                             android:visibility="visible">
 
 
-                            <!-- images will be added dynamicall to this layout -->
                         </LinearLayout>
                     </HorizontalScrollView>
 
                 </androidx.cardview.widget.CardView>
 
 
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     card_view:cardElevation="5dp"
@@ -376,8 +374,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingLeft="25dp"
-                            android:text="Recommendation"
-                            android:textSize="16dp"
+                            android:text="@string/Recommendation"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -391,7 +389,7 @@
                             android:layout_marginBottom="18dp"
                             android:background="@drawable/round_border">
 
-                            <EditText
+                            <com.rentokil.pci.rauditor_vn.CustomEditTextWithBullets
                                 android:id="@+id/et_sum_2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -403,23 +401,13 @@
                                 android:hint="Tap here to edit"
                                 android:inputType="textCapWords|textCapSentences"
                                 android:padding="15dp"
-                                android:textSize="13dp" />
+                                android:textSize="@dimen/answer_size" />
 
                         </LinearLayout>
 
-
                     </LinearLayout>
 
-
                 </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-
-
 
 
 

@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.levelupstudio:expandable-recyclerview:1.0.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/56511943269e4b13bee2743a869c2a2b/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/56511943269e4b13bee2743a869c2a2b/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.levelupstudio/expandable-recyclerview/1.0.1/6c80ce99f4abaea00f90f49f97034029da99ba41/expandable-recyclerview-1.0.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.levelupstudio/expandable-recyclerview/1.0.1/ffa739e7715015fb3dc7d9a056838cbcf8bd255e/expandable-recyclerview-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

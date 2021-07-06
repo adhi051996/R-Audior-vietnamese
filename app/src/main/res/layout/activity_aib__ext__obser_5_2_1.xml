@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="com.rentokil.pci.rauditor_sg.AIB.AIB_Ext_Obser_5_2_1">
+    tools:context="com.rentokil.pci.rauditor_vn.AIB.AIB_Ext_Obser_5_2_1">
 
 
     <include layout="@layout/toolbar_category"/>

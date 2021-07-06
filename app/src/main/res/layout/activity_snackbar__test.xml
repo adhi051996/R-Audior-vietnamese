@@ -9,7 +9,7 @@
     tools:context=".Image.Snackbar_Test">
 
 
-    <com.rentokil.pci.rauditor_sg.View.SliderLayout
+    <com.rentokil.pci.rauditor_vn.View.SliderLayout
         android:id="@+id/slider"
         style="@style/AlertDialog.AppCompat.Light"
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
         custom:pager_animation_span="1100">
 
         <requestFocus />
-    </com.rentokil.pci.rauditor_sg.View.SliderLayout>
+    </com.rentokil.pci.rauditor_vn.View.SliderLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -644,7 +644,7 @@
 
                 </LinearLayout>
 
-                <com.rentokil.pci.rauditor_sg.View.ExpandableHeightListView
+                <com.rentokil.pci.rauditor_vn.View.ExpandableHeightListView
                     android:id="@+id/haircut_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -654,7 +654,7 @@
 
 
 
-                </com.rentokil.pci.rauditor_sg.View.ExpandableHeightListView>
+                </com.rentokil.pci.rauditor_vn.View.ExpandableHeightListView>
 
 
             </LinearLayout>

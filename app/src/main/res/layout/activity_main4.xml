@@ -79,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14dp"
-                    android:text="Location"
+                    android:text="@string/Location"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:textStyle="bold"
@@ -110,7 +110,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14dp"
-                    android:text="Prepared By"
+                    android:text="@string/Preparedby"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:textStyle="bold"
@@ -141,7 +141,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14dp"
-                    android:text="Contact Number:"
+                    android:text="@string/Contact_Number"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:textStyle="bold"
@@ -172,7 +172,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14dp"
-                    android:text="Accompanied by/Reported to"
+                    android:text="@string/AccompaniedbyReportedto"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:textStyle="bold"
@@ -204,7 +204,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14dp"
-                    android:text="Conducted on"
+                    android:text="@string/Conductedon"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:textStyle="bold"
@@ -251,7 +251,7 @@
 
         </RelativeLayout>
 
-        <com.rentokil.pci.rauditor_sg.NonScrollListView
+        <com.rentokil.pci.rauditor_vn.NonScrollListView
             android:id="@+id/lst"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

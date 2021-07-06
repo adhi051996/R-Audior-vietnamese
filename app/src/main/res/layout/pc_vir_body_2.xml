@@ -22,7 +22,7 @@
         android:paddingTop="12dp"
         android:text="Vehicle Body"
         android:textColor="#ffffff"
-        android:textSize="15dp" />
+        android:textSize="@dimen/answer_size" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PC VIR (Section 2 of 7)"
-                android:textSize="19.2sp"
+                android:textSize="@dimen/heading_size"
                 android:textStyle="bold"
                 android:textColor="#E63C06"/>
 
@@ -99,7 +99,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="25dp"
                             android:text="Front"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -127,7 +127,7 @@
                                 android:padding="9dp"
                                 android:text="ADD MEDIA"
                                 android:textColor="#fff"
-                                android:textSize="16dp" />
+                                android:textSize="@dimen/answer_size" />
 
 
                         </LinearLayout>
@@ -143,8 +143,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
+
                     android:layout_marginTop="5dp">
                     <HorizontalScrollView
                         android:layout_width="match_parent"
@@ -153,7 +152,6 @@
                         android:foregroundGravity="left">
 
                         <LinearLayout
-                            android:clickable="true"
                             android:id="@+id/selected_photos_container1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -164,11 +162,12 @@
                             android:visibility="visible">
 
 
-                            <!-- images will be added dynamicall to this layout -->
                         </LinearLayout>
                     </HorizontalScrollView>
 
                 </androidx.cardview.widget.CardView>
+
+
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -193,7 +192,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="25dp"
                             android:text="Side 1"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -219,7 +218,7 @@
                                 android:padding="9dp"
                                 android:text="ADD MEDIA"
                                 android:textColor="#fff"
-                                android:textSize="16dp" />
+                                android:textSize="@dimen/answer_size" />
 
                         </LinearLayout>
 
@@ -234,8 +233,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
+
                     android:layout_marginTop="5dp">
                     <HorizontalScrollView
                         android:layout_width="match_parent"
@@ -244,7 +242,6 @@
                         android:foregroundGravity="left">
 
                         <LinearLayout
-                            android:clickable="true"
                             android:id="@+id/selected_photos_container2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -255,12 +252,10 @@
                             android:visibility="visible">
 
 
-                            <!-- images will be added dynamicall to this layout -->
                         </LinearLayout>
                     </HorizontalScrollView>
 
                 </androidx.cardview.widget.CardView>
-
 
 
                 <androidx.cardview.widget.CardView
@@ -286,7 +281,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="25dp"
                             android:text="Side 2"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -312,7 +307,7 @@
                                 android:padding="9dp"
                                 android:text="ADD MEDIA"
                                 android:textColor="#fff"
-                                android:textSize="16dp" />
+                                android:textSize="@dimen/answer_size" />
                         </LinearLayout>
 
 
@@ -321,13 +316,13 @@
 
                 </androidx.cardview.widget.CardView>
 
+
                 <androidx.cardview.widget.CardView
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
+
                     android:layout_marginTop="5dp">
                     <HorizontalScrollView
                         android:layout_width="match_parent"
@@ -336,7 +331,6 @@
                         android:foregroundGravity="left">
 
                         <LinearLayout
-                            android:clickable="true"
                             android:id="@+id/selected_photos_container3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -347,14 +341,10 @@
                             android:visibility="visible">
 
 
-                            <!-- images will be added dynamicall to this layout -->
                         </LinearLayout>
                     </HorizontalScrollView>
 
                 </androidx.cardview.widget.CardView>
-
-
-
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -378,7 +368,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="25dp"
                             android:text="Rear"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -404,7 +394,7 @@
                                 android:padding="9dp"
                                 android:text="ADD MEDIA"
                                 android:textColor="#fff"
-                                android:textSize="16dp" />
+                                android:textSize="@dimen/answer_size" />
                         </LinearLayout>
 
 
@@ -413,13 +403,13 @@
 
                 </androidx.cardview.widget.CardView>
 
+
                 <androidx.cardview.widget.CardView
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
+
                     android:layout_marginTop="5dp">
                     <HorizontalScrollView
                         android:layout_width="match_parent"
@@ -428,7 +418,6 @@
                         android:foregroundGravity="left">
 
                         <LinearLayout
-                            android:clickable="true"
                             android:id="@+id/selected_photos_container4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -439,7 +428,6 @@
                             android:visibility="visible">
 
 
-                            <!-- images will be added dynamicall to this layout -->
                         </LinearLayout>
                     </HorizontalScrollView>
 
@@ -469,7 +457,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="25dp"
                             android:text="Remarks"
-                            android:textSize="16dp"
+                            android:textSize="@dimen/heading_size"
                             android:textColor="#000000"
                             android:layout_marginTop="3dp"
                             android:textStyle="bold" />
@@ -495,7 +483,7 @@
                                 android:hint="Tap here to edit"
                                 android:inputType="textCapWords|textCapSentences"
                                 android:padding="15dp"
-                                android:textSize="13dp" />
+                                android:textSize="@dimen/answer_size" />
 
                         </LinearLayout>
 

@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.chootdev:recycleclick:1.0.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/08f5c227ddc9bd3f064360e686b06371/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/08f5c227ddc9bd3f064360e686b06371/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.chootdev/recycleclick/1.0.0/25795fc0be7aebfc4bc63712d9a3cc2b810f6674/recycleclick-1.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.chootdev/recycleclick/1.0.0/af4e66ad3670887511090ad0dde6235c9469c33f/recycleclick-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

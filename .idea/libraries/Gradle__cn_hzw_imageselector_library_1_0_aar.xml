@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: cn.hzw.imageselector:library:1.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/20c44181ccf67edc4be29af828c0b4c0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/20c44181ccf67edc4be29af828c0b4c0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.hzw.imageselector/library/1.0/12c5a34ac94be2616b6d7ad6e538ee07fd84432/library-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
