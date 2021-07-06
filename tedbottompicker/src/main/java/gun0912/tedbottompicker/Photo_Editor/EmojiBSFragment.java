@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-
 import java.util.ArrayList;
 
 import gun0912.tedbottompicker.R;

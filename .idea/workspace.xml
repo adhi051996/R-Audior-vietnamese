@@ -18,757 +18,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b35942cb-6b24-42ca-b3ca-a3d5007925eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileContent/fileContent.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_adhi_a_Desktop_rAuditor_VN_app_libs_ImageBase64Encoder_jar_unspecified_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_adhi_a_Desktop_rAuditor_VN_app_libs_android_viewbadger_jar_unspecified_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_adhi_a_Desktop_rAuditor_VN_app_libs_apache_httpcomponents_httpclient_jar_unspecified_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_adhi_a_Desktop_rAuditor_VN_app_libs_apache_httpcomponents_httpcore_jar_unspecified_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_adhi_a_Desktop_rAuditor_VN_app_libs_ormlite_android_4_42_jar_unspecified_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_adhi_a_Desktop_rAuditor_VN_app_libs_ormlite_core_4_48_jar_unspecified_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_adhi_a_Desktop_rAuditor_VN_app_libs_urlimageviewhelper_1_0_4_jar_unspecified_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_1_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_rc01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_browser_browser_1_0_0_rc01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_rc01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_1_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_1_1_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_1_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_0_0_rc01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_exifinterface_exifinterface_1_0_0_rc01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_rc01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_v4_1_0_0_rc01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_2_0_alpha01_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_ktx_2_2_0_alpha01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_0_0_rc01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_0_0_rc01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_rc01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_rc01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_core_1_3_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_1_0_alpha3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_1_0_alpha3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_ext_junit_1_1_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_3_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_1_0_alpha3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_0_0_rc01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__cn_hzw_imageselector_library_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_alexzh_circleimageview_1_1_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_installreferrer_installreferrer_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_chootdev_recycleclick_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crashlytics_sdk_android_answers_1_4_7_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crashlytics_sdk_android_beta_1_2_10_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crashlytics_sdk_android_crashlytics_2_10_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crashlytics_sdk_android_crashlytics_core_2_7_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crystal_crystalrangeseekbar_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_daimajia_androidanimations_library_1_0_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_daimajia_slider_library_1_1_5_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_android_sdk_5_15_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_applinks_5_15_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_common_5_15_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_core_5_15_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_login_5_15_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_messenger_5_15_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_places_5_15_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_share_5_15_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_fresco_animated_gif_1_11_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_fresco_animated_webp_1_11_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_fresco_drawee_1_11_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_fresco_fbcore_1_11_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_fresco_fresco_1_11_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_fresco_imagepipeline_1_11_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_fresco_imagepipeline_base_1_11_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_fresco_nativeimagefilters_1_11_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_fresco_webpsupport_1_11_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_network_connectionclass_connectionclass_1_0_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebaseui_firebase_ui_auth_4_3_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_1993hzw_Androids_1_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_PhilJay_MPAndroidChart_v3_0_2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_android_pdf_viewer_2_0_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_pdfium_android_1_4_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_annotations_4_7_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_disklrucache_4_7_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_7_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_7_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_d_max_spots_dialog_0_4_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_siyamed_android_shape_imageview_0_9_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_sundeepk_compact_calendar_view_2_0_2_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_identifier_17_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_auth_17_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_auth_api_phone_17_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_auth_base_17_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_17_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_17_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_flags_16_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_location_15_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_17_4_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_api_17_4_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_17_4_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_impl_17_4_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_17_4_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_api_17_4_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_places_placereport_15_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_stats_17_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_17_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_0_0_rc01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_auto_value_auto_value_annotations_1_6_5_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_4_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_17_4_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_18_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_interop_18_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_19_3_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_components_16_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_core_17_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_crash_16_2_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_20_1_5_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_interop_17_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_installations_16_2_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_installations_interop_16_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_18_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_zxing_core_3_3_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_10_2_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_annotations_10_2_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_runtime_10_2_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_levelupstudio_expandable_recyclerview_1_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_mcxiaoke_volley_library_1_0_19_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_mikhaellopez_circularimageview_2_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_nineoldandroids_library_2_4_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_nostra13_universalimageloader_universal_image_loader_1_9_5_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_parse_bolts_bolts_android_1_4_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_parse_bolts_bolts_applinks_1_4_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_parse_bolts_bolts_tasks_1_4_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_3_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp_okhttp_2_5_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_8_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_3_2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit_converter_gson_2_0_0_beta2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit_retrofit_2_0_0_beta2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_toptoche_searchablespinner_searchablespinnerlibrary_1_3_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_net_commons_net_3_6_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__de_hdodenhof_circleimageview_3_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__fr_bmartel_http_endec_1_04_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__fr_bmartel_jspeedtest_1_32_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__gun0912_ted_tedonactivityresult_1_0_6_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__gun0912_ted_tedpermission_2_2_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__id_zelory_compressor_3_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_fabric_sdk_android_fabric_1_4_8_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_reactivex_rxjava2_rxandroid_2_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_reactivex_rxjava2_rxjava_2_2_6_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__ja_burhanrashid52_photoeditor_0_4_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__nl_psdcompany_duo_navigation_drawer_2_0_6_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_commons_commons_lang3_3_11_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_commons_commons_text_1_9_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_13_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_android_extensions_runtime_1_3_61_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_61_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_61_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_61_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_android_1_1_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_core_1_3_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jsoup_jsoup_1_10_2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_reactivestreams_reactive_streams_1_0_2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__pl_droidsonroids_gif_android_gif_drawable_1_2_8_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__xyz_danoz_recyclerviewfastscroller_0_1_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/ImageBase64Encoder.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/CustomEditTextWithBullets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/CustomEditTextWithNumbers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/DemoActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/DemoApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle/DemoApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle/MosaicDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle/ScaleGestureItemDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle/guide/AdvancedDoodleView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle/guide/DoodleGuideActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle/guide/MiddleDoodleView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle/guide/SimpleDoodleView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/CopyLocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/DoodleActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/DoodleBitmap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/DoodleColor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/DoodleItemBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/DoodleOnTouchGestureListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/DoodlePaintAttrs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/DoodleParams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/DoodlePath.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/DoodlePen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/DoodleRotatableItemBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/DoodleSelectableItemBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/DoodleShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/DoodleText.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/DoodleTouchDetector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/DoodleView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/IDoodleListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/core/IDoodle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/core/IDoodleColor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/core/IDoodleItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/core/IDoodleItemListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/core/IDoodlePen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/core/IDoodleSelectableItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/core/IDoodleShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/core/IDoodleTouchDetector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/dialog/ColorPickerDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/dialog/ColorPickerView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/dialog/DialogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/imagepicker/ImageLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/imagepicker/ImageSelectorAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/imagepicker/ImageSelectorView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/imageselector/ImageLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/imageselector/ImageSelectorActivity_doodle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/imageselector/ImageSelectorAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Doodle_EDITING/util/DrawUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_Display/Action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_Display/Adapter/ImageListRecyclerAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_Display/BaseActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_Display/CustomGallery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_Display/CustomGalleryActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_Display/Display_Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_Display/utils/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/DividerItemDecoration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/FolderPopupWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/FolderRecyclerViewAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/ImageRecyclerViewAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/ImagesSelectorActivity_pick.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/OnFolderRecyclerViewInteractionListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/OnImageRecyclerViewInteractionListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/SelectorSettings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/models/FolderItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/models/FolderListContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/models/ImageItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/models/ImageListContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/share.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/utilities/DraweeUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/utilities/FileUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/utilities/StringUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/ExifUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/FileUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/LIST_TEST/LogArrayAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/TedBottomSheetDialogFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PCI/BitmapHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/STORE_INSPEC/SI_PAGE_2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/STORE_INSPEC/SI_PAGE_3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/STORE_INSPEC/SI_Page_1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/animator/fade_in.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/animator/fade_out.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/color/default_text_color.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/color/folder_text_color.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/action_btn.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn.9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_bg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_hover.9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_sel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/checkbox_selected.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/checkbox_up.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/default_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_bar_background.9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_bar_progress.9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_btn_back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_btn_effect_panel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_btn_effect_rect_line.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_btn_effect_rect_pressed_black.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_btn_effect_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_btn_finish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_hide_panel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_hide_panel_pressed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_clear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_eraser.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_fill_circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_fill_rect.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_handwrite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_hollow_circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_hollow_rect.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_line.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_mosaic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_move.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_pen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_text.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_texture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_undo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_undo_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_ic_zoomer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_imageselector_image_selected.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_imageselector_loading.9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_rotate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_seekbar_bg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_shader1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_shader2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_shader3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_shader4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_shader5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_shape_circle_normal.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_shape_circle_pressed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_shape_rect_pressed_black.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_shape_rect_stroke_normal.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_shape_rect_stroke_pressed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_thumb_normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_thumb_pressed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/doodle_thumb_seekbarr.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/folder_checked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/folder_select_indicator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_arrow_back_24dp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_arrow_back_white_24dp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_photo_camera_white_48dp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_search.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/image_selected.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/image_unselected.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/imageselector_image_selected.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/imageselector_loading.9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/logo_pci.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/no_media.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/on_focus_checkbox.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/popup_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ptilogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/thelittleprince2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/top_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_demo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_guide.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_image_selector.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_images_selector_multiple.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_mosaic.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_scale_gesture_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/compress_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/doodle_color_selector_dialog.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/doodle_create_bitmap.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/doodle_create_text.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/doodle_dialog.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/doodle_imageselector_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/doodle_layout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/doodle_layout_image_selector.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/doodle_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/doodle_title_bar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fsv__general_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/gallery.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/gallery_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/image_item_doodle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/imageselector_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/multiple_display.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_folder_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_folder_recyclerview.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/recyclerview_image_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/selector_custom_actionbar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/si__page_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/si__page_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/si__page_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/topbar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_scrolling.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/popup_menu_fsv.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/popup_menu_si.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/main/java/id/zelory/compressor/Compressor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/main/java/id/zelory/compressor/Util.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/main/java/id/zelory/compressor/constraint/Compression.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/main/java/id/zelory/compressor/constraint/Constraint.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/main/java/id/zelory/compressor/constraint/DefaultConstraint.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/main/java/id/zelory/compressor/constraint/DestinationConstraint.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/main/java/id/zelory/compressor/constraint/FormatConstraint.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/main/java/id/zelory/compressor/constraint/QualityConstraint.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/main/java/id/zelory/compressor/constraint/ResolutionConstraint.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/main/java/id/zelory/compressor/constraint/SizeConstraint.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/test/java/id/zelory/compressor/CompressorTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/test/java/id/zelory/compressor/UtilTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/test/java/id/zelory/compressor/constraint/CompressionTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/test/java/id/zelory/compressor/constraint/DefaultConstraintTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/test/java/id/zelory/compressor/constraint/DestinationConstraintTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/test/java/id/zelory/compressor/constraint/FormatConstraintTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/test/java/id/zelory/compressor/constraint/QualityConstraintTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/test/java/id/zelory/compressor/constraint/ResolutionConstraintTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressor/src/test/java/id/zelory/compressor/constraint/SizeConstraintTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/publish.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rAuditor_VN.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/beyond_wonderland.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/client.key.p12" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/client.truststore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/emojione-android.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/auto_fix.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/b_n_w.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/brightness.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/contrast.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/cross_process.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/documentary.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/dual_tone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/fill_light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/fish_eye.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/flip_horizental.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/flip_vertical.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/grain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/gray_scale.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/lomish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/negative.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/original.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/posterize.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/rotate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/saturate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/sepia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/sharpen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/temprature.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/tint.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/filters/vignette.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/Lato-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/Lato-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/Lato-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/Lato-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/MavenPro-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/OpenSans-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/OpenSans-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/OpenSans-Semibold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/Roboto-Black.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/Roboto-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/Roboto-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/Roboto-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/Roboto-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/Roboto-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/SF-Pro-Display-Medium.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/SF-Pro-Display-Regular.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/SF-Pro-Display-Semibold.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/aclonica.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/allan_bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/amita.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/sf_pro_display_light.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/sf_pro_display_medium.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/sf_pro_display_regular.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/assets/fonts/sf_pro_display_semibold.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/GridSpacingItemDecoration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/ColorPickerAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/EditImageActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/EmojiBSFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/PhotoApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/PropertiesBSFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/StickerBSFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/TextEditorDialogFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/base/BaseActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/base/BaseFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/filters/FilterListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/filters/FilterViewAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/tools/EditingToolsAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/tools/ToolType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/TedBottomPicker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/TedRxBottomPicker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/adapter/GalleryAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/util/RealPathUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/view/TedEmptyRecyclerView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/view/TedSquareFrameLayout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/view/TedSquareImageView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-hdpi/ic_camera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-hdpi/ic_gallery.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xhdpi/ic_camera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xhdpi/ic_clear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xhdpi/ic_gallery.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxhdpi/ic_camera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxhdpi/ic_gallery.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxhdpi/img_editor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/aa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/bb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/editlogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/eye.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/gallery_photo_selected.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/ic_brush.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/ic_camera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/ic_camera.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/ic_close.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/ic_eraser.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/ic_gallery.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/ic_gallery.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/ic_insert_emoticon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/ic_photo_filter.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/ic_redo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/ic_save.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/ic_sticker.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/ic_text.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/ic_undo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/img_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/rounded_border_text_view.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/star_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable-xxxhdpi/sync_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/drawable/okicon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/font/roboto_medium.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/layout/activity_edit_image.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/layout/add_text_dialog.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/layout/color_picker_item_list.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/layout/fragment_banner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/layout/fragment_bottom_properties_dialog.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/layout/fragment_bottom_sticker_emoji_dialog.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/layout/row_editing_tools.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/layout/row_emoji.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/layout/row_filter_view.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/layout/row_sticker.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/layout/tedbottompicker_content_view.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/layout/tedbottompicker_grid_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/layout/tedbottompicker_selected_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/values/attrs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/values/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/values/font_certs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/values/preloaded_fonts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/values/style.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tedbottompicker/src/main/res/xml/provider_paths.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/rentokil/pci/rauditor_sg/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/rentokil/pci/rauditor_vn/ExampleInstrumentedTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Adapter/CustomExpandableListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/CustomExpandableListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Adapter/ListViewAdapter_Completed.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/ListViewAdapter_Completed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Adapter/ListViewAdapter_Inprogress.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/ListViewAdapter_Inprogress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Adapter/ListViewAdapter_PDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/ListViewAdapter_PDF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Adapter/List_Item_Methodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/List_Item_Methodes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Adapter/List_Item_Methodes_PDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/List_Item_Methodes_PDF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Adapter/List_Item_Methodes_incomplete.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/List_Item_Methodes_incomplete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Adapter/List_Item_Methodes_incomplete_msot.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/List_Item_Methodes_incomplete_msot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Adapter/List_Item_PDF_Methodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/List_Item_PDF_Methodes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Adapter/RecycleAdapter_CategoryDining.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/RecycleAdapter_CategoryDining.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Adapter/recyclerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/recyclerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/BeanClasses/BeanClassForCategoryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/BeanClasses/BeanClassForCategoryType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/CardJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/CardJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Category_Type_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Category_Type_Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/CustomAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/CustomAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Database/DatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Database/DatabaseHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/ExpandableListDataPump.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/ExpandableListDataPump.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/FSV/FSV_BODY_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/FSV/FSV_BODY_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/FSV/FSV_EMERGENCY_6.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/FSV/FSV_EMERGENCY_6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/FSV/FSV_GENERAL_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/FSV/FSV_GENERAL_3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/FSV/FSV_SIGN_7.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/FSV/FSV_SIGN_7.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/FSV/FSV_STANDARD_ITEM_5.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/FSV/FSV_STANDARD_ITEM_5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/FSV/FSV_STANDARD_TOOL_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/FSV/FSV_STANDARD_TOOL_4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/FSV/FSV_TITLE_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/FSV/FSV_TITLE_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/FirebaseGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/FirebaseGet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/FirebasePost.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/FirebasePost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Fragments/About_Us_Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Fragments/About_Us_Fragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Fragments/Completed_Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Fragments/Completed_Fragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Fragments/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Fragments/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Fragments/ExpandableListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Fragments/ExpandableListView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Fragments/FragmentOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Fragments/FragmentOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Fragments/Fragment_Banner.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Fragments/Fragment_Banner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Fragments/In_Progress_Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Fragments/In_Progress_Fragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Fragments/Profile_Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Fragments/Profile_Fragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/GPSTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/GPSTracker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/GetAddressIntentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/GetAddressIntentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Image/GalleryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Image/GalleryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Image/GridItemSpacingDecoration.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Image/GridItemSpacingDecoration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Image/ImageTileAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Image/ImageTileAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Image/Main_PAGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Image/Main_PAGE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Image/NextActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Image/NextActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Image/Snackbar_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Image/Snackbar_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Image/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Image/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/LIST_TEST/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/LIST_TEST/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/LIST_TEST/LogArrayAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/LIST_TEST/LogRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/LIST_TEST/LogRow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/LIST_TEST/date_pick.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/LIST_TEST/date_pick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/LIST_TEST/test_ListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/LIST_TEST/test_ListActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Locationtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Locationtest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/GridSpacingItemDecoration.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/GridSpacingItemDecoration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/Photo_Editor/ColorPickerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/Photo_Editor/ColorPickerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/Photo_Editor/EditImageActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/Photo_Editor/EditImageActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/Photo_Editor/EmojiBSFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/Photo_Editor/EmojiBSFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/Photo_Editor/PhotoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/Photo_Editor/PhotoApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/Photo_Editor/PropertiesBSFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/Photo_Editor/PropertiesBSFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/Photo_Editor/StickerBSFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/Photo_Editor/StickerBSFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/Photo_Editor/TextEditorDialogFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/Photo_Editor/TextEditorDialogFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/Photo_Editor/base/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/Photo_Editor/base/BaseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/Photo_Editor/base/BaseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/Photo_Editor/base/BaseFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/Photo_Editor/filters/FilterListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/Photo_Editor/filters/FilterListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/Photo_Editor/filters/FilterViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/Photo_Editor/filters/FilterViewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/Photo_Editor/tools/EditingToolsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/Photo_Editor/tools/EditingToolsAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/Photo_Editor/tools/ToolType.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/Photo_Editor/tools/ToolType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/TedBottomPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/TedBottomPicker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/TedBottomSheetDialogFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/TedBottomSheetDialogFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/TedRxBottomPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/TedRxBottomPicker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/adapter/GalleryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/adapter/GalleryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/util/RealPathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/util/RealPathUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/view/TedEmptyRecyclerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/view/TedEmptyRecyclerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/view/TedSquareFrameLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/view/TedSquareFrameLayout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MULTI_IMAGE_SELECTION/view/TedSquareImageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MULTI_IMAGE_SELECTION/view/TedSquareImageView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Main2Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Main2Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Main3Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Main3Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Main4Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Main4Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Multiple_Image/Aib_GalleryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Multiple_Image/Aib_GalleryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Multiple_Image/Ipm_GalleryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Multiple_Image/Ipm_GalleryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Multiple_Image/Multi_Img.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Multiple_Image/Multi_Img.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Multiple_Image/Pmca_GalleryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Multiple_Image/Pmca_GalleryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Multiple_Image/Qsr_GalleryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Multiple_Image/Qsr_GalleryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Multiple_Image/Sir_GalleryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Multiple_Image/Sir_GalleryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Multiple_Image/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Multiple_Image/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/NetConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/NetConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Network/DownloadInfoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Network/DownloadInfoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Network/FacebookConnectActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Network/FacebookConnectActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Network/NetworkInfoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Network/NetworkInfoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Network/Network_MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Network/Network_MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/NonScrollListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/NonScrollListView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PCI/PCI_Audit_Page_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PCI/PCI_Audit_Page_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PCI/PCI_SIGN_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PCI/PCI_SIGN_3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PCI/PCI_Title_Page_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PCI/PCI_Title_Page_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PC_VIR/PC_VIR_BODY_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PC_VIR/PC_VIR_BODY_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PC_VIR/PC_VIR_FUNCTION_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PC_VIR/PC_VIR_FUNCTION_3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PC_VIR/PC_VIR_GENERAL_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PC_VIR/PC_VIR_GENERAL_4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PC_VIR/PC_VIR_OTHER_7.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PC_VIR/PC_VIR_OTHER_7.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PC_VIR/PC_VIR_PPE_5.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PC_VIR/PC_VIR_PPE_5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PC_VIR/PC_VIR_STANDARD_6.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PC_VIR/PC_VIR_STANDARD_6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PC_VIR/PC_VIR_TITLE_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PC_VIR/PC_VIR_TITLE_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PDFViewActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PDFViewActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PDF_MAIL.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PDF_MAIL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PDF_VIEWER.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PDF_VIEWER.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PTI/PTI_Audit_Page_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PTI/PTI_Audit_Page_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PTI/PTI_SIGN_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PTI/PTI_SIGN_3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PTI/PTI_Title_Page_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PTI/PTI_Title_Page_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Photo_Editor/ColorPickerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Photo_Editor/ColorPickerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Photo_Editor/EditImageActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Photo_Editor/EditImageActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Photo_Editor/EmojiBSFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Photo_Editor/EmojiBSFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Photo_Editor/PhotoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Photo_Editor/PhotoApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Photo_Editor/PropertiesBSFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Photo_Editor/PropertiesBSFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Photo_Editor/StickerBSFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Photo_Editor/StickerBSFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Photo_Editor/TextEditorDialogFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Photo_Editor/TextEditorDialogFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Photo_Editor/base/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Photo_Editor/base/BaseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Photo_Editor/base/BaseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Photo_Editor/base/BaseFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Photo_Editor/filters/FilterListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Photo_Editor/filters/FilterListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Photo_Editor/filters/FilterViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Photo_Editor/filters/FilterViewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Photo_Editor/tools/EditingToolsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Photo_Editor/tools/EditingToolsAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Photo_Editor/tools/ToolType.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Photo_Editor/tools/ToolType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Recyclerview.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Recyclerview.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/RequestActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/RequestActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Splash.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Splash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/View/ChildAnimationExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/View/ChildAnimationExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/View/ExpandableHeightListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/View/ExpandableHeightListView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/View/FitWidthImageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/View/FitWidthImageView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/View/FitWidthRelativeLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/View/FitWidthRelativeLayout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/View/MyDividerItemDecoration.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/View/MyDividerItemDecoration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/View/RecyclerTouchListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/View/RecyclerTouchListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/kotlinActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/model/DataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/model/DataModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/model/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/model/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/recyclercons.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/recyclercons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/volley/CertificateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/volley/CertificateConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/volley/CertificateEncryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/volley/CertificateEncryption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/volley/SSLCertificateValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/volley/SSLCertificateValidation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/volley/VolleyDataRequester.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/volley/VolleyDataRequester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/volley/VolleyHelperApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/volley/VolleyHelperApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/volley/VolleySSLSocketFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/volley/VolleySSLSocketFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/workout.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/workout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_aboutus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_aboutus.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_aib__ext__obser_5_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_aib__ext__obser_5_2_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dashboard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_firebase_get.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_firebase_get.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_incomplete__listview.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_incomplete__listview.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_msot__list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_msot__list.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_net_connection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_net_connection.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_snackbar__test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_snackbar__test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_spinner_tech.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_spinner_tech.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/card.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/card.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fsv__emergency_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fsv__emergency_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fsv__sign_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fsv__sign_7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fsv__standard__item_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fsv__standard__item_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fsv__standard_tool_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fsv__standard_tool_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fsv_body_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fsv_body_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fsv_title_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fsv_title_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_picker_camera_tile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_picker_camera_tile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_picker_dummy_tile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_picker_dummy_tile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_picker_gallery_tile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_picker_gallery_tile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_picker_image_tile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_picker_image_tile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/logout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/logout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/msot__main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/msot__main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nka_sign.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nka_sign.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pc_vir_body_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pc_vir_body_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pc_vir_function_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pc_vir_function_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pc_vir_general_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pc_vir_general_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pc_vir_other_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pc_vir_other_7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pc_vir_ppe_equip_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pc_vir_ppe_equip_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pc_vir_ppe_standard_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pc_vir_ppe_standard_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pc_vir_title_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pc_vir_title_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pci__audit__page_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pci__audit__page_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pci__sign_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pci__sign_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pci_title__page_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pci_title__page_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pti__audit__page_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pti__audit__page_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pti__sign_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pti__sign_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pti_title__page_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pti_title__page_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tedbottompicker_grid_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tedbottompicker_grid_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/toolbar_category.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/toolbar_category.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/toolbar_demo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/toolbar_demo.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_main3_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_main3_drawer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/popup_menu_pci.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/popup_menu_pci.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/popup_menu_pti.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/popup_menu_pti.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/ListViewAdapter_PDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/ListViewAdapter_PDF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PDF_VIEWER.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PDF_VIEWER.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_pdf__viewer2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_pdf__viewer2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/rentokil/pci/rauditor_sg/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/rentokil/pci/rauditor_vn/ExampleUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/ColorPickerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/ColorPickerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/EditImageActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/EditImageActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/EmojiBSFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/EmojiBSFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/filters/FilterViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/filters/FilterViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/tools/EditingToolsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/Photo_Editor/tools/EditingToolsAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/TedRxBottomPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/TedRxBottomPicker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/adapter/GalleryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/adapter/GalleryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/view/TedEmptyRecyclerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/tedbottompicker/src/main/java/gun0912/tedbottompicker/view/TedEmptyRecyclerView.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -837,50 +107,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Fragments/Completed_Fragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1853">
-              <caret line="134" column="51" selection-start-line="134" selection-start-column="51" selection-end-line="134" selection-end-column="51" />
+            <state relative-caret-position="289">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Category_Type_Activity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18785">
-              <caret line="1189" column="25" selection-start-line="1189" selection-start-column="25" selection-end-line="1189" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/ListViewAdapter_Completed.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="224" column="23" lean-forward="true" selection-start-line="224" selection-start-column="23" selection-end-line="224" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PTI/PTI_Title_Page_1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="122" column="45" selection-start-line="122" selection-start-column="45" selection-end-line="122" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/pti_title__page_1.xml">
-          <provider editor-type-id="android-designer2" />
+        <entry file="file://$PROJECT_DIR$/publish.gradle">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Recyclerview.java">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="90" column="66" selection-start-line="90" selection-start-column="66" selection-end-line="90" selection-end-column="66" />
+            <state relative-caret-position="164">
+              <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/ListViewAdapter_Completed.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="300" selection-start-line="300" selection-end-line="300" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -889,38 +140,71 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PCI/PCI_Audit_Page_2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1870">
-              <caret line="199" column="47" selection-start-line="199" selection-start-column="47" selection-end-line="199" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/pci__audit__page_2.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+            <state relative-caret-position="459">
+              <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+              <folding>
+                <element signature="e#1046#1066#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="321" column="39" lean-forward="true" selection-start-line="321" selection-start-column="39" selection-end-line="321" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PCI/PCI_SIGN_3.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_aboutus.xml">
+          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2142">
-              <caret line="179" column="66" selection-start-line="179" selection-start-column="66" selection-end-line="179" selection-end-column="66" />
+            <state relative-caret-position="382">
+              <caret line="60" column="34" lean-forward="true" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Fragments/About_Us_Fragment.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pdf__viewer2.xml">
+          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="2176">
+              <caret line="128" column="49" selection-start-line="128" selection-start-column="49" selection-end-line="128" selection-end-column="49" />
+              <folding>
+                <element signature="e#1753#1775#0" expanded="true" />
+                <element signature="e#2494#2510#0" expanded="true" />
+                <element signature="e#3142#3156#0" expanded="true" />
+                <element signature="e#3790#3805#0" expanded="true" />
+                <element signature="e#4434#4449#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PDF_VIEWER.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="42" column="15" lean-forward="true" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/ListViewAdapter_PDF.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="143" column="13" lean-forward="true" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -1017,9 +301,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Fragments/Completed_Fragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/nka_sign.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Adapter/ListViewAdapter_Completed.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/PCI/PCI_Audit_Page_2.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/DOODLE_IMAGE_EDIT/Multiple_IMAGE_SELECTOR/ImagesSelectorActivity_pick.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_sg/Database/DatabaseHelper.java" />
@@ -1058,16 +339,19 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_aboutus.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/logout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/popup_menu_pti.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/LoginActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Category_Type_Activity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Fragments/Dashboard.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/popup_menu_pci.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Fragments/Inspection_Fragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_recyclerview.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/ListViewAdapter_Completed.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_pdf__viewer2.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PDF_VIEWER.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/ListViewAdapter_PDF.java" />
       </list>
     </option>
   </component>
@@ -1341,7 +625,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582286891965</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="initial commit">
+      <created>1625551745502</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1625551745502</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1355,6 +646,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.5060827" side_tool="true" weight="0.27458397" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.492635" visible="true" weight="0.18532526" />
@@ -1369,7 +661,7 @@
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49848714" weight="0.32569557" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5075643" side_tool="true" weight="0.46317512" />
       <window_info anchor="bottom" id="Build" order="3" sideWeight="0.49924356" weight="0.7332242" />
-      <window_info anchor="bottom" id="Android Profiler" order="4" show_stripe_button="false" weight="0.3289689" />
+      <window_info anchor="bottom" id="Android Profiler" order="4" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="5" sideWeight="0.4992224" weight="0.700491" />
       <window_info anchor="bottom" id="Debug" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.54664487" />
@@ -1424,7 +716,8 @@
     <MESSAGE value="New added" />
     <MESSAGE value="Newly added" />
     <MESSAGE value="03-02-2020 pdf view" />
-    <option name="LAST_COMMIT_MESSAGE" value="03-02-2020 pdf view" />
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
   <component name="WindowStateProjectService">
     <state width="375" height="484" key="Git.Branch.Popup" />
@@ -1502,45 +795,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main3.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
-          <folding>
-            <element signature="e#918#954#0" expanded="true" />
-            <element signature="e#1173#1209#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-          <folding>
-            <element signature="e#1387#1405#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pdf__viewer2.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="137" column="32" selection-start-line="137" selection-start-column="32" selection-end-line="137" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
@@ -1551,25 +805,6 @@
             <element signature="e#2303#2325#0" expanded="true" />
             <element signature="e#2929#2951#0" expanded="true" />
             <element signature="e#4217#4233#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_aboutus.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
-          <folding>
-            <element signature="e#11297#11315#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1661,13 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_incomplete__listview.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
@@ -1681,13 +909,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5338">
-          <caret line="314" column="61" selection-start-line="314" selection-start-column="61" selection-end-line="314" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -1840,13 +1061,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Fragments/Completed_Fragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="134" column="51" selection-start-line="134" selection-start-column="51" selection-end-line="134" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Category_Type_Activity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18785">
@@ -1882,14 +1096,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/pci__audit__page_2.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PCI/PCI_SIGN_3.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2142">
@@ -1906,8 +1112,94 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/ListViewAdapter_Completed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="224" column="23" lean-forward="true" selection-start-line="224" selection-start-column="23" selection-end-line="224" selection-end-column="23" />
+        <state relative-caret-position="84">
+          <caret line="300" selection-start-line="300" selection-end-line="300" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Fragments/Completed_Fragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/publish.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/pci__audit__page_2.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+          <folding>
+            <element signature="e#1046#1066#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_aboutus.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="60" column="34" lean-forward="true" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pdf__viewer2.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2176">
+          <caret line="128" column="49" selection-start-line="128" selection-start-column="49" selection-end-line="128" selection-end-column="49" />
+          <folding>
+            <element signature="e#1753#1775#0" expanded="true" />
+            <element signature="e#2494#2510#0" expanded="true" />
+            <element signature="e#3142#3156#0" expanded="true" />
+            <element signature="e#3790#3805#0" expanded="true" />
+            <element signature="e#4434#4449#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/PDF_VIEWER.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="42" column="15" lean-forward="true" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rentokil/pci/rauditor_vn/Adapter/ListViewAdapter_PDF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="143" column="13" lean-forward="true" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="321" column="39" lean-forward="true" selection-start-line="321" selection-start-column="39" selection-end-line="321" selection-end-column="39" />
         </state>
       </provider>
     </entry>

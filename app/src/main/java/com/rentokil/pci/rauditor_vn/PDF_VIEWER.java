@@ -134,7 +134,8 @@ public class PDF_VIEWER extends AppCompatActivity   {
 
     private void get_all_pdf(){
 
-        String  url="https://rauditor.riflows.com/Android/PDF/ia_completed.php?mail_id=" + User_Details + "" ;
+       // String  url="https://rauditor.riflows.com/Android/PDF/ia_completed.php?mail_id=" + User_Details + "" ;
+        String url="https://rauditor.riflows.com/Android/VN/PDF/ia_completed.php?mail_id=" + User_Details + "" ;
 
         VolleyDataRequester.withDefaultHttps( this )
                 .setUrl(url.replace(" ","%20"))

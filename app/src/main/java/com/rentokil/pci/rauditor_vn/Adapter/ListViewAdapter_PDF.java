@@ -118,25 +118,25 @@ public class ListViewAdapter_PDF  extends BaseAdapter {
 
                 if(List_Item_PDF_Methodes.get(position).getCus_name().equalsIgnoreCase("PCI")){
 
-                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://rauditor.riflows.com/Android/downloads/PCI/PC Pest Inspection Report-"+List_Item_PDF_Methodes.get(position).getAudi_name()+"_"+List_Item_PDF_Methodes.get(position).getDoc_no()+".pdf"));
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://rauditor.riflows.com/Android/VN/downloads/PCI/PC Pest Inspection Report-"+List_Item_PDF_Methodes.get(position).getAudi_name()+"_"+List_Item_PDF_Methodes.get(position).getDoc_no()+".pdf"));
                     mContext.startActivity(browserIntent);
                 }
                 else if(List_Item_PDF_Methodes.get(position).getCus_name().equalsIgnoreCase("PTI")){
 
-                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://rauditor.riflows.com/Android/downloads/PTI/PT Pest Inspection Report-"+List_Item_PDF_Methodes.get(position).getAudi_name()+"_"+List_Item_PDF_Methodes.get(position).getDoc_no()+".pdf"));
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://rauditor.riflows.com/Android/VN/downloads/PTI/PT Pest Inspection Report-"+List_Item_PDF_Methodes.get(position).getAudi_name()+"_"+List_Item_PDF_Methodes.get(position).getDoc_no()+".pdf"));
                     mContext.startActivity(browserIntent);
 
                 }
                 else if(List_Item_PDF_Methodes.get(position).getCus_name().equalsIgnoreCase("VIR")){
 
-                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://rauditor.riflows.com/Android/downloads/PC_VEH/Vehicle Inspection PC_"+List_Item_PDF_Methodes.get(position).getDoc_no()+".pdf"));
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://rauditor.riflows.com/Android/VN/downloads/PC_VEH/Vehicle Inspection PC_"+List_Item_PDF_Methodes.get(position).getDoc_no()+".pdf"));
                     mContext.startActivity(browserIntent);
 
                 }
 
                 else if(List_Item_PDF_Methodes.get(position).getCus_name().equalsIgnoreCase("FSV")){
 
-                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://rauditor.riflows.com/Android/downloads/FSV/Fumigation Service Vehicle_"+List_Item_PDF_Methodes.get(position).getDoc_no()+".pdf"));
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://rauditor.riflows.com/Android/VN/downloads/FSV/Fumigation Service Vehicle_"+List_Item_PDF_Methodes.get(position).getDoc_no()+".pdf"));
                     mContext.startActivity(browserIntent);
 
                 }

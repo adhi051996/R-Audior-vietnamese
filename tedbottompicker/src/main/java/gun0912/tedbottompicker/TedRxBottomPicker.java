@@ -2,10 +2,10 @@ package gun0912.tedbottompicker;
 
 import android.net.Uri;
 
+import androidx.fragment.app.FragmentActivity;
 
 import java.util.List;
 
-import androidx.fragment.app.FragmentActivity;
 import io.reactivex.Single;
 
 public class TedRxBottomPicker extends TedBottomSheetDialogFragment {

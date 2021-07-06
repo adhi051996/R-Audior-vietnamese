@@ -1,12 +1,12 @@
 package gun0912.tedbottompicker.view;
 
 import android.content.Context;
+import android.util.AttributeSet;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.util.AttributeSet;
-import android.view.View;
 
 public class TedEmptyRecyclerView extends RecyclerView {
 	@Nullable

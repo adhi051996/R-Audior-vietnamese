@@ -48,7 +48,7 @@
                         android:singleLine="true"
                         android:textStyle="bold"
                         android:padding="0dp"
-                        android:text="C.Name"
+                        android:text="@string/CustomerName"
                         android:id="@+id/cust_name_main"
                         android:textColor="#066D1F"
                         android:gravity="center"/>
@@ -65,7 +65,7 @@
                         android:id="@+id/dsp_date_main"
                         android:padding="2dp"
 
-                        android:text="Report"
+                        android:text="@string/Report"
                         android:gravity="center"
                         />
 
@@ -81,7 +81,7 @@
                         android:id="@+id/txt_cus_id"
                         android:textColor="#066D1F"
                         android:padding="2dp"
-                        android:text="Date"
+                        android:text="@string/Date"
                         android:gravity="center"
                         />
 
@@ -97,7 +97,7 @@
                         android:id="@+id/con_quo_main"
                         android:textColor="#066D1F"
                         android:padding="2dp"
-                        android:text="Title"
+                        android:text="@string/Title"
                         android:gravity="center"
                         />
 
@@ -112,7 +112,7 @@
                         android:textColor="#066D1F"
                         android:id="@+id/soc_main"
                         android:padding="2dp"
-                        android:text="Doc Id"
+                        android:text="@string/DocId"
                         android:gravity="center"
                         />
 
@@ -126,7 +126,7 @@
                         android:id="@+id/txt_pay_date"
                         android:textColor="#066D1F"
                         android:padding="2dp"
-                        android:text="View PDF"
+                        android:text="@string/ViewPDF"
                         android:gravity="center"
                         />
 

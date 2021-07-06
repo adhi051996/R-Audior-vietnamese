@@ -5,14 +5,15 @@ import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+
 import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
-
-import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -23,7 +24,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.recyclerview.widget.RecyclerView;
 import gun0912.tedbottompicker.R;
 import gun0912.tedbottompicker.TedBottomSheetDialogFragment;
 import gun0912.tedbottompicker.view.TedSquareFrameLayout;
